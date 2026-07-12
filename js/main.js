@@ -96,7 +96,6 @@ function initScrollReveals() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        // Stagger children within a parent
         const parent = entry.target.closest('[data-stagger]');
         if (parent) {
           const siblings = parent.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -105,7 +104,9 @@ function initScrollReveals() {
         }
         
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove('visible');
+        entry.target.style.transitionDelay = '0s';
       }
     });
   }, {
