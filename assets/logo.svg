@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none">
+  <!-- Dark charcoal rectangle with smooth rounded edges -->
+  <rect x="20" y="10" width="200" height="110" rx="12" fill="#363636"/>
+  
+  <!-- Light blue infinity symbol (clean, flat style) -->
+  <path d="M70 65 C70 40, 105 35, 120 65 C135 35, 170 40, 170 65 C170 90, 135 95, 120 65 C105 95, 70 90, 70 65Z" 
+        stroke="#12B5E5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        
+  <!-- kshamtalaya text below -->
+  <text x="120" y="155" text-anchor="middle" font-family="'Courier New', Courier, monospace" 
+        font-size="28" font-weight="bold" fill="#12B5E5" letter-spacing="1">kshamtalaya</text>
+</svg>

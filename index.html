@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kshamtalaya — Abode of Potential | Every Child Realises Their True Potential</title>
+  <meta name="description" content="Kshamtalaya is an Indian education non-profit working in tribal-rural and urban government schools across Rajasthan, Bihar, and Delhi. Every child realises their true potential through meaningful, relevant and compassionate education." />
+  <meta name="keywords" content="Kshamtalaya, education, non-profit, India, Rajasthan, Bihar, Delhi, children, schools, potential" />
+  <meta property="og:title" content="Kshamtalaya — Abode of Potential" />
+  <meta property="og:description" content="Every child realises their true potential through meaningful, relevant and compassionate education." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kshamtalaya.org" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- NAVBAR                                   -->
+  <!-- ════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <!-- Logo -->
+      <a href="/" class="navbar__logo" aria-label="Kshamtalaya Home">
+        <img src="/assets/logo.svg" alt="Kshamtalaya Logo" style="height: 54px; width: auto;" />
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="navbar__links" id="desktop-nav">
+        <a href="/" class="navbar__link active">Home</a>
+        <a href="/#team" class="navbar__link">Our Team</a>
+        
+        <!-- Programs Dropdown -->
+        <div class="navbar__dropdown">
+          <a href="/programs.html" class="navbar__link navbar__dropdown-trigger">
+            Our Programs
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 5L6 8L9 5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="/programs.html#school-excellence" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#1CA6A0"></span>School Excellence Program</a>
+            <a href="/programs.html#teacher-support" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FFC72C"></span>Teacher Support Program</a>
+            <a href="/programs.html#fale-fale" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FF6F59"></span>Fale Fale Shiksha Muhim</a>
+            <a href="/programs.html#learning-festivals" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FFC72C"></span>Learning Festivals Internship</a>
+            <a href="/programs.html#star-parents" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#4FB6E8"></span>STAR Parents</a>
+          </div>
+        </div>
+
+        <a href="/story.html" class="navbar__link">Our Story</a>
+        <a href="/press.html" class="navbar__link">Press & Media</a>
+        <a href="/alumni.html" class="navbar__link">Our Alumni</a>
+        <a href="/contact.html" class="navbar__link">Contact</a>
+        <a href="/donate.html" class="btn btn--donate">Donate ❤</a>
+      </div>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobile-menu">
+      <a href="/" class="navbar__mobile-link">Home</a>
+      <a href="/#team" class="navbar__mobile-link">Our Team</a>
+      <a href="/programs.html" class="navbar__mobile-link">Our Programs</a>
+      <a href="/story.html" class="navbar__mobile-link">Our Story</a>
+      <a href="/press.html" class="navbar__mobile-link">Press & Media</a>
+      <a href="/alumni.html" class="navbar__mobile-link">Our Alumni</a>
+      <a href="/contact.html" class="navbar__mobile-link">Contact Us</a>
+      <a href="/donate.html" class="btn btn--primary btn--lg" style="margin-top:1rem;">Donate ❤</a>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- HERO SECTION                             -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="hero" id="hero" style="min-height: auto; padding: 4rem 0 2rem 0;">
+    <div class="hero__doodles" aria-hidden="true">
+      <!-- Floating doodle elements -->
+      <svg class="hero__doodle anim-float" style="top: 5%; left: 5%; width: 40px;" viewBox="0 0 40 40">
+        <polygon points="20,2 25,15 38,15 27,23 31,37 20,28 9,37 13,23 2,15 15,15" fill="none" stroke="#FFC72C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="hero__doodle anim-float" style="bottom: 15%; left: 8%; width: 36px; animation-delay: 2s;" viewBox="0 0 40 40">
+        <path d="M5 35 L20 5 L35 35" fill="none" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="hero__doodle anim-float" style="top: 15%; right: 10%; width: 24px; animation-delay: 3s;" viewBox="0 0 24 24">
+        <path d="M12 2L14 10H22L16 14L18 22L12 18L6 22L8 14L2 10H10Z" fill="#FFC72C" opacity="0.3"/>
+      </svg>
+      <!-- Paper airplane -->
+      <svg class="hero__doodle anim-float" style="bottom: 25%; right: 5%; width: 44px; animation-delay: 1.5s;" viewBox="0 0 48 48">
+        <path d="M6 24L42 6L30 42L24 28Z" fill="none" stroke="#4FB6E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 28L42 6" fill="none" stroke="#4FB6E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="container hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; position: relative; z-index: var(--z-content);">
+      
+      <div class="hero__content" style="max-width: 800px; width: 100%;">
+        <div class="hero__tagline" style="display: inline-block; padding: 4px 12px; border: 1px solid var(--color-teal); border-radius: 20px; font-size: 11px; margin-bottom: 1rem;">
+          <span style="color: var(--color-teal);">+ ABODE OF POTENTIAL</span>
+        </div>
+        
+        <h1 class="hero__title" style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.5rem; letter-spacing: -0.5px; line-height: 1.2;">
+          Every child realises their 
+          <span style="color: var(--color-teal); position: relative; display: inline-block;">
+            true potential
+            <svg style="position: absolute; bottom: -4px; left: -5%; width: 110%; height: auto; z-index: -1;" viewBox="0 0 200 20" preserveAspectRatio="none">
+              <path d="M5,15 Q50,5 100,10 T195,15" fill="none" stroke="#FFC72C" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </span> 
+          through meaningful, relevant & compassionate education.
+        </h1>
+        
+        <p class="hero__subtitle" style="font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+          Kshamtalaya works with tribal-rural and urban government schools 
+          across <strong>Rajasthan, Bihar and Delhi</strong> — reaching over 200,000 children 
+          with joyful, whole-school learning.
+        </p>
+      </div>
+      
+      <div class="hero__visual" style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
+        <div style="position: absolute; top: -15px; right: 20px; background: var(--color-yellow); border: 2px solid var(--color-charcoal); border-radius: 20px; padding: 4px 12px; font-weight: 800; font-size: 0.75rem; z-index: 10; transform: rotate(3deg);">
+          क्षमता - POTENTIAL
+        </div>
+        <div style="border: 3px solid var(--color-charcoal); border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 var(--color-teal); background: #f8f8f8; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+          <img src="/assets/photos/pic1.jpg" alt="Children sitting in a circle" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- IMPACT STATS BAR                        -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="stats section" id="impact" aria-label="Impact statistics" style="padding: 3rem 0; background: linear-gradient(135deg, #111 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
+      <style>
+        .stats::before {
+          content: "";
+          position: absolute;
+          top: -50%; left: -50%; width: 200%; height: 200%;
+          background: radial-gradient(circle, rgba(56,182,255,0.05) 0%, rgba(28,166,160,0.02) 40%, transparent 70%);
+          animation: pulse 15s infinite;
+          pointer-events: none;
+        }
+        .compact-stat-card {
+          flex: 1 1 calc(25% - 1.5rem);
+          min-width: 150px;
+          padding: 1.5rem 1rem;
+          background: rgba(43, 43, 43, 0.4);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 16px;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+        .compact-stat-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(56, 182, 255, 0.4);
+          background: rgba(50, 50, 50, 0.7);
+        }
+        .stat-num-compact {
+          font-size: 2rem; font-weight: 800; font-family: var(--font-heading);
+          color: #fff; margin: 0.5rem 0 0.25rem 0;
+        }
+        .stat-label-compact {
+          color: #b0b0b0; font-size: 0.85rem; line-height: 1.3; font-weight: 500;
+        }
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 0.3; }
+          50% { transform: scale(1.1); opacity: 0.6; }
+          100% { transform: scale(1); opacity: 0.3; }
+        }
+      </style>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; gap: 1rem;">
+          <h2 style="color: white; font-size: 2rem; font-family: var(--font-heading); font-weight: 800; margin: 0;">Our Impact & Reach</h2>
+          <p style="color: #bbb; font-size: 0.95rem; margin: 0; max-width: 400px; text-align: right;">Measurable change across communities, empowering children and educators alike.</p>
+        </div>
+        
+        <div class="stats__grid" data-stagger style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="10000" data-suffix="+">10,000+</div>
+            <div class="stat-label-compact">Children via direct engagement</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="120000" data-suffix="+">1,20,000+</div>
+            <div class="stat-label-compact">Children via digital engagement</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC72C" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="1953" data-suffix="">1,953</div>
+            <div class="stat-label-compact">Teachers Supported</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="10446" data-suffix="">10,446</div>
+            <div class="stat-label-compact">Community Members</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="140" data-suffix="">140</div>
+            <div class="stat-label-compact">Facilitators</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC72C" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="519" data-suffix="">519</div>
+            <div class="stat-label-compact">Out-of-school Children</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="166" data-suffix="">166</div>
+            <div class="stat-label-compact">Learning Festivals</div>
+          </div>
+
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="28" data-suffix="">28</div>
+            <div class="stat-label-compact">Panchayats</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- OUR APPROACH                             -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="approach" aria-label="Our Approach">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Our Approach</div>
+          <h2 class="section-header__title">A <span class="highlight-yellow">3-Pronged</span> Approach</h2>
+          <p class="section-header__desc">
+            With 8+ years in this sector working in 3 geographies, Kshamtalaya has arrived at a 3-Pronged approach to inch closer to our vision of Holistic Growth of Child through Learning, Well-Being and Governance.
+          </p>
+          <img src="/assets/photos/pic2.jpg" alt="Child learning on a blackboard" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; margin: 2.5rem auto 0; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid var(--color-teal);" />
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;" data-stagger>
+          <!-- 1. Demonstrate -->
+          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
+            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #38B6FF;"></div>
+            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(56, 182, 255, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #38B6FF;">
+              1
+            </div>
+            <div>
+              <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem; color: #38B6FF;">Demonstrate & Support Excellence in Learning, Governance & Well-being</h3>
+              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem;">100 Centers of Excellence within primary grade government schools</p>
+              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Increased child retention</li>
+                <li>Improved quality in learning & well-being</li>
+                <li>Increase in parental engagement in PTMs</li>
+                <li>Print-rich & learner centric classrooms</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Cultivate -->
+          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
+            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #1CA6A0;"></div>
+            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(28, 166, 160, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #1CA6A0;">
+              2
+            </div>
+            <div>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #1CA6A0;">Cultivating Local Leadership</h3>
+              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Cultivating a cadre of local Edu leaders as Community Mentors who support govt. schools builds foundational skills in primary grade students belonging to remote rural geographies</li>
+                <li>Cadre of govt. school teachers who are transformed to happy, purposeful & improved pedagogical leadership</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Build -->
+          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
+            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #FFC72C;"></div>
+            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(255, 199, 44, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #FFC72C;">
+              3
+            </div>
+            <div>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #FFC72C;">Building Systemic Excellence in Policy & Reforms</h3>
+              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Supporting the state in the mission of NEP 2020's State Curriculum Framework</li>
+                <li>Advocating curriculum development & building a cadre of 100 Mentor Teachers for well-being curriculum to build happy schools.</li>
+                <li>Partnering with state to support Assessment CELL initiatives & Module Development for Teacher Education</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- PROGRAMS AT A GLANCE                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section section--cream" id="programs" aria-label="Our Programs">
+      <div class="container">
+        <style>
+          .programs-header-layout {
+            display: flex; align-items: center; justify-content: center; gap: 2rem; 
+            max-width: 900px; margin: 0 auto 3rem; text-align: left; flex-wrap: wrap;
+          }
+          .programs-header-text { flex: 1; min-width: 300px; }
+          .programs-header-text .section-header__eyebrow { margin-left: 0; margin-right: 0; }
+          .programs-header-text .section-header__title { margin-left: 0; margin-right: 0; text-align: left; }
+          .programs-header-text .section-header__desc { margin-left: 0; margin-right: 0; text-align: left; }
+          .programs-header-image { flex: 0 0 250px; text-align: center; }
+          .programs-header-image img {
+            width: 100%; height: auto; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: rotate(5deg); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          }
+          .programs-header-image img:hover { transform: rotate(0deg) scale(1.05); }
+        </style>
+        <div class="reveal programs-header-layout">
+          <div class="programs-header-text">
+            <div class="section-header__eyebrow">What We Do</div>
+            <h2 class="section-header__title">Our <span class="highlight-yellow">Programs</span></h2>
+            <p class="section-header__desc">
+              Five interconnected programs working across three approaches — Demonstration, 
+              Community Leadership, and Systems Excellence — all anchoring the child at the center.
+            </p>
+          </div>
+          <div class="programs-header-image">
+            <img src="/assets/illustrations/3d_pencils.jpg" alt="Creative 3D Pencils" />
+          </div>
+        </div>
+
+        <!-- Theme: Demonstration Approach -->
+        <div class="programs__theme">
+          <div class="programs__theme-label reveal">Demonstration Approach</div>
+          <div class="programs__grid" data-stagger>
+            <!-- C.E.L.L -->
+            <a href="/programs/cell.html" class="program-card reveal" data-tilt>
+              <div class="program-card__header program-card__header--cell">
+                <div class="program-card__icon">
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <rect x="4" y="8" width="28" height="20" rx="3" stroke="#1CA6A0" stroke-width="2.5"/>
+                    <path d="M4 14H32" stroke="#1CA6A0" stroke-width="2.5"/>
+                    <circle cx="10" cy="22" r="3" fill="#FFC72C"/>
+                    <path d="M16 20H28" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16 25H24" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="program-card__tag">Rajasthan</span>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__name">School Excellence Program</h3>
+                <div class="program-card__location">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
+                  Rajasthan
+                </div>
+                <p class="program-card__desc">We embed dedicated facilitators directly inside government schools to systematically transition them into self-sustaining hubs of quality learning, student well-being, and structured institutional governance.</p>
+                <div class="program-card__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <!-- Learning Festivals -->
+            <a href="/programs/learning-festivals.html" class="program-card reveal" data-tilt>
+              <div class="program-card__header program-card__header--lf">
+                <div class="program-card__icon">
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <path d="M18 4L22 12L30 14L24 20L26 28L18 24L10 28L12 20L6 14L14 12Z" stroke="#FFC72C" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+                    <circle cx="18" cy="16" r="4" fill="#1CA6A0" opacity="0.3"/>
+                  </svg>
+                </div>
+                <span class="program-card__tag" style="background: var(--color-sunshine); color: var(--color-charcoal);">All Regions</span>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__name">Teacher Support Program</h3>
+                <div class="program-card__location">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
+                  Multiple Locations
+                </div>
+                <p class="program-card__desc">A targeted, peer-led professional development model that equips public school educators with the precise instructional toolkits and mental health frameworks needed to manage complex classrooms.</p>
+                <div class="program-card__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Theme: Community Leadership Approach -->
+        <div class="programs__theme">
+          <div class="programs__theme-label reveal">Community Leadership Approach</div>
+          <div class="programs__grid" data-stagger>
+            <!-- Fale Fale Shiksha Muhim -->
+            <a href="/programs/fale-fale.html" class="program-card reveal" data-tilt>
+              <div class="program-card__header program-card__header--fale">
+                <div class="program-card__icon">
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <path d="M8 28C8 28 12 20 18 20C24 20 28 28 28 28" stroke="#FF6F59" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="18" cy="12" r="6" stroke="#FF6F59" stroke-width="2.5"/>
+                    <path d="M4 32H32" stroke="#FFC72C" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="program-card__tag" style="background: var(--color-coral);">Gogunda</span>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__name">Fale Fale Shiksha Muhim</h3>
+                <div class="program-card__location">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
+                  Gogunda, Rajasthan
+                </div>
+                <p class="program-card__desc">A localized, doorstep-delivery learning model that maps, trains, and deploys neighborhood youth to bridge foundational literacy deficits right inside children’s homes.</p>
+                <div class="program-card__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <!-- Learning Festivals Internship Program -->
+            <a href="/programs/learning-festivals.html" class="program-card reveal" data-tilt>
+              <div class="program-card__header program-card__header--lf">
+                <div class="program-card__icon">
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <path d="M18 4L22 12L30 14L24 20L26 28L18 24L10 28L12 20L6 14L14 12Z" stroke="#FFC72C" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+                    <circle cx="18" cy="16" r="4" fill="#1CA6A0" opacity="0.3"/>
+                  </svg>
+                </div>
+                <span class="program-card__tag" style="background: var(--color-sunshine); color: var(--color-charcoal);">All Regions</span>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__name">Learning Festivals Internship</h3>
+                <div class="program-card__location">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
+                  Multiple Locations
+                </div>
+                <p class="program-card__desc">A short-term immersion track where outside talent pairs with local youth to run intensive, project-based camps focused on children’s practical reasoning and self-expression.</p>
+                <div class="program-card__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Theme: Systems Excellence Approach -->
+        <div class="programs__theme">
+          <div class="programs__theme-label reveal">Systems Excellence Approach</div>
+          <div class="programs__grid" data-stagger>
+            <!-- STAR Parents -->
+            <a href="/donate.html#partner" class="program-card reveal" data-tilt>
+              <div class="program-card__header program-card__header--khushi">
+                <div class="program-card__icon">
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <path d="M18 4L22 12L30 14L24 20L26 28L18 24L10 28L12 20L6 14L14 12Z" stroke="#4FB6E8" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+                    <circle cx="18" cy="16" r="4" fill="#FFC72C" opacity="0.4"/>
+                  </svg>
+                </div>
+                <span class="program-card__tag" style="background: var(--color-sky);">All States</span>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__name">STAR Parents</h3>
+                <div class="program-card__location">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
+                  Adopted by MCD, All Regions
+                </div>
+                <p class="program-card__desc">A structural intervention that organizes and coaches parents to actively run School Management Committees, establishing a permanent system of civic oversight and at-home learning routines.</p>
+                <div class="program-card__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: var(--space-2xl);">
+          <a href="/programs.html" class="btn btn--secondary">
+            Explore All Programs
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- OUR JOURNEY TIMELINE                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="journey" aria-label="Our Journey">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Our Journey</div>
+          <h2 class="section-header__title">The Story <span class="highlight-yellow">So Far</span></h2>
+          <p class="section-header__desc">
+            Ten years ago, Kshamtalaya began with a simple belief: every child deserves the opportunity to learn, grow, and thrive, 
+            regardless of their circumstances. Today, we work alongside communities, educators, and institutions to strengthen 
+            learning ecosystems and create pathways toward a more equitable future.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"></div>
+
+          <!-- 2016 -->
+          <div class="timeline__item">
+            <div class="timeline__content reveal-left">
+              <h3>The Spark ✨</h3>
+              <p>Kshamtalaya envisioned after witnessing deep education inequity in tribal-rural Kotra, Udaipur. A dream to build an "Abode of Potential" for every child.</p>
+            </div>
+            <div class="timeline__year">2016</div>
+            <div style="width: 45%;"></div>
+          </div>
+
+          <!-- 2017 -->
+          <div class="timeline__item">
+            <div style="width: 45%;"></div>
+            <div class="timeline__year">2017</div>
+            <div class="timeline__content reveal-right">
+              <h3>First Programs Launch 🎪</h3>
+              <p>Learning Festivals initiated in June, followed by the launch of the iDISCOVER Fellowship in November — the first cohort of grassroots education leaders inducted.</p>
+            </div>
+          </div>
+
+          <!-- 2019 -->
+          <div class="timeline__item">
+            <div class="timeline__content reveal-left">
+              <h3>Expansion & Partnerships 🤝</h3>
+              <p>SEE Learning curriculum (Emory University + Dalai Lama Trust) launched. CELL model formalised in Rajasthan. Entrepreneurial Mindset Curriculum co-created with SCERT Delhi.</p>
+            </div>
+            <div class="timeline__year">2019</div>
+            <div style="width: 45%;"></div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="timeline__item">
+            <div style="width: 45%;"></div>
+            <div class="timeline__year">2020</div>
+            <div class="timeline__content reveal-right">
+              <h3>COVID Response & Innovation 📻</h3>
+              <p>Launched COVID relief campaign for Kotra & Gogunda families. Pioneered Radio learning program with Radio Madhuban — reaching children without internet access.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: var(--space-xl);">
+          <a href="/story.html" class="btn btn--secondary">
+            Read Our Full Story
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8H12M12 8L8 4M12 8L8 12"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- PRESS & MEDIA STRIP                      -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="press-strip" aria-label="Press and Media">
+      <div class="press-strip__label">Featured In & Partnered With</div>
+      <div style="overflow: hidden;">
+        <div class="press-strip__track">
+          <!-- Placeholder press logos as text badges -->
+          <div style="display: flex; gap: 3rem; align-items: center; flex-shrink: 0;">
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Emory University</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Dalai Lama Trust</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">SCERT Delhi</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">BRIO</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Rajasthan State Govt</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Educate for Life</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Jatan Sansthan</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Radio Madhuban</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div style="display: flex; gap: 3rem; align-items: center; flex-shrink: 0;">
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Emory University</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Dalai Lama Trust</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">SCERT Delhi</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">BRIO</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Rajasthan State Govt</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Educate for Life</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Jatan Sansthan</span>
+            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Radio Madhuban</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- VALUES                                   -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="values" aria-label="Our Values">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Who We Are</div>
+          <h2 class="section-header__title">Our <span class="highlight-yellow">Values</span></h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;" data-stagger>
+          <!-- Compassion -->
+          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-teal); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-teal);">1. Compassion</h3>
+            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Compassion is recognizing suffering, understanding its universality, and taking action to alleviate it with empathy and care."</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">At Kshamtalaya, we integrate compassion by supporting students, teachers, and communities in their challenges, ensuring we respond with empathy and create nurturing environments for growth.</p>
+          </div>
+
+          <!-- Freedom with Responsibility -->
+          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-yellow); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-yellow);">2. Freedom with Responsibility</h3>
+            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"True freedom comes with the responsibility to be accountable for your actions, making choices that impact others and owning both successes and mistakes."</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">We empower our educators and students to make decisions and take ownership of their learning and growth, fostering an environment where responsibility is valued alongside freedom.</p>
+          </div>
+
+          <!-- Excellence -->
+          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-coral); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-coral);">3. Excellence</h3>
+            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Excellence is about striving to be better every day, dedicating yourself to doing your best and growing through each experience."</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">In our work, excellence is evident in our commitment to continuously improving educational practices and striving for the highest standards in every program we implement.</p>
+          </div>
+
+          <!-- Trust -->
+          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-sky); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-sky);">4. Trust</h3>
+            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Trust is the foundation of a safe and engaged environment, built on transparency, unconditional support, and the reliability of keeping commitments."</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Kshamtalaya fosters trust by being transparent in our processes, encouraging open communication, and creating spaces where mistakes are seen as opportunities for growth rather than failures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- 4 AUDIENCE PATHWAYS                      -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section section--cream" id="get-involved" aria-label="Get Involved">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Get Involved</div>
+          <h2 class="section-header__title">How You Can <span class="highlight-yellow">Make a Difference</span></h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl);" data-stagger>
+          <!-- For Funders -->
+          <div class="reveal" style="background: var(--color-white); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-sunshine);">
+            <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-xs);">💰 For Funders</h3>
+            <p style="font-size: var(--fs-body); color: var(--color-text-secondary); margin-bottom: var(--space-md); font-weight: var(--fw-semibold);">Invest in lasting educational impact</p>
+            <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-md);">Partner with communities and educators to create equitable learning opportunities that drive measurable change.</p>
+            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Transparent and accountable implementation</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Scalable, community-rooted programs</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Measurable outcomes and impact reporting</li>
+            </ul>
+            <a href="/donate.html" class="btn btn--primary btn--sm">Explore Partnership Opportunities</a>
+          </div>
+
+          <!-- Join the Team -->
+          <div class="reveal" style="background: var(--color-white); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-teal);">
+            <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-xs);">🤝 Join the Team</h3>
+            <p style="font-size: var(--fs-body); color: var(--color-text-secondary); margin-bottom: var(--space-md); font-weight: var(--fw-semibold);">Build meaningful change with us</p>
+            <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-md);">Join a purpose-driven team working to strengthen education and opportunities for underserved communities.</p>
+            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Fellowship and volunteer opportunities</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Real-world social impact experience</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Leadership and professional growth pathways</li>
+            </ul>
+            <a href="/contact.html" class="btn btn--secondary btn--sm">View Opportunities</a>
+          </div>
+
+          <!-- Partner with Us -->
+          <div class="reveal" style="background: var(--color-white); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-coral);">
+            <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-xs);">🏫 Partner with Us</h3>
+            <p style="font-size: var(--fs-body); color: var(--color-text-secondary); margin-bottom: var(--space-md); font-weight: var(--fw-semibold);">Collaborate for stronger learning ecosystems</p>
+            <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-md);">Work with us to design and implement community-centered education initiatives that create sustainable impact.</p>
+            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Government and institutional collaboration</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Training and implementation support</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Community-driven educational solutions</li>
+            </ul>
+            <a href="/contact.html" class="btn btn--secondary btn--sm">Start a Conversation</a>
+          </div>
+
+          <!-- Support a Child -->
+          <div class="reveal" style="background: var(--color-white); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-green);">
+            <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-xs);">❤️ Support a Child</h3>
+            <p style="font-size: var(--fs-body); color: var(--color-text-secondary); margin-bottom: var(--space-md); font-weight: var(--fw-semibold);">Help create brighter futures through learning</p>
+            <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-md);">Your support can help children access safe, inclusive, and meaningful educational opportunities.</p>
+            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Support learning and development programs</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Strengthen schools and communities</li>
+              <li style="display:flex; align-items:center; gap: 6px;"><span style="color:var(--color-teal);">✓</span> Contribute toward long-term educational access</li>
+            </ul>
+            <a href="/donate.html" class="btn btn--primary btn--sm">Support Learning Today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- OUR TEAM                                 -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="team" aria-label="Our Team" style="background: var(--color-white); overflow: hidden; position: relative; padding: 6rem 0;">
+      <!-- Decorative background blobs -->
+      <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: rgba(56, 182, 255, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+      <div style="position: absolute; bottom: -100px; right: -100px; width: 300px; height: 300px; background: rgba(255, 111, 89, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+      
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="section-header reveal" style="text-align: center;">
+          <div class="section-header__eyebrow" style="color: var(--color-teal); justify-content: center;">Our Team</div>
+          <h2 class="section-header__title" style="font-size: 3rem; margin-bottom: 1rem;">The <span style="position: relative; display: inline-block;">Hearts<svg style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 8px; z-index: -1;" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="var(--color-coral)" stroke-width="4"/></svg></span> Behind Kshamtalaya</h2>
+          <p class="section-header__desc" style="margin: 1rem auto 3.5rem; max-width: 650px;">
+            A passionate group of educators, community builders, and system thinkers dedicated to making quality education accessible to every child.
+          </p>
+        </div>
+
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2rem;">
+          
+          <!-- Team Member 1 -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(56, 182, 255, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%);"></div> <!-- Placeholder image -->
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Ravi Kumar</h3>
+            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Founder & CEO</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Driving the vision to unlock the potential in every rural and urban classroom.</p>
+          </div>
+
+          <!-- Team Member 2 (Offset slightly) -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px); transform: translateY(30px);" onmouseover="this.style.transform='translateY(15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(30px) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 111, 89, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%);"></div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Sneha Sharma</h3>
+            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Program Director</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Orchestrating our 3-pronged approach and managing our 100 Centers of Excellence.</p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(28, 166, 160, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%);"></div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Anil Desai</h3>
+            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Community</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Empowering local leaders and facilitating the Fale Fale Shiksha Muhim initiative.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- NEWSLETTER & CTA                         -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section section--yellow" id="newsletter" aria-label="Newsletter signup">
+      <div class="container text-center">
+        <div class="section-header reveal">
+          <h2 class="section-header__title" style="color: var(--color-charcoal);">Join the Movement</h2>
+          <p class="section-header__desc" style="color: rgba(43, 43, 43, 0.75);">
+            Stay connected with stories from the field, program updates, and ways to support 
+            children's potential across India.
+          </p>
+        </div>
+
+        <form class="newsletter__form reveal" action="#" method="POST" aria-label="Newsletter signup form">
+          <input type="email" class="newsletter__input" placeholder="Your email address" required aria-label="Email address" id="newsletter-email" />
+          <button type="submit" class="btn btn--primary" style="background: var(--color-charcoal); color: var(--color-sunshine);">
+            Subscribe
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 8H14M14 8L10 4M14 8L10 12"/></svg>
+          </button>
+        </form>
+
+        <div class="reveal" style="margin-top: var(--space-2xl); display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap;">
+          <a href="/donate.html" class="btn btn--primary btn--lg" style="background: var(--color-charcoal); color: var(--color-sunshine);">
+            Donate Now ❤
+          </a>
+          <a href="/contact.html" class="btn btn--white btn--lg">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- FOOTER                                   -->
+  <!-- ════════════════════════════════════════ -->
+  <footer style="background-color: #2D2D2D; color: #ffffff; padding: 5rem 0; font-family: 'Inter', sans-serif;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Column 1: Brand & About -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <svg viewBox="0 0 200 60" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 30 C10 15, 25 12, 35 30 C45 12, 60 15, 60 30 C60 45, 45 48, 35 30 C25 48, 10 45, 10 30Z" stroke="#12B5E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="75" y="40" font-family="'Inter', sans-serif" font-size="28" font-weight="800" fill="#FFFFFF" letter-spacing="0">kshamtalaya</text>
+          </svg>
+        </div>
+        <p style="color: #DDDDDD; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+          Abode of Potential. Kshamta (क्षमता)<br>means potential. Alaya (आलय) means<br>home. Kshamtalaya is the Abode of<br>Potential.
+        </p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="https://www.facebook.com/kshamtalaya" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+          <a href="https://twitter.com/kshamtalaya" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+          <a href="https://www.instagram.com/kshamtalaya" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.youtube.com/@kshamtalayafoundation9946" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96C1 8.16 1 12 1 12s0 3.84.46 5.58a2.78 2.78 0 001.94 1.96c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96C23 15.84 23 12 23 12s0-3.84-.46-5.58zM9.54 15.18V8.82l6.26 3.18-6.26 3.18z"></path></svg></a>
+          <a href="mailto:info@kshamtalaya.org" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Explore</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+          <li><a href="/" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Home</a></li>
+          <li><a href="/story.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Our Story</a></li>
+          <li><a href="/programs.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Programs</a></li>
+          <li><a href="/press.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Press & Media</a></li>
+          <li><a href="/resources.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Resources</a></li>
+          <li><a href="/contact.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Contact</a></li>
+          <li><a href="/donate.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Donate</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Programs -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Programs</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+          <li><a href="/programs/cell.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">C.E.L.L.</a></li>
+          <li><a href="/programs/learning-festivals.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Learning Festivals</a></li>
+          <li><a href="/programs/diganth.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Project Diganth</a></li>
+          <li><a href="/programs/wst.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Whole School Transformation</a></li>
+          <li><a href="/programs/hausla.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Hausla</a></li>
+          <li><a href="/programs/fale-fale.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Fale Fale Shiksha Muhim</a></li>
+          <li><a href="/programs/khushishala.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Khushishala</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Stay in Touch -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Stay In Touch</h4>
+        <p style="color: #DDDDDD; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">
+          Get stories of change, learning festival dates, and program updates in your inbox.
+        </p>
+        <form style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <input type="email" placeholder="you@school.org" style="flex: 1; min-width: 150px; padding: 0.75rem 1rem; background-color: #2D2D2D; border: 1px solid #555555; border-radius: 30px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" required>
+          <button type="submit" style="background-color: #FFC72C; color: #111111; padding: 0.75rem 1.5rem; border: none; border-radius: 30px; font-weight: 600; cursor: pointer; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#ffdb6b'" onmouseout="this.style.backgroundColor='#FFC72C'">
+            Join
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/counter.js"></script>
+</body>
+</html>
