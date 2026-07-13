@@ -20,6 +20,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+    <span class="cursor__label"></span>
+  </div>
+  <!-- Hover Image Reveal (follows cursor on program cards) -->
+  <div class="hover-reveal" id="hover-reveal" aria-hidden="true">
+    <img class="hover-reveal__img" src="" alt="" />
+  </div>
   <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- ════════════════════════════════════════ -->
@@ -81,20 +91,30 @@
   <!-- ════════════════════════════════════════ -->
   <section class="hero" id="hero" style="min-height: auto; padding: 4rem 0 2rem 0;">
     <div class="hero__doodles" aria-hidden="true">
-      <!-- Floating doodle elements -->
-      <svg class="hero__doodle anim-float" style="top: 5%; left: 5%; width: 40px;" viewBox="0 0 40 40">
+      <!-- Floating doodle elements with parallax -->
+      <svg class="hero__doodle anim-float-3d parallax-doodle" data-parallax-speed="0.15" style="top: 5%; left: 5%; width: 40px;" viewBox="0 0 40 40">
         <polygon points="20,2 25,15 38,15 27,23 31,37 20,28 9,37 13,23 2,15 15,15" fill="none" stroke="#FFC72C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg class="hero__doodle anim-float" style="bottom: 15%; left: 8%; width: 36px; animation-delay: 2s;" viewBox="0 0 40 40">
+      <svg class="hero__doodle anim-drift parallax-doodle" data-parallax-speed="0.25" style="bottom: 15%; left: 8%; width: 36px; animation-delay: 2s;" viewBox="0 0 40 40">
         <path d="M5 35 L20 5 L35 35" fill="none" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg class="hero__doodle anim-float" style="top: 15%; right: 10%; width: 24px; animation-delay: 3s;" viewBox="0 0 24 24">
+      <svg class="hero__doodle anim-float-3d parallax-doodle" data-parallax-speed="0.35" style="top: 15%; right: 10%; width: 24px; animation-delay: 3s;" viewBox="0 0 24 24">
         <path d="M12 2L14 10H22L16 14L18 22L12 18L6 22L8 14L2 10H10Z" fill="#FFC72C" opacity="0.3"/>
       </svg>
       <!-- Paper airplane -->
-      <svg class="hero__doodle anim-float" style="bottom: 25%; right: 5%; width: 44px; animation-delay: 1.5s;" viewBox="0 0 48 48">
+      <svg class="hero__doodle anim-drift parallax-doodle" data-parallax-speed="0.2" style="bottom: 25%; right: 5%; width: 44px; animation-delay: 1.5s;" viewBox="0 0 48 48">
         <path d="M6 24L42 6L30 42L24 28Z" fill="none" stroke="#4FB6E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M24 28L42 6" fill="none" stroke="#4FB6E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <!-- Additional hero doodles -->
+      <svg class="hero__doodle anim-swirl parallax-doodle" data-parallax-speed="0.1" style="top: 40%; left: 2%; width: 30px; opacity: 0.1;" viewBox="0 0 30 30">
+        <circle cx="15" cy="15" r="12" fill="none" stroke="#FF6F59" stroke-width="2" stroke-dasharray="4 4"/>
+      </svg>
+      <svg class="hero__doodle anim-float-3d parallax-doodle" data-parallax-speed="0.3" style="top: 60%; right: 15%; width: 20px; animation-delay: 4s;" viewBox="0 0 20 20">
+        <rect x="3" y="3" width="14" height="14" rx="3" fill="none" stroke="#1CA6A0" stroke-width="1.5" transform="rotate(15 10 10)"/>
+      </svg>
+      <svg class="hero__doodle anim-drift parallax-doodle" data-parallax-speed="0.18" style="bottom: 10%; left: 25%; width: 28px; animation-delay: 2.5s;" viewBox="0 0 28 28">
+        <path d="M14 2 Q 20 8, 14 14 Q 8 20, 14 26" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="container hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; position: relative; z-index: var(--z-content);">
@@ -223,11 +243,21 @@
     <!-- ════════════════════════════════════════ -->
     <!-- OUR APPROACH                             -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="approach" aria-label="Our Approach">
+    <section class="section doodle-bg" id="approach" aria-label="Our Approach">
+      <!-- Section Doodles -->
+      <svg class="section-doodle section-doodle--bob1" style="top: 10%; right: 5%; width: 50px;" viewBox="0 0 50 50" aria-hidden="true">
+        <polygon points="25,2 30,18 48,18 34,28 38,45 25,35 12,45 16,28 2,18 20,18" fill="none" stroke="#FFC72C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob2" style="bottom: 15%; left: 3%; width: 35px;" viewBox="0 0 35 35" aria-hidden="true">
+        <circle cx="17.5" cy="17.5" r="14" fill="none" stroke="#4FB6E8" stroke-width="2" stroke-dasharray="5 5"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob3" style="top: 50%; right: 2%; width: 28px;" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M5 23 L14 5 L23 23" fill="none" stroke="#FF6F59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <div class="container">
         <div class="section-header reveal">
           <div class="section-header__eyebrow">Our Approach</div>
-          <h2 class="section-header__title">A <span class="highlight-yellow">3-Pronged</span> Approach</h2>
+          <h2 class="section-header__title">A <span class="doodle-highlight">3-Pronged<svg class="doodle-highlight__circle" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="40" rx="95" ry="35" fill="none" stroke="#FFC72C" stroke-width="2.5" stroke-linecap="round" class="doodle-circle-draw" opacity="0.5"/></svg></span> Approach</h2>
           <p class="section-header__desc">
             With 8+ years in this sector working in 3 geographies, Kshamtalaya has arrived at a 3-Pronged approach to inch closer to our vision of Holistic Growth of Child through Learning, Well-Being and Governance.
           </p>
@@ -286,7 +316,18 @@
     <!-- ════════════════════════════════════════ -->
     <!-- PROGRAMS AT A GLANCE                     -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section section--cream" id="programs" aria-label="Our Programs">
+    <section class="section section--cream doodle-bg" id="programs" aria-label="Our Programs">
+      <!-- Section Doodles -->
+      <svg class="section-doodle section-doodle--bob2" style="top: 5%; left: 4%; width: 42px;" viewBox="0 0 42 42" aria-hidden="true">
+        <rect x="6" y="6" width="30" height="30" rx="6" fill="none" stroke="#1CA6A0" stroke-width="2" transform="rotate(12 21 21)" stroke-dasharray="6 4"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob1" style="bottom: 10%; right: 4%; width: 38px;" viewBox="0 0 38 38" aria-hidden="true">
+        <path d="M19 4 L22 14 L33 14 L24 20 L27 31 L19 25 L11 31 L14 20 L5 14 L16 14 Z" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob3" style="top: 45%; right: 2%; width: 24px;" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#FF6F59" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="5" fill="#FF6F59" opacity="0.15"/>
+      </svg>
       <div class="container">
         <style>
           .programs-header-layout {
@@ -307,7 +348,7 @@
         <div class="reveal programs-header-layout">
           <div class="programs-header-text">
             <div class="section-header__eyebrow">What We Do</div>
-            <h2 class="section-header__title">Our <span class="highlight-yellow">Programs</span></h2>
+            <h2 class="section-header__title">Our <span class="doodle-highlight">Programs<svg class="doodle-highlight__squiggle" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 Q 25 2, 50 8 T 100 8 T 150 8 T 200 8" fill="none" stroke="#1CA6A0" stroke-width="3" stroke-linecap="round" class="doodle-squiggle-draw" opacity="0.4"/></svg></span></h2>
             <p class="section-header__desc">
               Five interconnected programs working across three approaches — Demonstration, 
               Community Leadership, and Systems Excellence — all anchoring the child at the center.
@@ -463,13 +504,82 @@
       </div>
     </section>
     <!-- ════════════════════════════════════════ -->
+    <!-- GEOGRAPHICAL REACH 3D MAP                -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section section--yellow" id="impact-map" aria-label="Our Geographical Reach" style="overflow: hidden;">
+      <!-- Background Doodles -->
+      <svg class="section-doodle section-doodle--bob1" style="top: 10%; left: 5%; width: 40px; opacity: 0.3;" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="16" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="container text-center">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow" style="background: white; color: var(--color-charcoal);">Geographical Reach</div>
+          <h2 class="section-header__title" style="color: var(--color-charcoal);">Impact <span class="doodle-highlight" style="color: var(--color-teal);">Across India<svg class="doodle-highlight__squiggle" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 Q 25 2, 50 8 T 100 8 T 150 8 T 200 8" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" class="doodle-squiggle-draw" opacity="0.8"/></svg></span></h2>
+          <p class="section-header__desc" style="color: var(--color-charcoal); opacity: 0.8;">Hover over the markers to explore our active programs and regional scale.</p>
+        </div>
+        
+        <div class="map-3d-container reveal">
+          <div class="map-3d">
+            <!-- Accurate India Map SVG -->
+            <img src="/assets/india-map.svg" alt="Map of India" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));" />
+            
+            <!-- Pin 1: Rajasthan -->
+            <div class="map-pin-3d" style="top: 40%; left: 22%;" tabindex="0">
+              <div class="map-card-glass">
+                <h4 style="color: var(--color-teal);">Rajasthan</h4>
+                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2016 – Present</p>
+                <ul>
+                  <li>2 Districts</li>
+                  <li>3 Blocks</li>
+                  <li>60 Schools</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Pin 2: Delhi -->
+            <div class="map-pin-3d map-pin-3d--delhi" style="top: 30%; left: 30%;" tabindex="0">
+              <div class="map-card-glass">
+                <h4 style="color: var(--color-charcoal);">Delhi</h4>
+                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2018 – Present</p>
+                <ul>
+                  <li>16 MCD Schools</li>
+                  <li>EMC, DIET, SCERT, NCERT</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Pin 3: Bihar -->
+            <div class="map-pin-3d map-pin-3d--bihar" style="top: 40%; left: 68%;" tabindex="0">
+              <div class="map-card-glass">
+                <h4 style="color: var(--color-coral);">Bihar</h4>
+                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2022 – Present</p>
+                <ul>
+                  <li>2 Districts</li>
+                  <li>13 Blocks</li>
+                  <li>1 SCERT</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ════════════════════════════════════════ -->
     <!-- OUR JOURNEY TIMELINE                     -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="journey" aria-label="Our Journey">
+    <section class="section doodle-bg" id="journey" aria-label="Our Journey">
+      <!-- Section Doodles -->
+      <svg class="section-doodle section-doodle--bob2" style="top: 5%; left: 4%; width: 32px;" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M6 26 L16 6 L26 26" fill="none" stroke="#FF6F59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob1" style="bottom: 8%; right: 5%; width: 26px;" viewBox="0 0 26 26" aria-hidden="true">
+        <circle cx="13" cy="13" r="10" fill="none" stroke="#4FB6E8" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </svg>
       <div class="container">
         <div class="section-header reveal">
           <div class="section-header__eyebrow">Our Journey</div>
-          <h2 class="section-header__title">The Story <span class="highlight-yellow">So Far</span></h2>
+          <h2 class="section-header__title">The Story <span class="doodle-highlight">So Far<svg class="doodle-highlight__circle" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="40" rx="95" ry="35" fill="none" stroke="#1CA6A0" stroke-width="2.5" stroke-linecap="round" class="doodle-circle-draw" opacity="0.4"/></svg></span></h2>
           <p class="section-header__desc">
             Ten years ago, Kshamtalaya began with a simple belief: every child deserves the opportunity to learn, grow, and thrive, 
             regardless of their circumstances. Today, we work alongside communities, educators, and institutions to strengthen 
@@ -558,33 +668,46 @@
     <!-- ════════════════════════════════════════ -->
     <!-- VALUES                                   -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="values" aria-label="Our Values">
+    <section class="section doodle-bg" id="values" aria-label="Our Values">
+      <!-- Section Doodles -->
+      <svg class="section-doodle section-doodle--bob1" style="top: 8%; left: 3%; width: 45px;" viewBox="0 0 45 45" aria-hidden="true">
+        <path d="M22.5 5 L27 16 L38 16 L29 23 L33 35 L22.5 28 L12 35 L16 23 L7 16 L18 16 Z" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob3" style="top: 30%; right: 3%; width: 30px;" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M15 3 Q 22 10, 15 15 Q 8 20, 15 27" fill="none" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob2" style="bottom: 10%; left: 5%; width: 32px;" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="4" y="4" width="24" height="24" rx="4" fill="none" stroke="#4FB6E8" stroke-width="1.5" transform="rotate(20 16 16)" stroke-dasharray="4 3"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob1" style="bottom: 25%; right: 6%; width: 22px;" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="11" cy="11" r="8" fill="none" stroke="#FF6F59" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </svg>
       <div class="container">
         <div class="section-header reveal">
           <div class="section-header__eyebrow">Who We Are</div>
-          <h2 class="section-header__title">Our <span class="highlight-yellow">Values</span></h2>
+          <h2 class="section-header__title">Our <span class="doodle-highlight">Values<svg class="doodle-highlight__circle" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="40" rx="95" ry="35" fill="none" stroke="#FF6F59" stroke-width="2.5" stroke-linecap="round" class="doodle-circle-draw" opacity="0.4"/></svg></span></h2>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;" data-stagger>
           <!-- Compassion -->
-          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-teal); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-teal);">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-teal);">1. Compassion</h3>
             <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Compassion is recognizing suffering, understanding its universality, and taking action to alleviate it with empathy and care."</p>
             <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">At Kshamtalaya, we integrate compassion by supporting students, teachers, and communities in their challenges, ensuring we respond with empathy and create nurturing environments for growth.</p>
           </div>
           <!-- Freedom with Responsibility -->
-          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-yellow); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-yellow);">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-yellow);">2. Freedom with Responsibility</h3>
             <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"True freedom comes with the responsibility to be accountable for your actions, making choices that impact others and owning both successes and mistakes."</p>
             <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">We empower our educators and students to make decisions and take ownership of their learning and growth, fostering an environment where responsibility is valued alongside freedom.</p>
           </div>
           <!-- Excellence -->
-          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-coral); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-coral);">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-coral);">3. Excellence</h3>
             <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Excellence is about striving to be better every day, dedicating yourself to doing your best and growing through each experience."</p>
             <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">In our work, excellence is evident in our commitment to continuously improving educational practices and striving for the highest standards in every program we implement.</p>
           </div>
           <!-- Trust -->
-          <div class="reveal" style="padding: 2rem; background: var(--color-cream); border-radius: 20px; border-top: 4px solid var(--color-sky); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-sky);">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-sky);">4. Trust</h3>
             <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Trust is the foundation of a safe and engaged environment, built on transparency, unconditional support, and the reliability of keeping commitments."</p>
             <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Kshamtalaya fosters trust by being transparent in our processes, encouraging open communication, and creating spaces where mistakes are seen as opportunities for growth rather than failures.</p>
@@ -595,11 +718,18 @@
     <!-- ════════════════════════════════════════ -->
     <!-- 4 AUDIENCE PATHWAYS                      -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section section--cream" id="get-involved" aria-label="Get Involved">
+    <section class="section section--cream doodle-bg" id="get-involved" aria-label="Get Involved">
+      <!-- Section Doodles -->
+      <svg class="section-doodle section-doodle--bob3" style="top: 12%; right: 4%; width: 36px;" viewBox="0 0 36 36" aria-hidden="true">
+        <path d="M18 4L22 14L33 14L24 20L27 31L18 24L9 31L12 20L3 14L14 14Z" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <svg class="section-doodle section-doodle--bob1" style="bottom: 8%; left: 3%; width: 28px;" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M14 3 Q 20 8, 14 14 Q 8 20, 14 25" fill="none" stroke="#1CA6A0" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
       <div class="container">
         <div class="section-header reveal">
           <div class="section-header__eyebrow">Get Involved</div>
-          <h2 class="section-header__title">How You Can <span class="highlight-yellow">Make a Difference</span></h2>
+          <h2 class="section-header__title">How You Can <span class="doodle-highlight">Make a Difference<svg class="doodle-highlight__squiggle" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8 Q 25 2, 50 8 T 100 8 T 150 8 T 200 8" fill="none" stroke="#FFC72C" stroke-width="3" stroke-linecap="round" class="doodle-squiggle-draw" opacity="0.5"/></svg></span></h2>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl);" data-stagger>
           <!-- For Funders -->
@@ -668,33 +798,78 @@
             A passionate group of educators, community builders, and system thinkers dedicated to making quality education accessible to every child.
           </p>
         </div>
-        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2rem;">
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2rem;" id="team">
           <!-- Team Member 1 -->
           <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
             <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(56, 182, 255, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%);"></div> <!-- Placeholder image -->
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">V</div>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Ravi Kumar</h3>
-            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Founder & CEO</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Driving the vision to unlock the potential in every rural and urban classroom.</p>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Vivek Kumar</h3>
+            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Co-Founder</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> B.Tech, MA Education from TISS<br>
+              <strong>Experience:</strong> Nearing 10 Years
+            </p>
           </div>
-          <!-- Team Member 2 (Offset slightly) -->
+          <!-- Team Member 2 -->
           <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px); transform: translateY(30px);" onmouseover="this.style.transform='translateY(15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(30px) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
             <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 111, 89, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%);"></div>
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">S</div>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Sneha Sharma</h3>
-            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Program Director</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Orchestrating our 3-pronged approach and managing our 100 Centers of Excellence.</p>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Soumya B</h3>
+            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Director, CEO</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> Masters in Applied Sociology<br>
+              <strong>Experience:</strong> 8+ Years
+            </p>
           </div>
           <!-- Team Member 3 -->
           <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
             <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(28, 166, 160, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%);"></div>
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">P</div>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Anil Desai</h3>
-            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Community</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Empowering local leaders and facilitating the Fale Fale Shiksha Muhim initiative.</p>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Pooja Singh</h3>
+            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Co-Founder</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> Masters in Mass Comm<br>
+              <strong>Experience:</strong> Nearing 10 Years
+            </p>
+          </div>
+          <!-- Team Member 4 -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 199, 44, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF9E2C 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">A</div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Anjali Gupte</h3>
+            <p style="font-size: 0.9rem; color: var(--color-yellow); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Director, Founding Member</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> MSc Statistics, B.Ed.<br>
+              <strong>Experience:</strong> Nearing 10 Years
+            </p>
+          </div>
+          <!-- Team Member 5 -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px); transform: translateY(30px);" onmouseover="this.style.transform='translateY(15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(30px) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(56, 182, 255, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">A</div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Abhishek Tiwari</h3>
+            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Programs, Bihar</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> Bachelors of Science<br>
+              <strong>Experience:</strong> 8 Years
+            </p>
+          </div>
+          <!-- Team Member 6 -->
+          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
+            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 111, 89, 0.3);">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">T</div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Tina Aggarwal</h3>
+            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Programs, Delhi</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+              <strong>Education:</strong> D.El.Ed, MA-Education, B.Ed (LD)<br>
+              <strong>Experience:</strong> 6 Years
+            </p>
           </div>
         </div>
       </div>
@@ -726,6 +901,42 @@
             Get in Touch
           </a>
         </div>
+      </div>
+    </section>
+    <!-- ════════════════════════════════════════ -->
+    <!-- INFINITE TEXT MARQUEE                    -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="text-marquee" aria-hidden="true">
+      <div class="text-marquee__track">
+        <span class="text-marquee__item">Holistic Growth</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Joyful Learning</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Community Leadership</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">क्षमता — Potential</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Systems Excellence</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Happy Schools</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Every Child Matters</span>
+        <span class="text-marquee__separator">✦</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="text-marquee__item">Holistic Growth</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Joyful Learning</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Community Leadership</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">क्षमता — Potential</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Systems Excellence</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Happy Schools</span>
+        <span class="text-marquee__separator">✦</span>
+        <span class="text-marquee__item">Every Child Matters</span>
+        <span class="text-marquee__separator">✦</span>
       </div>
     </section>
   </main>

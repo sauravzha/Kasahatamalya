@@ -580,12 +580,22 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  perspective: 800px;
 }
 
 .program-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(43, 43, 43, 0.18), 0 0 0 1px rgba(28, 166, 160, 0.1);
   color: inherit;
+}
+
+.program-card:hover .program-card__icon {
+  transform: translateZ(20px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.program-card__icon {
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out);
 }
 
 .program-card__header {
@@ -995,46 +1005,90 @@
 /* ── SCROLL ANIMATIONS ── */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all var(--duration-anim) var(--ease-out);
+  transform: translateY(30px) scale(0.97) rotate(-1deg);
+  transition: all var(--duration-anim) var(--ease-spring);
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1) rotate(0deg);
 }
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-30px);
-  transition: all var(--duration-anim) var(--ease-out);
+  transform: translateX(-40px) scale(0.97) rotate(-1.5deg);
+  transition: all var(--duration-anim) var(--ease-spring);
 }
 
 .reveal-left.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1) rotate(0deg);
 }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(30px);
-  transition: all var(--duration-anim) var(--ease-out);
+  transform: translateX(40px) scale(0.97) rotate(1.5deg);
+  transition: all var(--duration-anim) var(--ease-spring);
 }
 
 .reveal-right.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1) rotate(0deg);
 }
 
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.85) rotate(-2deg);
   transition: all var(--duration-anim) var(--ease-spring);
 }
 
 .reveal-scale.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Doodle Highlight Utilities ── */
+.doodle-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.doodle-highlight__circle {
+  position: absolute;
+  top: -12px;
+  left: -16px;
+  width: calc(100% + 32px);
+  height: calc(100% + 24px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.doodle-highlight__squiggle {
+  position: absolute;
+  bottom: -8px;
+  left: -5%;
+  width: 110%;
+  height: 16px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Value Card 3D Hover ── */
+.value-card-3d {
+  transition: all 0.4s var(--ease-spring);
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.value-card-3d:hover {
+  transform: translateY(-10px) scale(1.03) rotateX(2deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1) !important;
+}
+
+/* ── Doodle Background Sections ── */
+.doodle-bg {
+  position: relative;
+  overflow: hidden;
 }
 
 /* ── RESPONSIVE ── */
@@ -1160,3 +1214,479 @@
     padding: var(--space-lg) var(--space-md);
   }
 }
+
+/* ══════════════════════════════════════════════
+   PREMIUM FEATURES
+   ══════════════════════════════════════════════ */
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+}
+
+.cursor__dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  transition: transform 0.15s var(--ease-spring), opacity 0.2s;
+}
+
+.cursor__ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  transition: width 0.4s var(--ease-spring),
+              height 0.4s var(--ease-spring),
+              top 0.4s var(--ease-spring),
+              left 0.4s var(--ease-spring),
+              border-color 0.3s,
+              background 0.3s;
+}
+
+.cursor__label {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Cursor states */
+.cursor--hover .cursor__ring {
+  width: 64px;
+  height: 64px;
+  top: -32px;
+  left: -32px;
+  border-color: rgba(255, 199, 44, 0.6);
+  background: rgba(255, 199, 44, 0.08);
+}
+
+.cursor--hover .cursor__label {
+  opacity: 1;
+}
+
+.cursor--hover .cursor__dot {
+  transform: scale(0.5);
+}
+
+.cursor--click .cursor__ring {
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  left: -15px;
+}
+
+.cursor--click .cursor__dot {
+  transform: scale(2);
+}
+
+/* Hide default cursor on elements when custom cursor is active */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Hide custom cursor on touch / small screens */
+@media (hover: none), (max-width: 768px) {
+  .cursor {
+    display: none !important;
+  }
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: auto !important;
+  }
+}
+
+/* ── GLASSMORPHISM CARDS ── */
+.glass-card {
+  background: rgba(255, 251, 240, 0.55);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-card:hover {
+  background: rgba(255, 251, 240, 0.75);
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark variant for stats section */
+.glass-card--dark {
+  background: rgba(43, 43, 43, 0.35);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card--dark:hover {
+  background: rgba(60, 60, 60, 0.5);
+  border-color: rgba(56, 182, 255, 0.3);
+}
+
+/* ── INFINITE TEXT MARQUEE ── */
+.text-marquee {
+  overflow: hidden;
+  background: var(--color-charcoal);
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.text-marquee::before,
+.text-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.text-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-charcoal), transparent);
+}
+
+.text-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-charcoal), transparent);
+}
+
+.text-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.text-marquee__item {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 251, 240, 0.25);
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.text-marquee__item:hover {
+  color: var(--color-sunshine);
+  -webkit-text-stroke: 0px;
+}
+
+.text-marquee__separator {
+  font-size: 1rem;
+  color: var(--color-teal);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── HOVER IMAGE REVEAL ── */
+.hover-reveal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: scale(0.8) rotate(-3deg);
+  transition: opacity 0.35s var(--ease-out),
+              transform 0.35s var(--ease-spring);
+}
+
+.hover-reveal.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.hover-reveal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════
+   3D GEOGRAPHICAL REACH COMPONENTS
+   ══════════════════════════════════════════════ */
+
+/* ── Home Page 3D Map ── */
+.map-3d-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  perspective: 1200px;
+  padding: 4rem 0;
+}
+
+.map-3d {
+  position: relative;
+  width: 100%;
+  padding-bottom: 90%; /* Aspect Ratio */
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(-30deg);
+  transition: transform 0.5s ease;
+}
+
+.map-3d img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.map-pin-3d {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: var(--color-teal);
+  border: 3px solid white;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  /* Counter-rotate to stand up */
+  transform: translateY(0) rotateZ(30deg) rotateX(-55deg);
+  cursor: pointer;
+  z-index: 10;
+  animation: mapPinGlow 2s infinite, mapPinBounce 3s infinite ease-in-out;
+}
+
+.map-pin-3d::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--color-teal), transparent);
+}
+
+/* Specific Pin Colors */
+.map-pin-3d--delhi { background: var(--color-yellow); }
+.map-pin-3d--delhi::after { background: linear-gradient(to bottom, var(--color-yellow), transparent); }
+.map-pin-3d--bihar { background: var(--color-coral); }
+.map-pin-3d--bihar::after { background: linear-gradient(to bottom, var(--color-coral), transparent); }
+
+.map-card-glass {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(40px) scale(0.9);
+  width: 220px;
+  padding: 1.2rem;
+  border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s var(--ease-spring);
+  text-align: left;
+  z-index: 20;
+}
+
+.map-pin-3d:hover .map-card-glass {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateZ(40px) scale(1);
+}
+
+.map-card-glass h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-charcoal);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.map-card-glass ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.map-card-glass li {
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.map-card-glass li::before {
+  content: '→';
+  color: var(--color-teal);
+}
+
+/* ── Story Page Floating Islands Timeline ── */
+.floating-islands-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1200px;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.island-3d {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  transform-style: preserve-3d;
+  animation: islandFloat 6s infinite ease-in-out;
+}
+
+.island-3d:nth-child(even) {
+  animation-delay: -3s;
+}
+
+.island-platform {
+  width: 100%;
+  padding-bottom: 40%;
+  background: var(--color-teal);
+  border-radius: 50% / 20%;
+  transform: rotateX(60deg);
+  box-shadow: 
+    0 20px 0 0 rgba(28, 166, 160, 0.8),
+    0 20px 40px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.island-3d:nth-child(2) .island-platform {
+  background: var(--color-yellow);
+  box-shadow: 
+    0 20px 0 0 rgba(255, 199, 44, 0.8),
+    0 20px 40px 10px rgba(0, 0, 0, 0.2);
+}
+
+.island-3d:nth-child(3) .island-platform {
+  background: var(--color-coral);
+  box-shadow: 
+    0 20px 0 0 rgba(255, 111, 89, 0.8),
+    0 20px 40px 10px rgba(0, 0, 0, 0.2);
+}
+
+.island-platform::after {
+  content: '';
+  position: absolute;
+  top: 5%; left: 5%; right: 5%; bottom: 5%;
+  border-radius: 50% / 20%;
+  background: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.3);
+}
+
+.island-content {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(60px);
+  width: 80%;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.island-year {
+  display: inline-block;
+  background: var(--color-charcoal);
+  color: var(--color-sunshine);
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 0; left: 50%; transform: translate(-50%, -50%);
+}
+
+.island-content h3 {
+  font-size: 1.5rem;
+  color: var(--color-charcoal);
+  margin-bottom: 1rem;
+}
+
+.island-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.island-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.island-stat-val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-teal);
+  line-height: 1;
+}
+
+.island-3d:nth-child(2) .island-stat-val { color: var(--color-yellow); }
+.island-3d:nth-child(3) .island-stat-val { color: var(--color-coral); }
+
+.island-stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .hover-reveal {
+    display: none !important;
+  }
+}
+

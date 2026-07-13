@@ -249,6 +249,24 @@
   transform-style: preserve-3d;
 }
 
+/* ── 3D Map Pin Animations ── */
+@keyframes mapPinGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(28, 166, 160, 0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(28, 166, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(28, 166, 160, 0); }
+}
+
+@keyframes mapPinBounce {
+  0%, 100% { transform: translateY(0) rotateZ(30deg) rotateX(-60deg); }
+  50%      { transform: translateY(-10px) rotateZ(30deg) rotateX(-60deg); }
+}
+
+/* ── 3D Island Float Animation ── */
+@keyframes islandFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-15px); }
+}
+
 /* ── Stagger delays for children ── */
 .stagger-1 { animation-delay: 0.08s; }
 .stagger-2 { animation-delay: 0.16s; }
@@ -259,6 +277,212 @@
 .stagger-7 { animation-delay: 0.56s; }
 .stagger-8 { animation-delay: 0.64s; }
 
+/* ── 3D Float (with depth) ── */
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg) translateZ(0);
+  }
+  25% {
+    transform: translateY(-14px) rotateX(5deg) rotateY(8deg) translateZ(10px);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(-3deg) rotateY(-5deg) translateZ(20px);
+  }
+  75% {
+    transform: translateY(-18px) rotateX(4deg) rotateY(6deg) translateZ(5px);
+  }
+}
+
+.anim-float-3d {
+  animation: float3D 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* ── Doodle Drift (slow organic wander) ── */
+@keyframes doodleDrift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate(6px, -10px) rotate(5deg) scale(1.05);
+  }
+  40% {
+    transform: translate(-4px, -16px) rotate(-3deg) scale(0.97);
+  }
+  60% {
+    transform: translate(8px, -6px) rotate(4deg) scale(1.03);
+  }
+  80% {
+    transform: translate(-6px, -12px) rotate(-5deg) scale(1);
+  }
+}
+
+.anim-drift {
+  animation: doodleDrift 8s ease-in-out infinite;
+}
+
+/* ── Hand-Drawn Circle Draw ── */
+@keyframes circleDraw {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.doodle-circle-draw {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+.doodle-circle-draw.visible {
+  animation: circleDraw 1.2s var(--ease-out) forwards;
+}
+
+/* ── Squiggle underline draw ── */
+@keyframes squiggleDraw {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.doodle-squiggle-draw {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+.doodle-squiggle-draw.visible {
+  animation: squiggleDraw 1s var(--ease-out) 0.3s forwards;
+}
+
+/* ── Organic Swirl (for decorative SVGs) ── */
+@keyframes organicSwirl {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.15;
+  }
+  33% {
+    transform: rotate(8deg) scale(1.1);
+    opacity: 0.22;
+  }
+  66% {
+    transform: rotate(-6deg) scale(0.95);
+    opacity: 0.12;
+  }
+}
+
+.anim-swirl {
+  animation: organicSwirl 10s ease-in-out infinite;
+}
+
+/* ── Wiggle (playful jiggle for icons) ── */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(6deg); }
+  30% { transform: rotate(-5deg); }
+  45% { transform: rotate(4deg); }
+  60% { transform: rotate(-3deg); }
+  75% { transform: rotate(2deg); }
+}
+
+.anim-wiggle {
+  animation: wiggle 0.6s var(--ease-spring);
+}
+
+/* ── Magnetic Button Hover ── */
+@keyframes magneticPulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(255, 199, 44, 0.3),
+                0 0 0 0 rgba(255, 199, 44, 0.4);
+  }
+  70% {
+    box-shadow: 0 6px 20px rgba(255, 199, 44, 0.35),
+                0 0 0 12px rgba(255, 199, 44, 0);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(255, 199, 44, 0.3),
+                0 0 0 0 rgba(255, 199, 44, 0);
+  }
+}
+
+.btn--primary:hover,
+.btn--donate:hover {
+  animation: magneticPulse 1.2s ease-in-out infinite;
+}
+
+/* ── Section Doodle Decorations (background doodles) ── */
+@keyframes doodleBob1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes doodleBob2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-4deg); }
+}
+
+@keyframes doodleBob3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(5px, -6px) rotate(5deg); }
+  66% { transform: translate(-3px, -10px) rotate(-3deg); }
+}
+
+.section-doodle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.section-doodle--bob1 { animation: doodleBob1 5s ease-in-out infinite; }
+.section-doodle--bob2 { animation: doodleBob2 6s ease-in-out infinite; }
+.section-doodle--bob3 { animation: doodleBob3 7s ease-in-out infinite; }
+
+/* ── Parallax Doodles (driven by JS) ── */
+.parallax-doodle {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ── Card Inner Parallax (child elements lift on hover) ── */
+.card-3d-inner {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.card-3d-lift {
+  transition: transform 0.3s var(--ease-out);
+}
+
+/* ── Stat Card Glow ── */
+@keyframes statGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 182, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(56, 182, 255, 0.15);
+  }
+}
+
+.compact-stat-card:hover {
+  animation: statGlow 2s ease-in-out infinite;
+}
+
+/* ── Value Card 3D Lift ── */
+@keyframes valueCardLift {
+  from {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+  to {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  }
+}
+
 /* ── Reduced motion overrides ── */
 @media (prefers-reduced-motion: reduce) {
   .infinity-draw,
@@ -268,10 +492,20 @@
   .anim-slide-right,
   .anim-sparkle,
   .anim-float,
+  .anim-float-3d,
+  .anim-drift,
+  .anim-swirl,
+  .anim-wiggle,
   .anim-rotate,
   .anim-pulse,
   .anim-doodle-pop,
-  .infinity-3d {
+  .infinity-3d,
+  .section-doodle--bob1,
+  .section-doodle--bob2,
+  .section-doodle--bob3,
+  .parallax-doodle,
+  .map-pin-3d,
+  .island-3d {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -284,5 +518,20 @@
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .btn--primary:hover,
+  .btn--donate:hover {
+    animation: none !important;
+  }
+
+  .compact-stat-card:hover {
+    animation: none !important;
+  }
+
+  .doodle-circle-draw,
+  .doodle-squiggle-draw {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
   }
 }
