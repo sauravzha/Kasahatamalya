@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press & Media — Kshamtalaya | Stories from the Field</title>
+  <meta name="description" content="Press coverage, stories, and media resources for Kshamtalaya Foundation. Annual Impact Report 2025–26 available for download." />
+  <link rel="icon" type="image/png" href="/assets/logo-Zw3lcZ7V.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .story-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--duration-normal), box-shadow var(--duration-normal);
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .story-card__visual {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-card__body { padding: var(--space-xl); }
+    .story-tag {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      font-weight: var(--fw-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--space-sm);
+    }
+    .testimonial-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-xl);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--color-sunshine);
+      font-family: Georgia, serif;
+      opacity: 0.4;
+    }
+    .testimonial-card blockquote {
+      font-size: var(--fs-body-lg);
+      color: var(--color-charcoal);
+      font-style: italic;
+      line-height: 1.7;
+      margin: var(--space-md) 0 var(--space-lg);
+    }
+    .testimonial-card cite {
+      font-size: var(--fs-small);
+      color: var(--color-teal);
+      font-weight: var(--fw-semibold);
+      font-style: normal;
+    }
+    .impact-report-cta {
+      background: var(--color-charcoal);
+      border-radius: var(--radius-xl);
+      padding: var(--space-3xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-report-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,199,44,0.06) 0%, transparent 70%);
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/main-sU_zzN0g.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Brj1EKXX.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Kshamtalaya Home">
+        <img src="/assets/logo-Zw3lcZ7V.png" alt="Kshamtalaya Logo" style="height: 54px; width: auto;" />
+      </a>
+      <div class="navbar__links" id="desktop-nav">
+        <a href="/" class="navbar__link">Home</a>
+        <a href="/#team" class="navbar__link">Our Team</a>
+        <div class="navbar__dropdown">
+          <a href="/programs.html" class="navbar__link navbar__dropdown-trigger">Our Programs
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5L6 8L9 5"/></svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="/programs.html#school-excellence" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#1CA6A0"></span>School Excellence Program</a>
+            <a href="/programs.html#teacher-support" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FFC72C"></span>Teacher Support Program</a>
+            <a href="/programs.html#fale-fale" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FF6F59"></span>Fale Fale Shiksha Muhim</a>
+            <a href="/programs.html#learning-festivals" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#FFC72C"></span>Learning Festivals Internship</a>
+            <a href="/programs.html#star-parents" class="navbar__dropdown-item" role="menuitem"><span class="program-dot" style="background:#4FB6E8"></span>STAR Parents</a>
+          </div>
+        </div>
+        <a href="/story.html" class="navbar__link">Our Story</a>
+        <a href="/press.html" class="navbar__link active">Press & Media</a>
+        <a href="/alumni.html" class="navbar__link">Our Alumni</a>
+        <a href="/contact.html" class="navbar__link">Contact</a>
+        <a href="/donate.html" class="btn btn--donate">Donate ❤</a>
+      </div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-menu" id="mobile-menu">
+      <a href="/" class="navbar__mobile-link">Home</a>
+      <a href="/#team" class="navbar__mobile-link">Our Team</a>
+      <a href="/programs.html" class="navbar__mobile-link">Our Programs</a>
+      <a href="/story.html" class="navbar__mobile-link">Our Story</a>
+      <a href="/press.html" class="navbar__mobile-link">Press & Media</a>
+      <a href="/alumni.html" class="navbar__mobile-link">Our Alumni</a>
+      <a href="/contact.html" class="navbar__mobile-link">Contact Us</a>
+      <a href="/donate.html" class="btn btn--primary btn--lg" style="margin-top:1rem;">Donate ❤</a>
+    </div>
+  </nav>
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="section" style="padding-top: calc(var(--navbar-height) + var(--space-3xl)); background: linear-gradient(135deg, var(--color-cream) 0%, rgba(255,199,44,0.08) 100%);">
+      <div class="container text-center">
+        <div class="section-header__eyebrow reveal">Press & Media</div>
+        <h1 class="reveal" style="margin-bottom: var(--space-md);">Stories from <span class="highlight-yellow">the Field</span></h1>
+        <p class="reveal" style="max-width: 600px; margin: 0 auto var(--space-xl); font-size: var(--fs-body-lg); color: var(--color-text-secondary);">
+          Evidence and emotional resonance — the full picture of what Kshamtalaya's 
+          work looks like in the lives of children, teachers, and communities.
+        </p>
+      </div>
+    </section>
+    <!-- ANNUAL REPORT FEATURED CTA -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="impact-report-cta reveal">
+          <div style="position: relative; z-index: 1;">
+            <div class="section-header__eyebrow" style="color: var(--color-sunshine);">2025–26 Annual Impact Report</div>
+            <h2 style="color: var(--color-cream); font-size: var(--fs-h2); margin-bottom: var(--space-md);">The Full Picture of Our Work</h2>
+            <p style="color: rgba(255,251,240,0.65); max-width: 520px; margin: 0 auto var(--space-2xl); font-size: var(--fs-body);">
+              Transparent reporting, measurable outcomes, and the human stories behind our numbers. 
+              A resource for funders, partners, and supporters.
+            </p>
+            <div style="display:flex; gap: var(--space-md); justify-content:center; flex-wrap:wrap;">
+              <a href="https://canva.link/tcm2crpcansr5q0" class="btn btn--primary btn--lg" style="background:var(--color-sunshine); color: var(--color-charcoal);" target="_blank" rel="noopener">
+                Read Impact Report 2025–26
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3H13V10M13 3L3 13"/></svg>
+              </a>
+              <a href="/contact.html" class="btn btn--outline btn--lg" style="border-color: rgba(255,251,240,0.3); color: var(--color-cream);">Request Detailed Deck</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3 FEATURED STORIES -->
+    <section class="section section--cream" id="stories">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Featured Stories</div>
+          <h2 class="section-header__title">Three Perspectives, <span class="highlight-yellow">One Movement</span></h2>
+          <p class="section-header__desc">A child's story. A teacher's story. A community's story. Each one a window into what Kshamtalaya makes possible.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);" data-stagger>
+          <!-- Child Story -->
+          <div class="story-card reveal">
+            <div class="story-card__visual" style="background: linear-gradient(135deg, rgba(255,199,44,0.15) 0%, rgba(255,111,89,0.1) 100%);">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" width="180">
+                <circle cx="100" cy="55" r="28" fill="#FFC72C" opacity="0.2" stroke="#FFC72C" stroke-width="2.5"/>
+                <path d="M86 65C86 58 93 53 100 53C107 53 114 58 114 65" stroke="#FFC72C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Book in hands -->
+                <rect x="80" y="85" width="40" height="30" rx="3" fill="#1CA6A0" opacity="0.3" stroke="#1CA6A0" stroke-width="2"/>
+                <path d="M100 85V115" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                <!-- Stars -->
+                <path d="M60 40L62 46H68L63 50L65 56L60 52L55 56L57 50L52 46H58Z" fill="#FFC72C" opacity="0.6"/>
+                <path d="M140 30L142 36H148L143 40L145 46L140 42L135 46L137 40L132 36H138Z" fill="#FF6F59" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="story-card__body">
+              <span class="story-tag" style="background: rgba(255,199,44,0.15); color: #B8860B;">A Child's Story</span>
+              <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-sm);">From Silence to Self-Expression</h3>
+              <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+                How a 9-year-old girl from Kotra Block who wouldn't speak in class found her voice through a Learning Festival — and went on to lead her school's drama performance.
+              </p>
+              <a href="https://canva.link/2tq847lnk4got4g" class="btn btn--secondary btn--sm" target="_blank" rel="noopener">Read Story →</a>
+            </div>
+          </div>
+          <!-- Teacher Story -->
+          <div class="story-card reveal">
+            <div class="story-card__visual" style="background: linear-gradient(135deg, rgba(28,166,160,0.12) 0%, rgba(79,182,232,0.08) 100%);">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" width="180">
+                <!-- Teacher at board -->
+                <rect x="50" y="30" width="100" height="70" rx="4" fill="#1CA6A0" opacity="0.1" stroke="#1CA6A0" stroke-width="2"/>
+                <path d="M65 60H135" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                <path d="M65 72H110" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                <path d="M65 84H90" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
+                <!-- Person icon -->
+                <circle cx="160" cy="50" r="16" fill="#4FB6E8" opacity="0.2" stroke="#4FB6E8" stroke-width="2.5"/>
+                <path d="M150 70C150 63 155 60 160 60C165 60 170 63 170 70" stroke="#4FB6E8" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Lightbulb -->
+                <circle cx="160" cy="42" r="8" stroke="#FFC72C" stroke-width="2" fill="none"/>
+                <path d="M157 50H163M158 53H162" stroke="#FFC72C" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="story-card__body">
+              <span class="story-tag" style="background: rgba(28,166,160,0.12); color: var(--color-teal);">A Teacher's Story</span>
+              <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-sm);">Rediscovering the Joy of Teaching</h3>
+              <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+                After 15 years of burnout and rote-teaching, a government school teacher in Bihar found a renewed sense of purpose through Kshamtalaya's Teacher Support Program.
+              </p>
+              <a href="https://canva.link/2tq847lnk4got4g" class="btn btn--secondary btn--sm" target="_blank" rel="noopener">Read Story →</a>
+            </div>
+          </div>
+          <!-- Community Story -->
+          <div class="story-card reveal">
+            <div class="story-card__visual" style="background: linear-gradient(135deg, rgba(109,190,69,0.12) 0%, rgba(255,111,89,0.08) 100%);">
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" width="180">
+                <!-- Community group -->
+                <circle cx="70" cy="55" r="20" fill="#6DBE45" opacity="0.15" stroke="#6DBE45" stroke-width="2"/>
+                <circle cx="130" cy="55" r="20" fill="#FF6F59" opacity="0.15" stroke="#FF6F59" stroke-width="2"/>
+                <circle cx="100" cy="45" r="20" fill="#FFC72C" opacity="0.2" stroke="#FFC72C" stroke-width="2"/>
+                <!-- Connection / hands -->
+                <path d="M88 65C88 65 94 72 100 72C106 72 112 65 112 65" stroke="#6DBE45" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Rising graph underneath -->
+                <path d="M40 110L80 90L120 95L160 75" stroke="#1CA6A0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="160" cy="75" r="5" fill="#1CA6A0"/>
+              </svg>
+            </div>
+            <div class="story-card__body">
+              <span class="story-tag" style="background: rgba(109,190,69,0.12); color: #4a8f1a;">A Community's Story</span>
+              <h3 style="font-size: var(--fs-h4); margin-bottom: var(--space-sm);">Parents Who Changed Their School</h3>
+              <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+                How the STAR Parents program transformed a dormant School Management Committee in East Delhi into an active community body — and what that meant for 200 children.
+              </p>
+              <a href="https://canva.link/2tq847lnk4got4g" class="btn btn--secondary btn--sm" target="_blank" rel="noopener">Read Story →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">What People Say</div>
+          <h2 class="section-header__title">Voices from <span class="highlight-yellow">Our Community</span></h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);" data-stagger>
+          <div class="testimonial-card reveal">
+            <blockquote>"Kshamtalaya doesn't just run programs — they build ecosystems. The depth of their community trust is something you can't manufacture. It takes years of genuine presence."</blockquote>
+            <cite>— Senior Education Officer, Rajasthan</cite>
+          </div>
+          <div class="testimonial-card reveal">
+            <blockquote>"As a funder, what reassures me most is the accountability. Kshamtalaya's reporting is honest — they tell you what worked and what didn't. That's rare."</blockquote>
+            <cite>— CSR Partner, Philanthropic Foundation</cite>
+          </div>
+          <div class="testimonial-card reveal">
+            <blockquote>"My children started looking forward to school. Before Kshamtalaya came, they used to cry about going. Now they run ahead of me."</blockquote>
+            <cite>— Parent, Kotra Block, Rajasthan</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- KEY INDICATORS -->
+    <section class="section section--cream" id="data">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header__eyebrow">Key Outcome Indicators</div>
+          <h2 class="section-header__title">Impact in <span class="highlight-yellow">Numbers</span></h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg);" data-stagger>
+          <div class="reveal" style="background:var(--color-white); border-radius:var(--radius-xl); padding:var(--space-xl); text-align:center; box-shadow:var(--shadow-card);">
+            <div style="font-size:var(--fs-h1); font-weight:var(--fw-black); color:var(--color-teal);">17,000+</div>
+            <div style="font-size:var(--fs-small); color:var(--color-text-secondary); margin-top:4px;">Children receiving direct learning support daily</div>
+          </div>
+          <div class="reveal" style="background:var(--color-white); border-radius:var(--radius-xl); padding:var(--space-xl); text-align:center; box-shadow:var(--shadow-card);">
+            <div style="font-size:var(--fs-h1); font-weight:var(--fw-black); color:var(--color-sunshine);">2,00,000+</div>
+            <div style="font-size:var(--fs-small); color:var(--color-text-secondary); margin-top:4px;">Children reached across India (cumulative)</div>
+          </div>
+          <div class="reveal" style="background:var(--color-white); border-radius:var(--radius-xl); padding:var(--space-xl); text-align:center; box-shadow:var(--shadow-card);">
+            <div style="font-size:var(--fs-h1); font-weight:var(--fw-black); color:var(--color-coral);">80+</div>
+            <div style="font-size:var(--fs-small); color:var(--color-text-secondary); margin-top:4px;">iDISCOVER Fellows — grassroots education leaders</div>
+          </div>
+          <div class="reveal" style="background:var(--color-white); border-radius:var(--radius-xl); padding:var(--space-xl); text-align:center; box-shadow:var(--shadow-card);">
+            <div style="font-size:var(--fs-h1); font-weight:var(--fw-black); color:var(--color-green);">10,000+</div>
+            <div style="font-size:var(--fs-small); color:var(--color-text-secondary); margin-top:4px;">Active STAR Parents & SMC members</div>
+          </div>
+        </div>
+        <div class="text-center reveal" style="margin-top: var(--space-2xl);">
+          <p style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-md);">For full data, programme-wise indicators, and financial reporting:</p>
+          <a href="https://canva.link/tcm2crpcansr5q0" class="btn btn--primary" target="_blank" rel="noopener">
+            Download Full Impact Report
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3V11M8 11L5 8M8 11L11 8"/><path d="M3 13H13"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- MEDIA ENQUIRIES CTA -->
+    <section class="section section--yellow text-center" style="padding: var(--space-2xl) 0;">
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:center; gap: var(--space-2xl); flex-wrap:wrap;">
+          <div>
+            <h3 style="color: var(--color-charcoal); margin-bottom: var(--space-xs);">Media & Press Enquiries</h3>
+            <p style="color: rgba(43,43,43,0.7); font-size: var(--fs-small);">We respond to all press enquiries within 3 working days</p>
+          </div>
+          <a href="/contact.html" class="btn btn--primary" style="background: var(--color-charcoal); color: var(--color-sunshine);">
+            Contact for Press Kit
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+    <footer style="background-color: #2D2D2D; color: #ffffff; padding: 5rem 0; font-family: 'Inter', sans-serif;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+      <!-- Column 1: Brand & About -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <img src="/assets/logo-Zw3lcZ7V.png" alt="Kshamtalaya Logo" style="height: 60px; width: auto; object-fit: contain;" />
+        </div>
+        <p style="color: #DDDDDD; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+          Abode of Potential. Kshamta (क्षमता)<br>means potential. Alaya (आलय) means<br>home. Kshamtalaya is the Abode of<br>Potential.
+        </p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="https://www.facebook.com/kshamtalaya" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+          <a href="https://twitter.com/kshamtalaya" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+          <a href="https://www.instagram.com/kshamtalaya" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.youtube.com/@kshamtalayafoundation9946" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96C1 8.16 1 12 1 12s0 3.84.46 5.58a2.78 2.78 0 001.94 1.96c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96C23 15.84 23 12 23 12s0-3.84-.46-5.58zM9.54 15.18V8.82l6.26 3.18-6.26 3.18z"></path></svg></a>
+          <a href="mailto:info@kshamtalaya.org" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #555555; border-radius: 50%; color: #fff; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='#555'"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+        </div>
+      </div>
+      <!-- Column 2: Explore -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Explore</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+          <li><a href="/" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Home</a></li>
+          <li><a href="/story.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Our Story</a></li>
+          <li><a href="/programs.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Programs</a></li>
+          <li><a href="/press.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Press & Media</a></li>
+          <li><a href="/resources.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Resources</a></li>
+          <li><a href="/contact.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Contact</a></li>
+          <li><a href="/donate.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Donate</a></li>
+        </ul>
+      </div>
+      <!-- Column 3: Programs -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Programs</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+          <li><a href="/programs/cell.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">C.E.L.L.</a></li>
+          <li><a href="/programs/learning-festivals.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Learning Festivals</a></li>
+          <li><a href="/programs/diganth.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Project Diganth</a></li>
+          <li><a href="/programs/wst.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Whole School Transformation</a></li>
+          <li><a href="/programs/hausla.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Hausla</a></li>
+          <li><a href="/programs/fale-fale.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Fale Fale Shiksha Muhim</a></li>
+          <li><a href="/programs/khushishala.html" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Khushishala</a></li>
+        </ul>
+      </div>
+      <!-- Column 4: Stay in Touch -->
+      <div>
+        <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Stay In Touch</h4>
+        <p style="color: #DDDDDD; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">
+          Get stories of change, learning festival dates, and program updates in your inbox.
+        </p>
+        <form style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <input type="email" placeholder="you@school.org" style="flex: 1; min-width: 150px; padding: 0.75rem 1rem; background-color: #2D2D2D; border: 1px solid #555555; border-radius: 30px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" required>
+          <button type="submit" style="background-color: #FFC72C; color: #111111; padding: 0.75rem 1.5rem; border: none; border-radius: 30px; font-weight: 600; cursor: pointer; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#ffdb6b'" onmouseout="this.style.backgroundColor='#FFC72C'">
+            Join
+          </button>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
