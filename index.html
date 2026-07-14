@@ -263,17 +263,68 @@
           </p>
           <img src="/assets/photos/pic2.jpg" alt="Child learning on a blackboard" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; margin: 2.5rem auto 0; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid var(--color-teal);" />
         </div>
-        <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;" data-stagger>
+        <style>
+          .premium-approach-card {
+            position: relative; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
+            border-radius: 24px; padding: 3rem; margin-bottom: 2rem;
+            display: flex; align-items: stretch; gap: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;
+          }
+          .premium-approach-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+          }
+          .premium-approach-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 100%;
+            background: var(--card-color); border-radius: 24px 0 0 24px;
+            transition: width 0.4s ease;
+          }
+          .premium-approach-card:hover::after { width: 12px; }
+          .approach-number {
+            font-family: var(--font-heading); font-size: 8rem; font-weight: 900;
+            line-height: 0.8; color: var(--card-color); opacity: 0.1;
+            position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
+            z-index: 0; transition: all 0.5s ease;
+          }
+          .premium-approach-card:hover .approach-number {
+            opacity: 0.15; transform: translateY(-50%) scale(1.1);
+          }
+          .approach-icon-wrap {
+            flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
+            width: 80px; height: 80px; border-radius: 20px;
+            background: linear-gradient(135deg, var(--card-color) 0%, rgba(255,255,255,0.8) 100%);
+            color: white; font-size: 2.5rem; font-weight: 800;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); z-index: 1;
+          }
+          .approach-content { position: relative; z-index: 1; flex: 1; }
+          .approach-title { font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.75rem; line-height: 1.3; }
+          .approach-subtitle { font-size: 1.1rem; font-weight: 700; color: var(--card-color); margin-bottom: 1.25rem; }
+          .approach-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+          .approach-list li {
+            position: relative; padding-left: 1.75rem; font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.6;
+          }
+          .approach-list li::before {
+            content: '✓'; position: absolute; left: 0; top: 0; color: var(--card-color);
+            font-weight: 900; font-size: 1.1rem;
+          }
+          @media (max-width: 768px) {
+            .premium-approach-card { flex-direction: column; padding: 2rem; gap: 1.5rem; }
+            .approach-number { font-size: 6rem; top: 2rem; right: 1rem; transform: none; }
+            .premium-approach-card:hover .approach-number { transform: scale(1.1); }
+          }
+        </style>
+
+        <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem;" data-stagger>
           <!-- 1. Demonstrate -->
-          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
-            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #38B6FF;"></div>
-            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(56, 182, 255, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #38B6FF;">
-              1
-            </div>
-            <div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem; color: #38B6FF;">Demonstrate & Support Excellence in Learning, Governance & Well-being</h3>
-              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem;">100 Centers of Excellence within primary grade government schools</p>
-              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <div class="reveal premium-approach-card" style="--card-color: #38B6FF;">
+            <div class="approach-number">1</div>
+            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #38B6FF, #0077B6);">1</div>
+            <div class="approach-content">
+              <h3 class="approach-title">Demonstrate & Support Excellence</h3>
+              <p class="approach-subtitle">in Learning, Governance & Well-being</p>
+              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 1.1rem;">100 Centers of Excellence within primary grade government schools</p>
+              <ul class="approach-list">
                 <li>Increased child retention</li>
                 <li>Improved quality in learning & well-being</li>
                 <li>Increase in parental engagement in PTMs</li>
@@ -282,28 +333,25 @@
             </div>
           </div>
           <!-- 2. Cultivate -->
-          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
-            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #1CA6A0;"></div>
-            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(28, 166, 160, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #1CA6A0;">
-              2
-            </div>
-            <div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #1CA6A0;">Cultivating Local Leadership</h3>
-              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <div class="reveal premium-approach-card" style="--card-color: #1CA6A0;">
+            <div class="approach-number">2</div>
+            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #1CA6A0, #0F6E69);">2</div>
+            <div class="approach-content">
+              <h3 class="approach-title">Cultivating Local Leadership</h3>
+              <ul class="approach-list" style="margin-top: 1.5rem;">
                 <li>Cultivating a cadre of local Edu leaders as Community Mentors who support govt. schools builds foundational skills in primary grade students belonging to remote rural geographies</li>
                 <li>Cadre of govt. school teachers who are transformed to happy, purposeful & improved pedagogical leadership</li>
               </ul>
             </div>
           </div>
           <!-- 3. Build -->
-          <div class="reveal" style="background: white; padding: 2.5rem 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 2rem; position: relative; overflow: hidden;">
-            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #FFC72C;"></div>
-            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: rgba(255, 199, 44, 0.15); border-radius: 50%; font-size: 1.8rem; font-weight: 800; color: #FFC72C;">
-              3
-            </div>
-            <div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #FFC72C;">Building Systemic Excellence in Policy & Reforms</h3>
-              <ul style="color: var(--color-text-secondary); line-height: 1.6; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <div class="reveal premium-approach-card" style="--card-color: #FFC72C;">
+            <div class="approach-number">3</div>
+            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #FFC72C, #F9A825);">3</div>
+            <div class="approach-content">
+              <h3 class="approach-title">Building Systemic Excellence</h3>
+              <p class="approach-subtitle">in Policy & Reforms</p>
+              <ul class="approach-list">
                 <li>Supporting the state in the mission of NEP 2020's State Curriculum Framework</li>
                 <li>Advocating curriculum development & building a cadre of 100 Mentor Teachers for well-being curriculum to build happy schools.</li>
                 <li>Partnering with state to support Assessment CELL initiatives & Module Development for Teacher Education</li>
@@ -518,49 +566,127 @@
           <p class="section-header__desc" style="color: var(--color-charcoal); opacity: 0.8;">Hover over the markers to explore our active programs and regional scale.</p>
         </div>
         
-        <div class="map-3d-container reveal">
-          <div class="map-3d">
-            <!-- Accurate India Map SVG -->
-            <img src="/assets/india-map.svg" alt="Map of India" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));" />
-            
-            <!-- Pin 1: Rajasthan -->
-            <div class="map-pin-3d" style="top: 40%; left: 22%;" tabindex="0">
-              <div class="map-card-glass">
-                <h4 style="color: var(--color-teal);">Rajasthan</h4>
-                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2016 – Present</p>
-                <ul>
-                  <li>2 Districts</li>
-                  <li>3 Blocks</li>
-                  <li>60 Schools</li>
-                </ul>
+        <style>
+          .impact-layout {
+            display: flex; gap: 4rem; align-items: center; margin-top: 3rem; flex-wrap: wrap; text-align: left;
+          }
+          .impact-map-col {
+            flex: 1; min-width: 350px; position: relative;
+          }
+          .impact-data-col {
+            flex: 0 0 450px; display: flex; flex-direction: column; gap: 1.5rem;
+          }
+          .impact-state-card {
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px; padding: 2.25rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--state-color);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative; overflow: hidden;
+            will-change: transform, box-shadow;
+          }
+          .impact-state-card:hover {
+            transform: translateX(-10px) translateY(-2px); box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+          }
+          .impact-state-card::before {
+            content: ''; position: absolute; inset: 0; background: var(--state-color);
+            opacity: 0; transition: opacity 0.4s ease; z-index: 0;
+          }
+          .impact-state-card:hover::before { opacity: 0.04; }
+          .state-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; position: relative; z-index: 1; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 1rem; }
+          .state-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin: 0; }
+          .state-year { font-size: 0.85rem; font-weight: 800; color: var(--state-color); text-transform: uppercase; letter-spacing: 1px; background: white; padding: 6px 12px; border-radius: 100px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+          .state-metrics { display: flex; gap: 0.75rem; flex-wrap: wrap; position: relative; z-index: 1; }
+          .state-metric-tag {
+            background: white; padding: 8px 16px; border-radius: 100px; font-size: 0.95rem;
+            font-weight: 600; color: var(--color-charcoal);
+            border: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            will-change: border-color, box-shadow;
+          }
+          .impact-state-card:hover .state-metric-tag { border-color: var(--state-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+          .state-metric-tag::before {
+            content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+            background: var(--state-color);
+          }
+          
+          /* Pulsing map dots */
+          .map-dot {
+            position: absolute; width: 20px; height: 20px; border-radius: 50%; background: var(--state-color);
+            border: 3px solid white; box-shadow: 0 0 0 0 rgba(255,255,255, 0.7);
+            animation: pulse-dot 2s infinite cubic-bezier(0.66, 0, 0, 1); cursor: pointer;
+          }
+          @keyframes pulse-dot {
+            to { box-shadow: 0 0 0 20px rgba(255,255,255, 0); }
+          }
+          
+          @media (max-width: 900px) {
+            .impact-data-col { flex: 1 1 100%; }
+            .impact-state-card:hover { transform: translateY(-5px) translateX(0); }
+          }
+        </style>
+
+        <div class="impact-layout">
+          <!-- Left: Map -->
+          <div class="impact-map-col reveal">
+            <div class="map-3d-container" style="margin: 0 auto; width: 100%; max-width: 600px; height: 500px;">
+              <div class="map-3d" style="animation: float 6s ease-in-out infinite;">
+                <!-- Accurate India Map SVG -->
+                <img src="/assets/india-map.svg" alt="Map of India" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.15));" />
+                
+                <!-- Pins -->
+                <!-- Rajasthan -->
+                <div class="map-dot" style="top: 40%; left: 22%; --state-color: #1CA6A0;" title="Rajasthan"></div>
+                <!-- Delhi -->
+                <div class="map-dot" style="top: 30%; left: 30%; --state-color: #38B6FF;" title="Delhi"></div>
+                <!-- Bihar -->
+                <div class="map-dot" style="top: 40%; left: 56%; --state-color: #FFC72C;" title="Bihar"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Data -->
+          <div class="impact-data-col" data-stagger>
+            <!-- Rajasthan -->
+            <div class="impact-state-card reveal" style="--state-color: #1CA6A0;">
+              <div class="state-header">
+                <h3 class="state-name">Rajasthan</h3>
+                <span class="state-year">2016 – Present</span>
+              </div>
+              <div class="state-metrics">
+                <span class="state-metric-tag">2 Districts</span>
+                <span class="state-metric-tag">3 Blocks</span>
+                <span class="state-metric-tag">60 Schools</span>
               </div>
             </div>
 
-            <!-- Pin 2: Delhi -->
-            <div class="map-pin-3d map-pin-3d--delhi" style="top: 30%; left: 30%;" tabindex="0">
-              <div class="map-card-glass">
-                <h4 style="color: var(--color-charcoal);">Delhi</h4>
-                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2018 – Present</p>
-                <ul>
-                  <li>16 MCD Schools</li>
-                  <li>EMC, DIET, SCERT, NCERT</li>
-                </ul>
+            <!-- Delhi -->
+            <div class="impact-state-card reveal" style="--state-color: #38B6FF;">
+              <div class="state-header">
+                <h3 class="state-name">Delhi</h3>
+                <span class="state-year">2018 – Present</span>
+              </div>
+              <div class="state-metrics">
+                <span class="state-metric-tag">16 MCD Schools</span>
+                <span class="state-metric-tag">EMC</span>
+                <span class="state-metric-tag">DIET</span>
+                <span class="state-metric-tag">SCERT</span>
+                <span class="state-metric-tag">NCERT</span>
               </div>
             </div>
 
-            <!-- Pin 3: Bihar -->
-            <div class="map-pin-3d map-pin-3d--bihar" style="top: 40%; left: 68%;" tabindex="0">
-              <div class="map-card-glass">
-                <h4 style="color: var(--color-coral);">Bihar</h4>
-                <p style="font-size: 0.8rem; color: var(--color-charcoal); font-weight: bold; margin-bottom: 0.5rem;">2022 – Present</p>
-                <ul>
-                  <li>2 Districts</li>
-                  <li>13 Blocks</li>
-                  <li>1 SCERT</li>
-                </ul>
+            <!-- Bihar -->
+            <div class="impact-state-card reveal" style="--state-color: #FFC72C;">
+              <div class="state-header">
+                <h3 class="state-name">Bihar</h3>
+                <span class="state-year">2022 – Present</span>
+              </div>
+              <div class="state-metrics">
+                <span class="state-metric-tag">2 Districts</span>
+                <span class="state-metric-tag">13 Blocks</span>
+                <span class="state-metric-tag">1 SCERT</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -586,43 +712,117 @@
             learning ecosystems and create pathways toward a more equitable future.
           </p>
         </div>
-        <div class="timeline">
-          <div class="timeline__line" aria-hidden="true"></div>
+        <style>
+          .premium-timeline {
+            position: relative; max-width: 1000px; margin: 4rem auto; padding: 2rem 0;
+          }
+          .premium-timeline::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 4px; background: linear-gradient(180deg, rgba(28,166,160,0) 0%, rgba(28,166,160,0.4) 15%, rgba(255,199,44,0.4) 85%, rgba(255,199,44,0) 100%);
+            border-radius: 4px;
+          }
+          .pt-item {
+            position: relative; width: 100%; display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 4rem;
+          }
+          .pt-item:nth-child(even) { flex-direction: row-reverse; }
+          .pt-content-wrap { width: 45%; position: relative; }
+          .pt-dot {
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            width: 24px; height: 24px; border-radius: 50%; background: white;
+            border: 4px solid var(--dot-color, var(--color-teal));
+            box-shadow: 0 0 0 6px rgba(255,255,255,0.8), 0 0 20px rgba(0,0,0,0.15); z-index: 2;
+            transition: all 0.3s ease;
+          }
+          .pt-item:hover .pt-dot {
+            transform: translate(-50%, -50%) scale(1.3);
+            box-shadow: 0 0 0 8px rgba(255,255,255,0.9), 0 0 30px var(--dot-color, var(--color-teal));
+          }
+          .pt-card {
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(12px);
+            padding: 2.5rem; border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05), inset 0 0 0 1px rgba(255,255,255,1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+          }
+          .pt-item:hover .pt-card {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1), inset 0 0 0 2px var(--dot-color, var(--color-teal));
+          }
+          .pt-year {
+            font-family: var(--font-heading); font-size: 4rem; font-weight: 900;
+            color: var(--dot-color, var(--color-teal)); opacity: 0.15;
+            position: absolute; top: -1.5rem; right: 1.5rem; line-height: 1; z-index: 0;
+            pointer-events: none; transition: all 0.4s ease;
+          }
+          .pt-item:nth-child(even) .pt-year { right: auto; left: 1.5rem; }
+          .pt-item:hover .pt-year { opacity: 0.25; transform: scale(1.1); }
+          .pt-card h3 {
+            font-size: 1.6rem; color: var(--color-charcoal); margin-bottom: 1rem;
+            position: relative; z-index: 1; font-weight: 800;
+          }
+          .pt-card p {
+            font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.6;
+            position: relative; z-index: 1; margin: 0;
+          }
+          @media (max-width: 768px) {
+            .premium-timeline::before { left: 30px; }
+            .pt-item, .pt-item:nth-child(even) { flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+            .pt-content-wrap { width: calc(100% - 60px); margin-left: 60px; }
+            .pt-dot { left: 30px; top: 30px; transform: translate(-50%, -50%); }
+            .pt-item:hover .pt-dot { transform: translate(-50%, -50%) scale(1.2); }
+            .pt-year { font-size: 3rem; top: 1rem; }
+          }
+        </style>
+
+        <div class="premium-timeline" data-stagger>
           <!-- 2016 -->
-          <div class="timeline__item">
-            <div class="timeline__content reveal-left">
-              <h3>The Spark ✨</h3>
-              <p>Kshamtalaya envisioned after witnessing deep education inequity in tribal-rural Kotra, Udaipur. A dream to build an "Abode of Potential" for every child.</p>
+          <div class="pt-item reveal">
+            <div class="pt-content-wrap">
+              <div class="pt-card">
+                <div class="pt-year">2016</div>
+                <h3>The Spark ✨</h3>
+                <p>Kshamtalaya envisioned after witnessing deep education inequity in tribal-rural Kotra, Udaipur. A dream to build an "Abode of Potential" for every child.</p>
+              </div>
             </div>
-            <div class="timeline__year">2016</div>
+            <div class="pt-dot" style="--dot-color: #FF6F59;"></div>
             <div style="width: 45%;"></div>
           </div>
           <!-- 2017 -->
-          <div class="timeline__item">
-            <div style="width: 45%;"></div>
-            <div class="timeline__year">2017</div>
-            <div class="timeline__content reveal-right">
-              <h3>First Programs Launch 🎪</h3>
-              <p>Learning Festivals initiated in June, followed by the launch of the iDISCOVER Fellowship in November — the first cohort of grassroots education leaders inducted.</p>
+          <div class="pt-item reveal">
+            <div class="pt-content-wrap">
+              <div class="pt-card">
+                <div class="pt-year">2017</div>
+                <h3>First Programs Launch 🎪</h3>
+                <p>Learning Festivals initiated in June, followed by the launch of the iDISCOVER Fellowship in November — the first cohort of grassroots education leaders inducted.</p>
+              </div>
             </div>
+            <div class="pt-dot" style="--dot-color: #1CA6A0;"></div>
+            <div style="width: 45%;"></div>
           </div>
           <!-- 2019 -->
-          <div class="timeline__item">
-            <div class="timeline__content reveal-left">
-              <h3>Expansion & Partnerships 🤝</h3>
-              <p>SEE Learning curriculum (Emory University + Dalai Lama Trust) launched. CELL model formalised in Rajasthan. Entrepreneurial Mindset Curriculum co-created with SCERT Delhi.</p>
+          <div class="pt-item reveal">
+            <div class="pt-content-wrap">
+              <div class="pt-card">
+                <div class="pt-year">2019</div>
+                <h3>Expansion & Partnerships 🤝</h3>
+                <p>SEE Learning curriculum (Emory University + Dalai Lama Trust) launched. CELL model formalised in Rajasthan. Entrepreneurial Mindset Curriculum co-created with SCERT Delhi.</p>
+              </div>
             </div>
-            <div class="timeline__year">2019</div>
+            <div class="pt-dot" style="--dot-color: #FFC72C;"></div>
             <div style="width: 45%;"></div>
           </div>
           <!-- 2020 -->
-          <div class="timeline__item">
-            <div style="width: 45%;"></div>
-            <div class="timeline__year">2020</div>
-            <div class="timeline__content reveal-right">
-              <h3>COVID Response & Innovation 📻</h3>
-              <p>Launched COVID relief campaign for Kotra & Gogunda families. Pioneered Radio learning program with Radio Madhuban — reaching children without internet access.</p>
+          <div class="pt-item reveal">
+            <div class="pt-content-wrap">
+              <div class="pt-card">
+                <div class="pt-year">2020</div>
+                <h3>COVID Response & Innovation 📻</h3>
+                <p>Launched COVID relief campaign for Kotra & Gogunda families. Pioneered Radio learning program with Radio Madhuban — reaching children without internet access.</p>
+              </div>
             </div>
+            <div class="pt-dot" style="--dot-color: #38B6FF;"></div>
+            <div style="width: 45%;"></div>
           </div>
         </div>
         <div class="text-center reveal" style="margin-top: var(--space-xl);">
@@ -640,27 +840,47 @@
       <div class="press-strip__label">Featured In & Partnered With</div>
       <div style="overflow: hidden;">
         <div class="press-strip__track">
-          <!-- Placeholder press logos as text badges -->
-          <div style="display: flex; gap: 3rem; align-items: center; flex-shrink: 0;">
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Emory University</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Dalai Lama Trust</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">SCERT Delhi</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">BRIO</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Rajasthan State Govt</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Educate for Life</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Jatan Sansthan</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Radio Madhuban</span>
+          <style>
+            .marquee-logo {
+              height: 45px;
+              width: auto;
+              object-fit: contain;
+              filter: grayscale(100%) opacity(60%);
+              transition: all 0.3s ease;
+            }
+            .marquee-logo:hover {
+              filter: grayscale(0%) opacity(100%);
+              transform: scale(1.05);
+            }
+            @media (max-width: 768px) {
+              .marquee-logo { height: 35px; }
+            }
+          </style>
+          <!-- Partner Logos Marquee -->
+          <div style="display: flex; gap: 4rem; align-items: center; flex-shrink: 0; padding: 0 2rem;">
+            <img src="/assets/partners/brio.png" alt="Brio" class="marquee-logo" />
+            <img src="/assets/partners/rscert-udaipur.png" alt="Rajasthan State Govt" class="marquee-logo" style="height: 55px;" />
+            <img src="/assets/partners/educate-for-life.png" alt="Educate for Life" class="marquee-logo" />
+            <img src="/assets/partners/jatan.png" alt="Jatan Sansthan" class="marquee-logo" style="height: 55px;" />
+            <img src="/assets/partners/wipro-foundation.png" alt="Wipro Foundation" class="marquee-logo" />
+            <img src="/assets/partners/edelgive-foundation.png" alt="EdelGive Foundation" class="marquee-logo" />
+            <img src="/assets/partners/piramal-foundation.png" alt="Piramal Foundation" class="marquee-logo" />
+            <img src="/assets/partners/bcg.png" alt="BCG" class="marquee-logo" style="height: 38px;" />
+            <img src="/assets/partners/cbct.png" alt="CBCT" class="marquee-logo" />
+            <img src="/assets/partners/max-india-foundation.png" alt="Max India Foundation" class="marquee-logo" />
           </div>
           <!-- Duplicate for seamless loop -->
-          <div style="display: flex; gap: 3rem; align-items: center; flex-shrink: 0;">
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Emory University</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Dalai Lama Trust</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">SCERT Delhi</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">BRIO</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Rajasthan State Govt</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Educate for Life</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Jatan Sansthan</span>
-            <span style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; opacity: 0.5;">Radio Madhuban</span>
+          <div style="display: flex; gap: 4rem; align-items: center; flex-shrink: 0; padding: 0 2rem;">
+            <img src="/assets/partners/brio.png" alt="Brio" class="marquee-logo" />
+            <img src="/assets/partners/rscert-udaipur.png" alt="Rajasthan State Govt" class="marquee-logo" style="height: 55px;" />
+            <img src="/assets/partners/educate-for-life.png" alt="Educate for Life" class="marquee-logo" />
+            <img src="/assets/partners/jatan.png" alt="Jatan Sansthan" class="marquee-logo" style="height: 55px;" />
+            <img src="/assets/partners/wipro-foundation.png" alt="Wipro Foundation" class="marquee-logo" />
+            <img src="/assets/partners/edelgive-foundation.png" alt="EdelGive Foundation" class="marquee-logo" />
+            <img src="/assets/partners/piramal-foundation.png" alt="Piramal Foundation" class="marquee-logo" />
+            <img src="/assets/partners/bcg.png" alt="BCG" class="marquee-logo" style="height: 38px;" />
+            <img src="/assets/partners/cbct.png" alt="CBCT" class="marquee-logo" />
+            <img src="/assets/partners/max-india-foundation.png" alt="Max India Foundation" class="marquee-logo" />
           </div>
         </div>
       </div>
@@ -687,30 +907,83 @@
           <div class="section-header__eyebrow">Who We Are</div>
           <h2 class="section-header__title">Our <span class="doodle-highlight">Values<svg class="doodle-highlight__circle" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="40" rx="95" ry="35" fill="none" stroke="#FF6F59" stroke-width="2.5" stroke-linecap="round" class="doodle-circle-draw" opacity="0.4"/></svg></span></h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;" data-stagger>
+        <style>
+          .premium-values-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem; margin-top: 3rem;
+          }
+          .premium-value-card {
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px);
+            padding: 3rem 2.5rem; border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,1);
+            position: relative; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex; flex-direction: column; height: 100%;
+          }
+          .premium-value-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px;
+            background: var(--value-color); transition: height 0.4s ease;
+          }
+          .premium-value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+          }
+          .premium-value-card:hover::before { height: 10px; }
+          .value-icon-box {
+            width: 70px; height: 70px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            margin-bottom: 2rem; color: var(--value-color); font-size: 2rem;
+            font-family: var(--font-heading); font-weight: 900;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .premium-value-card:hover .value-icon-box {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 15px 35px var(--value-color-light);
+          }
+          .value-title {
+            font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 1rem;
+          }
+          .value-quote {
+            font-style: italic; color: var(--value-color); font-weight: 600;
+            margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.5;
+            background: linear-gradient(90deg, var(--value-color), var(--color-charcoal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+          }
+          .value-desc {
+            color: var(--color-text-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;
+            flex-grow: 1;
+          }
+        </style>
+
+        <div class="premium-values-grid" data-stagger>
           <!-- Compassion -->
-          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-teal);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-teal);">1. Compassion</h3>
-            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Compassion is recognizing suffering, understanding its universality, and taking action to alleviate it with empathy and care."</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">At Kshamtalaya, we integrate compassion by supporting students, teachers, and communities in their challenges, ensuring we respond with empathy and create nurturing environments for growth.</p>
+          <div class="reveal premium-value-card" style="--value-color: #1CA6A0; --value-color-light: rgba(28,166,160,0.3);">
+            <div class="value-icon-box">1</div>
+            <h3 class="value-title">Compassion</h3>
+            <p class="value-quote">"Compassion is recognizing suffering, understanding its universality, and taking action to alleviate it with empathy and care."</p>
+            <p class="value-desc">At Kshamtalaya, we integrate compassion by supporting students, teachers, and communities in their challenges, ensuring we respond with empathy and create nurturing environments for growth.</p>
           </div>
           <!-- Freedom with Responsibility -->
-          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-yellow);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-yellow);">2. Freedom with Responsibility</h3>
-            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"True freedom comes with the responsibility to be accountable for your actions, making choices that impact others and owning both successes and mistakes."</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">We empower our educators and students to make decisions and take ownership of their learning and growth, fostering an environment where responsibility is valued alongside freedom.</p>
+          <div class="reveal premium-value-card" style="--value-color: #FFC72C; --value-color-light: rgba(255,199,44,0.3);">
+            <div class="value-icon-box">2</div>
+            <h3 class="value-title">Freedom with Responsibility</h3>
+            <p class="value-quote">"True freedom comes with the responsibility to be accountable for your actions, making choices that impact others and owning both successes and mistakes."</p>
+            <p class="value-desc">We empower our educators and students to make decisions and take ownership of their learning and growth, fostering an environment where responsibility is valued alongside freedom.</p>
           </div>
           <!-- Excellence -->
-          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-coral);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-coral);">3. Excellence</h3>
-            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Excellence is about striving to be better every day, dedicating yourself to doing your best and growing through each experience."</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">In our work, excellence is evident in our commitment to continuously improving educational practices and striving for the highest standards in every program we implement.</p>
+          <div class="reveal premium-value-card" style="--value-color: #FF6F59; --value-color-light: rgba(255,111,89,0.3);">
+            <div class="value-icon-box">3</div>
+            <h3 class="value-title">Excellence</h3>
+            <p class="value-quote">"Excellence is about striving to be better every day, dedicating yourself to doing your best and growing through each experience."</p>
+            <p class="value-desc">In our work, excellence is evident in our commitment to continuously improving educational practices and striving for the highest standards in every program we implement.</p>
           </div>
           <!-- Trust -->
-          <div class="reveal value-card-3d glass-card" style="padding: 2rem; border-radius: 20px; border-top: 4px solid var(--color-sky);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-sky);">4. Trust</h3>
-            <p style="font-style: italic; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 0.95rem;">"Trust is the foundation of a safe and engaged environment, built on transparency, unconditional support, and the reliability of keeping commitments."</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Kshamtalaya fosters trust by being transparent in our processes, encouraging open communication, and creating spaces where mistakes are seen as opportunities for growth rather than failures.</p>
+          <div class="reveal premium-value-card" style="--value-color: #38B6FF; --value-color-light: rgba(56,182,255,0.3);">
+            <div class="value-icon-box">4</div>
+            <h3 class="value-title">Trust</h3>
+            <p class="value-quote">"Trust is the foundation of a safe and engaged environment, built on transparency, unconditional support, and the reliability of keeping commitments."</p>
+            <p class="value-desc">Kshamtalaya fosters trust by being transparent in our processes, encouraging open communication, and creating spaces where mistakes are seen as opportunities for growth rather than failures.</p>
           </div>
         </div>
       </div>
@@ -786,91 +1059,401 @@
     <!-- ════════════════════════════════════════ -->
     <!-- OUR TEAM                                 -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="team" aria-label="Our Team" style="background: var(--color-white); overflow: hidden; position: relative; padding: 6rem 0;">
+    <section class="section" id="team" aria-label="Our Team" style="background: #FAFCFC; overflow: hidden; position: relative; padding: 8rem 0;">
       <!-- Decorative background blobs -->
-      <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: rgba(56, 182, 255, 0.15); border-radius: 50%; filter: blur(40px);"></div>
-      <div style="position: absolute; bottom: -100px; right: -100px; width: 300px; height: 300px; background: rgba(255, 111, 89, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+      <div style="position: absolute; top: 0; left: -100px; width: 400px; height: 400px; background: rgba(56, 182, 255, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
+      <div style="position: absolute; bottom: 0; right: -100px; width: 500px; height: 500px; background: rgba(255, 199, 44, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
       <div class="container" style="position: relative; z-index: 2;">
         <div class="section-header reveal" style="text-align: center;">
-          <div class="section-header__eyebrow" style="color: var(--color-teal); justify-content: center;">Our Team</div>
-          <h2 class="section-header__title" style="font-size: 3rem; margin-bottom: 1rem;">The <span style="position: relative; display: inline-block;">Hearts<svg style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 8px; z-index: -1;" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="var(--color-coral)" stroke-width="4"/></svg></span> Behind Kshamtalaya</h2>
-          <p class="section-header__desc" style="margin: 1rem auto 3.5rem; max-width: 650px;">
+          <div class="partners-badge-premium" style="justify-content: center; margin-bottom: 1rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Our Team
+          </div>
+          <h2 class="partners-title-premium">The <span>Hearts</span> Behind Kshamtalaya</h2>
+          <p class="partners-intro__desc" style="margin: 1rem auto 4rem; max-width: 700px; font-size: 1.15rem;">
             A passionate group of educators, community builders, and system thinkers dedicated to making quality education accessible to every child.
           </p>
         </div>
-        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2rem;" id="team">
+
+        <style>
+          .premium-team-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem; margin-top: 2rem;
+          }
+          .team-card-pro {
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 36px; padding: 3.5rem 2.5rem; text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,0.8);
+            position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+          }
+          .team-card-pro::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 180px;
+            background: linear-gradient(180deg, var(--team-color-light) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1; opacity: 0.6; transition: opacity 0.5s;
+          }
+          .team-card-pro:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+          }
+          .team-card-pro:hover::before { opacity: 1; }
+          .team-avatar-pro {
+            width: 140px; height: 140px; margin: 0 auto 2rem; border-radius: 50%;
+            background: var(--team-gradient);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem; color: white; font-weight: 900; font-family: var(--font-heading);
+            border: 6px solid white; box-shadow: 0 15px 35px var(--team-shadow);
+            position: relative; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .team-avatar-pro::after {
+            content: ''; position: absolute; inset: -12px; border-radius: 50%;
+            border: 2.5px dashed var(--team-color); opacity: 0; transform: rotate(0deg);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .team-card-pro:hover .team-avatar-pro {
+            transform: scale(1.08) translateY(-5px); box-shadow: 0 25px 45px var(--team-shadow);
+          }
+          .team-card-pro:hover .team-avatar-pro::after {
+            opacity: 0.5; transform: rotate(180deg);
+          }
+          .team-name-pro { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+          .team-role-pro { 
+            display: inline-block; padding: 6px 18px; border-radius: 100px;
+            background: var(--team-color-light); color: var(--team-color);
+            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+            margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.5);
+          }
+          .team-details-pro { font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.7; margin: 0; }
+          .team-details-pro strong { color: var(--color-charcoal); font-weight: 700; display: block; margin-top: 0.5rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--team-color); }
+        </style>
+
+        <div class="premium-team-grid" data-stagger>
           <!-- Team Member 1 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(56, 182, 255, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">V</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Vivek Kumar</h3>
-            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Co-Founder</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> B.Tech, MA Education from TISS<br>
-              <strong>Experience:</strong> Nearing 10 Years
+          <div class="team-card-pro reveal" style="--team-color: #38B6FF; --team-color-light: rgba(56, 182, 255, 0.15); --team-gradient: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); --team-shadow: rgba(56, 182, 255, 0.4);">
+            <div class="team-avatar-pro">V</div>
+            <h3 class="team-name-pro">Vivek Kumar</h3>
+            <div class="team-role-pro">Co-Founder</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> B.Tech, MA Education from TISS<br>
+              <strong>Experience</strong> Nearing 10 Years
             </p>
           </div>
           <!-- Team Member 2 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px); transform: translateY(30px);" onmouseover="this.style.transform='translateY(15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(30px) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 111, 89, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">S</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Soumya B</h3>
-            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Director, CEO</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> Masters in Applied Sociology<br>
-              <strong>Experience:</strong> 8+ Years
+          <div class="team-card-pro reveal" style="--team-color: #FF6F59; --team-color-light: rgba(255, 111, 89, 0.15); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); --team-shadow: rgba(255, 111, 89, 0.4);">
+            <div class="team-avatar-pro">S</div>
+            <h3 class="team-name-pro">Soumya B</h3>
+            <div class="team-role-pro">Director, CEO</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> Masters in Applied Sociology<br>
+              <strong>Experience</strong> 8+ Years
             </p>
           </div>
           <!-- Team Member 3 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(28, 166, 160, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">P</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Pooja Singh</h3>
-            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Co-Founder</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> Masters in Mass Comm<br>
-              <strong>Experience:</strong> Nearing 10 Years
+          <div class="team-card-pro reveal" style="--team-color: #1CA6A0; --team-color-light: rgba(28, 166, 160, 0.15); --team-gradient: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%); --team-shadow: rgba(28, 166, 160, 0.4);">
+            <div class="team-avatar-pro">P</div>
+            <h3 class="team-name-pro">Pooja Singh</h3>
+            <div class="team-role-pro">Co-Founder</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> Masters in Mass Comm<br>
+              <strong>Experience</strong> Nearing 10 Years
             </p>
           </div>
           <!-- Team Member 4 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 199, 44, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF9E2C 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">A</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Anjali Gupte</h3>
-            <p style="font-size: 0.9rem; color: var(--color-yellow); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Director, Founding Member</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> MSc Statistics, B.Ed.<br>
-              <strong>Experience:</strong> Nearing 10 Years
+          <div class="team-card-pro reveal" style="--team-color: #FFC72C; --team-color-light: rgba(255, 199, 44, 0.2); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF9E2C 100%); --team-shadow: rgba(255, 199, 44, 0.4);">
+            <div class="team-avatar-pro">A</div>
+            <h3 class="team-name-pro">Anjali Gupte</h3>
+            <div class="team-role-pro">Director, Founding Member</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> MSc Statistics, B.Ed.<br>
+              <strong>Experience</strong> Nearing 10 Years
             </p>
           </div>
           <!-- Team Member 5 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px); transform: translateY(30px);" onmouseover="this.style.transform='translateY(15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(30px) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(56, 182, 255, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">A</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Abhishek Tiwari</h3>
-            <p style="font-size: 0.9rem; color: var(--color-teal); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Programs, Bihar</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> Bachelors of Science<br>
-              <strong>Experience:</strong> 8 Years
+          <div class="team-card-pro reveal" style="--team-color: #38B6FF; --team-color-light: rgba(56, 182, 255, 0.15); --team-gradient: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); --team-shadow: rgba(56, 182, 255, 0.4);">
+            <div class="team-avatar-pro">A</div>
+            <h3 class="team-name-pro">Abhishek Tiwari</h3>
+            <div class="team-role-pro">Head of Programs, Bihar</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> Bachelors of Science<br>
+              <strong>Experience</strong> 8 Years
             </p>
           </div>
           <!-- Team Member 6 -->
-          <div class="team-card reveal" style="text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; padding: 2rem; background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)';">
-            <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; position: relative; border: 4px solid var(--color-white); box-shadow: 0 10px 25px rgba(255, 111, 89, 0.3);">
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: bold;">T</div>
-            </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.25rem;">Tina Aggarwal</h3>
-            <p style="font-size: 0.9rem; color: var(--color-coral); font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Head of Programs, Delhi</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-              <strong>Education:</strong> D.El.Ed, MA-Education, B.Ed (LD)<br>
-              <strong>Experience:</strong> 6 Years
+          <div class="team-card-pro reveal" style="--team-color: #FF6F59; --team-color-light: rgba(255, 111, 89, 0.15); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); --team-shadow: rgba(255, 111, 89, 0.4);">
+            <div class="team-avatar-pro">T</div>
+            <h3 class="team-name-pro">Tina Aggarwal</h3>
+            <div class="team-role-pro">Head of Programs, Delhi</div>
+            <p class="team-details-pro">
+              <strong>Education</strong> D.El.Ed, MA-Education, B.Ed (LD)<br>
+              <strong>Experience</strong> 6 Years
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- ════════════════════════════════════════ -->
+    <!-- PARTNERS SECTION                         -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="partners" aria-label="Our Partners" style="padding: 8rem 0; position: relative; overflow: hidden; background-color: #FAFCFC;">
+      <!-- Dynamic Animated Background -->
+      <style>
+        @keyframes floatBlob {
+          0% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(50px, -50px) scale(1.1); }
+          66% { transform: translate(-30px, 30px) scale(0.9); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+        .partners-bg-blob {
+          position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.15;
+          animation: floatBlob 25s infinite alternate ease-in-out;
+          z-index: 0; pointer-events: none;
+        }
+        .partners-blob-1 { width: 700px; height: 700px; background: var(--color-teal); top: -10%; left: -10%; }
+        .partners-blob-2 { width: 600px; height: 600px; background: var(--color-sunshine); bottom: 5%; right: -10%; animation-delay: -5s; opacity: 0.12; }
+        .partners-blob-3 { width: 500px; height: 500px; background: var(--color-coral); top: 35%; left: 35%; animation-delay: -12s; opacity: 0.08; }
+
+        .partners-section-content { position: relative; z-index: 2; }
+        
+        /* Intro Styling */
+        .partners-intro { text-align: center; max-width: 800px; margin: 0 auto 5rem; }
+        .partners-badge-premium {
+          display: inline-flex; align-items: center; gap: 10px;
+          padding: 8px 24px; background: rgba(255, 255, 255, 0.7);
+          border: 1px solid rgba(28, 166, 160, 0.3); border-radius: 100px;
+          font-size: 0.85rem; font-weight: 700; color: var(--color-teal);
+          text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;
+          box-shadow: 0 10px 30px rgba(28, 166, 160, 0.1); backdrop-filter: blur(12px);
+        }
+        .partners-title-premium {
+          font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4.2rem);
+          font-weight: 800; color: var(--color-charcoal); margin-bottom: 1.5rem; line-height: 1.1;
+          letter-spacing: -1px;
+        }
+        .partners-title-premium span {
+          background: linear-gradient(135deg, var(--color-teal) 0%, #117873 100%);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        /* Bento Box Categories */
+        .partners-bento-grid {
+          display: grid; gap: 3rem; grid-template-columns: 1fr;
+        }
+        .partners-bento-card {
+          background: rgba(255, 255, 255, 0.55);
+          backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.8);
+          border-radius: 36px; padding: 3.5rem;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,0.6);
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .partners-bento-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 35px 70px rgba(28,166,160,0.06), inset 0 0 0 1px rgba(255,255,255,0.9);
+        }
+        
+        .bento-header {
+          display: flex; align-items: center; justify-content: space-between;
+          margin-bottom: 3rem; padding-bottom: 1.5rem;
+          border-bottom: 2px dashed rgba(0,0,0,0.06);
+        }
+        .bento-header__left { display: flex; align-items: center; gap: 1.25rem; }
+        .bento-icon-wrapper {
+          width: 58px; height: 58px; border-radius: 18px;
+          display: flex; align-items: center; justify-content: center;
+          background: white; box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        .bento-title {
+          font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800;
+          color: var(--color-charcoal); margin: 0;
+        }
+        
+        /* Premium Logos */
+        .bento-logos { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .bento-logo-item {
+          flex: 1 1 calc(25% - 1.5rem); min-width: 170px;
+          background: #ffffff; border-radius: 24px; padding: 2rem 1.5rem;
+          display: flex; align-items: center; justify-content: center; height: 130px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02);
+          transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          position: relative; overflow: hidden;
+        }
+        .bento-logo-item::before {
+          content: ''; position: absolute; inset: 0;
+          background: linear-gradient(135deg, rgba(28,166,160,0.06) 0%, transparent 100%);
+          opacity: 0; transition: opacity 0.4s; z-index: 1;
+        }
+        .bento-logo-item:hover {
+          transform: translateY(-10px) scale(1.04);
+          box-shadow: 0 25px 45px rgba(0,0,0,0.08), 0 0 0 2.5px var(--color-teal);
+        }
+        .bento-logo-item:hover::before { opacity: 1; }
+        .bento-logo-item img {
+          max-width: 100%; max-height: 65px; object-fit: contain;
+          transition: all 0.5s ease; position: relative; z-index: 2;
+          filter: grayscale(15%); opacity: 0.9;
+        }
+        .bento-logo-item:hover img {
+          filter: grayscale(0%); opacity: 1; transform: scale(1.08);
+        }
+        
+        /* Double Column Bento */
+        .bento-grid-2col {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+        }
+        .bento-grid-2col .bento-logo-item { flex: 1 1 calc(33.333% - 1.5rem); min-width: 140px; }
+
+        /* Closing Quote */
+        .premium-quote {
+          margin-top: 5rem; padding: 5rem 4rem;
+          background: var(--color-charcoal); border-radius: 40px; text-align: center;
+          position: relative; overflow: hidden;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+        .premium-quote::before {
+          content: '\201C'; position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+          font-family: var(--font-heading); font-size: 20rem; color: rgba(255,255,255,0.03);
+          line-height: 1; z-index: 0;
+        }
+        .premium-quote p {
+          position: relative; z-index: 1;
+          font-size: 1.6rem; font-weight: 300; color: white; line-height: 1.7;
+          max-width: 900px; margin: 0 auto; font-style: italic;
+        }
+        .premium-quote p strong {
+          color: var(--color-sunshine); font-weight: 700;
+          background: linear-gradient(90deg, #FFC72C, #FFA000);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        @media (max-width: 1024px) {
+          .bento-grid-2col { grid-template-columns: 1fr; gap: 2.5rem; }
+          .bento-logo-item { flex: 1 1 calc(33.333% - 1.5rem); }
+        }
+        @media (max-width: 768px) {
+          .partners-bento-card { padding: 2rem; border-radius: 28px; }
+          .bento-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding-bottom: 1rem; }
+          .bento-logo-item { flex: 1 1 calc(50% - 1rem); min-width: 120px; padding: 1.5rem; height: 100px; gap: 1rem; }
+          .bento-logo-item img { max-height: 50px; }
+          .premium-quote { padding: 3.5rem 2rem; border-radius: 28px; }
+          .premium-quote p { font-size: 1.25rem; }
+        }
+      </style>
+
+      <div class="partners-bg-blob partners-blob-1"></div>
+      <div class="partners-bg-blob partners-blob-2"></div>
+      <div class="partners-bg-blob partners-blob-3"></div>
+
+      <div class="container partners-section-content">
+        <!-- Intro -->
+        <div class="partners-intro reveal">
+          <div class="partners-badge-premium">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Our Partners
+          </div>
+          <h2 class="partners-title-premium">Partners <span>Along the Way</span></h2>
+          <p class="partners-intro__desc" style="font-size: 1.1rem;">
+            At Kshamtalaya, we believe that wellbeing is nurtured in relationships &#8212; through collaboration, learning, and shared intent. Our collaborations &#8212; with knowledge institutions, training organizations, and collective platforms &#8212; have helped bring the language of wellbeing into diverse spaces: from classrooms and communities to workplaces and leadership programs.
+          </p>
+        </div>
+
+        <div class="partners-bento-grid">
+          <!-- Knowledge Partners -->
+          <div class="partners-bento-card reveal">
+            <div class="bento-header">
+              <div class="bento-header__left">
+                <div class="bento-icon-wrapper" style="background: linear-gradient(135deg, #E8F5F4, #B2DFDB);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h3 class="bento-title">Knowledge Partners</h3>
+              </div>
+            </div>
+            <div class="bento-logos">
+              <div class="bento-logo-item"><img src="/assets/partners/brio.png" alt="Brio" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/karuna-practice.png" alt="The Karuna Practice" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/cbct.png" alt="CBCT Compassion Training" loading="lazy" /></div>
+            </div>
+          </div>
+
+          <!-- Partners in Purpose -->
+          <div class="partners-bento-card reveal">
+            <div class="bento-header">
+              <div class="bento-header__left">
+                <div class="bento-icon-wrapper" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <h3 class="bento-title">Partners in Purpose</h3>
+              </div>
+            </div>
+            <div class="bento-logos">
+              <div class="bento-logo-item"><img src="/assets/partners/max-india-foundation.png" alt="Max India Foundation" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/wipro-foundation.png" alt="Wipro Foundation" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/educate-for-life.png" alt="Educate for Life" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/edelgive-foundation.png" alt="EdelGive Foundation" loading="lazy" /></div>
+            </div>
+          </div>
+
+          <!-- Capacity Building Partners -->
+          <div class="partners-bento-card reveal">
+            <div class="bento-header">
+              <div class="bento-header__left">
+                <div class="bento-icon-wrapper" style="background: linear-gradient(135deg, #E0F7FA, #B2EBF2);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00838F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h3 class="bento-title">Capacity Building <span style="font-weight: 500; font-size: 1.25rem; color: var(--color-text-muted);">(Partners in Practice)</span></h3>
+              </div>
+            </div>
+            <div class="bento-logos">
+              <div class="bento-logo-item"><img src="/assets/partners/iih.png" alt="IIH" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/jatan.png" alt="Jatan" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/bhumi.png" alt="Bhumi" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/bcg.png" alt="BCG" loading="lazy" style="height: 40px;" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/piramal-foundation.png" alt="Piramal Foundation" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/gram-jagat.png" alt="Gram Jagat" loading="lazy" /></div>
+              <div class="bento-logo-item"><img src="/assets/partners/learning-initiatives-india.png" alt="Learning Initiatives for India" loading="lazy" /></div>
+            </div>
+          </div>
+
+          <!-- Bottom Grid (2 Columns) -->
+          <div class="bento-grid-2col">
+            <!-- Collectives -->
+            <div class="partners-bento-card reveal">
+              <div class="bento-header">
+                <div class="bento-header__left">
+                  <div class="bento-icon-wrapper" style="background: linear-gradient(135deg, #FCE4EC, #F8BBD0);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                  </div>
+                  <h3 class="bento-title">Collectives We Are Part of</h3>
+                </div>
+              </div>
+              <div class="bento-logos">
+                <div class="bento-logo-item"><img src="/assets/partners/bihar-development-collective.png" alt="Bihar Development Collective" loading="lazy" /></div>
+                <div class="bento-logo-item"><img src="/assets/partners/project-sampoorna.png" alt="Project Sampoorna" loading="lazy" /></div>
+                <div class="bento-logo-item"><img src="/assets/partners/reach-collective.png" alt="REACH Collective" loading="lazy" /></div>
+              </div>
+            </div>
+
+            <!-- Government -->
+            <div class="partners-bento-card reveal">
+              <div class="bento-header">
+                <div class="bento-header__left">
+                  <div class="bento-icon-wrapper" style="background: linear-gradient(135deg, #E8EAF6, #C5CAE9);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#283593" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                  </div>
+                  <h3 class="bento-title">Government Partners</h3>
+                </div>
+              </div>
+              <div class="bento-logos">
+                <div class="bento-logo-item"><img src="/assets/partners/rscert-udaipur.png" alt="RSCERT Udaipur" loading="lazy" style="height: 70px;" /></div>
+                <div class="bento-logo-item"><img src="/assets/partners/bihar-education-project.png" alt="Bihar Education Project" loading="lazy" /></div>
+                <div class="bento-logo-item"><img src="/assets/partners/mcd-delhi.png" alt="Municipal Corporation of Delhi" loading="lazy" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Closing Quote block -->
+        <div class="premium-quote reveal">
+          <p>Each partnership has been an opportunity to listen, learn, and grow together &#8212; reaffirming that wellbeing is not an individual pursuit, but a <strong>collective responsibility</strong>.</p>
         </div>
       </div>
     </section>
@@ -908,35 +1491,47 @@
     <!-- ════════════════════════════════════════ -->
     <section class="text-marquee" aria-hidden="true">
       <div class="text-marquee__track">
-        <span class="text-marquee__item">Holistic Growth</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Joyful Learning</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Community Leadership</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">क्षमता — Potential</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Systems Excellence</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Happy Schools</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Every Child Matters</span>
-        <span class="text-marquee__separator">✦</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="text-marquee__item">Holistic Growth</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Joyful Learning</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Community Leadership</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">क्षमता — Potential</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Systems Excellence</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Happy Schools</span>
-        <span class="text-marquee__separator">✦</span>
-        <span class="text-marquee__item">Every Child Matters</span>
-        <span class="text-marquee__separator">✦</span>
+        <style>
+          .dark-marquee-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            margin: 0 2.5rem;
+            border-radius: 4px;
+            opacity: 0.9;
+          }
+          .dark-marquee-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.05);
+          }
+          @media (max-width: 768px) {
+            .dark-marquee-logo { height: 35px; margin: 0 1.5rem; }
+          }
+        </style>
+        <!-- First Set -->
+        <img src="/assets/partners/brio.png" alt="Brio" class="dark-marquee-logo" />
+        <img src="/assets/partners/rscert-udaipur.png" alt="Rajasthan State Govt" class="dark-marquee-logo" style="height: 55px;" />
+        <img src="/assets/partners/educate-for-life.png" alt="Educate for Life" class="dark-marquee-logo" />
+        <img src="/assets/partners/jatan.png" alt="Jatan Sansthan" class="dark-marquee-logo" style="height: 55px;" />
+        <img src="/assets/partners/wipro-foundation.png" alt="Wipro Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/edelgive-foundation.png" alt="EdelGive Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/piramal-foundation.png" alt="Piramal Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/bcg.png" alt="BCG" class="dark-marquee-logo" style="height: 38px;" />
+        <img src="/assets/partners/cbct.png" alt="CBCT" class="dark-marquee-logo" />
+        <img src="/assets/partners/max-india-foundation.png" alt="Max India Foundation" class="dark-marquee-logo" />
+        <!-- Second Set (Duplicate for seamless loop) -->
+        <img src="/assets/partners/brio.png" alt="Brio" class="dark-marquee-logo" />
+        <img src="/assets/partners/rscert-udaipur.png" alt="Rajasthan State Govt" class="dark-marquee-logo" style="height: 55px;" />
+        <img src="/assets/partners/educate-for-life.png" alt="Educate for Life" class="dark-marquee-logo" />
+        <img src="/assets/partners/jatan.png" alt="Jatan Sansthan" class="dark-marquee-logo" style="height: 55px;" />
+        <img src="/assets/partners/wipro-foundation.png" alt="Wipro Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/edelgive-foundation.png" alt="EdelGive Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/piramal-foundation.png" alt="Piramal Foundation" class="dark-marquee-logo" />
+        <img src="/assets/partners/bcg.png" alt="BCG" class="dark-marquee-logo" style="height: 38px;" />
+        <img src="/assets/partners/cbct.png" alt="CBCT" class="dark-marquee-logo" />
+        <img src="/assets/partners/max-india-foundation.png" alt="Max India Foundation" class="dark-marquee-logo" />
       </div>
     </section>
   </main>
