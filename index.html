@@ -137,13 +137,26 @@
           with joyful, whole-school learning.
         </p>
       </div>
-      <div class="hero__visual" style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
-        <div style="position: absolute; top: -15px; right: 20px; background: var(--color-yellow); border: 2px solid var(--color-charcoal); border-radius: 20px; padding: 4px 12px; font-weight: 800; font-size: 0.75rem; z-index: 10; transform: rotate(3deg);">
-          क्षमता - POTENTIAL
+      <div class="hero__visual" style="position: relative; width: 100%; max-width: 900px; margin: 0 auto; display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+        
+        <div style="position: relative; width: 100%; max-width: 420px;">
+          <div style="position: absolute; top: -15px; right: 20px; background: var(--color-yellow); border: 2px solid var(--color-charcoal); border-radius: 20px; padding: 4px 12px; font-weight: 800; font-size: 0.75rem; z-index: 10; transform: rotate(3deg);">
+            क्षमता - POTENTIAL
+          </div>
+          <div style="border: 3px solid var(--color-charcoal); border-radius: 16px; overflow: hidden; box-shadow: -8px 8px 0 var(--color-teal); background: #f8f8f8; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; transform: rotate(-2deg); transition: transform 0.3s;">
+            <img src="/assets/photos/pic1.jpg" alt="Children sitting in a circle" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
+          </div>
         </div>
-        <div style="border: 3px solid var(--color-charcoal); border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 var(--color-teal); background: #f8f8f8; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
-          <img src="/assets/photos/pic1.jpg" alt="Children sitting in a circle" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
+
+        <div style="position: relative; width: 100%; max-width: 420px;">
+          <div style="position: absolute; bottom: -15px; left: 20px; background: var(--color-orange); border: 2px solid var(--color-charcoal); border-radius: 20px; padding: 4px 12px; font-weight: 800; font-size: 0.75rem; z-index: 10; transform: rotate(-3deg);">
+            JOYFUL LEARNING
+          </div>
+          <div style="border: 3px solid var(--color-charcoal); border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 var(--color-magenta); background: #f8f8f8; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; transform: rotate(2deg); transition: transform 0.3s;">
+            <img src="/assets/photos/hero2.jpg" alt="Meaningful Education" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -152,13 +165,13 @@
     <!-- ════════════════════════════════════════ -->
     <!-- IMPACT STATS BAR                        -->
     <!-- ════════════════════════════════════════ -->
-    <section class="stats section" id="impact" aria-label="Impact statistics" style="padding: 3rem 0; background: linear-gradient(135deg, #111 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
+    <section class="stats section" id="impact" aria-label="Impact statistics" style="padding: 3rem 0; background: #08B9DB; position: relative; overflow: hidden;">
       <style>
         .stats::before {
           content: "";
           position: absolute;
           top: -50%; left: -50%; width: 200%; height: 200%;
-          background: radial-gradient(circle, rgba(56,182,255,0.05) 0%, rgba(28,166,160,0.02) 40%, transparent 70%);
+          background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 70%);
           animation: pulse 15s infinite;
           pointer-events: none;
         }
@@ -166,17 +179,17 @@
           flex: 1 1 calc(25% - 1.5rem);
           min-width: 150px;
           padding: 1.5rem 1rem;
-          background: rgba(43, 43, 43, 0.4);
+          background: rgba(0, 0, 0, 0.25);
           backdrop-filter: blur(12px);
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.15);
           border-radius: 16px;
           text-align: center;
           transition: all 0.3s ease;
         }
         .compact-stat-card:hover {
           transform: translateY(-5px);
-          border-color: rgba(56, 182, 255, 0.4);
-          background: rgba(50, 50, 50, 0.7);
+          border-color: rgba(255, 255, 255, 0.5);
+          background: rgba(0, 0, 0, 0.35);
         }
         .stat-num-compact {
           font-size: 2rem; font-weight: 800; font-family: var(--font-heading);
@@ -194,7 +207,7 @@
       <div class="container" style="position: relative; z-index: 2;">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; gap: 1rem;">
           <h2 style="color: white; font-size: 2rem; font-family: var(--font-heading); font-weight: 800; margin: 0;">Our Impact & Reach</h2>
-          <p style="color: #bbb; font-size: 0.95rem; margin: 0; max-width: 400px; text-align: right;">Measurable change across communities, empowering children and educators alike.</p>
+          <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin: 0; max-width: 400px; text-align: right;">Measurable change across communities, empowering children and educators alike.</p>
         </div>
         <div class="stats__grid" data-stagger style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <div class="compact-stat-card reveal">
@@ -243,6 +256,20 @@
     <!-- ════════════════════════════════════════ -->
     <!-- OUR APPROACH                             -->
     <!-- ════════════════════════════════════════ -->
+    
+    <!-- ════════════════════════════════════════ -->
+    <!-- OUR MISSION                              -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section section--cream" id="mission" aria-label="Our Mission">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center;">
+          <div class="section-header__eyebrow">Our Mission</div>
+          <h2 class="section-header__title">The Child at the <span class="doodle-highlight" style="color: var(--color-teal);">Center</span></h2>
+          <img src="/assets/mission.png" alt="Our Mission Diagram" style="width: 100%; max-width: 900px; height: auto; margin: 3rem auto 0; display: block; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" />
+        </div>
+      </div>
+    </section>
+
     <section class="section doodle-bg" id="approach" aria-label="Our Approach">
       <!-- Section Doodles -->
       <svg class="section-doodle section-doodle--bob1" style="top: 10%; right: 5%; width: 50px;" viewBox="0 0 50 50" aria-hidden="true">
@@ -261,70 +288,105 @@
           <p class="section-header__desc">
             With 8+ years in this sector working in 3 geographies, Kshamtalaya has arrived at a 3-Pronged approach to inch closer to our vision of Holistic Growth of Child through Learning, Well-Being and Governance.
           </p>
-          <img src="/assets/photos/pic2.jpg" alt="Child learning on a blackboard" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; margin: 2.5rem auto 0; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid var(--color-teal);" />
+          <img src="/assets/approach.png" alt="Child learning on a blackboard" style="width: 100%; max-width: 800px; height: auto; border-radius: 16px; margin: 2.5rem auto 0; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid var(--color-teal);" />
         </div>
         <style>
+          .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+          }
           .premium-approach-card {
-            position: relative; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
-            border-radius: 24px; padding: 3rem; margin-bottom: 2rem;
-            display: flex; align-items: stretch; gap: 3rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,1);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;
+            position: relative;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,0.8);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            border-top: 4px solid var(--card-color);
+            z-index: 1;
           }
           .premium-approach-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08), inset 0 0 0 2px var(--card-color);
+            background: rgba(255,255,255,1);
+            z-index: 2;
           }
-          .premium-approach-card::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 100%;
-            background: var(--card-color); border-radius: 24px 0 0 24px;
-            transition: width 0.4s ease;
-          }
-          .premium-approach-card:hover::after { width: 12px; }
           .approach-number {
-            font-family: var(--font-heading); font-size: 8rem; font-weight: 900;
-            line-height: 0.8; color: var(--card-color); opacity: 0.1;
-            position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
-            z-index: 0; transition: all 0.5s ease;
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 0.8;
+            color: var(--card-color);
+            opacity: 0.05;
+            position: absolute;
+            right: -0.5rem;
+            bottom: -0.5rem;
+            z-index: 0;
+            transition: all 0.5s ease;
           }
           .premium-approach-card:hover .approach-number {
-            opacity: 0.15; transform: translateY(-50%) scale(1.1);
+            opacity: 0.12;
+            transform: scale(1.1) translate(-5px, -5px);
+          }
+          .approach-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
           }
           .approach-icon-wrap {
-            flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
-            width: 80px; height: 80px; border-radius: 20px;
-            background: linear-gradient(135deg, var(--card-color) 0%, rgba(255,255,255,0.8) 100%);
-            color: white; font-size: 2.5rem; font-weight: 800;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1); z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--card-color) 0%, rgba(255,255,255,0.5) 100%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
-          .approach-content { position: relative; z-index: 1; flex: 1; }
-          .approach-title { font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.75rem; line-height: 1.3; }
-          .approach-subtitle { font-size: 1.1rem; font-weight: 700; color: var(--card-color); margin-bottom: 1.25rem; }
-          .approach-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+          .premium-approach-card:hover .approach-icon-wrap {
+            transform: rotate(-10deg) scale(1.05);
+          }
+          .approach-title { font-size: 1.15rem; font-weight: 800; color: var(--color-charcoal); line-height: 1.2; margin: 0; }
+          .approach-subtitle { font-size: 0.85rem; font-weight: 700; color: var(--card-color); margin-top: 0.25rem; }
+          .approach-content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
+          .approach-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
           .approach-list li {
-            position: relative; padding-left: 1.75rem; font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.6;
+            position: relative; padding-left: 1.2rem; font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.4;
           }
           .approach-list li::before {
             content: '✓'; position: absolute; left: 0; top: 0; color: var(--card-color);
-            font-weight: 900; font-size: 1.1rem;
-          }
-          @media (max-width: 768px) {
-            .premium-approach-card { flex-direction: column; padding: 2rem; gap: 1.5rem; }
-            .approach-number { font-size: 6rem; top: 2rem; right: 1rem; transform: none; }
-            .premium-approach-card:hover .approach-number { transform: scale(1.1); }
+            font-weight: 900; font-size: 0.9rem;
           }
         </style>
 
-        <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem;" data-stagger>
+        <div class="approach-grid" data-stagger>
           <!-- 1. Demonstrate -->
           <div class="reveal premium-approach-card" style="--card-color: #38B6FF;">
-            <div class="approach-number">1</div>
-            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #38B6FF, #0077B6);">1</div>
+            <div class="approach-header">
+              <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #38B6FF, #0077B6);">1</div>
+              <div>
+                <h3 class="approach-title">Demonstrate & Support Excellence</h3>
+                <p class="approach-subtitle">in Learning, Governance & Well-being</p>
+              </div>
+            </div>
             <div class="approach-content">
-              <h3 class="approach-title">Demonstrate & Support Excellence</h3>
-              <p class="approach-subtitle">in Learning, Governance & Well-being</p>
-              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 1.1rem;">100 Centers of Excellence within primary grade government schools</p>
               <ul class="approach-list">
+                <li><strong>100 Centers of Excellence</strong> within primary grade government schools</li>
                 <li>Increased child retention</li>
                 <li>Improved quality in learning & well-being</li>
                 <li>Increase in parental engagement in PTMs</li>
@@ -334,11 +396,14 @@
           </div>
           <!-- 2. Cultivate -->
           <div class="reveal premium-approach-card" style="--card-color: #1CA6A0;">
-            <div class="approach-number">2</div>
-            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #1CA6A0, #0F6E69);">2</div>
+            <div class="approach-header">
+              <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #1CA6A0, #0F6E69);">2</div>
+              <div>
+                <h3 class="approach-title">Cultivating Local Leadership</h3>
+              </div>
+            </div>
             <div class="approach-content">
-              <h3 class="approach-title">Cultivating Local Leadership</h3>
-              <ul class="approach-list" style="margin-top: 1.5rem;">
+              <ul class="approach-list">
                 <li>Cultivating a cadre of local Edu leaders as Community Mentors who support govt. schools builds foundational skills in primary grade students belonging to remote rural geographies</li>
                 <li>Cadre of govt. school teachers who are transformed to happy, purposeful & improved pedagogical leadership</li>
               </ul>
@@ -346,11 +411,14 @@
           </div>
           <!-- 3. Build -->
           <div class="reveal premium-approach-card" style="--card-color: #FFC72C;">
-            <div class="approach-number">3</div>
-            <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #FFC72C, #F9A825);">3</div>
+            <div class="approach-header">
+              <div class="approach-icon-wrap" style="background: linear-gradient(135deg, #FFC72C, #F9A825);">3</div>
+              <div>
+                <h3 class="approach-title">Building Systemic Excellence</h3>
+                <p class="approach-subtitle">in Policy & Reforms</p>
+              </div>
+            </div>
             <div class="approach-content">
-              <h3 class="approach-title">Building Systemic Excellence</h3>
-              <p class="approach-subtitle">in Policy & Reforms</p>
               <ul class="approach-list">
                 <li>Supporting the state in the mission of NEP 2020's State Curriculum Framework</li>
                 <li>Advocating curriculum development & building a cadre of 100 Mentor Teachers for well-being curriculum to build happy schools.</li>
@@ -361,7 +429,6 @@
         </div>
       </div>
     </section>
-    <!-- ════════════════════════════════════════ -->
     <!-- PROGRAMS AT A GLANCE                     -->
     <!-- ════════════════════════════════════════ -->
     <section class="section section--cream doodle-bg" id="programs" aria-label="Our Programs">
@@ -845,11 +912,9 @@
               height: 45px;
               width: auto;
               object-fit: contain;
-              filter: grayscale(100%) opacity(60%);
               transition: all 0.3s ease;
             }
             .marquee-logo:hover {
-              filter: grayscale(0%) opacity(100%);
               transform: scale(1.05);
             }
             @media (max-width: 768px) {
@@ -1057,138 +1122,600 @@
       </div>
     </section>
     <!-- ════════════════════════════════════════ -->
-    <!-- OUR TEAM                                 -->
+    
+    
+    
+    <!-- OUR TEAM -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="team" aria-label="Our Team" style="background: #FAFCFC; overflow: hidden; position: relative; padding: 8rem 0;">
-      <!-- Decorative background blobs -->
-      <div style="position: absolute; top: 0; left: -100px; width: 400px; height: 400px; background: rgba(56, 182, 255, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
-      <div style="position: absolute; bottom: 0; right: -100px; width: 500px; height: 500px; background: rgba(255, 199, 44, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
-      <div class="container" style="position: relative; z-index: 2;">
+    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: #FFF9EE; overflow: hidden; position: relative; padding: 6rem 0;">
+      <!-- Playful background doodles -->
+      <svg class="team-doodle team-doodle-1" width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top: 10%; left: 5%; opacity:0.3; animation: anim-float 6s infinite ease-in-out;"><path fill="none" stroke="#FF6F59" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,60 Q30,10 60,60 T110,60"/></svg>
+      <svg class="team-doodle team-doodle-2" width="80" height="80" viewBox="0 0 120 120" style="position:absolute; bottom: 15%; right: 8%; opacity:0.3; animation: anim-rotate 15s infinite linear;"><polygon fill="none" stroke="#01BADE" stroke-width="4" points="60,10 110,110 10,110" stroke-linejoin="round"/></svg>
+      <svg class="team-doodle team-doodle-3" width="100" height="100" viewBox="0 0 120 120" style="position:absolute; top: 20%; right: 15%; opacity:0.3; animation: anim-wiggle 4s infinite;"><circle fill="none" stroke="#F2994A" stroke-width="4" cx="60" cy="60" r="40" stroke-dasharray="10 10"/></svg>
+
+      <div class="container" style="position: relative; z-index: 2; max-width: 100%; overflow: hidden;">
         <div class="section-header reveal" style="text-align: center;">
-          <div class="partners-badge-premium" style="justify-content: center; margin-bottom: 1rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Our Team
-          </div>
-          <h2 class="partners-title-premium">The <span>Hearts</span> Behind Kshamtalaya</h2>
-          <p class="partners-intro__desc" style="margin: 1rem auto 4rem; max-width: 700px; font-size: 1.15rem;">
-            A passionate group of educators, community builders, and system thinkers dedicated to making quality education accessible to every child.
+          <h2 class="partners-title-premium" style="font-family: 'Baloo 2', cursive; font-size: 3.5rem; color: #3A3A3C;">Curious about <span style="color: #01BADE; position:relative;">Our Leaders?</span></h2>
+          <p class="partners-intro__desc" style="margin: 1rem auto 3rem; max-width: 600px; font-size: 1.25rem; font-weight: 500;">
+            A passionate group of educators and system thinkers. Click a card to peek behind the scenes!
           </p>
         </div>
 
         <style>
-          .premium-team-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem; margin-top: 2rem;
+          .marquee-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            padding: 2rem 0 4rem;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
           }
-          .team-card-pro {
-            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-radius: 36px; padding: 3.5rem 2.5rem; text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,0.8);
-            position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+          .marquee-track {
+            display: flex;
+            gap: 3rem;
+            padding-right: 3rem;
+            animation: teamMarquee 160s linear infinite;
+            flex-shrink: 0;
+            align-items: center;
           }
-          .team-card-pro::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 180px;
-            background: linear-gradient(180deg, var(--team-color-light) 0%, rgba(255,255,255,0) 100%);
-            z-index: -1; opacity: 0.6; transition: opacity 0.5s;
+          .marquee-container:hover .marquee-track {
+            animation-play-state: paused;
           }
-          .team-card-pro:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+          @keyframes teamMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
           }
-          .team-card-pro:hover::before { opacity: 1; }
-          .team-avatar-pro {
-            width: 140px; height: 140px; margin: 0 auto 2rem; border-radius: 50%;
-            background: var(--team-gradient);
+          
+          /* Flip Card Mechanics */
+          .flip-card-container {
+            width: 280px;
+            height: 340px;
+            perspective: 1200px;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .flip-card-container:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 10;
+          }
+          .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .flip-card-container.flipped .flip-card {
+            transform: rotateY(180deg);
+          }
+          
+          /* Card Faces */
+          .flip-card-front, .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: #FFFFFF;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 4px solid #fff;
+          }
+          
+          /* Tape Effect */
+          .flip-card-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 80px;
+            height: 25px;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 10;
+          }
+          
+          /* Front Specifics */
+          .flip-photo-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background: #f0f0f0;
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+          }
+          .flip-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+          }
+          .flip-photo-placeholder {
+            width: 100%; height: 100%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem; color: white; font-weight: 900; font-family: var(--font-heading);
-            border: 6px solid white; box-shadow: 0 15px 35px var(--team-shadow);
-            position: relative; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 5rem; color: white; font-family: 'Baloo 2', cursive; font-weight: 800;
           }
-          .team-avatar-pro::after {
-            content: ''; position: absolute; inset: -12px; border-radius: 50%;
-            border: 2.5px dashed var(--team-color); opacity: 0; transform: rotate(0deg);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          .flip-name {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.5rem;
+            color: #3A3A3C;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
           }
-          .team-card-pro:hover .team-avatar-pro {
-            transform: scale(1.08) translateY(-5px); box-shadow: 0 25px 45px var(--team-shadow);
+          .flip-hint {
+            font-size: 0.85rem;
+            color: #01BADE;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            opacity: 0.7;
           }
-          .team-card-pro:hover .team-avatar-pro::after {
-            opacity: 0.5; transform: rotate(180deg);
+          
+          /* Back Specifics */
+          .flip-card-back {
+            transform: rotateY(180deg);
+            background: #FAFCFC;
+            border-width: 6px;
+            justify-content: center;
+            text-align: center;
+            background-image: radial-gradient(#00000010 1px, transparent 1px);
+            background-size: 15px 15px;
           }
-          .team-name-pro { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.75rem; letter-spacing: -0.5px; }
-          .team-role-pro { 
-            display: inline-block; padding: 6px 18px; border-radius: 100px;
-            background: var(--team-color-light); color: var(--team-color);
-            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
-            margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.5);
+          .flip-back-name {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
           }
-          .team-details-pro { font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.7; margin: 0; }
-          .team-details-pro strong { color: var(--color-charcoal); font-weight: 700; display: block; margin-top: 0.5rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--team-color); }
+          .flip-role {
+            font-weight: 700;
+            color: #3A3A3C;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: inline-block;
+          }
+          .flip-loc {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 500;
+            margin-bottom: 2rem;
+          }
+          .flip-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .flip-social:hover {
+            transform: scale(1.15) translateY(-5px);
+          }
         </style>
 
-        <div class="premium-team-grid" data-stagger>
-          <!-- Team Member 1 -->
-          <div class="team-card-pro reveal" style="--team-color: #38B6FF; --team-color-light: rgba(56, 182, 255, 0.15); --team-gradient: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); --team-shadow: rgba(56, 182, 255, 0.4);">
-            <div class="team-avatar-pro">V</div>
-            <h3 class="team-name-pro">Vivek Kumar</h3>
-            <div class="team-role-pro">Co-Founder</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> B.Tech, MA Education from TISS<br>
-              <strong>Experience</strong> Nearing 10 Years
-            </p>
+        
+        <style>
+          .interactive-scroller::-webkit-scrollbar {
+            height: 10px;
+          }
+          .interactive-scroller::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 10px;
+          }
+          .interactive-scroller::-webkit-scrollbar-thumb {
+            background: var(--color-teal);
+            border-radius: 10px;
+          }
+        </style>
+        <div class="marquee-container interactive-scroller" id="teamSlider" style="display: flex; overflow-x: auto; gap: 3rem; padding: 2rem 3rem 4rem; scrollbar-width: thin; scrollbar-color: var(--color-teal) rgba(0,0,0,0.05); -webkit-overflow-scrolling: touch;">
+            <div class="flip-card-container" style="transform: rotate(-3.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/mohd_asif_ameen.jpg" alt="Mohd Asif Ameen" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Mohd Asif Ameen</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Mohd Asif Ameen</h3>
+                <div class="flip-role">Program Lead</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/in/mohd-asif-ameen-23b041175" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- Team Member 2 -->
-          <div class="team-card-pro reveal" style="--team-color: #FF6F59; --team-color-light: rgba(255, 111, 89, 0.15); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); --team-shadow: rgba(255, 111, 89, 0.4);">
-            <div class="team-avatar-pro">S</div>
-            <h3 class="team-name-pro">Soumya B</h3>
-            <div class="team-role-pro">Director, CEO</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> Masters in Applied Sociology<br>
-              <strong>Experience</strong> 8+ Years
-            </p>
+          <div class="flip-card-container" style="transform: rotate(3.2deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/sneha_kumari.jpg" alt="Sneha Kumari" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Sneha Kumari</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FF6F59;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FF6F59;">Sneha Kumari</h3>
+                <div class="flip-role">Program manager</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/in/sneha-kshamtalaya-2678863a6" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- Team Member 3 -->
-          <div class="team-card-pro reveal" style="--team-color: #1CA6A0; --team-color-light: rgba(28, 166, 160, 0.15); --team-gradient: linear-gradient(135deg, #1CA6A0 0%, #4FB6E8 100%); --team-shadow: rgba(28, 166, 160, 0.4);">
-            <div class="team-avatar-pro">P</div>
-            <h3 class="team-name-pro">Pooja Singh</h3>
-            <div class="team-role-pro">Co-Founder</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> Masters in Mass Comm<br>
-              <strong>Experience</strong> Nearing 10 Years
-            </p>
+          <div class="flip-card-container" style="transform: rotate(-0.9deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/aman_gautam.jpg" alt="Aman Gautam" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Aman Gautam</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Aman Gautam</h3>
+                <div class="flip-role">Program Lead</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/in/aman-gautam-8b365a253" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- Team Member 4 -->
-          <div class="team-card-pro reveal" style="--team-color: #FFC72C; --team-color-light: rgba(255, 199, 44, 0.2); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF9E2C 100%); --team-shadow: rgba(255, 199, 44, 0.4);">
-            <div class="team-avatar-pro">A</div>
-            <h3 class="team-name-pro">Anjali Gupte</h3>
-            <div class="team-role-pro">Director, Founding Member</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> MSc Statistics, B.Ed.<br>
-              <strong>Experience</strong> Nearing 10 Years
-            </p>
+          <div class="flip-card-container" style="transform: rotate(1.6deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/deepak_sirsam.jpg" alt="Deepak Sirsam" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Deepak Sirsam</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FF6F59;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FF6F59;">Deepak Sirsam</h3>
+                <div class="flip-role">Program Lead</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/in/deepak-sirsam-b645a8256" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- Team Member 5 -->
-          <div class="team-card-pro reveal" style="--team-color: #38B6FF; --team-color-light: rgba(56, 182, 255, 0.15); --team-gradient: linear-gradient(135deg, #38B6FF 0%, #1CA6A0 100%); --team-shadow: rgba(56, 182, 255, 0.4);">
-            <div class="team-avatar-pro">A</div>
-            <h3 class="team-name-pro">Abhishek Tiwari</h3>
-            <div class="team-role-pro">Head of Programs, Bihar</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> Bachelors of Science<br>
-              <strong>Experience</strong> 8 Years
-            </p>
+          <div class="flip-card-container" style="transform: rotate(3.3deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/aman_kumar.jpg" alt="Aman Kumar" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Aman Kumar</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Aman Kumar</h3>
+                <div class="flip-role">Program Leader</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- Team Member 6 -->
-          <div class="team-card-pro reveal" style="--team-color: #FF6F59; --team-color-light: rgba(255, 111, 89, 0.15); --team-gradient: linear-gradient(135deg, #FFC72C 0%, #FF6F59 100%); --team-shadow: rgba(255, 111, 89, 0.4);">
-            <div class="team-avatar-pro">T</div>
-            <h3 class="team-name-pro">Tina Aggarwal</h3>
-            <div class="team-role-pro">Head of Programs, Delhi</div>
-            <p class="team-details-pro">
-              <strong>Education</strong> D.El.Ed, MA-Education, B.Ed (LD)<br>
-              <strong>Experience</strong> 6 Years
-            </p>
+          <div class="flip-card-container" style="transform: rotate(-0.5deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/sameep_sonkar.jpg" alt="Sameep Sonkar" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Sameep Sonkar</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Sameep Sonkar</h3>
+                <div class="flip-role">Program Manager</div>
+                <div class="flip-loc">📍 Samastipur</div>
+                <a href="https://www.linkedin.com/me" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(0.7deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/subham_bhakat.jpg" alt="Subham Bhakat" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Subham Bhakat</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #6DBE45;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #6DBE45;">Subham Bhakat</h3>
+                <div class="flip-role">State Resource Person</div>
+                <div class="flip-loc">📍 Patna, Bihar</div>
+                <a href="https://www.linkedin.com/in/subham-bhakat" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #6DBE45;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(0.2deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/tina_aggarwal.jpg" alt="Tina Aggarwal" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Tina Aggarwal</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FFC72C;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FFC72C;">Tina Aggarwal</h3>
+                <div class="flip-role">Head of Programs, Delhi</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="https://www.linkedin.com/in/tina-aggarwal-75b41a154" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FFC72C;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(-3.4deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/tamanna.jpg" alt="Tamanna" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Tamanna</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Tamanna</h3>
+                <div class="flip-role">Program Lead</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="https://www.linkedin.com/in/tamanna-638a80359" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(3.2deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/priya.jpg" alt="Priya" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Priya</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FFC72C;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FFC72C;">Priya</h3>
+                <div class="flip-role">Program Leader</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="https://www.linkedin.com/in/priya-bisht-2319591a3" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FFC72C;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(0.8deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/abhishek_kumar_tiwari.jpg" alt="Abhishek Kumar Tiwari" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Abhishek Kumar Tiwari</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FFC72C;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FFC72C;">Abhishek Kumar Tiwari</h3>
+                <div class="flip-role">Head of Programs, Bihar</div>
+                <div class="flip-loc">📍 Bihar</div>
+                <a href="https://www.linkedin.com/in/abhishek-tiwari-54b947156" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FFC72C;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(2.5deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/reena.jpg" alt="Reena" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Reena</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FF6F59;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FF6F59;">Reena</h3>
+                <div class="flip-role">Program Leader</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(0.7deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/ishu.jpg" alt="Ishu" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Ishu</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #F2994A;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #F2994A;">Ishu</h3>
+                <div class="flip-role">Program Manager</div>
+                <div class="flip-loc">📍 Bihar</div>
+                <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #F2994A;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(1.6deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/tabassum.jpg" alt="Tabassum" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Tabassum</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FF6F59;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FF6F59;">Tabassum</h3>
+                <div class="flip-role">Community Leader</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="https://www.linkedin.com/in/tabassum-mansori-007b87360" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(-3.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <img src="/assets/team/anjali.jpg" alt="Anjali" class="flip-photo">
+                </div>
+                <h3 class="flip-name">Anjali</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #01BADE;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #01BADE;">Anjali</h3>
+                <div class="flip-role">Program Leader</div>
+                <div class="flip-loc">📍 Delhi</div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-container" style="transform: rotate(-3.8deg);" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card">
+              <!-- FRONT -->
+              <div class="flip-card-front">
+                <div class="flip-card-tape"></div>
+                <div class="flip-photo-wrapper">
+                    <div class="flip-photo-placeholder" style="background:#FFC72C;">P</div>
+                </div>
+                <h3 class="flip-name">Pradeep Singh Rathore</h3>
+                <div class="flip-hint">Click me! ✨</div>
+              </div>
+              <!-- BACK -->
+              <div class="flip-card-back" style="border-color: #FFC72C;">
+                <div class="flip-card-tape"></div>
+                <h3 class="flip-back-name" style="color: #FFC72C;">Pradeep Singh Rathore</h3>
+                <div class="flip-role">Program lead ( FFSM )</div>
+                <div class="flip-loc">📍 Rajasthan</div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="flip-social" style="background: #FFC72C;" onclick="event.stopPropagation();">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+        
+        <script>
+          const slider = document.getElementById('teamSlider');
+          let isInteracting = false;
+          
+          slider.addEventListener('mouseenter', () => isInteracting = true);
+          slider.addEventListener('mouseleave', () => isInteracting = false);
+          slider.addEventListener('touchstart', () => isInteracting = true, {passive: true});
+          slider.addEventListener('touchend', () => {
+              setTimeout(() => isInteracting = false, 1500);
+          });
+
+          setInterval(() => {
+            if (!isInteracting) {
+              slider.scrollLeft += 1;
+              if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 1)) {
+                 slider.scrollLeft = 0;
+              }
+            }
+          }, 30);
+        </script>
+
       </div>
     </section>
     <!-- ════════════════════════════════════════ -->

@@ -5,14 +5,14 @@
 
 :root {
   /* ── Brand Colors ── */
-  --color-sunshine:       #FFC72C;
-  --color-sunshine-light: #FFD966;
-  --color-sunshine-dark:  #E5A800;
-  --color-teal:           #1CA6A0;
-  --color-teal-light:     #2CC4BD;
-  --color-teal-dark:      #148580;
-  --color-charcoal:       #2B2B2B;
-  --color-charcoal-light: #3D3D3D;
+  --color-sunshine:       #F2994A; /* Warmer, softer orange/yellow */
+  --color-sunshine-light: #F5B073;
+  --color-sunshine-dark:  #D97F35;
+  --color-teal:           #08B9DB; /* Primary Cyan Blue */
+  --color-teal-light:     #10E0F5; /* Bright Aqua */
+  --color-teal-dark:      #0194B1;
+  --color-charcoal:       #313234; /* Charcoal */
+  --color-charcoal-light: #2F3B42; /* Dark Slate */
   --color-cream:          #FFFBF0;
   --color-cream-dark:     #FFF5DC;
   --color-coral:          #FF6F59;
@@ -25,7 +25,7 @@
 
   /* ── Semantic Colors ── */
   --color-text-primary:   var(--color-charcoal);
-  --color-text-secondary: #5A5A5A;
+  --color-text-secondary: #2F3B42; /* Dark Slate */
   --color-text-muted:     #888888;
   --color-text-on-dark:   var(--color-cream);
   --color-bg-primary:     var(--color-cream);
