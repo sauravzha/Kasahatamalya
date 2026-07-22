@@ -1221,55 +1221,7 @@
 
 /* ── CUSTOM CURSOR ── */
 .cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 10000;
-  mix-blend-mode: difference;
-}
-
-.cursor__dot {
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  transition: transform 0.15s var(--ease-spring), opacity 0.2s;
-}
-
-.cursor__ring {
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  transition: width 0.4s var(--ease-spring),
-              height 0.4s var(--ease-spring),
-              top 0.4s var(--ease-spring),
-              left 0.4s var(--ease-spring),
-              border-color 0.3s,
-              background 0.3s;
-}
-
-.cursor__label {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
+  display: none !important;
 }
 
 /* Cursor states */
@@ -1304,7 +1256,7 @@
 /* Hide default cursor on elements when custom cursor is active */
 body.custom-cursor-active,
 body.custom-cursor-active * {
-  cursor: none !important;
+  cursor: auto !important;
 }
 
 /* Hide custom cursor on touch / small screens */

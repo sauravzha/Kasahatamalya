@@ -442,93 +442,9 @@ document.addEventListener('click', (e) => {
 });
 
 
-/* ── Custom Smart Cursor ── */
+/* ── Custom Smart Cursor (Disabled - standard browser cursor enabled) ── */
 function initCustomCursor() {
-  const cursor = document.getElementById('cursor');
-  if (!cursor) return;
-
-  const dot = cursor.querySelector('.cursor__dot');
-  const ring = cursor.querySelector('.cursor__ring');
-  const label = cursor.querySelector('.cursor__label');
-
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-  let ringX = 0, ringY = 0;
-
-  document.body.classList.add('custom-cursor-active');
-
-  // Track mouse position
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Smooth follow with lag
-  function updateCursor() {
-    // Dot follows closely
-    cursorX += (mouseX - cursorX) * 0.25;
-    cursorY += (mouseY - cursorY) * 0.25;
-    
-    // Ring follows with more lag
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-
-    dot.parentElement.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-    ring.style.transform = `translate(${ringX - cursorX}px, ${ringY - cursorY}px)`;
-
-    requestAnimationFrame(updateCursor);
-  }
-  updateCursor();
-
-  // Interactive elements config: [selector, label]
-  const interactiveElements = [
-    ['.btn', 'Click'],
-    ['.program-card', 'Explore'],
-    ['.navbar__link', 'Go'],
-    ['.navbar__dropdown-item', 'Go'],
-    ['a[href]', ''],
-    ['.value-card-3d', 'View'],
-    ['.team-card', 'Meet'],
-    ['img', 'View'],
-  ];
-
-  // Hover detection
-  document.addEventListener('mouseover', (e) => {
-    for (const [selector, text] of interactiveElements) {
-      const match = e.target.closest(selector);
-      if (match) {
-        cursor.classList.add('cursor--hover');
-        if (text && label) label.textContent = text;
-        return;
-      }
-    }
-  });
-
-  document.addEventListener('mouseout', (e) => {
-    for (const [selector] of interactiveElements) {
-      if (e.target.closest(selector)) {
-        cursor.classList.remove('cursor--hover');
-        if (label) label.textContent = '';
-        return;
-      }
-    }
-  });
-
-  // Click effect
-  document.addEventListener('mousedown', () => {
-    cursor.classList.add('cursor--click');
-  });
-  document.addEventListener('mouseup', () => {
-    cursor.classList.remove('cursor--click');
-  });
-
-  // Hide when mouse leaves window
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-  });
+  // Disabled custom animated cursor to use standard browser pointer cursor
 }
 
 
