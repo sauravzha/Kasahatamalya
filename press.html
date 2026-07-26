@@ -248,6 +248,450 @@
         </div>
       </div>
     </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- ACHIEVEMENTS & RECOGNITION              -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="achievements-recognition" style="background: linear-gradient(180deg, #F0F7FF 0%, #FAFCFF 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+      <!-- Ambient blobs -->
+      <div style="position:absolute; top:-120px; right:-120px; width:450px; height:450px; background:radial-gradient(circle, rgba(8,185,219,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+      <div style="position:absolute; bottom:-100px; left:-100px; width:400px; height:400px; background:radial-gradient(circle, rgba(255,199,44,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+
+      <div class="container" style="max-width:1280px; margin:0 auto; padding:0 1.5rem; position:relative; z-index:2;">
+        <!-- Header -->
+        <div class="section-header reveal" style="text-align:center; margin-bottom:3.5rem;">
+          <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background:rgba(8,185,219,0.1); border:1.5px solid var(--color-teal); border-radius:30px; font-weight:800; font-size:0.82rem; color:var(--color-teal); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:1rem;">
+            🏆 RECOGNITION & MILESTONES
+          </div>
+          <h2 style="font-family:'Baloo 2',cursive; font-size:clamp(2.2rem,4vw,3.2rem); font-weight:800; color:var(--color-charcoal); margin:0 0 1rem; line-height:1.2;">
+            Achievements & <span style="color:var(--color-teal);">Recognition</span>
+          </h2>
+          <p style="max-width:700px; margin:0 auto; font-size:1.15rem; color:var(--color-text-secondary); line-height:1.65;">
+            Key milestones, global recognition, and press coverage that demonstrate Kshamtalaya's growing impact on education across India.
+          </p>
+        </div>
+
+        <style>
+          /* Achievement Timeline Cards */
+          .achv-timeline {
+            position: relative;
+            padding: 2rem 0;
+          }
+          .achv-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #08B9DB, #FFC72C, #FF6F59, #9B51E0);
+            border-radius: 4px;
+            transform: translateY(-50%);
+            z-index: 0;
+          }
+          @media (max-width: 768px) {
+            .achv-timeline::before { display: none; }
+          }
+          .achv-cards-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+          }
+          .achv-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            cursor: pointer;
+          }
+          .achv-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(8,185,219,0.15);
+          }
+          .achv-card-accent {
+            height: 6px;
+            width: 100%;
+          }
+          .achv-year-badge {
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            z-index: 2;
+          }
+          .achv-card-body {
+            padding: 1.75rem;
+          }
+          .achv-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            transition: transform 0.4s ease;
+          }
+          .achv-card:hover .achv-card-icon {
+            transform: scale(1.15) rotate(5deg);
+          }
+          .achv-card-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--color-charcoal);
+            margin: 0 0 0.75rem;
+            line-height: 1.3;
+          }
+          .achv-card-desc {
+            font-size: 0.93rem;
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+            margin: 0;
+          }
+          .achv-source-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-top: 1rem;
+          }
+          .achv-highlight-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #F8FAFC;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-top: 0.75rem;
+            margin-right: 0.5rem;
+          }
+
+          /* Expandable Detail */
+          .achv-detail-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            background: #F8FAFC;
+            border-top: 1px solid rgba(0,0,0,0.04);
+          }
+          .achv-card.expanded .achv-detail-panel {
+            max-height: 800px;
+            padding: 1.25rem 1.75rem;
+          }
+          .achv-expand-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--color-teal);
+            background: rgba(8,185,219,0.04);
+            transition: all 0.3s ease;
+          }
+          .achv-card:hover .achv-expand-hint {
+            background: rgba(8,185,219,0.08);
+          }
+          .achv-expand-arrow {
+            transition: transform 0.3s ease;
+          }
+          .achv-card.expanded .achv-expand-arrow {
+            transform: rotate(180deg);
+          }
+          .achv-press-img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1rem;
+            border: 2px solid rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+          }
+          .achv-press-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+          }
+          .achv-img-caption {
+            font-size: 0.78rem;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 0.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+          }
+          /* Lightbox overlay */
+          .achv-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: zoom-out;
+            animation: lightboxFadeIn 0.3s ease;
+          }
+          .achv-lightbox.active {
+            display: flex;
+          }
+          .achv-lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            object-fit: contain;
+          }
+          .achv-lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            backdrop-filter: blur(8px);
+          }
+          .achv-lightbox-close:hover {
+            background: rgba(255,255,255,0.3);
+          }
+          @keyframes lightboxFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+        </style>
+
+        <div class="achv-timeline reveal">
+          <div class="achv-cards-row">
+
+            <!-- Card 1: T4 2020 - Aadi Peepli -->
+            <div class="achv-card" onclick="this.classList.toggle('expanded')">
+              <div class="achv-card-accent" style="background:linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
+              <span class="achv-year-badge" style="background:#E6F8FC; color:#0194B1;">📅 Sep 2020</span>
+              <div class="achv-card-body">
+                <div class="achv-card-icon" style="background:#E6F8FC;">🏆</div>
+                <h4 class="achv-card-title">Top 100 Schools Worldwide — T4 2020</h4>
+                <p class="achv-card-desc">
+                  The Govt. Primary School at Aadi Peepli, Kotra was selected as one of the top 100 schools from across the world at the T4 global education conference 2020.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="achv-highlight-stat">🌍 Top 100 Globally</span>
+                  <span class="achv-highlight-stat">🏫 Aadi Peepli, Kotra</span>
+                </div>
+                <span class="achv-source-tag" style="background:#FFF4E5; color:#D97F35;">📰 Dainik Bhaskar • 26-09-2020</span>
+              </div>
+              <div class="achv-expand-hint">
+                <span>Read more details</span>
+                <svg class="achv-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+              <div class="achv-detail-panel">
+                <p style="font-size:0.92rem; color:var(--color-text-secondary); line-height:1.7; margin:0;">
+                  The focus of the school's selection was the aspect of <strong>community ownership and participation in learning engagement</strong>. This recognition placed Kotra's community-driven education model on the global stage, validating Kshamtalaya's approach to deep community immersion.
+                </p>
+                <img src="/assets/press-clippings/t4-2020-dainik-bhaskar.png" alt="Dainik Bhaskar newspaper clipping - T4 2020 Aadi Peepli Kotra" class="achv-press-img" onclick="event.stopPropagation(); openLightbox(this.src)" />
+                <div class="achv-img-caption">📰 Dainik Bhaskar, 26 September 2020 — Click to enlarge</div>
+              </div>
+            </div>
+
+            <!-- Card 2: T4 2021 - Mandwa -->
+            <div class="achv-card" onclick="this.classList.toggle('expanded')">
+              <div class="achv-card-accent" style="background:linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
+              <span class="achv-year-badge" style="background:#E8F8F7; color:#14807B;">📅 Oct 2021</span>
+              <div class="achv-card-body">
+                <div class="achv-card-icon" style="background:#E8F8F7;">🎖️</div>
+                <h4 class="achv-card-title">Top 100 Schools — T4 2021 (Again!)</h4>
+                <p class="achv-card-desc">
+                  The Govt. Senior Secondary School at Mandwa, Kotra was selected again as one of the top 100 schools worldwide at the T4 global education conference 2021.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="achv-highlight-stat">🤝 Community Partnership</span>
+                  <span class="achv-highlight-stat">🏫 Mandwa, Kotra</span>
+                </div>
+                <span class="achv-source-tag" style="background:#FFF0EE; color:#E04832;">📰 Patrika, Udaipur • 08-10-2021</span>
+              </div>
+              <div class="achv-expand-hint">
+                <span>Read more details</span>
+                <svg class="achv-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+              <div class="achv-detail-panel">
+                <p style="font-size:0.92rem; color:var(--color-text-secondary); line-height:1.7; margin:0;">
+                  The focus was <strong>Community Partnership and Collaboration</strong> — including parental engagement and working with employers. This second consecutive global recognition cemented Kshamtalaya's reputation for building authentic school-community partnerships.
+                </p>
+                <img src="/assets/press-clippings/t4-2021-patrika-bhaskar.png" alt="Patrika and Dainik Bhaskar newspaper clipping - T4 2021 Mandwa" class="achv-press-img" onclick="event.stopPropagation(); openLightbox(this.src)" />
+                <div class="achv-img-caption">📰 Patrika & Dainik Bhaskar, Udaipur — 08 October 2021 — Click to enlarge</div>
+              </div>
+            </div>
+
+            <!-- Card 3: SCERT / Hausla -->
+            <div class="achv-card" onclick="this.classList.toggle('expanded')">
+              <div class="achv-card-accent" style="background:linear-gradient(90deg, #F2994A, #FFC72C);"></div>
+              <span class="achv-year-badge" style="background:#FFF4E5; color:#D97F35;">📅 2024–25</span>
+              <div class="achv-card-body">
+                <div class="achv-card-icon" style="background:#FFF8EE;">👨‍🏫</div>
+                <h4 class="achv-card-title">1 Lakh+ Teachers Trained with SCERT</h4>
+                <p class="achv-card-desc">
+                  Kshamtalaya supported training more than 1 lakh+ teachers in partnership with SCERT — upskilling them in self-awareness, attention training, resilience, compassion and interdependence.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="achv-highlight-stat">🧘 Hausla Program</span>
+                  <span class="achv-highlight-stat">📊 39% Well-being Boost</span>
+                </div>
+                <span class="achv-source-tag" style="background:#E8F8F7; color:#14807B;">📋 WHO-5 Well-being Index Measured</span>
+              </div>
+              <div class="achv-expand-hint">
+                <span>Read more details</span>
+                <svg class="achv-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+              <div class="achv-detail-panel">
+                <p style="font-size:0.92rem; color:var(--color-text-secondary); line-height:1.7; margin:0;">
+                  Through the flagship <strong>Hausla</strong> program, a notable <strong>39% of teachers reported a significant boost in well-being</strong>, as measured by the WHO-5 well-being index. This partnership with SCERT represents one of the largest teacher well-being interventions in the country.
+                </p>
+                <img src="/assets/press-clippings/scert-training-photo.png" alt="SCERT Teacher Training Session with Kshamtalaya" class="achv-press-img" onclick="event.stopPropagation(); openLightbox(this.src)" />
+                <div class="achv-img-caption">📸 SCERT Teacher Training Session — Kshamtalaya Team in action — Click to enlarge</div>
+              </div>
+            </div>
+
+            <!-- Card 4: World's Best School Prize - Family Champions -->
+            <div class="achv-card" onclick="this.classList.toggle('expanded')">
+              <div class="achv-card-accent" style="background:linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
+              <span class="achv-year-badge" style="background:#F5EEFC; color:#822DBF;">📅 June 2023</span>
+              <div class="achv-card-body">
+                <div class="achv-card-icon" style="background:#F5EEFC;">🥇</div>
+                <h4 class="achv-card-title">Top 10 World's Best School Prize</h4>
+                <p class="achv-card-desc">
+                  Family Champions: A cadre of empowered mothers leading the educational movement in Govt Schools of Seemapuri, Delhi — shortlisted for T4 World's Best School Prize 2023.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="achv-highlight-stat">🏅 Community Collaboration</span>
+                  <span class="achv-highlight-stat">👩 Family Champions</span>
+                </div>
+                <span class="achv-source-tag" style="background:#E6F8FC; color:#0194B1;">🏆 T4 World's Best School Prize</span>
+              </div>
+              <div class="achv-expand-hint">
+                <span>Read more details</span>
+                <svg class="achv-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+              <div class="achv-detail-panel">
+                <p style="font-size:0.92rem; color:var(--color-text-secondary); line-height:1.7; margin:0;">
+                  Through the <strong>Family Champion program</strong> — community learning centers, parent learning ambassadors, and home-based learning support — Kshamtalaya forged a strong connection among teachers, students, and parents. The recognition for community collaboration came despite challenges brought by the <strong>COVID-19 pandemic</strong>, with the program effectively addressing issues of disconnection, remote learning, and parental support.
+                </p>
+                <img src="/assets/press-clippings/top10-certificate.png" alt="Top 10 Shortlisted School - Community Collaboration Certificate" class="achv-press-img" onclick="event.stopPropagation(); openLightbox(this.src)" />
+                <div class="achv-img-caption">🏆 T4 World's Best School Prize Certificate — June 2023 — Click to enlarge</div>
+              </div>
+            </div>
+
+            <!-- Card 5: Khushishala Program Launch -->
+            <div class="achv-card" onclick="this.classList.toggle('expanded')">
+              <div class="achv-card-accent" style="background:linear-gradient(90deg, #FF6F59, #FF9080);"></div>
+              <span class="achv-year-badge" style="background:#FFF0EE; color:#E04832;">📅 Aug 2020</span>
+              <div class="achv-card-body">
+                <div class="achv-card-icon" style="background:#FFF0EE;">🎓</div>
+                <h4 class="achv-card-title">Khushishala Program Launch with RSCERT</h4>
+                <p class="achv-card-desc">
+                  Under NEP 2020, RSCERT launched the Khushishala-Khud Ki Khoj program for students' mental and emotional well-being — a pilot across 60 schools in Banswara and Sirohi districts.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="achv-highlight-stat">🏫 60 Schools Pilot</span>
+                  <span class="achv-highlight-stat">🧘 NEP 2020 Aligned</span>
+                </div>
+                <span class="achv-source-tag" style="background:#FFF4E5; color:#D97F35;">📰 Punjab Kesari • Aug 2020</span>
+              </div>
+              <div class="achv-expand-hint">
+                <span>Read more details</span>
+                <svg class="achv-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+              <div class="achv-detail-panel">
+                <p style="font-size:0.92rem; color:var(--color-text-secondary); line-height:1.7; margin:0;">
+                  In partnership with RSCERT under the <strong>National Education Policy 2020</strong>, the Khushishala pilot study was launched across 60 schools for students' mental health, emotional development and self-awareness. This was a unique first-of-its-kind initiative in Rajasthan.
+                </p>
+                <img src="/assets/press-clippings/khushishala-newspaper.png" alt="Punjab Kesari newspaper clipping - Khushishala launch" class="achv-press-img" onclick="event.stopPropagation(); openLightbox(this.src)" />
+                <div class="achv-img-caption">📰 Punjab Kesari — Khushishala-Khud Ki Khoj Program Launch — Click to enlarge</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Lightbox Overlay -->
+        <div class="achv-lightbox" id="achvLightbox" onclick="closeLightbox()">
+          <button class="achv-lightbox-close" onclick="closeLightbox()" aria-label="Close image">✕</button>
+          <img id="achvLightboxImg" src="" alt="Enlarged press clipping" />
+        </div>
+
+        <script>
+          function openLightbox(src) {
+            var lb = document.getElementById('achvLightbox');
+            var img = document.getElementById('achvLightboxImg');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+          function closeLightbox() {
+            var lb = document.getElementById('achvLightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
+
+        <!-- Quick Stats Summary -->
+        <div class="reveal" style="margin-top: 3rem; text-align:center;">
+          <div style="display:inline-flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+            <div style="background:white; border-radius:20px; padding:1.25rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.04); text-align:center; min-width:140px;">
+              <div style="font-family:'Baloo 2',cursive; font-size:2.2rem; font-weight:800; color:var(--color-teal); line-height:1;">3×</div>
+              <div style="font-size:0.85rem; font-weight:700; color:var(--color-text-secondary); margin-top:4px;">T4 Global Recognition</div>
+            </div>
+            <div style="background:white; border-radius:20px; padding:1.25rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.04); text-align:center; min-width:140px;">
+              <div style="font-family:'Baloo 2',cursive; font-size:2.2rem; font-weight:800; color:#F2994A; line-height:1;">1L+</div>
+              <div style="font-size:0.85rem; font-weight:700; color:var(--color-text-secondary); margin-top:4px;">Teachers Trained</div>
+            </div>
+            <div style="background:white; border-radius:20px; padding:1.25rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.04); text-align:center; min-width:140px;">
+              <div style="font-family:'Baloo 2',cursive; font-size:2.2rem; font-weight:800; color:#9B51E0; line-height:1;">Top 10</div>
+              <div style="font-size:0.85rem; font-weight:700; color:var(--color-text-secondary); margin-top:4px;">World's Best School</div>
+            </div>
+            <div style="background:white; border-radius:20px; padding:1.25rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.04); text-align:center; min-width:140px;">
+              <div style="font-family:'Baloo 2',cursive; font-size:2.2rem; font-weight:800; color:#FF6F59; line-height:1;">39%</div>
+              <div style="font-size:0.85rem; font-weight:700; color:var(--color-text-secondary); margin-top:4px;">WHO-5 Well-being Boost</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- TESTIMONIALS -->
     <section class="section" id="testimonials">
       <div class="container">
