@@ -93,7 +93,6 @@ advisory_section_html = f'''
           </div>
           <h2 style="font-family: 'Baloo 2', cursive; font-size: clamp(2.5rem, 4.5vw, 3.6rem); font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0; line-height: 1.15; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
             Our Advisory Board
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFC72C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
           </h2>
           <p style="max-width: 720px; margin: 0 auto; font-size: 1.2rem; color: rgba(255,255,255,0.9); line-height: 1.6; font-weight: 400;">
             Distinguished leaders, researchers, and social entrepreneurs guiding Kshamtalaya's mission to unlock potential across India.
