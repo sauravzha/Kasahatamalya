@@ -851,14 +851,13 @@
               KF Reach in 2025–26 <span style="font-weight:600; font-size:1.1rem; color:var(--color-teal);">(3 States)</span>
             </h3>
           </div>
-
           <style>
             .reach-grid {
               display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 1.5rem;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 1.25rem;
             }
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
               .reach-grid { grid-template-columns: repeat(2, 1fr); }
             }
             @media (max-width: 480px) {
@@ -867,7 +866,7 @@
             .reach-card {
               background: white;
               border-radius: 24px;
-              padding: 2rem 1.5rem;
+              padding: 1.75rem 1.25rem;
               text-align: center;
               box-shadow: 0 8px 28px rgba(0,0,0,0.04);
               border: 1px solid rgba(0,0,0,0.04);
@@ -886,11 +885,11 @@
               height: 5px;
             }
             .reach-icon-circle {
-              width: 72px; height: 72px;
+              width: 64px; height: 64px;
               border-radius: 50%;
               display: flex; align-items: center; justify-content: center;
-              margin: 0 auto 1rem;
-              font-size: 2rem;
+              margin: 0 auto 0.85rem;
+              font-size: 1.8rem;
               transition: transform 0.4s ease;
             }
             .reach-card:hover .reach-icon-circle {
@@ -898,9 +897,9 @@
             }
             .reach-number {
               font-family: 'Baloo 2', cursive;
-              font-size: 2.8rem;
+              font-size: clamp(1.8rem, 2.2vw, 2.5rem);
               font-weight: 800;
-              line-height: 1;
+              line-height: 1.1;
               margin-bottom: 0.3rem;
               background: linear-gradient(135deg, var(--color-charcoal), var(--color-teal));
               -webkit-background-clip: text;
@@ -908,10 +907,10 @@
               background-clip: text;
             }
             .reach-label {
-              font-size: 1rem;
+              font-size: 0.92rem;
               font-weight: 700;
               color: var(--color-text-secondary);
-              letter-spacing: 0.3px;
+              letter-spacing: 0.2px;
             }
           </style>
 
@@ -925,33 +924,46 @@
             <div class="reach-card">
               <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #FF6F59, #FF9080);"></div>
               <div class="reach-icon-circle" style="background: #FFF0EE;">👦</div>
-              <div class="reach-number">6,747</div>
+              <div class="reach-number">1,84,188</div>
               <div class="reach-label">Children - Direct Impact</div>
             </div>
             <div class="reach-card">
               <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
               <div class="reach-icon-circle" style="background: #F5EEFC;">👧</div>
-              <div class="reach-number">22,661</div>
+              <div class="reach-number">1,71,726</div>
               <div class="reach-label">Children - Indirect Impact</div>
             </div>
             <div class="reach-card">
               <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
               <div class="reach-icon-circle" style="background: #E8F8F7;">🙌</div>
-              <div class="reach-number">52</div>
+              <div class="reach-number">204</div>
               <div class="reach-label">Fellows</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #F2994A, #FFC72C);"></div>
-              <div class="reach-icon-circle" style="background: #FFF8EE;">👨‍👩‍👧</div>
-              <div class="reach-number">6,018</div>
-              <div class="reach-label">Parents</div>
             </div>
             <div class="reach-card">
               <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #38B6FF, #08B9DB);"></div>
               <div class="reach-icon-circle" style="background: #EBF8FF;">👩‍🏫</div>
-              <div class="reach-number">1,562</div>
-              <div class="reach-label">Teachers</div>
+              <div class="reach-number">2,000</div>
+              <div class="reach-label">Teachers - Direct Impact</div>
             </div>
+            <div class="reach-card">
+              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #01BADE, #35D6F5);"></div>
+              <div class="reach-icon-circle" style="background: #EAF9FC;">🌐</div>
+              <div class="reach-number">1,57,000</div>
+              <div class="reach-label">Teachers - Indirect Impact</div>
+            </div>
+            <div class="reach-card">
+              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #F2994A, #FFC72C);"></div>
+              <div class="reach-icon-circle" style="background: #FFF8EE;">👨‍👩‍👧</div>
+              <div class="reach-number">16,000</div>
+              <div class="reach-label">Parents - Direct Impact</div>
+            </div>
+            <div class="reach-card">
+              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #E056FD, #F6B93B);"></div>
+              <div class="reach-icon-circle" style="background: #FDF6FF;">🏡</div>
+              <div class="reach-number">63,170</div>
+              <div class="reach-label">Parents - Indirect Impact</div>
+            </div>
+          </div>
           </div>
         </div>
 
@@ -1065,11 +1077,11 @@
                 👶 Children Related Achievements
               </h4>
               <p style="color:var(--color-text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:1.05rem;">
-                Our programs directly and indirectly touched the lives of <strong>29,408 children</strong> across 3 states, fostering holistic development, joyful learning, and foundational skills.
+                Our programs directly and indirectly touched the lives of <strong>3,55,914 children</strong> across 3 states, fostering holistic development, joyful learning, and foundational skills.
               </p>
               <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">6,747</span> Children - Direct Impact</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">22,661</span> Children - Indirect Impact</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">1,84,188</span> Children - Direct Impact</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">1,71,726</span> Children - Indirect Impact</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">1,402</span> iDiscover Rajasthan</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">1,050+</span> iDiscover Bihar</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#FF6F59;">4,053</span> Delhi Direct Students</span>
@@ -1105,12 +1117,14 @@
                 🤝 Stakeholder Related Achievements
               </h4>
               <p style="color:var(--color-text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:1.05rem;">
-                Empowering <strong>1,562 teachers</strong>, engaging <strong>6,018 parents</strong>, and nurturing <strong>52 Fellows</strong> — building a vibrant ecosystem of support around every child.
+                Empowering <strong>1,59,000 teachers</strong> (2,000 direct, 1,57,000 indirect), engaging <strong>79,170 parents</strong> (16,000 direct, 63,170 indirect), and nurturing <strong>204 Fellows</strong> — building a vibrant ecosystem of support around every child.
               </p>
               <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#C06C84;">1,562</span> Teachers</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">6,018</span> Parents</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">52</span> Fellows</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#C06C84;">2,000</span> Direct Teachers</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#38B6FF;">1,57,000</span> Indirect Teachers</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">16,000</span> Direct Parents</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#E056FD;">63,170</span> Indirect Parents</span>
+                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">204</span> Fellows</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">100</span> Champion Teachers (Delhi)</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">175+</span> Volunteers</span>
                 <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#FF6F59;">234</span> Star Parents (Delhi)</span>
@@ -1956,81 +1970,7 @@
 
         <!-- VIEW 1: Visual Cards View -->
         <div id="govCardsGrid" class="gov-cards-grid reveal">
-          <!-- 1. Vivek Kumar -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #F2994A, #FFC72C);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box" style="background: linear-gradient(135deg, #F2994A, #D97F35);">
-                  <img src="/assets/vivek_kumar-Cl6d4RFw.jpeg" alt="Vivek Kumar" class="gov-avatar-img" />
-                </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Vivek Kumar
-                  </h3>
-                  <span class="gov-badge" style="background: #FFF4E5; color: #D97F35; border: 1px solid #FFD8A8;">
-                    Co-Founder
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    B.Tech, MA Education from TISS
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 Nearing 10 Years</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2. Soumya B -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box" style="background: linear-gradient(135deg, #08B9DB, #0194B1);">
-                  <img src="/assets/soumya_b-DxOmNLtS.jpeg" alt="Soumya B" class="gov-avatar-img" />
-                </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Soumya B
-                  </h3>
-                  <span class="gov-badge" style="background: #E6F8FC; color: #0194B1; border: 1px solid #B3ECF7;">
-                    Director, CEO
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    Masters in Applied Sociology
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">⚡ 8+ Years</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Pooja Singh -->
+          <!-- 1. Pooja Singh -->
           <div class="gov-card">
             <div class="gov-card-accent" style="background: linear-gradient(90deg, #FF6F59, #FF9080);"></div>
             <div>
@@ -2060,14 +2000,49 @@
                   <span class="gov-detail-icon">⏳</span>
                   <div>
                     <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 Nearing 10 Years</span>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- 2. Vivek Kumar -->
+          <div class="gov-card">
+            <div class="gov-card-accent" style="background: linear-gradient(90deg, #F2994A, #F5B073);"></div>
+            <div>
+              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
+                <div class="gov-avatar-box">
+                  <img src="/assets/vivek_kumar-Cl6d4RFw.jpeg" alt="Vivek Kumar" class="gov-avatar-img" />
+                </div>
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
+                    Vivek Kumar
+                  </h3>
+                  <span class="gov-badge" style="background: #FFF4E5; color: #D97F35; border: 1px solid #FFD8A8;">
+                    Co-Founder
+                  </span>
+                </div>
+              </div>
 
-          <!-- 4. Anjali Gupte -->
+              <div class="gov-details-box">
+                <div class="gov-detail-item">
+                  <span class="gov-detail-icon">🎓</span>
+                  <div>
+                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
+                    B.Tech, MA Education from TISS
+                  </div>
+                </div>
+                <div class="gov-detail-item">
+                  <span class="gov-detail-icon">⏳</span>
+                  <div>
+                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Anjali Gupte -->
           <div class="gov-card">
             <div class="gov-card-accent" style="background: linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
             <div>
@@ -2097,13 +2072,48 @@
                   <span class="gov-detail-icon">⏳</span>
                   <div>
                     <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 Nearing 10 Years</span>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- 4. Soumya B -->
+          <div class="gov-card">
+            <div class="gov-card-accent" style="background: linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
+            <div>
+              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
+                <div class="gov-avatar-box" style="background: linear-gradient(135deg, #08B9DB, #0194B1);">
+                  <img src="/assets/soumya_b-DxOmNLtS.jpeg" alt="Soumya B" class="gov-avatar-img" />
+                </div>
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
+                    Soumya B
+                  </h3>
+                  <span class="gov-badge" style="background: #E6F8FC; color: #0194B1; border: 1px solid #B3ECF7;">
+                    Director, CEO
+                  </span>
+                </div>
+              </div>
 
+              <div class="gov-details-box">
+                <div class="gov-detail-item">
+                  <span class="gov-detail-icon">🎓</span>
+                  <div>
+                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
+                    Masters in Applied Sociology
+                  </div>
+                </div>
+                <div class="gov-detail-item">
+                  <span class="gov-detail-icon">⏳</span>
+                  <div>
+                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- 5. Abhishek Tiwari -->
           <div class="gov-card">
             <div class="gov-card-accent" style="background: linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
@@ -2134,13 +2144,12 @@
                   <span class="gov-detail-icon">⏳</span>
                   <div>
                     <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">📍 8 Years</span>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- 6. Tina Aggarwal -->
           <div class="gov-card">
             <div class="gov-card-accent" style="background: linear-gradient(90deg, #38B6FF, #08B9DB);"></div>
@@ -2164,20 +2173,19 @@
                   <span class="gov-detail-icon">🎓</span>
                   <div>
                     <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    D.El Ed, MA-EDUCATION, B.Ed (Learning Disability)
+                    D.El Ed, MA- EDUCATION, B. ED( Learning Disability)
                   </div>
                 </div>
                 <div class="gov-detail-item">
                   <span class="gov-detail-icon">⏳</span>
                   <div>
                     <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🏙️ 6 Years</span>
+                    <span class="gov-tenure-pill">🌟 10 Years</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
 
         <!-- VIEW 2: Executive Matrix Table View -->
@@ -2195,13 +2203,35 @@
               <tr>
                 <td>
                   <div class="gov-matrix-user">
+                    <div class="gov-matrix-avatar" style="background: #FF6F59;"><img src="/assets/pooja_singh-CxJ2sAiW.jpeg" alt="Pooja Singh" /></div>
+                    <div>Pooja Singh</div>
+                  </div>
+                </td>
+                <td><span class="gov-badge" style="background: #FFF0EE; color: #E04832;">Co-Founder</span></td>
+                <td>Masters in Mass Comm</td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="gov-matrix-user">
                     <div class="gov-matrix-avatar" style="background: #F2994A;"><img src="/assets/vivek_kumar-Cl6d4RFw.jpeg" alt="Vivek Kumar" /></div>
                     <div>Vivek Kumar</div>
                   </div>
                 </td>
                 <td><span class="gov-badge" style="background: #FFF4E5; color: #D97F35;">Co-Founder</span></td>
                 <td>B.Tech, MA Education from TISS</td>
-                <td><span class="gov-tenure-pill">Nearing 10</span></td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="gov-matrix-user">
+                    <div class="gov-matrix-avatar" style="background: #9B51E0;"><img src="/assets/anjali_gupte-DMpSRILz.jpeg" alt="Anjali Gupte" /></div>
+                    <div>Anjali Gupte</div>
+                  </div>
+                </td>
+                <td><span class="gov-badge" style="background: #F5EEFC; color: #822DBF;">Director, Founding member</span></td>
+                <td>MSc Statistics, B.Ed.</td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
               </tr>
               <tr>
                 <td>
@@ -2212,57 +2242,29 @@
                 </td>
                 <td><span class="gov-badge" style="background: #E6F8FC; color: #0194B1;">Director, CEO</span></td>
                 <td>Masters in Applied Sociology</td>
-                <td><span class="gov-tenure-pill">8+</span></td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
               </tr>
               <tr>
                 <td>
                   <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #FF6F59;"><img src="/assets/pooja_singh-CxJ2sAiW.jpeg" alt="Pooja Singh" /></div>
-                    <div>Pooja Singh</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #FFF0EE; color: #E04832;">Co-Founder</span></td>
-                <td>Masters in Mass Comm</td>
-                <td><span class="gov-tenure-pill">Nearing 10</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar">
-                      <img src="/assets/anjali_gupte-DMpSRILz.jpeg" alt="Anjali Gupte" />
-                    </div>
-                    <div>Anjali Gupte</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #F5EEFC; color: #822DBF;">Director, Founding member</span></td>
-                <td>MSc Statistics, B.Ed.</td>
-                <td><span class="gov-tenure-pill">Nearing 10</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar">
-                      <img src="/assets/abhishek_kumar_tiwari-BoqZzHjw.jpg" alt="Abhishek Tiwari" />
-                    </div>
+                    <div class="gov-matrix-avatar" style="background: #1CA6A0;"><img src="/assets/abhishek_kumar_tiwari-BoqZzHjw.jpg" alt="Abhishek Tiwari" /></div>
                     <div>Abhishek Tiwari</div>
                   </div>
                 </td>
                 <td><span class="gov-badge" style="background: #E8F8F7; color: #14807B;">Head of Programs, Bihar</span></td>
                 <td>Bachelors of Science</td>
-                <td><span class="gov-tenure-pill">8 Years</span></td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
               </tr>
               <tr>
                 <td>
                   <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar">
-                      <img src="/assets/tina_aggarwal-cYSGizer.jpg" alt="Tina Aggarwal" />
-                    </div>
+                    <div class="gov-matrix-avatar" style="background: #38B6FF;"><img src="/assets/tina_aggarwal-cYSGizer.jpg" alt="Tina Aggarwal" /></div>
                     <div>Tina Aggarwal</div>
                   </div>
                 </td>
                 <td><span class="gov-badge" style="background: #EBF8FF; color: #0284C7;">Head of Programs, Delhi</span></td>
                 <td>D.El Ed, MA- EDUCATION, B. ED( Learning Disability)</td>
-                <td><span class="gov-tenure-pill">6 Years</span></td>
+                <td><span class="gov-tenure-pill">10 Years</span></td>
               </tr>
             </tbody>
           </table>
@@ -2300,26 +2302,31 @@
       }
     </script>
 
+    
+    
     <!-- OUR TEAM -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: #FFF9EE; overflow: hidden; position: relative; padding: 6rem 0;">
+    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: linear-gradient(135deg, #EBF5FF 0%, #D8EDFE 100%); overflow: hidden; position: relative; padding: 6rem 0;">
       <!-- Playful background doodles -->
-      <svg class="team-doodle team-doodle-1" width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top: 8%; left: 4%; opacity:0.25; animation: anim-float 6s infinite ease-in-out;"><path fill="none" stroke="#FF6F59" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,60 Q30,10 60,60 T110,60"/></svg>
-      <svg class="team-doodle team-doodle-2" width="80" height="80" viewBox="0 0 120 120" style="position:absolute; bottom: 12%; right: 5%; opacity:0.25; animation: anim-rotate 15s infinite linear;"><polygon fill="none" stroke="#01BADE" stroke-width="4" points="60,10 110,110 10,110" stroke-linejoin="round"/></svg>
+      <svg class="team-doodle team-doodle-1" width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top: 8%; left: 4%; opacity:0.3; animation: anim-float 6s infinite ease-in-out;"><path fill="none" stroke="#08B9DB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,60 Q30,10 60,60 T110,60"/></svg>
+      <svg class="team-doodle team-doodle-2" width="80" height="80" viewBox="0 0 120 120" style="position:absolute; bottom: 12%; right: 5%; opacity:0.3; animation: anim-rotate 15s infinite linear;"><polygon fill="none" stroke="#38B6FF" stroke-width="4" points="60,10 110,110 10,110" stroke-linejoin="round"/></svg>
+      <div style="position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; background: rgba(56, 182, 255, 0.12); border-radius: 50%; filter: blur(70px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -100px; left: -100px; width: 450px; height: 450px; background: rgba(8, 185, 219, 0.12); border-radius: 50%; filter: blur(70px); pointer-events: none;"></div>
 
       <div class="container" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
         <!-- Header -->
         <div class="section-header reveal" style="text-align: center; margin-bottom: 2rem;">
-          <h2 class="partners-title-premium" style="font-family: 'Baloo 2', cursive; font-size: 3.2rem; color: #3A3A3C; line-height: 1.2;">
-            Curious about <span style="color: #01BADE; position:relative;">Our Leaders?</span>
+          <h2 class="partners-title-premium" style="font-family: 'Baloo 2', cursive; font-size: 3.2rem; color: #1E293B; line-height: 1.2;">
+            Curious about <span style="color: #08B9DB; position:relative;">Our Leaders?</span>
           </h2>
-          <p class="partners-intro__desc" style="margin: 1rem auto 2rem; max-width: 650px; font-size: 1.2rem; font-weight: 500; color: #55555A;">
+          <p class="partners-intro__desc" style="margin: 1rem auto 2rem; max-width: 650px; font-size: 1.2rem; font-weight: 500; color: #475569;">
             A passionate group of educators and system thinkers. Click a card to peek behind the scenes!
           </p>
           
           <!-- Filter Tabs -->
-          <div class="leader-filters" style="display: inline-flex; gap: 0.75rem; background: rgba(0,0,0,0.04); padding: 6px; border-radius: 50px; margin-bottom: 1rem;">
-            <button class="filter-btn active" onclick="filterLeaders('all', this)">All Leaders (15)</button>
+          <div class="leader-filters" style="display: inline-flex; gap: 0.5rem; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(8, 185, 219, 0.25); padding: 6px 12px; border-radius: 50px; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.04); flex-wrap: wrap; justify-content: center;">
+            <button class="filter-btn active" onclick="filterLeaders('all', this)">All Leaders (18)</button>
+            <button class="filter-btn" onclick="filterLeaders('rajasthan', this)">📍 Rajasthan Team</button>
             <button class="filter-btn" onclick="filterLeaders('bihar', this)">📍 Bihar Team</button>
             <button class="filter-btn" onclick="filterLeaders('delhi', this)">📍 Delhi Team</button>
           </div>
@@ -2346,7 +2353,7 @@
             padding: 0.5rem 0.5rem 1.5rem;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
-            scrollbar-color: #01BADE rgba(0,0,0,0.05);
+            scrollbar-color: #08B9DB rgba(0,0,0,0.05);
           }
           .leader-track::-webkit-scrollbar {
             height: 8px;
@@ -2356,7 +2363,7 @@
             border-radius: 10px;
           }
           .leader-track::-webkit-scrollbar-thumb {
-            background: #01BADE;
+            background: #08B9DB;
             border-radius: 10px;
           }
           
@@ -2507,7 +2514,7 @@
           
           .leader-flip-hint {
             font-size: 0.75rem;
-            color: #01BADE;
+            color: #08B9DB;
             font-weight: 700;
             margin-top: 0.4rem;
             opacity: 0.85;
@@ -2545,7 +2552,7 @@
             background: rgba(0,0,0,0.02);
             padding: 1rem;
             border-radius: 12px;
-            border-left: 3px solid #01BADE;
+            border-left: 3px solid #08B9DB;
           }
           .leader-back-linkedin {
             display: inline-flex;
@@ -2573,14 +2580,14 @@
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
-            color: #555;
+            color: #475569;
             cursor: pointer;
             transition: all 0.25s ease;
           }
           .filter-btn.active, .filter-btn:hover {
-            background: #ffffff;
-            color: #01BADE;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            background: #08B9DB;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(8, 185, 219, 0.35);
           }
           
           .leader-controls {
@@ -2595,8 +2602,8 @@
             height: 48px;
             border-radius: 50%;
             background: #FFFFFF;
-            border: 2px solid #E5E7EB;
-            color: #2D2D2E;
+            border: 2px solid #CBD5E1;
+            color: #1E293B;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2605,11 +2612,11 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
           }
           .leader-nav-btn:hover {
-            background: #01BADE;
+            background: #08B9DB;
             color: #FFFFFF;
-            border-color: #01BADE;
+            border-color: #08B9DB;
             transform: scale(1.1);
-            box-shadow: 0 6px 18px rgba(1, 186, 222, 0.3);
+            box-shadow: 0 6px 18px rgba(8, 185, 219, 0.3);
           }
           
           .leader-dots {
@@ -2621,14 +2628,14 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #D1D5DB;
+            background: #94A3B8;
             cursor: pointer;
             transition: all 0.3s ease;
           }
           .leader-dot.active {
             width: 28px;
             border-radius: 10px;
-            background: #01BADE;
+            background: #08B9DB;
           }
         </style>
 
@@ -2637,17 +2644,97 @@
           <div class="leader-track-wrapper">
             <div class="leader-track" id="leaderTrack">
 
-          <div class="leader-card-item" data-category="bihar">
+          <div class="leader-card-item" data-category="rajasthan">
             <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
                 <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
+                    <img src="/assets/pradeep_singh_rathore-D1_guJ2L.jpg" alt="Pradeep Singh Rathore" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Pradeep Singh Rathore</h3>
+                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead (FFSM)</div>
+                  <div class="leader-location">📍 Kotra, Rajasthan</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #01BADE;">Pradeep Singh Rathore</h4>
+                  <div class="leader-back-role">Program Lead (FFSM)</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Kotra, Rajasthan</strong></div>
+                  
+                  <p class="leader-back-bio">"Leading Fale Fale Shiksha Muhim and community-driven educational access across tribal clusters in Kotra, Rajasthan."</p>
+                  
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="rajasthan">
+            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
+                    <img src="/assets/priyanka_rambol-C3UNCe3w.jpg" alt="Priyanka Rambol" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Priyanka Rambol</h3>
+                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Coach</div>
+                  <div class="leader-location">📍 Gogunda, Rajasthan</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #FF6F59;">Priyanka Rambol</h4>
+                  <div class="leader-back-role">Program Coach</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Gogunda, Rajasthan</strong></div>
+                  
+                  <p class="leader-back-bio">"Coaching and mentoring educators and community leaders to nurture child-centric learning spaces in Rajasthan."</p>
+                  
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="bihar">
+            <div class="leader-flip-container" style="transform: rotate(0.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
                     <img src="/assets/mohd_asif_ameen-GG_rqhgT.jpg" alt="Mohd Asif Ameen" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Mohd Asif Ameen</h3>
-                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead</div>
+                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Lead</div>
                   <div class="leader-location">📍 Samastipur, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2661,15 +2748,55 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #01BADE;">Mohd Asif Ameen</h4>
+                  <h4 class="leader-back-name" style="color: #F2994A;">Mohd Asif Ameen</h4>
                   <div class="leader-back-role">Program Lead</div>
                   <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Pioneering community-led learning models and nurturing young minds in Samastipur."</p>
                   
-                  <a href="https://www.linkedin.com/in/mohd-asif-ameen-23b041175" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/mohd-asif-ameen-23b041175" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="bihar">
+            <div class="leader-flip-container" style="transform: rotate(1.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #6DBE45;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
+                    <img src="/assets/nikhil_kumar-DhDO9Qbj.jpg" alt="Nikhil Kumar" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Nikhil Kumar</h3>
+                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Lead</div>
+                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #6DBE45;">Nikhil Kumar</h4>
+                  <div class="leader-back-role">Program Lead</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  
+                  <p class="leader-back-bio">"Driving grassroots educational innovations and field operations across government schools in Samastipur."</p>
+                  
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2678,16 +2805,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="delhi">
-            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
+                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/tina_aggarwal-cYSGizer.jpg" alt="Tina Aggarwal" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Tina Aggarwal</h3>
-                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Head of Programs, Delhi</div>
+                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Head of Programs, Delhi</div>
                   <div class="leader-location">📍 Delhi NCR</div>
                   
                   <div class="leader-front-actions">
@@ -2701,15 +2828,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #FF6F59;">Tina Aggarwal</h4>
+                  <h4 class="leader-back-name" style="color: #9B51E0;">Tina Aggarwal</h4>
                   <div class="leader-back-role">Head of Programs, Delhi</div>
                   <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
                   
                   <p class="leader-back-bio">"Leading urban education initiatives and systemic support in Delhi MCD schools."</p>
                   
-                  <a href="https://www.linkedin.com/in/tina-aggarwal-75b41a154" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/tina-aggarwal-75b41a154" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2718,16 +2845,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(0.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
+                <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/abhishek_kumar_tiwari-BoqZzHjw.jpg" alt="Abhishek Kumar Tiwari" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Abhishek Kumar Tiwari</h3>
-                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Head of Programs, Bihar</div>
+                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Head of Programs, Bihar</div>
                   <div class="leader-location">📍 Patna, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2741,15 +2868,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #F2994A;">Abhishek Kumar Tiwari</h4>
+                  <h4 class="leader-back-name" style="color: #01BADE;">Abhishek Kumar Tiwari</h4>
                   <div class="leader-back-role">Head of Programs, Bihar</div>
                   <div class="leader-back-loc">📍 Location: <strong>Patna, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Driving state-level educational partnerships and teacher capacity building across Bihar."</p>
                   
-                  <a href="https://www.linkedin.com/in/abhishek-tiwari-54b947156" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/abhishek-tiwari-54b947156" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2758,16 +2885,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(1.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #6DBE45;">
+                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/sneha_kumari-CHTascjb.jpg" alt="Sneha Kumari" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Sneha Kumari</h3>
-                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Manager</div>
+                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Manager</div>
                   <div class="leader-location">📍 Samastipur, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2781,15 +2908,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #6DBE45;">Sneha Kumari</h4>
+                  <h4 class="leader-back-name" style="color: #FF6F59;">Sneha Kumari</h4>
                   <div class="leader-back-role">Program Manager</div>
                   <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Empowering girls and expanding Fale Fale Shiksha Muhim across rural clusters."</p>
                   
-                  <a href="https://www.linkedin.com/in/sneha-kshamtalaya-2678863a6" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/sneha-kshamtalaya-2678863a6" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2798,16 +2925,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="delhi">
-            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(0.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
+                <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/tamanna-2Qedj20X.jpg" alt="Tamanna" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Tamanna</h3>
-                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Program Lead</div>
+                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Lead</div>
                   <div class="leader-location">📍 Delhi NCR</div>
                   
                   <div class="leader-front-actions">
@@ -2821,15 +2948,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #9B51E0;">Tamanna</h4>
+                  <h4 class="leader-back-name" style="color: #F2994A;">Tamanna</h4>
                   <div class="leader-back-role">Program Lead</div>
                   <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
                   
                   <p class="leader-back-bio">"Designing socio-emotional learning frameworks and creative classroom workshops."</p>
                   
-                  <a href="https://www.linkedin.com/in/tamanna-638a80359" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/tamanna-638a80359" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2838,16 +2965,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(1.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
+                <div class="leader-card-front" style="border-top: 5px solid #6DBE45;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/aman_gautam-D-no1c3e.jpg" alt="Aman Gautam" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Aman Gautam</h3>
-                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead</div>
+                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Lead</div>
                   <div class="leader-location">📍 Samastipur, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2861,15 +2988,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #01BADE;">Aman Gautam</h4>
+                  <h4 class="leader-back-name" style="color: #6DBE45;">Aman Gautam</h4>
                   <div class="leader-back-role">Program Lead</div>
                   <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Fostering grassroots leadership and student-centric pedagogy in rural government schools."</p>
                   
-                  <a href="https://www.linkedin.com/in/aman-gautam-8b365a253" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/aman-gautam-8b365a253" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2878,16 +3005,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
+                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/subham_bhakat-DQ65VpSc.jpg" alt="Subham Bhakat" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Subham Bhakat</h3>
-                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">State Resource Person</div>
+                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">State Resource Person</div>
                   <div class="leader-location">📍 Patna, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2901,15 +3028,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #FF6F59;">Subham Bhakat</h4>
+                  <h4 class="leader-back-name" style="color: #9B51E0;">Subham Bhakat</h4>
                   <div class="leader-back-role">State Resource Person</div>
                   <div class="leader-back-loc">📍 Location: <strong>Patna, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Strengthening curriculum alignment and institutional research at the state level."</p>
                   
-                  <a href="https://www.linkedin.com/in/subham-bhakat" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/subham-bhakat" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2918,16 +3045,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(0.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
+                <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/deepak_sirsam-BUSSBpgR.jpg" alt="Deepak Sirsam" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Deepak Sirsam</h3>
-                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Lead</div>
+                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead</div>
                   <div class="leader-location">📍 Samastipur, Bihar</div>
                   
                   <div class="leader-front-actions">
@@ -2941,15 +3068,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #F2994A;">Deepak Sirsam</h4>
+                  <h4 class="leader-back-name" style="color: #01BADE;">Deepak Sirsam</h4>
                   <div class="leader-back-role">Program Lead</div>
                   <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Championing experiential learning and community sports for development."</p>
                   
-                  <a href="https://www.linkedin.com/in/deepak-sirsam-b645a8256" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/deepak-sirsam-b645a8256" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -2958,16 +3085,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="delhi">
-            <div class="leader-flip-container" style="transform: rotate(1.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #6DBE45;">
+                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/priya-V8W-lQq2.jpg" alt="Priya" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Priya</h3>
-                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Leader</div>
+                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Leader</div>
                   <div class="leader-location">📍 Delhi NCR</div>
                   
                   <div class="leader-front-actions">
@@ -2981,135 +3108,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #6DBE45;">Priya</h4>
+                  <h4 class="leader-back-name" style="color: #FF6F59;">Priya</h4>
                   <div class="leader-back-role">Program Leader</div>
                   <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
                   
                   <p class="leader-back-bio">"Mentoring fellow educators and facilitating STAR Parent engagement circles."</p>
                   
-                  <a href="https://www.linkedin.com/in/priya-bisht-2319591a3" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
-              <div class="leader-flip-card">
-                <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
-                  <div class="leader-tape"></div>
-                  <div class="leader-photo-box">
-                    <img src="/assets/aman_kumar-p-TzzLK5.jpg" alt="Aman Kumar" loading="lazy" class="leader-photo" />
-                  </div>
-                  <h3 class="leader-name">Aman Kumar</h3>
-                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Program Leader</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
-                  
-                  <div class="leader-front-actions">
-                    <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                      <span>LinkedIn</span>
-                    </a>
-                  </div>
-                  
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
-                </div>
-
-                <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
-                  <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #9B51E0;">Aman Kumar</h4>
-                  <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
-                  
-                  <p class="leader-back-bio">"Building foundation literacy models and joyful learning festivals."</p>
-                  
-                  <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="leader-card-item" data-category="delhi">
-            <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
-              <div class="leader-flip-card">
-                <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
-                  <div class="leader-tape"></div>
-                  <div class="leader-photo-box">
-                    <img src="/assets/reena-B_qGX0nd.jpg" alt="Reena" loading="lazy" class="leader-photo" />
-                  </div>
-                  <h3 class="leader-name">Reena</h3>
-                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Leader</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
-                  
-                  <div class="leader-front-actions">
-                    <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                      <span>LinkedIn</span>
-                    </a>
-                  </div>
-                  
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
-                </div>
-
-                <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
-                  <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #01BADE;">Reena</h4>
-                  <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
-                  
-                  <p class="leader-back-bio">"Nurturing holistic development and mindfulness practices for young learners."</p>
-                  
-                  <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="leader-card-item" data-category="bihar">
-            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
-              <div class="leader-flip-card">
-                <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
-                  <div class="leader-tape"></div>
-                  <div class="leader-photo-box">
-                    <img src="/assets/sameep_sonkar-Bn9Qv5ue.jpg" alt="Sameep Sonkar" loading="lazy" class="leader-photo" />
-                  </div>
-                  <h3 class="leader-name">Sameep Sonkar</h3>
-                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Manager</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
-                  
-                  <div class="leader-front-actions">
-                    <a href="https://www.linkedin.com/in/sameep-sonkar-4148421b8" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                      <span>LinkedIn</span>
-                    </a>
-                  </div>
-                  
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
-                </div>
-
-                <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
-                  <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #FF6F59;">Sameep Sonkar</h4>
-                  <div class="leader-back-role">Program Manager</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
-                  
-                  <p class="leader-back-bio">"Managing field operations, data analytics, and impact measurement frameworks."</p>
-                  
-                  <a href="https://www.linkedin.com/in/sameep-sonkar-4148421b8" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/priya-bisht-2319591a3" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -3124,14 +3131,14 @@
                 <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
-                    <img src="/assets/ishu-BVrYqA5O.jpg" alt="Ishu" loading="lazy" class="leader-photo" />
+                    <img src="/assets/aman_kumar-p-TzzLK5.jpg" alt="Aman Kumar" loading="lazy" class="leader-photo" />
                   </div>
-                  <h3 class="leader-name">Ishu</h3>
-                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Manager</div>
-                  <div class="leader-location">📍 Bihar</div>
+                  <h3 class="leader-name">Aman Kumar</h3>
+                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Leader</div>
+                  <div class="leader-location">📍 Samastipur, Bihar</div>
                   
                   <div class="leader-front-actions">
-                    <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                    <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                       <span>LinkedIn</span>
                     </a>
@@ -3143,13 +3150,13 @@
                 <!-- BACK FACE -->
                 <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #F2994A;">Ishu</h4>
-                  <div class="leader-back-role">Program Manager</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Bihar</strong></div>
+                  <h4 class="leader-back-name" style="color: #F2994A;">Aman Kumar</h4>
+                  <div class="leader-back-role">Program Leader</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
                   
-                  <p class="leader-back-bio">"Curating volunteer engagement and community learning hubs."</p>
+                  <p class="leader-back-bio">"Building foundation literacy models and joyful learning festivals."</p>
                   
-                  <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -3164,10 +3171,130 @@
                 <div class="leader-card-front" style="border-top: 5px solid #6DBE45;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
+                    <img src="/assets/reena-B_qGX0nd.jpg" alt="Reena" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Reena</h3>
+                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Leader</div>
+                  <div class="leader-location">📍 Delhi NCR</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #6DBE45;">Reena</h4>
+                  <div class="leader-back-role">Program Leader</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  
+                  <p class="leader-back-bio">"Nurturing holistic development and mindfulness practices for young learners."</p>
+                  
+                  <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="bihar">
+            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
+                    <img src="/assets/sameep_sonkar-Bn9Qv5ue.jpg" alt="Sameep Sonkar" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Sameep Sonkar</h3>
+                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Program Manager</div>
+                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="https://www.linkedin.com/in/sameep-sonkar-4148421b8" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #9B51E0;">Sameep Sonkar</h4>
+                  <div class="leader-back-role">Program Manager</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  
+                  <p class="leader-back-bio">"Managing field operations, data analytics, and impact measurement frameworks."</p>
+                  
+                  <a href="https://www.linkedin.com/in/sameep-sonkar-4148421b8" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="bihar">
+            <div class="leader-flip-container" style="transform: rotate(-2.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #01BADE;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
+                    <img src="/assets/ishu-BVrYqA5O.jpg" alt="Ishu" loading="lazy" class="leader-photo" />
+                  </div>
+                  <h3 class="leader-name">Ishu</h3>
+                  <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Manager</div>
+                  <div class="leader-location">📍 Bihar</div>
+                  
+                  <div class="leader-front-actions">
+                    <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                  
+                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="leader-card-back" style="border: 3px solid #01BADE; background: #FAFDFE;">
+                  <div class="leader-tape"></div>
+                  <h4 class="leader-back-name" style="color: #01BADE;">Ishu</h4>
+                  <div class="leader-back-role">Program Manager</div>
+                  <div class="leader-back-loc">📍 Location: <strong>Bihar</strong></div>
+                  
+                  <p class="leader-back-bio">"Curating volunteer engagement and community learning hubs."</p>
+                  
+                  <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leader-card-item" data-category="delhi">
+            <div class="leader-flip-container" style="transform: rotate(-1.0deg);" onclick="this.classList.toggle('flipped')">
+              <div class="leader-flip-card">
+                <!-- FRONT FACE -->
+                <div class="leader-card-front" style="border-top: 5px solid #FF6F59;">
+                  <div class="leader-tape"></div>
+                  <div class="leader-photo-box">
                     <img src="/assets/tabassum-BCsIOdY-.jpg" alt="Tabassum" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Tabassum</h3>
-                  <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Community Leader</div>
+                  <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Community Leader</div>
                   <div class="leader-location">📍 Delhi NCR</div>
                   
                   <div class="leader-front-actions">
@@ -3181,15 +3308,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #6DBE45; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #FF6F59; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #6DBE45;">Tabassum</h4>
+                  <h4 class="leader-back-name" style="color: #FF6F59;">Tabassum</h4>
                   <div class="leader-back-role">Community Leader</div>
                   <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
                   
                   <p class="leader-back-bio">"Strengthening parent-school bonds and community advocacy for education."</p>
                   
-                  <a href="https://www.linkedin.com/in/tabassum-mansori-007b87360" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #6DBE45;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/tabassum-mansori-007b87360" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #FF6F59;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
@@ -3198,16 +3325,16 @@
             </div>
           </div>
           <div class="leader-card-item" data-category="delhi">
-            <div class="leader-flip-container" style="transform: rotate(2.0deg);" onclick="this.classList.toggle('flipped')">
+            <div class="leader-flip-container" style="transform: rotate(0.0deg);" onclick="this.classList.toggle('flipped')">
               <div class="leader-flip-card">
                 <!-- FRONT FACE -->
-                <div class="leader-card-front" style="border-top: 5px solid #9B51E0;">
+                <div class="leader-card-front" style="border-top: 5px solid #F2994A;">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
                     <img src="/assets/anjali-BjRabPD5.jpg" alt="Anjali" loading="lazy" class="leader-photo" />
                   </div>
                   <h3 class="leader-name">Anjali</h3>
-                  <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Program Leader</div>
+                  <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Leader</div>
                   <div class="leader-location">📍 Delhi NCR</div>
                   
                   <div class="leader-front-actions">
@@ -3221,15 +3348,15 @@
                 </div>
 
                 <!-- BACK FACE -->
-                <div class="leader-card-back" style="border: 3px solid #9B51E0; background: #FAFDFE;">
+                <div class="leader-card-back" style="border: 3px solid #F2994A; background: #FAFDFE;">
                   <div class="leader-tape"></div>
-                  <h4 class="leader-back-name" style="color: #9B51E0;">Anjali</h4>
+                  <h4 class="leader-back-name" style="color: #F2994A;">Anjali</h4>
                   <div class="leader-back-role">Program Leader</div>
                   <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
                   
                   <p class="leader-back-bio">"Facilitating expressive arts, drama, and creative writing workshops."</p>
                   
-                  <a href="https://www.linkedin.com/in/anjali-kumari-01" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #9B51E0;" onclick="event.stopPropagation();">
+                  <a href="https://www.linkedin.com/in/anjali-kumari-01" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #F2994A;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                     <span>Connect on LinkedIn</span>
                   </a>
