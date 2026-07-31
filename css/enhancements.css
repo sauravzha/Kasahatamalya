@@ -1,0 +1,388 @@
+/* ============================================
+   KSHAMTALAYA — Premium Visual Enhancements
+   ============================================ */
+
+/* ── Ambient Floating Blobs ── */
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, -40px) scale(0.95); }
+  75% { transform: translate(15px, -15px) scale(1.02); }
+}
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 20px) scale(1.08); }
+  66% { transform: translate(20px, -30px) scale(0.92); }
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.18;
+  will-change: transform;
+  z-index: 0;
+}
+.ambient-blob--1 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, #08B9DB, transparent 70%);
+  animation: blobDrift1 12s ease-in-out infinite;
+}
+.ambient-blob--2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #FFC72C, transparent 70%);
+  animation: blobDrift2 15s ease-in-out infinite;
+}
+.ambient-blob--3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #FF6F59, transparent 70%);
+  animation: blobDrift1 18s ease-in-out infinite reverse;
+}
+
+/* ── Glassmorphic Filter Bar (Leaders Section) ── */
+.leader-filters-glass {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  padding: 8px 16px !important;
+  border-radius: 60px !important;
+  box-shadow:
+    0 8px 32px rgba(8, 185, 219, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.leader-filters-glass:hover {
+  box-shadow:
+    0 12px 40px rgba(8, 185, 219, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Enhanced Filter Buttons */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+.filter-btn:hover::before {
+  left: 100%;
+}
+.filter-btn.active {
+  background: linear-gradient(135deg, #08B9DB 0%, #0194B1 100%) !important;
+  box-shadow: 0 4px 18px rgba(8, 185, 219, 0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  transform: scale(1.05);
+}
+
+/* ── Card Light-Sheen Reflection Effect ── */
+.leader-card-front::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 55%
+  );
+  transform: translateX(-100%) rotate(0deg);
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 5;
+}
+.leader-flip-container:hover .leader-card-front::after {
+  transform: translateX(60%) rotate(0deg);
+}
+
+/* ── Enhanced Leader Photo Frame ── */
+.leader-photo-box {
+  position: relative;
+}
+.leader-photo-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+  border-radius: 0 0 18px 18px;
+  z-index: 1;
+}
+
+/* ── Governance Card 3D Tilt Interaction ── */
+.gov-card {
+  transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transform-style: preserve-3d;
+}
+.gov-card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow:
+    0 25px 50px rgba(8, 185, 219, 0.12),
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* ── Gradient Tenure Pills ── */
+.gov-tenure-pill {
+  background: linear-gradient(135deg, #FFFBF0 0%, #FFF3D6 100%) !important;
+  border: 1.5px solid rgba(255, 199, 44, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(255, 199, 44, 0.15);
+  transition: all 0.3s ease;
+}
+.gov-card:hover .gov-tenure-pill {
+  background: linear-gradient(135deg, #FFC72C 0%, #FFB400 100%) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(255, 199, 44, 0.35);
+}
+
+/* ── Matrix Table Enhancements ── */
+.gov-matrix-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%) !important;
+}
+.gov-matrix-table tr {
+  transition: all 0.25s ease;
+}
+.gov-matrix-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(8, 185, 219, 0.04), rgba(8, 185, 219, 0.08), rgba(8, 185, 219, 0.04)) !important;
+  transform: scale(1.005);
+}
+
+/* ── Stat Counter Pulse on Complete ── */
+@keyframes counterPop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.12); }
+  60% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+.stat-num-compact.counted {
+  animation: counterPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Enhanced Stat Cards ── */
+.compact-stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.compact-stat-card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1));
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.compact-stat-card:hover::before {
+  opacity: 1;
+}
+.compact-stat-card:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ── CTA Button Glow & Arrow Slide ── */
+@keyframes ctaGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(255, 199, 44, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(255, 199, 44, 0.6), 0 0 60px rgba(255, 199, 44, 0.15);
+  }
+}
+.btn--donate {
+  position: relative;
+  overflow: hidden;
+}
+.btn--donate::after {
+  content: '→';
+  position: absolute;
+  right: -20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-weight: 800;
+}
+.btn--donate:hover::after {
+  right: 16px;
+  opacity: 1;
+}
+.btn--donate:hover {
+  padding-right: 2.5rem !important;
+  animation: ctaGlow 2s ease-in-out infinite;
+}
+
+/* ── Map Pin Ripple Animation ── */
+@keyframes mapRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(28, 166, 160, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(28, 166, 160, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(28, 166, 160, 0);
+  }
+}
+.map-pin-3d,
+.state-pin {
+  animation: mapRipple 2.5s ease-in-out infinite !important;
+}
+
+/* ── Enhanced Region Badges on Leader Cards ── */
+.leader-location {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 12px !important;
+  border-radius: 20px;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+.leader-card-item[data-category="rajasthan"] .leader-location {
+  background: linear-gradient(135deg, rgba(255, 111, 89, 0.08), rgba(255, 111, 89, 0.15));
+  color: #D95447;
+  border: 1px solid rgba(255, 111, 89, 0.2);
+}
+.leader-card-item[data-category="bihar"] .leader-location {
+  background: linear-gradient(135deg, rgba(107, 190, 69, 0.08), rgba(107, 190, 69, 0.15));
+  color: #4D8F30;
+  border: 1px solid rgba(107, 190, 69, 0.2);
+}
+.leader-card-item[data-category="delhi"] .leader-location {
+  background: linear-gradient(135deg, rgba(8, 185, 219, 0.08), rgba(8, 185, 219, 0.15));
+  color: #0194B1;
+  border: 1px solid rgba(8, 185, 219, 0.2);
+}
+
+/* ── Leader Card Enhanced Shadow on Hover ── */
+.leader-card-front {
+  transition: box-shadow 0.4s ease !important;
+}
+.leader-flip-container:hover .leader-card-front {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(8, 185, 219, 0.08) !important;
+}
+
+/* ── Advisory Board Card Enhancements ── */
+.advisory-card {
+  transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.advisory-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ── Partners Logo Hover Glow ── */
+.dark-marquee-logo {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.dark-marquee-logo:hover {
+  filter: brightness(1.1) drop-shadow(0 4px 12px rgba(255, 199, 44, 0.3)) !important;
+  transform: scale(1.12) translateY(-3px) !important;
+}
+
+/* ── Newsletter Form Glow ── */
+.newsletter__form {
+  transition: all 0.4s ease !important;
+}
+.newsletter__form:focus-within {
+  border-color: rgba(255, 199, 44, 0.6) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 199, 44, 0.15) !important;
+}
+
+/* ── Section Title Gradient Accent ── */
+.section-header__title .doodle-highlight {
+  background: linear-gradient(135deg, #08B9DB 0%, #0194B1 50%, #1CA6A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Governance Card Avatar Ring Glow ── */
+.gov-avatar-box {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.gov-card:hover .gov-avatar-box {
+  transform: scale(1.08) !important;
+  box-shadow: 0 15px 35px rgba(8, 185, 219, 0.2), 0 0 0 4px rgba(8, 185, 219, 0.15) !important;
+}
+
+/* ── Gov Badge Gradient ── */
+.gov-badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.gov-card:hover .gov-badge {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Deck Card (Map) Hover Enhancement ── */
+.deck-card {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.deck-card:hover {
+  transform: scale(1.03) !important;
+}
+.deck-card.active-card {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ── Journey Timeline Item Glow ── */
+.journey-card:hover,
+.timeline-item:hover {
+  box-shadow: 0 15px 40px rgba(8, 185, 219, 0.12);
+}
+
+/* ── Smooth Page-Level Scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Print Styles ── */
+@media print {
+  .ambient-blob,
+  .team-doodle,
+  .hero__doodle,
+  .section-doodle {
+    display: none !important;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob,
+  .leader-card-front::after,
+  .filter-btn::before {
+    animation: none !important;
+    transition: none !important;
+  }
+  .stat-num-compact.counted {
+    animation: none !important;
+  }
+}
