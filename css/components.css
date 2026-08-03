@@ -32,7 +32,7 @@
   background: var(--color-sunshine-dark);
   transform: translateY(-2px) scale(1.02);
   box-shadow: var(--shadow-lg);
-  color: var(--color-charcoal);
+  color: var(--color-white);
 }
 
 .btn--primary:active {
@@ -58,8 +58,8 @@
 }
 
 .btn--donate {
-  background: var(--color-sunshine);
-  color: var(--color-charcoal);
+  background: var(--color-teal);
+  color: var(--color-white);
   font-weight: var(--fw-extrabold);
   padding: 0.65rem 1.5rem;
   font-size: var(--fs-small);
@@ -69,10 +69,10 @@
 }
 
 .btn--donate:hover {
-  background: var(--color-sunshine-dark);
+  background: var(--color-teal-dark);
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 199, 44, 0.4);
-  color: var(--color-charcoal);
+  box-shadow: 0 6px 20px rgba(8, 185, 219, 0.4);
+  color: var(--color-white);
 }
 
 .btn--donate:active {
@@ -88,7 +88,7 @@
 .btn--white:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  color: var(--color-charcoal);
+  color: var(--color-teal);
 }
 
 .btn--lg {
@@ -544,7 +544,7 @@
 .approach__icon svg {
   width: 40px;
   height: 40px;
-  color: var(--color-charcoal);
+  color: var(--color-white);
 }
 
 .approach__step h3 {

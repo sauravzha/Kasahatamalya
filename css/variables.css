@@ -13,8 +13,8 @@
   --color-teal-dark:      #0194B1;
   --color-charcoal:       #313234; /* Charcoal */
   --color-charcoal-light: #2F3B42; /* Dark Slate */
-  --color-cream:          #FFFBF0;
-  --color-cream-dark:     #FFF5DC;
+  --color-cream:          #FFFFFF;
+  --color-cream-dark:     #F8F9FA;
   --color-coral:          #FF6F59;
   --color-coral-light:    #FF9080;
   --color-sky:            #4FB6E8;
@@ -28,7 +28,7 @@
   --color-text-secondary: #2F3B42; /* Dark Slate */
   --color-text-muted:     #888888;
   --color-text-on-dark:   var(--color-cream);
-  --color-bg-primary:     var(--color-cream);
+  --color-bg-primary:     var(--color-white);
   --color-bg-dark:        var(--color-charcoal);
   --color-bg-yellow:      var(--color-sunshine);
   --color-link:           var(--color-teal);

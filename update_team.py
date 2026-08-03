@@ -1,181 +1,242 @@
 import re
 
-profiles = [
-    ('Mohd Asif Ameen', 'Program Lead', 'Samastipur'),
-    ('Sneha kumari', 'Program manager', 'Samastipur'),
-    ('Aman Gautam', 'Program Lead', 'Samastipur'),
-    ('Deepak Sirsam', 'Program Lead', 'Samastipur'),
-    ('Aman Kumar', 'Program Leader', 'Samastipur'),
-    ('Sameep Sonkar', 'Program Manager', 'Samastipur'),
-    ('Subham Bhakat', 'State Resource Person', 'Patna, Bihar'),
-    ('TINA AGGARWAL', 'Head of Programs, Delhi', 'Delhi'),
-    ('TAMANNA', 'Program Lead', 'Delhi'),
-    ('PRIYA', 'Program Leader', 'Delhi'),
-    ('Abhishek Kumar Tiwari', 'Head of Programs, Bihar', 'Bihar'),
-    ('REENA', 'Program Leader', 'Delhi'),
-    ('Ishu', 'Program Manager', 'Bihar'),
-    ('Tabassum', 'Community Leader', 'Delhi'),
-    ('ANJALI', 'Program Leader', 'Delhi'),
-    ('Pradeep Singh Rathore', 'Program lead ( FFSM )', 'Rajasthan')
-]
-
-cards_html = ''
-for i, (name, role, loc) in enumerate(profiles):
-    colors = [
-        {'color': '#01BADE', 'light': 'rgba(1, 186, 222, 0.15)', 'grad': 'linear-gradient(135deg, #01BADE 0%, #4FB6E8 100%)', 'shadow': 'rgba(1, 186, 222, 0.4)'},
-        {'color': '#F2994A', 'light': 'rgba(242, 153, 74, 0.15)', 'grad': 'linear-gradient(135deg, #F2994A 0%, #F5B073 100%)', 'shadow': 'rgba(242, 153, 74, 0.4)'},
-        {'color': '#FF6F59', 'light': 'rgba(255, 111, 89, 0.15)', 'grad': 'linear-gradient(135deg, #FF9080 0%, #FF6F59 100%)', 'shadow': 'rgba(255, 111, 89, 0.4)'},
-        {'color': '#6DBE45', 'light': 'rgba(109, 190, 69, 0.15)', 'grad': 'linear-gradient(135deg, #8ED46A 0%, #6DBE45 100%)', 'shadow': 'rgba(109, 190, 69, 0.4)'}
-    ]
-    c = colors[i % len(colors)]
-    
-    avatar_letter = name.strip()[0].upper() if name.strip() else ''
-    title_name = name.title()
-    
-    cards_html += f'''
-          <div class="team-card-pro" style="--team-color: {c['color']}; --team-color-light: {c['light']}; --team-gradient: {c['grad']}; --team-shadow: {c['shadow']};">
-            <!-- Photo placeholder: Replace {avatar_letter} with <img src="photo_url" alt="{title_name}"> when ready -->
-            <div class="team-avatar-pro">{avatar_letter}</div>
-            <h3 class="team-name-pro" style="text-transform: capitalize;">{title_name}</h3>
-            <div class="team-role-pro">{role}</div>
-            <p class="team-details-pro">
-              <strong>Location</strong> {loc}
-            </p>
-            <!-- LinkedIn placeholder -->
-            <a href="#" class="team-social-link" aria-label="LinkedIn Profile" style="margin-top: 1.5rem; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--team-color-light); color: var(--team-color); border-radius: 50%; transition: all 0.3s; text-decoration: none;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-            </a>
-          </div>'''
-
-section_html = f'''
-    <!-- OUR TEAM -->
-    <!-- ════════════════════════════════════════ -->
-    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: #FAFCFC; overflow: hidden; position: relative; padding: 8rem 0;">
-      <div style="position: absolute; top: 0; left: -100px; width: 400px; height: 400px; background: rgba(56, 182, 255, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
-      <div style="position: absolute; bottom: 0; right: -100px; width: 500px; height: 500px; background: rgba(242, 153, 74, 0.08); border-radius: 50%; filter: blur(60px); z-index: 0;"></div>
-      <div class="container" style="position: relative; z-index: 2; max-width: 100%;">
-        <div class="section-header reveal" style="text-align: center;">
-          <div class="partners-badge-premium" style="justify-content: center; margin-bottom: 1rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Leadership Profile
+new_team_html = """
+      <div class="container" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+        <!-- Section Header -->
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+          <div class="section-header__eyebrow" style="display: inline-block; padding: 6px 18px; background: rgba(8, 185, 219, 0.1); border: 1.5px solid var(--color-teal); border-radius: 30px; font-weight: 800; font-size: 0.85rem; color: var(--color-teal); letter-spacing: 1.5px; margin-bottom: 1rem;">
+            GOVERNANCE & LEADERSHIP
           </div>
-          <h2 class="partners-title-premium">The <span>Leaders</span> Behind Kshamtalaya</h2>
-          <p class="partners-intro__desc" style="margin: 1rem auto 3rem; max-width: 700px; font-size: 1.15rem;">
-            A passionate group of educators, community builders, and system thinkers dedicated to making quality education accessible to every child.
+          <h2 class="section-header__title" style="font-family: 'Baloo 2', cursive; font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-charcoal); margin-bottom: 1rem; font-weight: 800; line-height: 1.2;">
+            Core Leadership & <span class="doodle-highlight" style="color: var(--color-teal);">Founding Team</span>
+          </h2>
+          <p class="section-header__desc" style="max-width: 720px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.6;">
+            The founders, directors, and senior leaders steering Kshamtalaya's mission to strengthen learning ecosystems and nurture child potential across India.
           </p>
         </div>
 
         <style>
-          .premium-team-slider {{
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 2.5rem;
-            padding: 1rem 3rem 4rem;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--color-teal) rgba(0,0,0,0.05);
-          }}
-          .premium-team-slider::-webkit-scrollbar {{
-            height: 10px;
-          }}
-          .premium-team-slider::-webkit-scrollbar-track {{
-            background: rgba(0,0,0,0.05);
-            border-radius: 10px;
-          }}
-          .premium-team-slider::-webkit-scrollbar-thumb {{
-            background: var(--color-teal);
-            border-radius: 10px;
-          }}
-          .team-card-pro {{
-            scroll-snap-align: start;
-            flex: 0 0 auto;
-            width: 320px;
-            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-radius: 36px; padding: 3.5rem 2rem; text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,0.8);
-            position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-          }}
-          .team-card-pro::before {{
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 180px;
-            background: linear-gradient(180deg, var(--team-color-light) 0%, rgba(255,255,255,0) 100%);
-            z-index: -1; opacity: 0.6; transition: opacity 0.5s;
-          }}
-          .team-card-pro:hover {{
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
-          }}
-          .team-card-pro:hover::before {{ opacity: 1; }}
-          .team-avatar-pro {{
-            width: 140px; height: 140px; margin: 0 auto 2rem; border-radius: 50%;
-            background: var(--team-gradient);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem; color: white; font-weight: 900; font-family: var(--font-heading);
-            border: 6px solid white; box-shadow: 0 15px 35px var(--team-shadow);
-            position: relative; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          .team-awwwards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+          }
+          .team-pro-card {
+            position: relative;
+            height: 480px;
+            border-radius: 30px;
             overflow: hidden;
-          }}
-          .team-avatar-pro img {{
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-          }}
-          .team-avatar-pro::after {{
-            content: ''; position: absolute; inset: -12px; border-radius: 50%;
-            border: 2.5px dashed var(--team-color); opacity: 0; transform: rotate(0deg);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-          }}
-          .team-card-pro:hover .team-avatar-pro {{
-            transform: scale(1.08) translateY(-5px); box-shadow: 0 25px 45px var(--team-shadow);
-          }}
-          .team-card-pro:hover .team-avatar-pro::after {{
-            opacity: 0.5; transform: rotate(180deg);
-          }}
-          .team-name-pro {{ font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 0.75rem; letter-spacing: -0.5px; line-height: 1.2; min-height: 3.8rem; display: flex; align-items: center; justify-content: center; }}
-          .team-role-pro {{ 
-            display: inline-block; padding: 6px 18px; border-radius: 100px;
-            background: var(--team-color-light); color: var(--team-color);
-            font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.5);
-            min-height: 2.5rem; display: inline-flex; align-items: center; justify-content: center; text-align: center;
-          }}
-          .team-details-pro {{ font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.7; margin: 0; flex-grow: 1; }}
-          .team-details-pro strong {{ color: var(--color-charcoal); font-weight: 700; display: block; margin-top: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--team-color); }}
-          .team-social-link:hover {{
-            background: var(--team-color) !important; color: white !important; transform: scale(1.1);
-          }}
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            background: #fff;
+          }
+          .team-pro-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1), filter 0.8s ease;
+            filter: grayscale(80%) contrast(1.1);
+          }
+          .team-pro-card:hover .team-pro-img {
+            transform: scale(1.08);
+            filter: grayscale(0%) contrast(1);
+          }
+          .team-pro-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 100%);
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+          }
+          .team-pro-card:hover .team-pro-overlay {
+            opacity: 0.95;
+            background: linear-gradient(to top, var(--pro-color) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+          }
+          .team-pro-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            color: white;
+            transform: translateY(60px);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+          }
+          .team-pro-card:hover .team-pro-content {
+            transform: translateY(0);
+          }
+          .team-pro-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 0 0.25rem 0;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+          }
+          .team-pro-role {
+            color: #FFC72C;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            display: block;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+          }
+          .team-pro-card:hover .team-pro-role {
+            color: #fff;
+          }
+          .team-pro-details {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            transition-delay: 0.1s;
+          }
+          .team-pro-card:hover .team-pro-details {
+            opacity: 1;
+          }
+          .team-pro-stat {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+          }
+          .team-pro-stat strong {
+            color: white;
+            font-weight: 700;
+          }
+          .team-pro-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+          }
           
-          /* Navigation Buttons for Slider */
-          .slider-nav-btn {{
-             width: 48px; height: 48px; border-radius: 50%; background: white; 
-             box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;
-             cursor: pointer; transition: all 0.3s; color: var(--color-charcoal); border: 2px solid transparent; outline: none;
-          }}
-          .slider-nav-btn:hover {{ background: var(--color-teal); color: white; transform: scale(1.1); border-color: var(--color-teal); }}
-          .slider-controls {{ display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }}
+          @media (max-width: 768px) {
+            .team-pro-content {
+              transform: translateY(0);
+            }
+            .team-pro-details {
+              opacity: 1;
+            }
+            .team-pro-img { filter: grayscale(0%); }
+            .team-pro-overlay { opacity: 0.9; }
+          }
         </style>
 
-        <div class="slider-wrapper" style="position: relative;">
-            <div class="premium-team-slider" id="teamSlider" data-stagger>
-{cards_html}
+        <div class="team-awwwards-grid reveal" data-stagger>
+          <!-- 1. Pooja Singh -->
+          <div class="team-pro-card" style="--pro-color: #FF6F59;">
+            <img src="/assets/team/pooja_singh.jpeg" alt="Pooja Singh" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Pooja Singh</h3>
+              <span class="team-pro-role">Co-Founder & Mentor</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Masters in Mass Comm</div>
+                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
+              </div>
             </div>
-            
-            <div class="slider-controls">
-                <button class="slider-nav-btn" onclick="document.getElementById('teamSlider').scrollBy({{left: -350, behavior: 'smooth'}})" aria-label="Previous">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button class="slider-nav-btn" onclick="document.getElementById('teamSlider').scrollBy({{left: 350, behavior: 'smooth'}})" aria-label="Next">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+          </div>
+          
+          <!-- 2. Anjali Gupte -->
+          <div class="team-pro-card" style="--pro-color: #9B51E0;">
+            <img src="/assets/team/anjali_gupte.jpeg" alt="Anjali Gupte" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Anjali Gupte</h3>
+              <span class="team-pro-role">Director, Founding member</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>MSc Statistics, B.Ed.</div>
+                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
+              </div>
             </div>
+          </div>
+          
+          <!-- 3. Soumya B -->
+          <div class="team-pro-card" style="--pro-color: #08B9DB;">
+            <img src="/assets/team/soumya_b.jpeg" alt="Soumya B" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Soumya B</h3>
+              <span class="team-pro-role">Director, CEO</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Masters in Applied Sociology</div>
+                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 4. Abhishek Tiwari -->
+          <div class="team-pro-card" style="--pro-color: #1CA6A0;">
+            <img src="/assets/team/abhishek_kumar_tiwari.jpg" alt="Abhishek Tiwari" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Abhishek Tiwari</h3>
+              <span class="team-pro-role">Head of Programs, Bihar</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Bachelors of Science</div>
+                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 5. Tina Aggarwal -->
+          <div class="team-pro-card" style="--pro-color: #38B6FF;">
+            <img src="/assets/team/tina_aggarwal.jpg" alt="Tina Aggarwal" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Tina Aggarwal</h3>
+              <span class="team-pro-role">Head of Programs, Delhi</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>D.El Ed, MA- EDUCATION</div>
+                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>'''
+"""
 
-with open('index.html', 'r', encoding='utf-8') as f:
-    content = f.read()
+def update_team(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        text = f.read()
 
-pattern = re.compile(r'<!-- OUR TEAM.*?</section>', re.DOTALL)
-new_content = pattern.sub(section_html, content)
+    # Find the <div class="container" ...> inside #core-governance
+    # Pattern to match the container and EVERYTHING inside it until the closing </section>
+    pattern = r'<div class="container" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 1\.5rem;">[\s\S]*?(?=    </section>)'
+    
+    new_text = re.sub(pattern, new_team_html.strip() + '\n', text)
+    
+    if new_text != text:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(new_text)
+        print(f"Successfully updated team section in {file_path}")
+    else:
+        print(f"Could not find the target team block in {file_path}")
 
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(new_content)
+update_team('index.html')
+update_team('story.html')

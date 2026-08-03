@@ -140,10 +140,16 @@
           across <strong>Rajasthan, Bihar and Delhi</strong> — reaching over 200,000 children 
           with joyful, whole-school learning.
         </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; margin-top: 2rem;">
+          <a href="/press.html" class="btn" style="background-color: #0C4957; color: white; font-size: 1.15rem; padding: 0.9rem 2rem; box-shadow: 0 8px 25px rgba(12, 73, 87, 0.35); border-radius: 6px; font-weight: 700;">Read our Impact Report</a>
+          <a href="/story.html" class="btn btn--outline" style="font-size: 1.15rem; padding: 0.9rem 2rem; border-width: 2px;">See how we work</a>
+        </div>
+
       </div>
-      <div class="hero__visual" style="position: relative; width: 100%; max-width: 900px; margin: 0 auto; display: flex; gap: 2rem; justify-content: center; align-items: stretch; flex-wrap: wrap;">
+      <div class="hero__visual" style="position: relative; width: 100%; max-width: 1400px; margin: 0 auto; display: flex; gap: 2rem; justify-content: center; align-items: stretch; flex-wrap: wrap;">
         
-        <div style="position: relative; width: 100%; max-width: 420px;">
+        <div style="position: relative; flex: 1; min-width: 280px; max-width: 420px;">
           <div style="position: absolute; top: 12px; left: 12px; background: var(--color-sunshine); border: 2.5px solid var(--color-charcoal); border-radius: 24px; padding: 6px 16px; font-weight: 800; font-size: 0.8rem; z-index: 10; transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--color-charcoal); letter-spacing: 0.5px; color: var(--color-charcoal);">
             क्षमता — POTENTIAL
           </div>
@@ -152,7 +158,7 @@
           </div>
         </div>
 
-        <div style="position: relative; width: 100%; max-width: 420px;">
+        <div style="position: relative; flex: 1; min-width: 280px; max-width: 420px;">
           <div style="position: absolute; bottom: 12px; right: 12px; background: var(--color-coral); border: 2.5px solid var(--color-charcoal); border-radius: 24px; padding: 6px 16px; font-weight: 800; font-size: 0.8rem; z-index: 10; transform: rotate(2deg); box-shadow: 3px 3px 0 var(--color-charcoal); letter-spacing: 0.5px; color: #fff;">
             JOYFUL LEARNING ✨
           </div>
@@ -160,6 +166,16 @@
             <img src="/assets/photos/hero2.jpg" alt="Meaningful Education" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
           </div>
         </div>
+
+        <div style="position: relative; flex: 1; min-width: 280px; max-width: 420px;">
+          <div style="position: absolute; top: 12px; right: 12px; background: var(--color-teal); border: 2.5px solid var(--color-charcoal); border-radius: 24px; padding: 6px 16px; font-weight: 800; font-size: 0.8rem; z-index: 10; transform: rotate(-3deg); box-shadow: -3px 3px 0 var(--color-charcoal); letter-spacing: 0.5px; color: #fff;">
+            GROWING TOGETHER 🌱
+          </div>
+          <div style="border: 3px solid var(--color-charcoal); border-radius: 16px; overflow: hidden; box-shadow: -8px 8px 0 var(--color-sunshine); background: #f8f8f8; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; transform: rotate(-1deg); transition: transform 0.3s;">
+            <img src="/assets/photos/hero3.jpg" alt="Children reading together" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;" />
+          </div>
+        </div>
+
 
       </div>
     </div>
@@ -169,6 +185,105 @@
     <!-- ════════════════════════════════════════ -->
     <!-- IMPACT STATS BAR                        -->
     <!-- ════════════════════════════════════════ -->
+    
+    
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- MEANING BANNER                           -->
+    <!-- ════════════════════════════════════════ -->
+    <style>
+      @keyframes float-3d {
+        0% { transform: translateY(0) rotateX(0) rotateY(0); }
+        50% { transform: translateY(-12px) rotateX(8deg) rotateY(-8deg); }
+        100% { transform: translateY(0) rotateX(0) rotateY(0); }
+      }
+      @keyframes glow-pulse {
+        0% { text-shadow: 0 4px 15px rgba(12, 73, 87, 0.2), 0 1px 3px rgba(12,73,87,0.3); }
+        50% { text-shadow: 0 12px 30px rgba(12, 73, 87, 0.5), 0 4px 10px rgba(12,73,87,0.6); }
+        100% { text-shadow: 0 4px 15px rgba(12, 73, 87, 0.2), 0 1px 3px rgba(12,73,87,0.3); }
+      }
+      @keyframes symbol-glow {
+        0% { text-shadow: 0 0 10px rgba(82, 188, 229, 0.4); transform: translateY(0) scale(1); }
+        50% { text-shadow: 0 0 25px rgba(82, 188, 229, 0.8); transform: translateY(-8px) scale(1.15); }
+        100% { text-shadow: 0 0 10px rgba(82, 188, 229, 0.4); transform: translateY(0) scale(1); }
+      }
+      .meaning-card {
+        flex: 1;
+        min-width: 250px;
+        animation: float-3d 6s ease-in-out infinite;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+      .meaning-card:nth-child(3) { animation-delay: 1.5s; }
+      .meaning-card:nth-child(5) { animation-delay: 3s; }
+      
+      .meaning-hindi {
+        font-size: 3.8rem; 
+        color: #0C4957; 
+        margin-bottom: 0.5rem; 
+        font-family: var(--font-heading); 
+        font-weight: 800;
+        animation: glow-pulse 4s ease-in-out infinite;
+        transform: translateZ(30px);
+        display: inline-block;
+      }
+      .meaning-symbol {
+        font-size: 3.5rem; 
+        color: #52BCE5; 
+        font-weight: 300;
+        animation: symbol-glow 4s ease-in-out infinite;
+        display: inline-block;
+      }
+      .meaning-english {
+        font-size: 1rem; 
+        font-weight: 800; 
+        color: #C5881D; 
+        letter-spacing: 3px; 
+        margin-bottom: 1rem; 
+        text-transform: uppercase;
+        transform: translateZ(15px);
+        display: block;
+      }
+      .meaning-desc {
+        font-size: 1.1rem; 
+        color: #4A5568; 
+        line-height: 1.5; 
+        margin: 0 auto; 
+        max-width: 250px; 
+        font-weight: 500;
+        transform: translateZ(5px);
+      }
+    </style>
+    <section class="section" aria-label="Meaning of Kshamtalaya" style="background-color: #FFFFFF; padding: 6rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); overflow: hidden;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; perspective: 1500px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; text-align: center; gap: 1rem; flex-wrap: wrap; transform-style: preserve-3d;">
+          
+          <div class="meaning-card">
+            <h2 class="meaning-hindi">क्षमता</h2>
+            <div class="meaning-english">Kshamta</div>
+            <p class="meaning-desc">Potential. What every child already walks in with.</p>
+          </div>
+
+          <div class="meaning-symbol">+</div>
+
+          <div class="meaning-card">
+            <h2 class="meaning-hindi">आलय</h2>
+            <div class="meaning-english">Aalaya</div>
+            <p class="meaning-desc">A home. A place that holds you while you grow.</p>
+          </div>
+
+          <div class="meaning-symbol">=</div>
+
+          <div class="meaning-card">
+            <h2 class="meaning-hindi">क्षमतालय</h2>
+            <div class="meaning-english">Kshamtalaya</div>
+            <p class="meaning-desc">Where potential finds a home.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section class="stats section" id="impact" aria-label="Impact statistics" style="padding: 3rem 0; background: #08B9DB; position: relative; overflow: hidden;">
       <style>
         .stats::before {
@@ -213,31 +328,60 @@
       </style>
       <div class="container" style="position: relative; z-index: 2;">
         <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; gap: 1rem;">
-          <h2 style="color: white; font-size: 2rem; font-family: var(--font-heading); font-weight: 800; margin: 0; text-align: center;">Our Impact & Reach</h2>
+          <h2 style="color: white; font-size: 2.2rem; font-family: var(--font-heading); font-weight: 800; margin: 0; text-align: center;">A Decade of Impact: <span style="color: var(--color-sunshine);">10 Years of Reach</span></h2>
         </div>
         <div class="stats__grid" data-stagger style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          
+          <!-- NEW 5 CARDS -->
           <div class="compact-stat-card reveal">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="355914" data-suffix="">3,55,914</div>
+            <div class="stat-label-compact">Total Students <span class="stat-verb">Impacted</span></div>
+          </div>
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="1402" data-suffix="">1,402</div>
+            <div class="stat-label-compact">iDiscover <span class="stat-verb">Rajasthan</span></div>
+          </div>
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC72C" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="1050" data-suffix="+">1,050+</div>
+            <div class="stat-label-compact">iDiscover <span class="stat-verb">Bihar</span></div>
+          </div>
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="4053" data-suffix="">4,053</div>
+            <div class="stat-label-compact">Delhi Direct <span class="stat-verb">Students</span></div>
+          </div>
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <div class="stat-num-compact" data-count="6368" data-suffix="+">6,368+</div>
+            <div class="stat-label-compact">Learning Festival <span class="stat-verb">Children</span></div>
+          </div>
+
+          <!-- PREVIOUS 8 CARDS -->
+          <div class="compact-stat-card reveal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="10000" data-suffix="+">10,000+</div>
             <div class="stat-label-compact">Children via direct <span class="stat-verb">engagement</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC72C" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="120000" data-suffix="+">1,20,000+</div>
             <div class="stat-label-compact">Children via digital <span class="stat-verb">engagement</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC72C" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="1953" data-suffix="">1,953</div>
             <div class="stat-label-compact">Teachers <span class="stat-verb">Supported</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="10446" data-suffix="">10,446</div>
             <div class="stat-label-compact">Community Members <span class="stat-verb">Engaged</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="140" data-suffix="">140</div>
             <div class="stat-label-compact">Facilitators <span class="stat-verb">Trained</span></div>
           </div>
@@ -247,17 +391,16 @@
             <div class="stat-label-compact">Out-of-school Children <span class="stat-verb">Re-enrolled</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1CA6A0" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="166" data-suffix="">166</div>
             <div class="stat-label-compact">Learning Festivals <span class="stat-verb">Conducted</span></div>
           </div>
           <div class="compact-stat-card reveal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6F59" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38B6FF" style="margin: 0 auto;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             <div class="stat-num-compact" data-count="28" data-suffix="">28</div>
             <div class="stat-label-compact">Panchayats <span class="stat-verb">Involved</span></div>
           </div>
-        </div>
-      </div>
+        </div>      </div>
     </section>
     <!-- ════════════════════════════════════════ -->
     <!-- OUR APPROACH                             -->
@@ -554,7 +697,7 @@
                 <h3 class="program-card__name">Fale Fale Shiksha Muhim</h3>
                 <div class="program-card__location">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13C7 13 11.5 9 11.5 5.5C11.5 3 9.5 1 7 1Z"/><circle cx="7" cy="5.5" r="1.5"/></svg>
-                  Gogunda, Rajasthan
+                  Rajasthan
                 </div>
                 <p class="program-card__desc">A localized, doorstep-delivery learning model that maps, trains, and deploys neighborhood youth to bridge foundational literacy deficits right inside children’s homes.</p>
                 <div class="program-card__arrow" aria-hidden="true">
@@ -846,295 +989,6 @@
           <p style="max-width:700px; margin:0 auto; font-size:1.15rem; color:var(--color-text-secondary); line-height:1.65;">
             A year of scaling impact across 3 states — reaching thousands of children, empowering teachers, and strengthening communities.
           </p>
-        </div>
-
-        <!-- ─── PART 1: KF REACH STATS ─── -->
-        <div class="reveal" style="margin-bottom:4rem;">
-          <div style="text-align:center; margin-bottom:2rem;">
-            <h3 style="font-family:'Baloo 2',cursive; font-size:1.8rem; font-weight:800; color:var(--color-charcoal); margin:0;">
-              KF Reach in 2025–26 <span style="font-weight:600; font-size:1.1rem; color:var(--color-teal);">(3 States)</span>
-            </h3>
-          </div>
-          <style>
-            .reach-grid {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 1.25rem;
-            }
-            @media (max-width: 1024px) {
-              .reach-grid { grid-template-columns: repeat(2, 1fr); }
-            }
-            @media (max-width: 480px) {
-              .reach-grid { grid-template-columns: 1fr; }
-            }
-            .reach-card {
-              background: white;
-              border-radius: 24px;
-              padding: 1.75rem 1.25rem;
-              text-align: center;
-              box-shadow: 0 8px 28px rgba(0,0,0,0.04);
-              border: 1px solid rgba(0,0,0,0.04);
-              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-              position: relative;
-              overflow: hidden;
-            }
-            .reach-card:hover {
-              transform: translateY(-8px) scale(1.02);
-              box-shadow: 0 20px 40px rgba(8,185,219,0.12);
-            }
-            .reach-card::before {
-              content: '';
-              position: absolute;
-              top: 0; left: 0; right: 0;
-              height: 5px;
-            }
-            .reach-icon-circle {
-              width: 64px; height: 64px;
-              border-radius: 50%;
-              display: flex; align-items: center; justify-content: center;
-              margin: 0 auto 0.85rem;
-              font-size: 1.8rem;
-              transition: transform 0.4s ease;
-            }
-            .reach-card:hover .reach-icon-circle {
-              transform: scale(1.12) rotate(5deg);
-            }
-            .reach-number {
-              font-family: 'Baloo 2', cursive;
-              font-size: clamp(1.8rem, 2.2vw, 2.5rem);
-              font-weight: 800;
-              line-height: 1.1;
-              margin-bottom: 0.3rem;
-              background: linear-gradient(135deg, var(--color-charcoal), var(--color-teal));
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-clip: text;
-            }
-            .reach-label {
-              font-size: 0.92rem;
-              font-weight: 700;
-              color: var(--color-text-secondary);
-              letter-spacing: 0.2px;
-            }
-          </style>
-
-          <div class="reach-grid">
-            <div class="reach-card" style="--accent: #08B9DB;">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
-              <div class="reach-icon-circle" style="background: #E6F8FC;">🏫</div>
-              <div class="reach-number">155</div>
-              <div class="reach-label">Schools</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #FF6F59, #FF9080);"></div>
-              <div class="reach-icon-circle" style="background: #FFF0EE;">👦</div>
-              <div class="reach-number">1,84,188</div>
-              <div class="reach-label">Children - Direct Impact</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
-              <div class="reach-icon-circle" style="background: #F5EEFC;">👧</div>
-              <div class="reach-number">1,71,726</div>
-              <div class="reach-label">Children - Indirect Impact</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
-              <div class="reach-icon-circle" style="background: #E8F8F7;">🙌</div>
-              <div class="reach-number">204</div>
-              <div class="reach-label">Fellows</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #38B6FF, #08B9DB);"></div>
-              <div class="reach-icon-circle" style="background: #EBF8FF;">👩‍🏫</div>
-              <div class="reach-number">2,000</div>
-              <div class="reach-label">Teachers - Direct Impact</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #01BADE, #35D6F5);"></div>
-              <div class="reach-icon-circle" style="background: #EAF9FC;">🌐</div>
-              <div class="reach-number">1,57,000</div>
-              <div class="reach-label">Teachers - Indirect Impact</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #F2994A, #FFC72C);"></div>
-              <div class="reach-icon-circle" style="background: #FFF8EE;">👨‍👩‍👧</div>
-              <div class="reach-number">16,000</div>
-              <div class="reach-label">Parents - Direct Impact</div>
-            </div>
-            <div class="reach-card">
-              <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #E056FD, #F6B93B);"></div>
-              <div class="reach-icon-circle" style="background: #FDF6FF;">🏡</div>
-              <div class="reach-number">63,170</div>
-              <div class="reach-label">Parents - Indirect Impact</div>
-            </div>
-          </div>
-          </div>
-        </div>
-
-        <!-- ─── PART 2: ACHIEVEMENT CATEGORIES ─── -->
-        <div class="reveal" style="margin-bottom:4rem;">
-          <div style="text-align:center; margin-bottom:2rem;">
-            <h3 style="font-family:'Baloo 2',cursive; font-size:1.8rem; font-weight:800; color:var(--color-charcoal); margin:0;">
-              Achievement Highlights
-            </h3>
-          </div>
-
-          <style>
-            .achieve-tabs {
-              display: flex;
-              justify-content: center;
-              gap: 0.75rem;
-              margin-bottom: 2rem;
-              flex-wrap: wrap;
-            }
-            .achieve-tab {
-              padding: 12px 28px;
-              border-radius: 50px;
-              font-weight: 700;
-              font-size: 0.95rem;
-              border: 2px solid transparent;
-              cursor: pointer;
-              transition: all 0.35s ease;
-              background: white;
-              color: var(--color-charcoal);
-              box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            }
-            .achieve-tab.active-tab-cyan {
-              background: linear-gradient(135deg, #08B9DB, #0AD1F0);
-              color: white;
-              box-shadow: 0 8px 22px rgba(8,185,219,0.3);
-              border-color: transparent;
-            }
-            .achieve-tab.active-tab-gold {
-              background: linear-gradient(135deg, #F2994A, #FFC72C);
-              color: white;
-              box-shadow: 0 8px 22px rgba(242,153,74,0.3);
-              border-color: transparent;
-            }
-            .achieve-tab.active-tab-rose {
-              background: linear-gradient(135deg, #C06C84, #D4849A);
-              color: white;
-              box-shadow: 0 8px 22px rgba(192,108,132,0.3);
-              border-color: transparent;
-            }
-            .achieve-panel {
-              display: none;
-              animation: achieveFadeIn 0.4s ease;
-            }
-            .achieve-panel.active {
-              display: block;
-            }
-            @keyframes achieveFadeIn {
-              from { opacity: 0; transform: translateY(12px); }
-              to { opacity: 1; transform: translateY(0); }
-            }
-            .achieve-content-card {
-              background: white;
-              border-radius: 24px;
-              padding: 2.5rem;
-              box-shadow: 0 12px 35px rgba(0,0,0,0.06);
-              border: 1px solid rgba(0,0,0,0.04);
-              position: relative;
-              overflow: hidden;
-            }
-            .achieve-content-card::before {
-              content: '';
-              position: absolute;
-              top: 0; left: 0; right: 0;
-              height: 6px;
-            }
-            .achieve-stat-pill {
-              display: inline-flex;
-              align-items: center;
-              gap: 8px;
-              padding: 10px 20px;
-              background: #F8FAFC;
-              border-radius: 16px;
-              font-size: 0.95rem;
-              color: var(--color-text-secondary);
-              border: 1px solid rgba(0,0,0,0.05);
-              margin: 0.4rem;
-              transition: all 0.3s ease;
-            }
-            .achieve-stat-pill:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-            }
-            .achieve-stat-value {
-              font-weight: 800;
-              font-size: 1.1rem;
-              color: var(--color-charcoal);
-            }
-          </style>
-
-          <!-- Tabs -->
-          <div class="achieve-tabs">
-            <button class="achieve-tab active-tab-cyan" onclick="switchAchieveTab('children', this, 'active-tab-cyan')" id="tabChildren">👶 Children Related</button>
-            <button class="achieve-tab" onclick="switchAchieveTab('scale', this, 'active-tab-gold')" id="tabScale">📈 At Scale</button>
-            <button class="achieve-tab" onclick="switchAchieveTab('stakeholder', this, 'active-tab-rose')" id="tabStakeholder">🤝 Stakeholder Related</button>
-          </div>
-
-          <!-- Panel: Children Related -->
-          <div class="achieve-panel active" id="panelChildren">
-            <div class="achieve-content-card" style="border-top: 6px solid #08B9DB;">
-              <h4 style="font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:#08B9DB; margin:0 0 1.25rem;">
-                👶 Children Related Achievements
-              </h4>
-              <p style="color:var(--color-text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:1.05rem;">
-                Our programs directly and indirectly touched the lives of <strong>3,55,914 children</strong> across 3 states, fostering holistic development, joyful learning, and foundational skills.
-              </p>
-              <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">1,84,188</span> Children - Direct Impact</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">1,71,726</span> Children - Indirect Impact</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">1,402</span> iDiscover Rajasthan</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">1,050+</span> iDiscover Bihar</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#FF6F59;">4,053</span> Delhi Direct Students</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#38B6FF;">6,368+</span> Learning Festival Children</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel: At Scale -->
-          <div class="achieve-panel" id="panelScale">
-            <div class="achieve-content-card" style="border-top: 6px solid #F2994A;">
-              <h4 style="font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:#F2994A; margin:0 0 1.25rem;">
-                📈 At Scale Achievements
-              </h4>
-              <p style="color:var(--color-text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:1.05rem;">
-                Operating across <strong>155 schools in 3 states</strong> with a combined budget of <strong>₹2.88 Cr</strong>, our programs are scaling impact through deep partnerships, community leadership, and systemic innovation.
-              </p>
-              <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">155</span> Schools</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">3</span> States (Rajasthan, Bihar, Delhi)</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">7</span> Active Programs</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">₹2.88 Cr</span> Combined Budget</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#FF6F59;">3</span> Blocks in Rajasthan</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#38B6FF;">3</span> MCD Zones in Delhi</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel: Stakeholder Related -->
-          <div class="achieve-panel" id="panelStakeholder">
-            <div class="achieve-content-card" style="border-top: 6px solid #C06C84;">
-              <h4 style="font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:#C06C84; margin:0 0 1.25rem;">
-                🤝 Stakeholder Related Achievements
-              </h4>
-              <p style="color:var(--color-text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:1.05rem;">
-                Empowering <strong>1,59,000 teachers</strong> (2,000 direct, 1,57,000 indirect), engaging <strong>79,170 parents</strong> (16,000 direct, 63,170 indirect), and nurturing <strong>204 Fellows</strong> — building a vibrant ecosystem of support around every child.
-              </p>
-              <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#C06C84;">2,000</span> Direct Teachers</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#38B6FF;">1,57,000</span> Indirect Teachers</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#F2994A;">16,000</span> Direct Parents</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#E056FD;">63,170</span> Indirect Parents</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#1CA6A0;">204</span> Fellows</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#08B9DB;">100</span> Champion Teachers (Delhi)</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#9B51E0;">175+</span> Volunteers</span>
-                <span class="achieve-stat-pill"><span class="achieve-stat-value" style="color:#FF6F59;">234</span> Star Parents (Delhi)</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- ─── PART 3: PROGRAMS IN 2025-26 ─── -->
@@ -1483,54 +1337,200 @@
           }
         </style>
 
-        <div class="premium-timeline" data-stagger>
-          <!-- 2016 -->
-          <div class="pt-item reveal">
-            <div class="pt-content-wrap">
-              <div class="pt-card">
-                <div class="pt-year">2016</div>
-                <h3>The Spark</h3>
-                <p>Kshamtalaya envisioned after witnessing deep education inequity in tribal-rural Kotra, Udaipur. A dream to build an "Abode of Potential" for every child.</p>
+        <div class="interactive-timeline-container reveal" style="max-width: 1200px; margin: 4rem auto;">
+          <style>
+            .expanding-timeline {
+              display: flex;
+              height: 500px;
+              gap: 12px;
+              width: 100%;
+              padding: 0 1rem;
+            }
+            .et-card {
+              flex: 1;
+              position: relative;
+              background: linear-gradient(145deg, #ffffff 0%, var(--et-bg-color) 100%);
+              border-radius: 24px;
+              overflow: hidden;
+              cursor: pointer;
+              transition: all 0.7s cubic-bezier(0.25, 1, 0.3, 1);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+              display: flex;
+              flex-direction: column;
+              border: 1px solid rgba(0,0,0,0.03);
+            }
+            .et-card:hover, .et-card:focus-within {
+              flex: 6;
+              box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+              transform: translateY(-5px);
+            }
+            /* The Year Text */
+            .et-year {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(-90deg);
+              font-family: var(--font-heading);
+              font-size: 2rem;
+              font-weight: 900;
+              color: var(--et-color);
+              transition: all 0.7s cubic-bezier(0.25, 1, 0.3, 1);
+              white-space: nowrap;
+              letter-spacing: 2px;
+              opacity: 0.7;
+            }
+            .et-card:hover .et-year, .et-card:focus-within .et-year {
+              transform: translate(0, 0) rotate(0deg);
+              top: 2rem;
+              left: 2rem;
+              font-size: 3.5rem;
+              opacity: 1;
+            }
+            /* The Content */
+            .et-content {
+              opacity: 0;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              padding: 2rem;
+              padding-top: 4rem;
+              background: linear-gradient(0deg, #ffffff 60%, rgba(255,255,255,0) 100%);
+              transform: translateY(30px);
+              transition: all 0.5s ease;
+              transition-delay: 0s;
+              pointer-events: none;
+            }
+            .et-card:hover .et-content, .et-card:focus-within .et-content {
+              opacity: 1;
+              transform: translateY(0);
+              transition-delay: 0.3s;
+              pointer-events: auto;
+            }
+            .et-content h3 {
+              font-size: 1.6rem;
+              color: var(--color-charcoal);
+              margin-bottom: 0.75rem;
+              font-weight: 800;
+              line-height: 1.2;
+            }
+            .et-content p {
+              font-size: 1.05rem;
+              color: var(--color-text-secondary);
+              line-height: 1.6;
+              margin: 0;
+            }
+            
+            /* Responsive */
+            @media (max-width: 900px) {
+              .expanding-timeline {
+                flex-direction: column;
+                height: auto;
+              }
+              .et-card {
+                height: 80px;
+                flex: none;
+                transition: all 0.5s ease;
+              }
+              .et-year {
+                transform: translate(0, -50%) rotate(0deg);
+                top: 50%;
+                left: 1.5rem;
+                font-size: 2rem;
+                opacity: 1;
+              }
+              .et-card:hover, .et-card:focus-within {
+                height: 300px;
+                transform: translateX(5px);
+              }
+              .et-card:hover .et-year, .et-card:focus-within .et-year {
+                top: 1.5rem;
+                transform: translate(0, 0);
+              }
+            }
+          </style>
+
+          <div class="expanding-timeline">
+            <!-- 2016 -->
+            <div class="et-card" tabindex="0" style="--et-color: #FF6F59; --et-bg-color: rgba(255,111,89,0.15);">
+              <div class="et-year">2016</div>
+              <div class="et-content">
+                <h3>The beginning, in Kotra</h3>
+                <p>Two fellows in a remote tribal block, asking what real education would look like there. Incorporated as a Section 8 company on 27 July 2016.</p>
               </div>
             </div>
-            <div class="pt-dot" style="--dot-color: #FF6F59;"></div>
-            <div style="width: 45%;"></div>
-          </div>
-          <!-- 2017 -->
-          <div class="pt-item reveal">
-            <div class="pt-content-wrap">
-              <div class="pt-card">
-                <div class="pt-year">2017</div>
-                <h3>First Programs Launch</h3>
-                <p>Learning Festivals initiated in June, followed by the launch of the iDISCOVER Fellowship in November — the first cohort of grassroots education leaders inducted.</p>
+            <!-- 2017 -->
+            <div class="et-card" tabindex="0" style="--et-color: #1CA6A0; --et-bg-color: rgba(28,166,160,0.15);">
+              <div class="et-year">2017</div>
+              <div class="et-content">
+                <h3>First programmes</h3>
+                <p>Learning Festivals begin in June. The iDISCOVER Fellowship inducts its first cohort of grassroots education leaders in November.</p>
               </div>
             </div>
-            <div class="pt-dot" style="--dot-color: #1CA6A0;"></div>
-            <div style="width: 45%;"></div>
-          </div>
-          <!-- 2019 -->
-          <div class="pt-item reveal">
-            <div class="pt-content-wrap">
-              <div class="pt-card">
-                <div class="pt-year">2019</div>
-                <h3>Expansion & Partnerships</h3>
-                <p>SEE Learning curriculum (Emory University + Dalai Lama Trust) launched. CELL model formalised in Rajasthan. Entrepreneurial Mindset Curriculum co-created with SCERT Delhi.</p>
+            <!-- 2018 -->
+            <div class="et-card" tabindex="0" style="--et-color: #FFC72C; --et-bg-color: rgba(255,199,44,0.2);">
+              <div class="et-year">2018</div>
+              <div class="et-content">
+                <h3>Into Delhi</h3>
+                <p>Work begins in MCD government schools in East Delhi, expanding our urban footprint.</p>
               </div>
             </div>
-            <div class="pt-dot" style="--dot-color: #FFC72C;"></div>
-            <div style="width: 45%;"></div>
-          </div>
-          <!-- 2020 -->
-          <div class="pt-item reveal">
-            <div class="pt-content-wrap">
-              <div class="pt-card">
-                <div class="pt-year">2020</div>
-                <h3>COVID Response & Innovation</h3>
-                <p>Launched COVID relief campaign for Kotra & Gogunda families. Pioneered Radio learning program with Radio Madhuban — reaching children without internet access.</p>
+            <!-- 2019 -->
+            <div class="et-card" tabindex="0" style="--et-color: #38B6FF; --et-bg-color: rgba(56,182,255,0.15);">
+              <div class="et-year">2019</div>
+              <div class="et-content">
+                <h3>Curriculum with the state</h3>
+                <p>SEE Learning launched with Emory University and the Dalai Lama Trust. Entrepreneurial Mindset Curriculum co-created with SCERT Delhi.</p>
               </div>
             </div>
-            <div class="pt-dot" style="--dot-color: #38B6FF;"></div>
-            <div style="width: 45%;"></div>
+            <!-- 2020 -->
+            <div class="et-card" tabindex="0" style="--et-color: #9B51E0; --et-bg-color: rgba(155,81,224,0.15);">
+              <div class="et-year">2020</div>
+              <div class="et-content">
+                <h3>The pandemic & radio</h3>
+                <p>Relief for families in Kotra. Radio learning launched with Radio Madhuban for children with no internet access.</p>
+              </div>
+            </div>
+            <!-- 2021 -->
+            <div class="et-card" tabindex="0" style="--et-color: #FF6F59; --et-bg-color: rgba(255,111,89,0.15);">
+              <div class="et-year">2021</div>
+              <div class="et-content">
+                <h3>Institutional footing</h3>
+                <p>CSR registration approved in April 2021, opening the door to transformative corporate partnerships.</p>
+              </div>
+            </div>
+            <!-- 2022 -->
+            <div class="et-card" tabindex="0" style="--et-color: #1CA6A0; --et-bg-color: rgba(28,166,160,0.15);">
+              <div class="et-year">2022</div>
+              <div class="et-content">
+                <h3>Into Bihar</h3>
+                <p>Work begins in Samastipur district, scaling impact in partnership with SCERT Bihar.</p>
+              </div>
+            </div>
+            <!-- 2023 -->
+            <div class="et-card" tabindex="0" style="--et-color: #FFC72C; --et-bg-color: rgba(255,199,44,0.2);">
+              <div class="et-year">2023</div>
+              <div class="et-content">
+                <h3>Recognised globally</h3>
+                <p>The parent engagement model reaches the global Top 10 for the World's Best School Prize for Community Collaboration.</p>
+              </div>
+            </div>
+            <!-- 2025 -->
+            <div class="et-card" tabindex="0" style="--et-color: #38B6FF; --et-bg-color: rgba(56,182,255,0.15);">
+              <div class="et-year">2025</div>
+              <div class="et-content">
+                <h3>Adopted by the system</h3>
+                <p>The STAR Parents model is officially adopted by the Municipal Corporation of Delhi starting 1 April 2025.</p>
+              </div>
+            </div>
+            <!-- 2026 -->
+            <div class="et-card" tabindex="0" style="--et-color: #9B51E0; --et-bg-color: rgba(155,81,224,0.15);">
+              <div class="et-year">2026</div>
+              <div class="et-content">
+                <h3>The depth decade begins</h3>
+                <p>Ten years in. An Advisory Board constituted. The next decade is about deeper roots and stronger institutions.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="text-center reveal" style="margin-top: var(--space-xl);">
@@ -1591,109 +1591,207 @@
         </div>
       </div>
     </section>
-    <!-- ════════════════════════════════════════ -->
-    <!-- VALUES                                   -->
-    <!-- ════════════════════════════════════════ -->
+    
+    <!-- VALUES -->
     <section class="section doodle-bg" id="values" aria-label="Our Values">
       <!-- Section Doodles -->
       <svg class="section-doodle section-doodle--bob1" style="top: 8%; left: 3%; width: 45px;" viewBox="0 0 45 45" aria-hidden="true">
         <path d="M22.5 5 L27 16 L38 16 L29 23 L33 35 L22.5 28 L12 35 L16 23 L7 16 L18 16 Z" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-linejoin="round"/>
       </svg>
-      <svg class="section-doodle section-doodle--bob3" style="top: 30%; right: 3%; width: 30px;" viewBox="0 0 30 30" aria-hidden="true">
-        <path d="M15 3 Q 22 10, 15 15 Q 8 20, 15 27" fill="none" stroke="#1CA6A0" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <svg class="section-doodle section-doodle--bob2" style="bottom: 10%; left: 5%; width: 32px;" viewBox="0 0 32 32" aria-hidden="true">
-        <rect x="4" y="4" width="24" height="24" rx="4" fill="none" stroke="#4FB6E8" stroke-width="1.5" transform="rotate(20 16 16)" stroke-dasharray="4 3"/>
-      </svg>
-      <svg class="section-doodle section-doodle--bob1" style="bottom: 25%; right: 6%; width: 22px;" viewBox="0 0 22 22" aria-hidden="true">
-        <circle cx="11" cy="11" r="8" fill="none" stroke="#FF6F59" stroke-width="1.5" stroke-dasharray="3 3"/>
-      </svg>
       <div class="container">
         <div class="section-header reveal">
           <div class="section-header__eyebrow">Who We Are</div>
-          <h2 class="section-header__title">Our <span class="doodle-highlight">Values<svg class="doodle-highlight__circle" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="40" rx="95" ry="35" fill="none" stroke="#FF6F59" stroke-width="2.5" stroke-linecap="round" class="doodle-circle-draw" opacity="0.4"/></svg></span></h2>
+          <h2 class="section-header__title">Our <span class="doodle-highlight">Values</span></h2>
         </div>
+        
         <style>
-          .premium-values-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem; margin-top: 3rem;
+          .bento-values {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(260px, auto);
+            gap: 1.5rem;
+            margin-top: 4rem;
           }
-          .premium-value-card {
-            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px);
-            padding: 3rem 2.5rem; border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03), inset 0 0 0 1px rgba(255,255,255,1);
-            position: relative; overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex; flex-direction: column; height: 100%;
+          .bento-card {
+            position: relative;
+            border-radius: 32px;
+            padding: 2.5rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+            background: white;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            z-index: 1;
+            cursor: default;
           }
-          .premium-value-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px;
-            background: var(--value-color); transition: height 0.4s ease;
+          .bento-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
           }
-          .premium-value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,1);
+          .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--v-color);
+            opacity: 0.05;
+            transition: all 0.5s ease;
+            z-index: -2;
           }
-          .premium-value-card:hover::before { height: 10px; }
-          .value-icon-box {
-            width: 70px; height: 70px; border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
-            background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            margin-bottom: 2rem; color: var(--value-color); font-size: 2rem;
-            font-family: var(--font-heading); font-weight: 900;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          .bento-card:hover::before {
+            opacity: 0.15;
           }
-          .premium-value-card:hover .value-icon-box {
+          .bento-hindi {
+            position: absolute;
+            right: -5%;
+            bottom: -15%;
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--v-color);
+            opacity: 0.06;
+            z-index: -1;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+            pointer-events: none;
+            white-space: nowrap;
+          }
+          .bento-card:hover .bento-hindi {
             transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 15px 35px var(--value-color-light);
+            opacity: 0.12;
+            right: 0%;
+            bottom: -10%;
           }
-          .value-title {
-            font-size: 1.8rem; font-weight: 800; color: var(--color-charcoal); margin-bottom: 1rem;
+          .bento-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
           }
-          .value-quote {
-            font-style: italic; color: var(--value-color); font-weight: 600;
-            margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.5;
-            background: linear-gradient(90deg, var(--value-color), var(--color-charcoal));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+          .bento-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            background: var(--v-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1);
           }
-          .value-desc {
-            color: var(--color-text-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;
-            flex-grow: 1;
+          .bento-card:hover .bento-icon {
+            transform: scale(1.1) rotate(10deg);
+          }
+          .bento-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-charcoal);
+            margin: 0;
+            line-height: 1.2;
+          }
+          .bento-desc {
+            font-size: 1.15rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+            max-width: 90%;
+          }
+          
+          /* Bento mapping */
+          .bento-card:nth-child(1) { grid-column: span 2; }
+          .bento-card:nth-child(2) { grid-column: span 2; }
+          .bento-card:nth-child(3) { grid-column: span 1; }
+          .bento-card:nth-child(4) { grid-column: span 2; }
+          .bento-card:nth-child(5) { grid-column: span 1; }
+
+          @media (max-width: 1024px) {
+            .bento-values {
+              grid-template-columns: repeat(2, 1fr);
+              grid-auto-rows: minmax(220px, auto);
+            }
+            .bento-card:nth-child(n) { grid-column: span 2; }
+            .bento-card:nth-child(3) { grid-column: span 1; }
+            .bento-card:nth-child(5) { grid-column: span 1; }
+          }
+          @media (max-width: 768px) {
+            .bento-values {
+              grid-template-columns: 1fr;
+              grid-auto-rows: auto;
+            }
+            .bento-card:nth-child(n) { grid-column: span 1; padding: 2rem; }
+            .bento-hindi { font-size: 6rem; }
+            .bento-desc { max-width: 100%; }
           }
         </style>
 
-        <div class="premium-values-grid" data-stagger>
-          <!-- Compassion -->
-          <div class="reveal premium-value-card" style="--value-color: #1CA6A0; --value-color-light: rgba(28,166,160,0.3);">
-            <div class="value-icon-box">1</div>
-            <h3 class="value-title">Compassion</h3>
-            <p class="value-quote">"Compassion is recognizing suffering, understanding its universality, and taking action to alleviate it with empathy and care."</p>
-            <p class="value-desc">At Kshamtalaya, we integrate compassion by supporting students, teachers, and communities in their challenges, ensuring we respond with empathy and create nurturing environments for growth.</p>
+        <div class="bento-values reveal" data-stagger>
+          <!-- 1. Compassion -->
+          <div class="bento-card" style="--v-color: #FF6F59;">
+            <div class="bento-hindi">करुणा</div>
+            <div class="bento-header">
+              <div class="bento-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <h3 class="bento-title">Compassion</h3>
+            </div>
+            <p class="bento-desc">We recognise difficulty, treat it as universal, and act on it with care.</p>
           </div>
-          <!-- Freedom with Responsibility -->
-          <div class="reveal premium-value-card" style="--value-color: #FFC72C; --value-color-light: rgba(255,199,44,0.3);">
-            <div class="value-icon-box">2</div>
-            <h3 class="value-title">Freedom with Responsibility</h3>
-            <p class="value-quote">"True freedom comes with the responsibility to be accountable for your actions, making choices that impact others and owning both successes and mistakes."</p>
-            <p class="value-desc">We empower our educators and students to make decisions and take ownership of their learning and growth, fostering an environment where responsibility is valued alongside freedom.</p>
+          
+          <!-- 2. Trust -->
+          <div class="bento-card" style="--v-color: #38B6FF;">
+            <div class="bento-hindi">विश्वास</div>
+            <div class="bento-header">
+              <div class="bento-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3 class="bento-title">Trust</h3>
+            </div>
+            <p class="bento-desc">We are transparent about our processes and treat mistakes as places to learn.</p>
           </div>
-          <!-- Excellence -->
-          <div class="reveal premium-value-card" style="--value-color: #FF6F59; --value-color-light: rgba(255,111,89,0.3);">
-            <div class="value-icon-box">3</div>
-            <h3 class="value-title">Excellence</h3>
-            <p class="value-quote">"Excellence is about striving to be better every day, dedicating yourself to doing your best and growing through each experience."</p>
-            <p class="value-desc">In our work, excellence is evident in our commitment to continuously improving educational practices and striving for the highest standards in every program we implement.</p>
+          
+          <!-- 3. Excellence -->
+          <div class="bento-card" style="--v-color: #FFC72C;">
+            <div class="bento-hindi" style="right: -15%;">उत्कृष्टता</div>
+            <div class="bento-header">
+              <div class="bento-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <h3 class="bento-title">Excellence</h3>
+            </div>
+            <p class="bento-desc">We hold a high standard and improve it deliberately, year on year.</p>
           </div>
-          <!-- Trust -->
-          <div class="reveal premium-value-card" style="--value-color: #38B6FF; --value-color-light: rgba(56,182,255,0.3);">
-            <div class="value-icon-box">4</div>
-            <h3 class="value-title">Trust</h3>
-            <p class="value-quote">"Trust is the foundation of a safe and engaged environment, built on transparency, unconditional support, and the reliability of keeping commitments."</p>
-            <p class="value-desc">Kshamtalaya fosters trust by being transparent in our processes, encouraging open communication, and creating spaces where mistakes are seen as opportunities for growth rather than failures.</p>
+          
+          <!-- 4. Freedom -->
+          <div class="bento-card" style="--v-color: #1CA6A0;">
+            <div class="bento-hindi">स्वतंत्रता</div>
+            <div class="bento-header">
+              <div class="bento-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+              </div>
+              <h3 class="bento-title">Freedom</h3>
+            </div>
+            <p class="bento-desc">Our teams make their own decisions and take full responsibility for what follows.</p>
+          </div>
+          
+          <!-- 5. Innovation -->
+          <div class="bento-card" style="--v-color: #9B51E0;">
+            <div class="bento-hindi">नवाचार</div>
+            <div class="bento-header">
+              <div class="bento-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="19" x2="12" y2="22"></line><line x1="9" y1="22" x2="15" y2="22"></line></svg>
+              </div>
+              <h3 class="bento-title">Innovation</h3>
+            </div>
+            <p class="bento-desc">We test, adapt and discard. The model came from reflection, not a plan.</p>
           </div>
         </div>
       </div>
     </section>
+
     <!-- ════════════════════════════════════════ -->
     <!-- 4 AUDIENCE PATHWAYS                      -->
     <!-- ════════════════════════════════════════ -->
@@ -1779,7 +1877,7 @@
 
       <div class="container" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
         <!-- Section Header -->
-        <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
           <div class="section-header__eyebrow" style="display: inline-block; padding: 6px 18px; background: rgba(8, 185, 219, 0.1); border: 1.5px solid var(--color-teal); border-radius: 30px; font-weight: 800; font-size: 0.85rem; color: var(--color-teal); letter-spacing: 1.5px; margin-bottom: 1rem;">
             GOVERNANCE & LEADERSHIP
           </div>
@@ -1789,528 +1887,216 @@
           <p class="section-header__desc" style="max-width: 720px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.6;">
             The founders, directors, and senior leaders steering Kshamtalaya's mission to strengthen learning ecosystems and nurture child potential across India.
           </p>
-
-          <!-- View Switcher Tabs -->
-          <div style="display: inline-flex; gap: 8px; background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); padding: 6px; border-radius: 50px; margin-top: 2rem; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
-            <button id="btnGovCards" onclick="toggleGovView('cards')" style="padding: 10px 22px; border-radius: 40px; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s ease; background: var(--color-teal); color: white; box-shadow: 0 4px 12px rgba(8, 185, 219, 0.3);">
-              🎴 Visual Profile Cards
-            </button>
-            <button id="btnGovTable" onclick="toggleGovView('table')" style="padding: 10px 22px; border-radius: 40px; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s ease; background: transparent; color: var(--color-charcoal);">
-              📊 Executive Matrix View
-            </button>
-          </div>
         </div>
 
         <style>
-          /* Governance Cards & Table Styling */
-          .gov-cards-grid {
+          .team-awwwards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            transition: all 0.4s ease;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
           }
-          .gov-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 24px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          .team-pro-card {
             position: relative;
+            height: 480px;
+            border-radius: 30px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            background: #fff;
           }
-          .gov-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 20px 40px rgba(8, 185, 219, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
-          }
-          .gov-card-accent {
+          .team-pro-img {
             position: absolute;
-            top: 0;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1), filter 0.8s ease;
+            filter: grayscale(80%) contrast(1.1);
+          }
+          .team-pro-card:hover .team-pro-img {
+            transform: scale(1.08);
+            filter: grayscale(0%) contrast(1);
+          }
+          .team-pro-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 100%);
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+          }
+          .team-pro-card:hover .team-pro-overlay {
+            opacity: 0.95;
+            background: linear-gradient(to top, var(--pro-color) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+          }
+          .team-pro-content {
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 6px;
-          }
-          .gov-avatar-box {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 5px solid white;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 2.5rem;
+            padding: 2rem;
             color: white;
-            background: linear-gradient(135deg, var(--color-teal), #0194B1);
-            transition: transform 0.4s ease;
-            margin: 0 auto 1rem auto;
+            transform: translateY(60px);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1);
           }
-          .gov-card:hover .gov-avatar-box {
-            transform: scale(1.06);
+          .team-pro-card:hover .team-pro-content {
+            transform: translateY(0);
           }
-          .gov-avatar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 15%;
+          .team-pro-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 0 0.25rem 0;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
           }
-          .gov-badge {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 0.82rem;
+          .team-pro-role {
+            color: #FFC72C;
             font-weight: 700;
-            letter-spacing: 0.3px;
-            margin-top: 0.3rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            display: block;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
           }
-          .gov-details-box {
-            background: rgba(248, 250, 252, 0.8);
-            border-radius: 16px;
-            padding: 1.25rem;
-            margin-top: 1.25rem;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+          .team-pro-card:hover .team-pro-role {
+            color: #fff;
           }
-          .gov-detail-item {
+          .team-pro-details {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            transition-delay: 0.1s;
+          }
+          .team-pro-card:hover .team-pro-details {
+            opacity: 1;
+          }
+          .team-pro-stat {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-bottom: 0.85rem;
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
-            line-height: 1.45;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
           }
-          .gov-detail-item:last-child {
-            margin-bottom: 0;
-          }
-          .gov-detail-icon {
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-top: 1px;
-          }
-          .gov-tenure-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            background: #FFFBF0;
-            border: 1px solid #FFE9A8;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--color-charcoal);
-          }
-
-          /* Matrix Table Styling */
-          .gov-matrix-wrapper {
-            display: none;
-            overflow-x: auto;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-            background: white;
-            border: 1px solid rgba(0,0,0,0.06);
-          }
-          .gov-matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            min-width: 800px;
-          }
-          .gov-matrix-table th {
-            background: linear-gradient(135deg, var(--color-charcoal) 0%, #1E293B 100%);
-            color: #FFFFFF;
-            padding: 1.25rem 1.5rem;
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-          }
-          .gov-matrix-table td {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            font-size: 0.98rem;
-            color: var(--color-text-secondary);
-            vertical-align: middle;
-          }
-          .gov-matrix-table tr:hover {
-            background: #F8FAFC;
-          }
-          .gov-matrix-table tr:last-child td {
-            border-bottom: none;
-          }
-          .gov-matrix-user {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            color: var(--color-charcoal);
-          }
-          .gov-matrix-avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
+          .team-pro-stat strong {
             color: white;
-            background: var(--color-teal);
+            font-weight: 700;
           }
-          .gov-matrix-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          .team-pro-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+          }
+          
+          @media (max-width: 768px) {
+            .team-pro-content {
+              transform: translateY(0);
+            }
+            .team-pro-details {
+              opacity: 1;
+            }
+            .team-pro-img { filter: grayscale(0%); }
+            .team-pro-overlay { opacity: 0.9; }
           }
         </style>
 
-        <!-- VIEW 1: Visual Cards View -->
-        <div id="govCardsGrid" class="gov-cards-grid reveal">
+        <div class="team-awwwards-grid reveal" data-stagger>
           <!-- 1. Pooja Singh -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #FF6F59, #FF9080);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box" style="background: linear-gradient(135deg, #FF6F59, #E04832);">
-                  <img src="/assets/team/pooja_singh.jpeg" alt="Pooja Singh" class="gov-avatar-img" />
+          <div class="team-pro-card" style="--pro-color: #FF6F59;">
+            <img src="/assets/team/pooja_singh.jpeg" alt="Pooja Singh" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Pooja Singh</h3>
+              <span class="team-pro-role">Co-Founder & Mentor</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Masters in Mass Comm</div>
                 </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Pooja Singh
-                  </h3>
-                  <span class="gov-badge" style="background: #FFF0EE; color: #E04832; border: 1px solid #FFC4BC;">
-                    Co-Founder
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    Masters in Mass Comm
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
               </div>
             </div>
           </div>
-          <!-- 2. Vivek Kumar -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #F2994A, #F5B073);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box">
-                  <img src="/assets/team/vivek_kumar.jpeg" alt="Vivek Kumar" class="gov-avatar-img" />
+          
+          <!-- 2. Anjali Gupte -->
+          <div class="team-pro-card" style="--pro-color: #9B51E0;">
+            <img src="/assets/team/anjali_gupte.jpeg" alt="Anjali Gupte" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Anjali Gupte</h3>
+              <span class="team-pro-role">Director, Founding member</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>MSc Statistics, B.Ed.</div>
                 </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Vivek Kumar
-                  </h3>
-                  <span class="gov-badge" style="background: #FFF4E5; color: #D97F35; border: 1px solid #FFD8A8;">
-                    Co-Founder
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    B.Tech, MA Education from TISS
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
               </div>
             </div>
           </div>
-          <!-- 3. Anjali Gupte -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box">
-                  <img src="/assets/team/anjali_gupte.jpeg" alt="Anjali Gupte" class="gov-avatar-img" />
+          
+          <!-- 3. Soumya B -->
+          <div class="team-pro-card" style="--pro-color: #08B9DB;">
+            <img src="/assets/team/soumya_b.jpeg" alt="Soumya B" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Soumya B</h3>
+              <span class="team-pro-role">Director, CEO</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Masters in Applied Sociology</div>
                 </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Anjali Gupte
-                  </h3>
-                  <span class="gov-badge" style="background: #F5EEFC; color: #822DBF; border: 1px solid #E1C5F7;">
-                    Director, Founding member
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    MSc Statistics, B.Ed.
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
               </div>
             </div>
           </div>
-          <!-- 4. Soumya B -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box" style="background: linear-gradient(135deg, #08B9DB, #0194B1);">
-                  <img src="/assets/team/soumya_b.jpeg" alt="Soumya B" class="gov-avatar-img" />
+          
+          <!-- 4. Abhishek Tiwari -->
+          <div class="team-pro-card" style="--pro-color: #1CA6A0;">
+            <img src="/assets/team/abhishek_kumar_tiwari.jpg" alt="Abhishek Tiwari" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Abhishek Tiwari</h3>
+              <span class="team-pro-role">Head of Programs, Bihar</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>Bachelors of Science</div>
                 </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Soumya B
-                  </h3>
-                  <span class="gov-badge" style="background: #E6F8FC; color: #0194B1; border: 1px solid #B3ECF7;">
-                    Director, CEO
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    Masters in Applied Sociology
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
               </div>
             </div>
           </div>
-          <!-- 5. Abhishek Tiwari -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box">
-                  <img src="/assets/team/abhishek_kumar_tiwari.jpg" alt="Abhishek Tiwari" class="gov-avatar-img" />
+          
+          <!-- 5. Tina Aggarwal -->
+          <div class="team-pro-card" style="--pro-color: #38B6FF;">
+            <img src="/assets/team/tina_aggarwal.jpg" alt="Tina Aggarwal" class="team-pro-img" />
+            <div class="team-pro-overlay"></div>
+            <div class="team-pro-content">
+              <h3 class="team-pro-name">Tina Aggarwal</h3>
+              <span class="team-pro-role">Head of Programs, Delhi</span>
+              <div class="team-pro-details">
+                <div class="team-pro-stat">
+                  <span>🎓</span>
+                  <div><strong>Qualifications:</strong><br/>D.El Ed, MA- EDUCATION</div>
                 </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Abhishek Tiwari
-                  </h3>
-                  <span class="gov-badge" style="background: #E8F8F7; color: #14807B; border: 1px solid #B4E8E5;">
-                    Head of Programs, Bihar
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    Bachelors of Science
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 6. Tina Aggarwal -->
-          <div class="gov-card">
-            <div class="gov-card-accent" style="background: linear-gradient(90deg, #38B6FF, #08B9DB);"></div>
-            <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1rem;">
-                <div class="gov-avatar-box">
-                  <img src="/assets/team/tina_aggarwal.jpg" alt="Tina Aggarwal" class="gov-avatar-img" />
-                </div>
-                <div>
-                  <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--color-charcoal); margin: 0 0 4px 0;">
-                    Tina Aggarwal
-                  </h3>
-                  <span class="gov-badge" style="background: #EBF8FF; color: #0284C7; border: 1px solid #BAE6FD;">
-                    Head of Programs, Delhi
-                  </span>
-                </div>
-              </div>
-
-              <div class="gov-details-box">
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">🎓</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Qualifications:</strong><br/>
-                    D.El Ed, MA- EDUCATION, B. ED( Learning Disability)
-                  </div>
-                </div>
-                <div class="gov-detail-item">
-                  <span class="gov-detail-icon">⏳</span>
-                  <div>
-                    <strong style="color: var(--color-charcoal);">Experience in Org:</strong><br/>
-                    <span class="gov-tenure-pill">🌟 10 Years</span>
-                  </div>
-                </div>
+                <div class="team-pro-badge">🌟 10 Years</div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- VIEW 2: Executive Matrix Table View -->
-        <div id="govMatrixWrapper" class="gov-matrix-wrapper">
-          <table class="gov-matrix-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Current Roles & Responsibilities</th>
-                <th>Educational Qualifications</th>
-                <th>Experience in Org</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #FF6F59;"><img src="/assets/team/pooja_singh.jpeg" alt="Pooja Singh" /></div>
-                    <div>Pooja Singh</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #FFF0EE; color: #E04832;">Co-Founder</span></td>
-                <td>Masters in Mass Comm</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #F2994A;"><img src="/assets/team/vivek_kumar.jpeg" alt="Vivek Kumar" /></div>
-                    <div>Vivek Kumar</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #FFF4E5; color: #D97F35;">Co-Founder</span></td>
-                <td>B.Tech, MA Education from TISS</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #9B51E0;"><img src="/assets/team/anjali_gupte.jpeg" alt="Anjali Gupte" /></div>
-                    <div>Anjali Gupte</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #F5EEFC; color: #822DBF;">Director, Founding member</span></td>
-                <td>MSc Statistics, B.Ed.</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #08B9DB;"><img src="/assets/team/soumya_b.jpeg" alt="Soumya B" /></div>
-                    <div>Soumya B</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #E6F8FC; color: #0194B1;">Director, CEO</span></td>
-                <td>Masters in Applied Sociology</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #1CA6A0;"><img src="/assets/team/abhishek_kumar_tiwari.jpg" alt="Abhishek Tiwari" /></div>
-                    <div>Abhishek Tiwari</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #E8F8F7; color: #14807B;">Head of Programs, Bihar</span></td>
-                <td>Bachelors of Science</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="gov-matrix-user">
-                    <div class="gov-matrix-avatar" style="background: #38B6FF;"><img src="/assets/team/tina_aggarwal.jpg" alt="Tina Aggarwal" /></div>
-                    <div>Tina Aggarwal</div>
-                  </div>
-                </td>
-                <td><span class="gov-badge" style="background: #EBF8FF; color: #0284C7;">Head of Programs, Delhi</span></td>
-                <td>D.El Ed, MA- EDUCATION, B. ED( Learning Disability)</td>
-                <td><span class="gov-tenure-pill">10 Years</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
       </div>
     </section>
 
-    <script>
-      function toggleGovView(view) {
-        var grid = document.getElementById('govCardsGrid');
-        var matrix = document.getElementById('govMatrixWrapper');
-        var btnCards = document.getElementById('btnGovCards');
-        var btnTable = document.getElementById('btnGovTable');
-        
-        if (view === 'cards') {
-          grid.style.display = 'grid';
-          matrix.style.display = 'none';
-          btnCards.style.background = 'var(--color-teal)';
-          btnCards.style.color = 'white';
-          btnCards.style.boxShadow = '0 4px 12px rgba(8, 185, 219, 0.3)';
-          btnTable.style.background = 'transparent';
-          btnTable.style.color = 'var(--color-charcoal)';
-          btnTable.style.boxShadow = 'none';
-        } else {
-          grid.style.display = 'none';
-          matrix.style.display = 'block';
-          btnTable.style.background = 'var(--color-teal)';
-          btnTable.style.color = 'white';
-          btnTable.style.boxShadow = '0 4px 12px rgba(8, 185, 219, 0.3)';
-          btnCards.style.background = 'transparent';
-          btnCards.style.color = 'var(--color-charcoal)';
-          btnCards.style.boxShadow = 'none';
-        }
-      }
-    </script>
-
-    
-    
     <!-- OUR TEAM -->
-    <!-- ════════════════════════════════════════ -->
+    <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
     <section class="section" id="team" aria-label="Our Leadership Profile" style="background: linear-gradient(135deg, #EBF5FF 0%, #D8EDFE 100%); overflow: hidden; position: relative; padding: 6rem 0;">
       <!-- Playful background doodles -->
       <svg class="team-doodle team-doodle-1" width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top: 8%; left: 4%; opacity:0.3; animation: anim-float 6s infinite ease-in-out;"><path fill="none" stroke="#08B9DB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,60 Q30,10 60,60 T110,60"/></svg>
@@ -2332,9 +2118,9 @@
           <!-- Filter Tabs -->
           <div class="leader-filters leader-filters-glass" style="margin-bottom: 1rem;">
             <button class="filter-btn active" onclick="filterLeaders('all', this)">All Leaders (18)</button>
-            <button class="filter-btn" onclick="filterLeaders('rajasthan', this)">📍 Rajasthan Team</button>
-            <button class="filter-btn" onclick="filterLeaders('bihar', this)">📍 Bihar Team</button>
-            <button class="filter-btn" onclick="filterLeaders('delhi', this)">📍 Delhi Team</button>
+            <button class="filter-btn" onclick="filterLeaders('rajasthan', this)">≡ƒôì Rajasthan Team</button>
+            <button class="filter-btn" onclick="filterLeaders('bihar', this)">≡ƒôì Bihar Team</button>
+            <button class="filter-btn" onclick="filterLeaders('delhi', this)">≡ƒôì Delhi Team</button>
           </div>
         </div>
 
@@ -2661,7 +2447,7 @@
                   </div>
                   <h3 class="leader-name">Pradeep Singh Rathore</h3>
                   <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead (FFSM)</div>
-                  <div class="leader-location">📍 Kotra, Rajasthan</div>
+                  <div class="leader-location">≡ƒôì Rajasthan</div>
                   
                   <div class="leader-front-actions">
                     <a href="#" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2670,7 +2456,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2678,9 +2464,9 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #01BADE;">Pradeep Singh Rathore</h4>
                   <div class="leader-back-role">Program Lead (FFSM)</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Kotra, Rajasthan</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Rajasthan</strong></div>
                   
-                  <p class="leader-back-bio">"Leading Fale Fale Shiksha Muhim and community-driven educational access across tribal clusters in Kotra, Rajasthan."</p>
+                  <p class="leader-back-bio">"Leading Fale Fale Shiksha Muhim and community-driven educational access across tribal clusters in Rajasthan."</p>
                   
                   <a href="#" target="_blank" rel="noopener noreferrer" class="leader-back-linkedin" style="background: #01BADE;" onclick="event.stopPropagation();">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
@@ -2701,7 +2487,7 @@
                   </div>
                   <h3 class="leader-name">Priyanka Rambol</h3>
                   <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Coach</div>
-                  <div class="leader-location">📍 Gogunda, Rajasthan</div>
+                  <div class="leader-location">≡ƒôì Rajasthan</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/priyankarambol" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2710,7 +2496,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2718,7 +2504,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #FF6F59;">Priyanka Rambol</h4>
                   <div class="leader-back-role">Program Coach</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Gogunda, Rajasthan</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Rajasthan</strong></div>
                   
                   <p class="leader-back-bio">"Coaching and mentoring educators and community leaders to nurture child-centric learning spaces in Rajasthan."</p>
                   
@@ -2741,7 +2527,7 @@
                   </div>
                   <h3 class="leader-name">Mohd Asif Ameen</h3>
                   <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Lead</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/mohd-asif-ameen-23b041175" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2750,7 +2536,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2758,7 +2544,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #F2994A;">Mohd Asif Ameen</h4>
                   <div class="leader-back-role">Program Lead</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Pioneering community-led learning models and nurturing young minds in Samastipur."</p>
                   
@@ -2781,7 +2567,7 @@
                   </div>
                   <h3 class="leader-name">Nikhil Kumar</h3>
                   <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Lead</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/nikhilllkr" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2790,7 +2576,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2798,7 +2584,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #6DBE45;">Nikhil Kumar</h4>
                   <div class="leader-back-role">Program Lead</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Driving grassroots educational innovations and field operations across government schools in Samastipur."</p>
                   
@@ -2821,7 +2607,7 @@
                   </div>
                   <h3 class="leader-name">Tina Aggarwal</h3>
                   <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Head of Programs, Delhi</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/tina-aggarwal-75b41a154" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2830,7 +2616,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2838,7 +2624,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #9B51E0;">Tina Aggarwal</h4>
                   <div class="leader-back-role">Head of Programs, Delhi</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Leading urban education initiatives and systemic support in Delhi MCD schools."</p>
                   
@@ -2861,7 +2647,7 @@
                   </div>
                   <h3 class="leader-name">Abhishek Kumar Tiwari</h3>
                   <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Head of Programs, Bihar</div>
-                  <div class="leader-location">📍 Patna, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/abhishek-tiwari-54b947156" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2870,7 +2656,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2878,7 +2664,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #01BADE;">Abhishek Kumar Tiwari</h4>
                   <div class="leader-back-role">Head of Programs, Bihar</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Patna, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Driving state-level educational partnerships and teacher capacity building across Bihar."</p>
                   
@@ -2901,7 +2687,7 @@
                   </div>
                   <h3 class="leader-name">Sneha Kumari</h3>
                   <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Manager</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/sneha-kshamtalaya-2678863a6" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2910,7 +2696,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2918,7 +2704,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #FF6F59;">Sneha Kumari</h4>
                   <div class="leader-back-role">Program Manager</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Empowering girls and expanding Fale Fale Shiksha Muhim across rural clusters."</p>
                   
@@ -2941,7 +2727,7 @@
                   </div>
                   <h3 class="leader-name">Tamanna</h3>
                   <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Lead</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/tamanna-638a80359" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2950,7 +2736,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2958,7 +2744,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #F2994A;">Tamanna</h4>
                   <div class="leader-back-role">Program Lead</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Designing socio-emotional learning frameworks and creative classroom workshops."</p>
                   
@@ -2981,7 +2767,7 @@
                   </div>
                   <h3 class="leader-name">Aman Gautam</h3>
                   <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Lead</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/aman-gautam-8b365a253" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -2990,7 +2776,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -2998,7 +2784,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #6DBE45;">Aman Gautam</h4>
                   <div class="leader-back-role">Program Lead</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Fostering grassroots leadership and student-centric pedagogy in rural government schools."</p>
                   
@@ -3021,7 +2807,7 @@
                   </div>
                   <h3 class="leader-name">Subham Bhakat</h3>
                   <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">State Resource Person</div>
-                  <div class="leader-location">📍 Patna, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/subham-bhakat" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3030,7 +2816,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3038,7 +2824,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #9B51E0;">Subham Bhakat</h4>
                   <div class="leader-back-role">State Resource Person</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Patna, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Strengthening curriculum alignment and institutional research at the state level."</p>
                   
@@ -3061,7 +2847,7 @@
                   </div>
                   <h3 class="leader-name">Deepak Sirsam</h3>
                   <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Lead</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/deepak-sirsam-b645a8256" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3070,7 +2856,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3078,7 +2864,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #01BADE;">Deepak Sirsam</h4>
                   <div class="leader-back-role">Program Lead</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Championing experiential learning and community sports for development."</p>
                   
@@ -3101,7 +2887,7 @@
                   </div>
                   <h3 class="leader-name">Priya</h3>
                   <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Program Leader</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/priya-bisht-2319591a3" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3110,7 +2896,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3118,7 +2904,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #FF6F59;">Priya</h4>
                   <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Mentoring fellow educators and facilitating STAR Parent engagement circles."</p>
                   
@@ -3141,7 +2927,7 @@
                   </div>
                   <h3 class="leader-name">Aman Kumar</h3>
                   <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Leader</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/aman-kumar-b1a760197" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3150,7 +2936,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3158,7 +2944,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #F2994A;">Aman Kumar</h4>
                   <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Building foundation literacy models and joyful learning festivals."</p>
                   
@@ -3181,7 +2967,7 @@
                   </div>
                   <h3 class="leader-name">Reena</h3>
                   <div class="leader-designation" style="color: #6DBE45; background: #F0F9EC;">Program Leader</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/reena-gautam-5bb471245" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3190,7 +2976,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3198,7 +2984,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #6DBE45;">Reena</h4>
                   <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Nurturing holistic development and mindfulness practices for young learners."</p>
                   
@@ -3221,7 +3007,7 @@
                   </div>
                   <h3 class="leader-name">Sameep Sonkar</h3>
                   <div class="leader-designation" style="color: #9B51E0; background: #F5EEFC;">Program Manager</div>
-                  <div class="leader-location">📍 Samastipur, Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/sameep-sonkar-4148421b8" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3230,7 +3016,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3238,7 +3024,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #9B51E0;">Sameep Sonkar</h4>
                   <div class="leader-back-role">Program Manager</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Samastipur, Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Managing field operations, data analytics, and impact measurement frameworks."</p>
                   
@@ -3261,7 +3047,7 @@
                   </div>
                   <h3 class="leader-name">Ishu</h3>
                   <div class="leader-designation" style="color: #01BADE; background: #E6F8FC;">Program Manager</div>
-                  <div class="leader-location">📍 Bihar</div>
+                  <div class="leader-location">≡ƒôì Bihar</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/ishu01" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3270,7 +3056,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3278,7 +3064,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #01BADE;">Ishu</h4>
                   <div class="leader-back-role">Program Manager</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Bihar</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Bihar</strong></div>
                   
                   <p class="leader-back-bio">"Curating volunteer engagement and community learning hubs."</p>
                   
@@ -3301,7 +3087,7 @@
                   </div>
                   <h3 class="leader-name">Tabassum</h3>
                   <div class="leader-designation" style="color: #FF6F59; background: #FFF0EE;">Community Leader</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/tabassum-mansori-007b87360" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3310,7 +3096,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3318,7 +3104,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #FF6F59;">Tabassum</h4>
                   <div class="leader-back-role">Community Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Strengthening parent-school bonds and community advocacy for education."</p>
                   
@@ -3341,7 +3127,7 @@
                   </div>
                   <h3 class="leader-name">Anjali</h3>
                   <div class="leader-designation" style="color: #F2994A; background: #FEF5EC;">Program Leader</div>
-                  <div class="leader-location">📍 Delhi NCR</div>
+                  <div class="leader-location">≡ƒôì Delhi</div>
                   
                   <div class="leader-front-actions">
                     <a href="https://www.linkedin.com/in/anjali-kumari-01" target="_blank" rel="noopener noreferrer" class="leader-linkedin-btn" onclick="event.stopPropagation();" title="View LinkedIn Profile">
@@ -3350,7 +3136,7 @@
                     </a>
                   </div>
                   
-                  <div class="leader-flip-hint">Click card to peek bio ✨</div>
+                  <div class="leader-flip-hint">Click card to peek bio Γ£¿</div>
                 </div>
 
                 <!-- BACK FACE -->
@@ -3358,7 +3144,7 @@
                   <div class="leader-tape"></div>
                   <h4 class="leader-back-name" style="color: #F2994A;">Anjali</h4>
                   <div class="leader-back-role">Program Leader</div>
-                  <div class="leader-back-loc">📍 Location: <strong>Delhi NCR</strong></div>
+                  <div class="leader-back-loc">≡ƒôì Location: <strong>Delhi</strong></div>
                   
                   <p class="leader-back-bio">"Facilitating expressive arts, drama, and creative writing workshops."</p>
                   
@@ -3453,10 +3239,10 @@
         const track = document.getElementById('leaderTrack');
         if (track) track.scrollTo({ left: 0, behavior: 'smooth' });
       }
-    </script><!-- ════════════════════════════════════════ -->
+    </script><!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
     
     <!-- OUR ADVISORY BOARD -->
-    <!-- ════════════════════════════════════════ -->
+    <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
     <section class="section" id="advisory-board" aria-label="Our Advisory Board" style="background: linear-gradient(135deg, #3A96AA 0%, #206E80 100%); color: white; padding: 6rem 0; position: relative; overflow: hidden;">
       <div style="position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(70px); pointer-events: none;"></div>
       <div style="position: absolute; bottom: -100px; left: -100px; width: 450px; height: 450px; background: rgba(1, 186, 222, 0.15); border-radius: 50%; filter: blur(70px); pointer-events: none;"></div>
@@ -3467,10 +3253,10 @@
             <span>Governance & Vision</span>
           </div>
           <h2 style="font-family: 'Baloo 2', cursive; font-size: clamp(2.5rem, 4.5vw, 3.6rem); font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0; line-height: 1.15; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            Our Advisory Board
+            Governance
           </h2>
-          <p style="max-width: 720px; margin: 0 auto; font-size: 1.2rem; color: rgba(255,255,255,0.9); line-height: 1.6; font-weight: 400;">
-            Distinguished leaders, researchers, and social entrepreneurs guiding Kshamtalaya's mission to unlock potential across India.
+          <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: rgba(255,255,255,0.9); line-height: 1.6; font-weight: 400;">
+            Kshamtalaya Foundation is governed by its Board of Directors under the Companies Act 2013. Our advisors guide strategy and practice and carry no statutory responsibility.
           </p>
         </div>
 
@@ -3485,6 +3271,170 @@
             transform: scale(1.08);
           }
         </style>
+
+
+        <!-- BOARD OF DIRECTORS -->
+        <div style="margin-bottom: 5rem;">
+          <h3 style="font-family: 'Baloo 2', cursive; font-size: 2.2rem; font-weight: 800; color: #FFC72C; text-align: center; margin-bottom: 2.5rem;">Board of Directors</h3>
+          
+          <div class="advisory-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: stretch; max-width: 900px; margin: 0 auto;">
+            
+            <div class="advisory-card reveal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 1.25rem; flex-shrink: 0; background: #ffffff; transition: transform 0.4s ease;">
+                <img src="/assets/team/soumya_b.jpeg" alt="SOUMYA BHASKARACHARYA" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
+              </div>
+              <h3 style="font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.25rem 0; letter-spacing: 0.5px;">SOUMYA BHASKARACHARYA</h3>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Director and CEO</div>
+              <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.92); line-height: 1.65; margin: 0; font-weight: 400; text-align: center;">
+                Masters in Applied Sociology. Eight years with the organisation.
+              </p>
+            </div>
+
+            <div class="advisory-card reveal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 1.25rem; flex-shrink: 0; background: #ffffff; transition: transform 0.4s ease;">
+                <img src="/assets/team/anjali_gupte.jpeg" alt="ANJALI GUPTE" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
+              </div>
+              <h3 style="font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.25rem 0; letter-spacing: 0.5px;">ANJALI GUPTE</h3>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Director and founding member</div>
+              <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.92); line-height: 1.65; margin: 0; font-weight: 400; text-align: center;">
+                MSc Statistics, B.Ed. Chairs the Advisory Board.
+              </p>
+            </div>
+            
+          </div>
+
+        <!-- JOSHILA BANNER -->
+        <style>
+          .joshila-banner {
+            margin-top: 7rem;
+            background: linear-gradient(135deg, #08B9DB 0%, #1D4ED8 100%);
+            border-radius: 32px;
+            position: relative;
+            padding: 4rem 4rem 4rem 360px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            color: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+          }
+          /* Add a glassmorphic decorative shape inside */
+          .joshila-banner::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+          }
+          .joshila-photo {
+            position: absolute;
+            left: 40px;
+            bottom: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50% 50% 0 0;
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            border-bottom: none;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 -15px 40px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease;
+          }
+          .joshila-banner:hover .joshila-photo {
+            transform: translateY(-10px);
+          }
+          .joshila-tag {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #FFC72C;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+          }
+          .joshila-title {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+            color: #FFFFFF;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+          }
+          .joshila-desc {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 650px;
+            margin-bottom: 2rem;
+          }
+          .joshila-box {
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: inline-block;
+          }
+          .joshila-box h5 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            font-weight: 800;
+            color: #FFC72C;
+          }
+          .joshila-box p {
+            font-size: 1rem;
+            margin: 0;
+            color: #FFFFFF;
+            font-weight: 500;
+            line-height: 1.5;
+          }
+          @media (max-width: 900px) {
+            .joshila-banner {
+              margin-top: 8rem;
+              padding: 200px 2.5rem 3rem;
+              text-align: center;
+            }
+            .joshila-photo {
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: auto;
+              top: -120px;
+              width: 220px;
+              height: 220px;
+              border-radius: 50%;
+              border: 6px solid rgba(255, 255, 255, 0.2);
+              border-bottom: 6px solid rgba(255, 255, 255, 0.2);
+            }
+            .joshila-banner:hover .joshila-photo {
+              transform: translateX(-50%) scale(1.05);
+            }
+            .joshila-desc {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+        </style>
+        <div class="joshila-banner reveal">
+          <img src="/assets/advisory/Joshila Kumari.png" alt="Joshila Kumari" class="joshila-photo">
+          <div class="joshila-tag">कोटड़ा से</div>
+          <div class="joshila-title">Joshila was a girl in Kotra when we started. She now advises our Board.</div>
+          <p class="joshila-desc">
+            She came through the iDISCOVER Fellowship, coaches with PlayQuity, and represents India as a Women's Ultimate Fellow. If anyone wants a single measure of whether a depth model works, this is the one we would offer.
+          </p>
+          <div class="joshila-box">
+            <h5>CHECK WITH JOSHILA</h5>
+            <p>Framing someone's own story publicly needs her consent and her preferred wording.</p>
+          </div>
+        </div>
+
+        </div>
+
+        <!-- ADVISORY BOARD HEADER -->
+        <h3 style="font-family: 'Baloo 2', cursive; font-size: 2.2rem; font-weight: 800; color: #FFC72C; text-align: center; margin-bottom: 2.5rem;">Advisory Board</h3>
 
         <div class="advisory-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: stretch;">
 
@@ -3505,9 +3455,9 @@
           </div>
           <h3 style="font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.25rem 0; letter-spacing: 0.5px;">LAKSHMI HIRANANDANI</h3>
           <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Social Entrepreneur</div>
-          <div style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; font-weight: 500;">Former CEO, Swara – Voice of Women</div>
+          <div style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; font-weight: 500;">Former CEO, Swara ΓÇô Voice of Women</div>
           <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.92); line-height: 1.65; margin: 0; font-weight: 400; text-align: left;">
-            Social entrepreneur and former CEO of Swara – Voice of Women, working to advance women’s economic empowerment in rural India across education, employability, and entrepreneurship.
+            Social entrepreneur and former CEO of Swara ΓÇô Voice of Women, working to advance womenΓÇÖs economic empowerment in rural India across education, employability, and entrepreneurship.
           </p>
         </div>
         <div class="advisory-card reveal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
@@ -3559,10 +3509,10 @@
             <img src="/assets/advisory/Sanjiv jain.png" alt="SANJIV JAIN" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
           </div>
           <h3 style="font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.25rem 0; letter-spacing: 0.5px;">SANJIV JAIN</h3>
-          <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Director – Finance</div>
+          <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Director ΓÇô Finance</div>
           <div style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; font-weight: 500;">Seva Mandir</div>
           <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.92); line-height: 1.65; margin: 0; font-weight: 400; text-align: left;">
-            Director – Finance at Seva Mandir and a Chartered Accountant with over 35 years of experience in financial management, governance, and strengthening institutional sustainability in the development sector.
+            Director ΓÇô Finance at Seva Mandir and a Chartered Accountant with over 35 years of experience in financial management, governance, and strengthening institutional sustainability in the development sector.
           </p>
         </div>
         <div class="advisory-card reveal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
@@ -3573,12 +3523,14 @@
           <div style="font-size: 0.85rem; font-weight: 700; color: #FFC72C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Young Tribal Leader & Coach</div>
           <div style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; font-weight: 500;">PlayQuity Coach & UPAI Fellow</div>
           <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.92); line-height: 1.65; margin: 0; font-weight: 400; text-align: left;">
-            Young tribal leader from Kotra, Rajasthan, and a former iDiscover Fellow with Kshamtalaya. Currently a PlayQuity Coach and Women Ultimate Fellow with UPAI, championing girls’ leadership worldwide.
+            Young tribal leader from Rajasthan, and a former iDiscover Fellow with Kshamtalaya. Currently a PlayQuity Coach and Women Ultimate Fellow with UPAI, championing girlsΓÇÖ leadership worldwide.
           </p>
         </div>
         </div>
       </div>
     </section>
+
+    
 
     <!-- PARTNERS SECTION                         -->
     <!-- ════════════════════════════════════════ -->
