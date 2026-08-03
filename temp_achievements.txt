@@ -1,0 +1,282 @@
+<section class="section" id="achievements-2025" aria-label="Achievements 2025-26" style="background: linear-gradient(180deg, #FAFCFF 0%, #F0F7FF 100%); padding: 6rem 0 5rem; position: relative; overflow: hidden;">
+      <!-- Ambient Decorations -->
+      <div style="position:absolute; top:-150px; left:-150px; width:500px; height:500px; background: radial-gradient(circle, rgba(8,185,219,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+      <div style="position:absolute; bottom:-120px; right:-120px; width:480px; height:480px; background: radial-gradient(circle, rgba(255,111,89,0.07) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; background: radial-gradient(circle, rgba(255,199,44,0.05) 0%, transparent 60%); border-radius:50%; pointer-events:none;"></div>
+
+      <div class="container" style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+
+        <!-- Section Header -->
+        <div class="section-header reveal" style="text-align:center; margin-bottom:3.5rem;">
+          <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 18px; background:rgba(8,185,219,0.1); border:1.5px solid var(--color-teal); border-radius:30px; font-weight:800; font-size:0.82rem; color:var(--color-teal); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:1rem;">
+            ANNUAL REPORT 2025–26
+          </div>
+          <h2 style="font-family:'Baloo 2',cursive; font-size:clamp(2.4rem,4.5vw,3.4rem); font-weight:800; color:var(--color-charcoal); margin:0 0 1rem; line-height:1.15;">
+            Achievements & <span style="color:var(--color-teal); position:relative;">Impact<svg style="position:absolute; bottom:-6px; left:0; width:100%; height:12px;" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0 6 Q 25 1, 50 6 T 100 6 T 150 6 T 200 6" fill="none" stroke="#FFC72C" stroke-width="3" stroke-linecap="round" opacity="0.6"/></svg></span> in 2025–26
+          </h2>
+          <p style="max-width:700px; margin:0 auto; font-size:1.15rem; color:var(--color-text-secondary); line-height:1.65;">
+            A year of scaling impact across 3 states — reaching thousands of children, empowering teachers, and strengthening communities.
+          </p>
+        </div>
+
+        <!-- ─── PART 3: PROGRAMS IN 2025-26 ─── -->
+        <div class="reveal">
+          <div style="text-align:center; margin-bottom:2rem;">
+            <h3 style="font-family:'Baloo 2',cursive; font-size:1.8rem; font-weight:800; color:var(--color-charcoal); margin:0 0 0.5rem;">
+              Programs in 2025–26
+            </h3>
+            <p style="color:var(--color-text-secondary); font-size:1.05rem; max-width:600px; margin:0 auto;">
+              7 flagship programs across Rajasthan, Bihar, and Delhi with deep community integration.
+            </p>
+          </div>
+
+          <style>
+            .prog25-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+              gap: 1.75rem;
+            }
+            @media (max-width: 480px) {
+              .prog25-grid { grid-template-columns: 1fr; }
+            }
+            .prog25-card {
+              background: white;
+              border-radius: 24px;
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+              border: 1px solid rgba(0,0,0,0.04);
+              transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+              display: flex;
+              flex-direction: column;
+            }
+            .prog25-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 40px rgba(8,185,219,0.1);
+            }
+            .prog25-header {
+              padding: 1.5rem 1.75rem 1rem;
+              position: relative;
+            }
+            .prog25-name {
+              font-family: 'Baloo 2', cursive;
+              font-size: 1.3rem;
+              font-weight: 800;
+              color: var(--color-charcoal);
+              margin: 0 0 0.5rem;
+            }
+            .prog25-region-badge {
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              padding: 4px 12px;
+              border-radius: 20px;
+              font-size: 0.78rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+            }
+            .prog25-objective {
+              padding: 0 1.75rem;
+              font-size: 0.93rem;
+              color: var(--color-text-secondary);
+              line-height: 1.6;
+              margin-bottom: 1rem;
+              flex-grow: 1;
+            }
+            .prog25-footer {
+              padding: 1rem 1.75rem 1.5rem;
+              background: #F9FAFB;
+              border-top: 1px solid rgba(0,0,0,0.04);
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+            }
+            .prog25-stat {
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              padding: 5px 12px;
+              background: white;
+              border-radius: 12px;
+              font-size: 0.82rem;
+              font-weight: 600;
+              color: var(--color-text-secondary);
+              border: 1px solid rgba(0,0,0,0.06);
+            }
+            .prog25-stat strong {
+              color: var(--color-charcoal);
+              font-weight: 800;
+            }
+            .prog25-meta {
+              padding: 0 1.75rem 1rem;
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              flex-wrap: wrap;
+            }
+            .prog25-supporter {
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              padding: 4px 12px;
+              background: #E8F8F7;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              font-weight: 700;
+              color: #14807B;
+            }
+            .prog25-budget {
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              padding: 4px 12px;
+              background: #FFFBF0;
+              border: 1px solid #FFE9A8;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              font-weight: 700;
+              color: var(--color-charcoal);
+            }
+          </style>
+
+          <div class="prog25-grid">
+
+            <!-- 1. iDiscover Rajasthan -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #F2994A, #FFC72C);"></div>
+                <h4 class="prog25-name">iDiscover Rajasthan</h4>
+                <span class="prog25-region-badge" style="background:#FFF4E5; color:#D97F35;">📍 Rajasthan</span>
+              </div>
+              <p class="prog25-objective">Establishing Centres of Excellence (CoE) in schools demonstrating the Whole School Transformation model, with active support of school and local community leadership.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>50</strong> Schools</span>
+                <span class="prog25-stat">📍 <strong>3</strong> Blocks</span>
+                <span class="prog25-stat">🙌 <strong>25</strong> Fellows</span>
+                <span class="prog25-stat">👦 <strong>1,402</strong> Direct Children</span>
+              </div>
+            </div>
+
+            <!-- 2. Fale Fale Shiksha Muhim - Raj -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #9B51E0, #BB6BD9);"></div>
+                <h4 class="prog25-name">Fale Fale Shiksha Muhim</h4>
+                <span class="prog25-region-badge" style="background:#F5EEFC; color:#822DBF;">📍 Rajasthan</span>
+              </div>
+              <p class="prog25-objective">Supporting early childhood through Secondary children with Foundational Literacy and Numeracy programs.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>10</strong> Schools</span>
+                <span class="prog25-stat">🙌 <strong>10</strong> Fellows</span>
+                <span class="prog25-stat">👦 <strong>242</strong> Direct</span>
+                <span class="prog25-stat">👧 <strong>559</strong> Indirect</span>
+              </div>
+            </div>
+
+            <!-- 3. iDiscover Bihar -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #1CA6A0, #6DBE45);"></div>
+                <h4 class="prog25-name">iDiscover, Bihar</h4>
+                <span class="prog25-region-badge" style="background:#E8F8F7; color:#14807B;">📍 Bihar</span>
+              </div>
+              <p class="prog25-objective">Establishing Centres of Excellence (CoE) in each school demonstrating the Whole School Transformation model, with active support of school and local community leadership.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>30</strong> Schools</span>
+                <span class="prog25-stat">👦 <strong>1,050+</strong> Direct</span>
+                <span class="prog25-stat">👧 <strong>4,644+</strong> Indirect</span>
+                <span class="prog25-stat">👩‍🏫 <strong>90+</strong> Teachers</span>
+                <span class="prog25-stat">🙌 <strong>15</strong> Fellows</span>
+                <span class="prog25-stat">🤝 <strong>75+</strong> Volunteers</span>
+              </div>
+            </div>
+
+            <!-- 4. Learning Festival Community Leadership -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #08B9DB, #4FB6E8);"></div>
+                <h4 class="prog25-name">Learning Festival & Community Leadership</h4>
+                <span class="prog25-region-badge" style="background:#E6F8FC; color:#0194B1;">📍 Bihar</span>
+              </div>
+              <p class="prog25-objective">Learning Festival serves as a process for bringing out potential of innovation, creativity, confidence, engagement, and community participation with the spirit of learning.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>40</strong> Schools</span>
+                <span class="prog25-stat">👦 <strong>6,368+</strong> Children</span>
+                <span class="prog25-stat">👩‍🏫 <strong>120+</strong> Teachers</span>
+                <span class="prog25-stat">🤝 <strong>100+</strong> Volunteers</span>
+              </div>
+            </div>
+
+            <!-- 5. Teacher Support Program - Delhi -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #FF6F59, #FF9080);"></div>
+                <h4 class="prog25-name">Teacher Support Program</h4>
+                <span class="prog25-region-badge" style="background:#FFF0EE; color:#E04832;">📍 Delhi</span>
+              </div>
+              <p class="prog25-objective">Building a cohort of 100 compassionate and pedagogically strong teachers who create high-impact classrooms for 4000+ children across 15 government schools in Delhi.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>15</strong> Schools</span>
+                <span class="prog25-stat">👩‍🏫 <strong>100</strong> Champion Teachers</span>
+                <span class="prog25-stat">👦 <strong>4,053</strong> Direct Students</span>
+                <span class="prog25-stat">👧 <strong>10,190</strong> Indirect</span>
+                <span class="prog25-stat">📚 <strong>900</strong> Indirect Teachers</span>
+              </div>
+            </div>
+
+            <!-- 6. Star Parent Program - Delhi -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #38B6FF, #08B9DB);"></div>
+                <h4 class="prog25-name">Star Parent Program</h4>
+                <span class="prog25-region-badge" style="background:#EBF8FF; color:#0284C7;">📍 Delhi</span>
+              </div>
+              <p class="prog25-objective">Building active parents in school who bridge the gap of School and Community for stronger educational outcomes.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏫 <strong>10</strong> Schools</span>
+                <span class="prog25-stat">⭐ <strong>234</strong> Star Parents</span>
+                <span class="prog25-stat">📝 <strong>400</strong> Admissions</span>
+              </div>
+            </div>
+
+            <!-- 7. Hausla - Delhi -->
+            <div class="prog25-card">
+              <div class="prog25-header">
+                <div style="position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg, #C06C84, #D4849A);"></div>
+                <h4 class="prog25-name">Hausla</h4>
+                <span class="prog25-region-badge" style="background:#FCF0F3; color:#C06C84;">📍 Delhi</span>
+              </div>
+              <p class="prog25-objective">Focusing on teachers' well-being that supports creating compassionate classrooms and nurturing learning environments.</p>
+
+              <div class="prog25-footer">
+                <span class="prog25-stat">🏙️ <strong>3</strong> MCD Zones</span>
+                <span class="prog25-stat">👩‍🏫 <strong>1,172</strong> Teachers</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        function switchAchieveTab(panel, btn, activeClass) {
+          // Hide all panels
+          document.querySelectorAll('.achieve-panel').forEach(function(p) { p.classList.remove('active'); });
+          // Remove active from all tabs
+          document.querySelectorAll('.achieve-tab').forEach(function(t) {
+            t.className = 'achieve-tab';
+          });
+          // Show selected panel
+          var panelEl = document.getElementById('panel' + panel.charAt(0).toUpperCase() + panel.slice(1));
+          if (panelEl) panelEl.classList.add('active');
+          // Add active class to button
+          btn.classList.add(activeClass);
+        }
+      </script>
+    </section>
