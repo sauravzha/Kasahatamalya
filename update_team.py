@@ -156,7 +156,7 @@ new_team_html = """
             <div class="team-pro-overlay"></div>
             <div class="team-pro-content">
               <h3 class="team-pro-name">Anjali Gupte</h3>
-              <span class="team-pro-role">Director, Founding member</span>
+              <span class="team-pro-role">Director, CEO</span>
               <div class="team-pro-details">
                 <div class="team-pro-stat">
                   <span>🎓</span>
@@ -173,7 +173,7 @@ new_team_html = """
             <div class="team-pro-overlay"></div>
             <div class="team-pro-content">
               <h3 class="team-pro-name">Soumya B</h3>
-              <span class="team-pro-role">Director, CEO</span>
+              <span class="team-pro-role">Director</span>
               <div class="team-pro-details">
                 <div class="team-pro-stat">
                   <span>🎓</span>

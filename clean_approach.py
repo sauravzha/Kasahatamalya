@@ -12,7 +12,7 @@ old_data = '''<p style="font-weight: 700; color: var(--color-charcoal); margin-b
               <ul class="approach-list">'''
 
 new_data = '''<ul class="approach-list">
-                <li><strong>100 Centers of Excellence</strong> within primary grade government schools</li>'''
+                <li><strong>100 Schools of Excellence</strong> within primary grade government schools</li>'''
 
 if old_data in content:
     content = content.replace(old_data, new_data)

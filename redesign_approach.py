@@ -93,7 +93,7 @@ new_content = '''        <style>
             <div class="approach-content">
               <h3 class="approach-title">Demonstrate & Support Excellence</h3>
               <p class="approach-subtitle">in Learning, Governance & Well-being</p>
-              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 1rem;">100 Centers of Excellence within primary grade government schools</p>
+              <p style="font-weight: 700; color: var(--color-charcoal); margin-bottom: 1rem; font-size: 1rem;">100 Schools of Excellence within primary grade government schools</p>
               <ul class="approach-list">
                 <li>Increased child retention</li>
                 <li>Improved quality in learning & well-being</li>
@@ -111,6 +111,7 @@ new_content = '''        <style>
               <ul class="approach-list" style="margin-top: 1rem;">
                 <li>Cultivating a cadre of local Edu leaders as Community Mentors who support govt. schools builds foundational skills in primary grade students belonging to remote rural geographies</li>
                 <li>Cadre of govt. school teachers who are transformed to happy, purposeful & improved pedagogical leadership</li>
+                <li>Cadre of Learning Festival Community Leaders supporting students develop creative confidence and enhance their 21st century life skills through access to art, music, theatre, movement, game design and other art related mediums.</li>
               </ul>
             </div>
           </div>
