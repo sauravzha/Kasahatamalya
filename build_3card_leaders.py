@@ -135,6 +135,43 @@ profiles = [
         'link': 'https://www.linkedin.com/in/anjali-kumari-01',
         'category': 'delhi',
         'bio': 'Facilitating expressive arts, drama, and creative writing workshops.'
+    },
+    {
+        'name': 'Sangam',
+        'role': 'Community Leader',
+        'loc': 'Delhi NCR',
+        'photo': 'sangam.jpg',
+        'link': '#',
+        'category': 'delhi',
+        'bio': 'Supporting students to develop creative confidence and enhance their 21st-century life skills.',
+        'img_pos': 'center 80%'
+    },
+    {
+        'name': 'Pradeep Singh Rathore',
+        'role': 'Program lead ( FFSM )',
+        'loc': 'Rajasthan',
+        'photo': 'pradeep_singh_rathore.jpg',
+        'link': '#',
+        'category': 'rajasthan',
+        'bio': 'Leading foundational learning and community programs across Rajasthan.'
+    },
+    {
+        'name': 'Nikhil Kumar',
+        'role': 'Program Lead',
+        'loc': 'Samastipur, Bihar',
+        'photo': 'nikhil_kumar.jpg',
+        'link': 'https://www.linkedin.com/in/nikhilllkr',
+        'category': 'bihar',
+        'bio': 'Working closely with local stakeholders to improve school ecosystems.'
+    },
+    {
+        'name': 'Priyanka Rambol',
+        'role': 'Program Coach, Rajasthan',
+        'loc': 'Rajasthan',
+        'photo': 'priyanka_rambol.jpg',
+        'link': 'https://www.linkedin.com/in/priyankarambol',
+        'category': 'rajasthan',
+        'bio': 'Coaching educators to adopt holistic learning practices and empathy.'
     }
 ]
 
@@ -159,7 +196,7 @@ for i, p in enumerate(profiles):
                 <div class="leader-card-front" style="border-top: 5px solid {col['accent']};">
                   <div class="leader-tape"></div>
                   <div class="leader-photo-box">
-                    <img src="/assets/team/{p['photo']}" alt="{p['name']}" loading="lazy" class="leader-photo" />
+                    <img src="/assets/team/{p['photo']}" alt="{p['name']}" loading="lazy" class="leader-photo" style="object-position: {p.get('img_pos', 'center 15%')};" />
                   </div>
                   <h3 class="leader-name">{p['name']}</h3>
                   <div class="leader-designation" style="color: {col['accent']}; background: {col['light']};">{p['role']}</div>
@@ -213,7 +250,8 @@ section_html = f'''
           
           <!-- Filter Tabs -->
           <div class="leader-filters" style="display: inline-flex; gap: 0.75rem; background: rgba(0,0,0,0.04); padding: 6px; border-radius: 50px; margin-bottom: 1rem;">
-            <button class="filter-btn active" onclick="filterLeaders('all', this)">All Leaders (15)</button>
+            <button class="filter-btn active" onclick="filterLeaders('all', this)">All Leaders (19)</button>
+            <button class="filter-btn" onclick="filterLeaders('rajasthan', this)">📍 Rajasthan Team</button>
             <button class="filter-btn" onclick="filterLeaders('bihar', this)">📍 Bihar Team</button>
             <button class="filter-btn" onclick="filterLeaders('delhi', this)">📍 Delhi Team</button>
           </div>
@@ -556,13 +594,20 @@ section_html = f'''
       </div>
     </section>'''
 
-with open('index.html', 'r', encoding='utf-8') as f:
-    content = f.read()
-
+files_to_update = ['index.html', 'story.html']
 pattern = re.compile(r'<!-- OUR TEAM.*?</section>', re.DOTALL)
-new_content = pattern.sub(section_html, content)
 
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(new_content)
+for file_path in files_to_update:
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        new_content = pattern.sub(section_html, content)
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f'Successfully updated {file_path}')
+    except Exception as e:
+        print(f"Failed to update {file_path}: {e}")
 
 print('Successfully enlarged leader photo box to 260px and card height to 490px!')
