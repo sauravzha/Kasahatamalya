@@ -185,6 +185,469 @@
         </div>
       </div>
     </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- FILL THE CLASSROOM VISUALIZER            -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section" id="fill-classroom" style="background: linear-gradient(180deg, #FFF9EE 0%, #FFFFFF 100%); padding: 5rem 0; overflow: hidden;">
+      <style>
+        .classroom-container {
+          max-width: 900px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .classroom-scene {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: linear-gradient(180deg, #e8f4f8 0%, #d4ecf7 40%, #c8b896 40%, #c8b896 100%);
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+          border: 3px solid rgba(0,0,0,0.06);
+        }
+        /* Room structure */
+        .room-wall { position: absolute; top: 0; left: 0; width: 100%; height: 40%; background: linear-gradient(180deg, #f5efe6 0%, #ece4d4 100%); }
+        .room-floor { position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(180deg, #d4a76a 0%, #c49a5e 30%, #b8905a 100%); }
+        .room-floor::before {
+          content: '';
+          position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+          background: repeating-linear-gradient(90deg, transparent, transparent 18%, rgba(0,0,0,0.04) 18%, rgba(0,0,0,0.04) 18.5%);
+        }
+        /* Blackboard */
+        .blackboard {
+          position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
+          width: 45%; height: 28%;
+          background: #2d4a3e; border: 6px solid #8b6f47; border-radius: 4px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 2;
+        }
+        .blackboard-text {
+          color: rgba(255,255,255,0.7); font-family: 'Baloo 2', cursive;
+          font-size: clamp(0.7rem, 2vw, 1.4rem); text-align: center; padding: 0.5rem;
+          transition: all 0.8s ease;
+        }
+        /* Window */
+        .window {
+          position: absolute; top: 4%; width: 12%; height: 30%;
+          background: linear-gradient(180deg, #87CEEB 0%, #b8e4f0 100%);
+          border: 5px solid #8b6f47; border-radius: 4px;
+          box-shadow: inset 0 0 15px rgba(135,206,235,0.5);
+          z-index: 1;
+        }
+        .window::after {
+          content: ''; position: absolute; top: 48%; left: 0; width: 100%; height: 4px;
+          background: #8b6f47;
+        }
+        .window::before {
+          content: ''; position: absolute; left: 48%; top: 0; width: 4px; height: 100%;
+          background: #8b6f47;
+        }
+        .window-left { left: 5%; }
+        .window-right { right: 5%; }
+
+        /* Classroom items - all start hidden */
+        .classroom-item {
+          position: absolute;
+          transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          opacity: 0;
+          transform: scale(0.3) translateY(30px);
+          z-index: 3;
+        }
+        .classroom-item.visible {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+
+        /* Desk */
+        .desk {
+          width: 18%; height: 14%;
+          background: linear-gradient(180deg, #c49a5e 0%, #a87d45 100%);
+          border-radius: 4px 4px 0 0;
+          box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        .desk::after {
+          content: ''; position: absolute; bottom: -20%; left: 10%; width: 8%; height: 20%;
+          background: #8b6f47; border-radius: 0 0 2px 2px;
+          box-shadow: 16px 0 0 #8b6f47;
+        }
+        .desk-1 { bottom: 32%; left: 8%; }
+        .desk-2 { bottom: 32%; left: 32%; }
+        .desk-3 { bottom: 32%; right: 8%; }
+
+        /* Books */
+        .books {
+          width: 8%; height: 6%;
+          display: flex; gap: 2px; align-items: flex-end;
+        }
+        .book {
+          width: 25%; height: 100%; border-radius: 2px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .books-1 { bottom: 46%; left: 10%; }
+        .books-2 { bottom: 46%; left: 34%; }
+        .books-3 { bottom: 46%; right: 10%; }
+
+        /* Globe */
+        .globe {
+          width: 6%; aspect-ratio: 1;
+          border-radius: 50%;
+          background: radial-gradient(circle at 35% 35%, #4FC3F7, #1976D2 60%, #0D47A1);
+          box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+          bottom: 46%; left: 80%;
+        }
+        .globe::after {
+          content: ''; position: absolute; top: 20%; left: 15%;
+          width: 35%; height: 25%;
+          background: #66BB6A; border-radius: 40%;
+          transform: rotate(-15deg);
+        }
+
+        /* Children - simple stylized figures */
+        .child-figure {
+          display: flex; flex-direction: column; align-items: center;
+          width: 7%;
+        }
+        .child-head {
+          width: 60%; aspect-ratio: 1; border-radius: 50%;
+          margin-bottom: 2px;
+        }
+        .child-body {
+          width: 80%; height: 55%;
+          border-radius: 30% 30% 0 0;
+        }
+
+        .child-1 { bottom: 16%; left: 12%; }
+        .child-2 { bottom: 16%; left: 22%; }
+        .child-3 { bottom: 16%; left: 36%; }
+        .child-4 { bottom: 16%; left: 46%; }
+        .child-5 { bottom: 16%; right: 22%; }
+        .child-6 { bottom: 16%; right: 12%; }
+
+        /* Sports equipment */
+        .sports {
+          width: 10%; display: flex; gap: 4px; align-items: flex-end;
+          bottom: 5%; right: 6%;
+        }
+        .football {
+          width: 40%; aspect-ratio: 1; border-radius: 50%;
+          background: radial-gradient(circle at 40% 35%, #fff, #f5f5f5 50%, #e0e0e0);
+          border: 2px solid #333;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .cricket-bat {
+          width: 20%; height: 200%;
+          background: linear-gradient(180deg, #deb887 60%, #333 60%);
+          border-radius: 4px 4px 1px 1px;
+          transform: rotate(-15deg);
+        }
+
+        /* Bookshelf */
+        .bookshelf {
+          width: 14%; height: 30%;
+          background: #8b6f47;
+          border-radius: 3px;
+          top: 5%; right: 20%;
+          display: flex; flex-direction: column;
+          padding: 3%; gap: 2px; justify-content: space-around;
+        }
+        .shelf-row {
+          width: 100%; height: 30%;
+          background: #a0885c;
+          border-radius: 2px;
+          display: flex; gap: 1px; padding: 2px; align-items: flex-end;
+        }
+        .shelf-book {
+          flex: 1; height: 80%; border-radius: 1px;
+        }
+
+        /* Clock */
+        .wall-clock {
+          width: 5%; aspect-ratio: 1;
+          border-radius: 50%;
+          background: #fff;
+          border: 3px solid #333;
+          top: 8%; left: 22%;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          display: flex; align-items: center; justify-content: center;
+        }
+        .clock-hand {
+          position: absolute; bottom: 50%; left: 50%;
+          width: 2px; background: #333;
+          transform-origin: bottom center;
+        }
+        .clock-hour { height: 25%; transform: rotate(-30deg); }
+        .clock-minute { height: 35%; transform: rotate(60deg); }
+
+        /* Art / drawings on wall */
+        .wall-art {
+          width: 7%; aspect-ratio: 4/5;
+          border-radius: 3px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+          border: 2px solid #fff;
+        }
+        .art-1 { top: 6%; left: 32%; background: linear-gradient(135deg, #08B9DB, #10E0F5); }
+        .art-2 { top: 10%; left: 62%; background: linear-gradient(135deg, #4FB6E8, #7ECDF0); }
+
+        /* Teacher's desk */
+        .teacher-desk {
+          width: 20%; height: 10%;
+          background: linear-gradient(180deg, #6d4c2e, #5a3e25);
+          border-radius: 4px;
+          bottom: 42%; left: 40%; transform: translateX(-50%);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Slider styling */
+        .donation-slider-wrap {
+          max-width: 700px; margin: 2.5rem auto 0;
+          text-align: center;
+        }
+        .donation-amount-display {
+          font-family: 'Baloo 2', cursive;
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-weight: 800;
+          color: var(--color-charcoal);
+          margin-bottom: 0.5rem;
+          transition: all 0.3s ease;
+        }
+        .donation-amount-display span {
+          color: var(--color-teal);
+        }
+        .donation-impact-label {
+          font-size: 1.1rem;
+          color: var(--color-text-secondary);
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          min-height: 1.5em;
+          transition: all 0.4s ease;
+        }
+        .classroom-slider {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 12px;
+          background: linear-gradient(90deg, #e0e0e0 0%, #08B9DB 50%, #0194B1 100%);
+          border-radius: 100px;
+          outline: none;
+          cursor: pointer;
+          box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .classroom-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 36px; height: 36px;
+          border-radius: 50%;
+          background: var(--color-teal);
+          border: 4px solid #fff;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+          cursor: grab;
+          transition: transform 0.2s ease;
+        }
+        .classroom-slider::-webkit-slider-thumb:hover {
+          transform: scale(1.15);
+        }
+        .classroom-slider::-moz-range-thumb {
+          width: 36px; height: 36px;
+          border-radius: 50%;
+          background: var(--color-teal);
+          border: 4px solid #fff;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+          cursor: grab;
+        }
+        .slider-labels {
+          display: flex; justify-content: space-between;
+          margin-top: 0.75rem;
+          font-size: 0.85rem; font-weight: 700;
+          color: var(--color-text-muted);
+        }
+        .donate-cta-row {
+          margin-top: 2rem;
+          display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 1rem;">
+          <div class="section-header__eyebrow">See Your Impact</div>
+          <h2 class="section-header__title">Fill a <span style="color: var(--color-teal);">Classroom</span> with Your Giving</h2>
+          <p class="section-header__desc">Drag the slider and watch the classroom come alive. Every rupee transforms a space into a place of wonder.</p>
+        </div>
+
+        <div class="classroom-container reveal">
+          <div class="classroom-scene" id="classroomScene">
+            <!-- Room structure -->
+            <div class="room-wall"></div>
+            <div class="room-floor"></div>
+            <div class="window window-left"></div>
+            <div class="window window-right"></div>
+            <div class="blackboard">
+              <div class="blackboard-text" id="boardText">An empty classroom awaits...</div>
+            </div>
+
+            <!-- TIER 1: ₹500 – Basic furniture -->
+            <div class="classroom-item desk desk-1" data-tier="1"></div>
+            <div class="classroom-item desk desk-2" data-tier="1"></div>
+            <div class="classroom-item desk desk-3" data-tier="1" style="transition-delay: 0.15s;"></div>
+            <div class="classroom-item teacher-desk" data-tier="1" style="transition-delay: 0.25s;"></div>
+
+            <!-- TIER 2: ₹2000 – Books & clock -->
+            <div class="classroom-item books books-1" data-tier="2">
+              <div class="book" style="background:#E53935; height:100%;"></div>
+              <div class="book" style="background:#1E88E5; height:85%;"></div>
+              <div class="book" style="background:#43A047; height:92%;"></div>
+              <div class="book" style="background:#7ECDF0; height:78%;"></div>
+            </div>
+            <div class="classroom-item books books-2" data-tier="2" style="transition-delay: 0.1s;">
+              <div class="book" style="background:#8E24AA; height:90%;"></div>
+              <div class="book" style="background:#00ACC1; height:100%;"></div>
+              <div class="book" style="background:#999999; height:82%;"></div>
+              <div class="book" style="background:#3949AB; height:95%;"></div>
+            </div>
+            <div class="classroom-item books books-3" data-tier="2" style="transition-delay: 0.2s;">
+              <div class="book" style="background:#C0CA33; height:88%;"></div>
+              <div class="book" style="background:#D81B60; height:96%;"></div>
+              <div class="book" style="background:#039BE5; height:80%;"></div>
+              <div class="book" style="background:#4FB6E8; height:100%;"></div>
+            </div>
+            <div class="classroom-item wall-clock" data-tier="2" style="transition-delay: 0.3s;">
+              <div class="clock-hand clock-hour"></div>
+              <div class="clock-minute clock-hand"></div>
+            </div>
+
+            <!-- TIER 3: ₹5000 – Bookshelf, globe, art -->
+            <div class="classroom-item bookshelf" data-tier="3">
+              <div class="shelf-row">
+                <div class="shelf-book" style="background:#E53935;"></div>
+                <div class="shelf-book" style="background:#1E88E5;"></div>
+                <div class="shelf-book" style="background:#43A047;"></div>
+                <div class="shelf-book" style="background:#FFC72C;"></div>
+              </div>
+              <div class="shelf-row">
+                <div class="shelf-book" style="background:#8E24AA;"></div>
+                <div class="shelf-book" style="background:#FF6F59;"></div>
+                <div class="shelf-book" style="background:#00ACC1;"></div>
+              </div>
+              <div class="shelf-row">
+                <div class="shelf-book" style="background:#F4511E;"></div>
+                <div class="shelf-book" style="background:#3949AB;"></div>
+                <div class="shelf-book" style="background:#C0CA33;"></div>
+                <div class="shelf-book" style="background:#D81B60;"></div>
+              </div>
+            </div>
+            <div class="classroom-item globe" data-tier="3" style="transition-delay: 0.15s;"></div>
+            <div class="classroom-item wall-art art-1" data-tier="3" style="transition-delay: 0.25s;"></div>
+            <div class="classroom-item wall-art art-2" data-tier="3" style="transition-delay: 0.35s;"></div>
+
+            <!-- TIER 4: ₹10000 – Sports + 3 children -->
+            <div class="classroom-item sports" data-tier="4">
+              <div class="cricket-bat"></div>
+              <div class="football"></div>
+            </div>
+            <div class="classroom-item child-figure child-1" data-tier="4" style="transition-delay: 0.1s;">
+              <div class="child-head" style="background: #8D6E63;"></div>
+              <div class="child-body" style="background: #42A5F5;"></div>
+            </div>
+            <div class="classroom-item child-figure child-2" data-tier="4" style="transition-delay: 0.2s;">
+              <div class="child-head" style="background: #A1887F;"></div>
+              <div class="child-body" style="background: #EF5350;"></div>
+            </div>
+            <div class="classroom-item child-figure child-3" data-tier="4" style="transition-delay: 0.3s;">
+              <div class="child-head" style="background: #795548;"></div>
+              <div class="child-body" style="background: #66BB6A;"></div>
+            </div>
+
+            <!-- TIER 5: ₹50000 – 3 more children (full classroom) -->
+            <div class="classroom-item child-figure child-4" data-tier="5">
+              <div class="child-head" style="background: #6D4C41;"></div>
+              <div class="child-body" style="background: #FFA726;"></div>
+            </div>
+            <div class="classroom-item child-figure child-5" data-tier="5" style="transition-delay: 0.15s;">
+              <div class="child-head" style="background: #8D6E63;"></div>
+              <div class="child-body" style="background: #AB47BC;"></div>
+            </div>
+            <div class="classroom-item child-figure child-6" data-tier="5" style="transition-delay: 0.25s;">
+              <div class="child-head" style="background: #A1887F;"></div>
+              <div class="child-body" style="background: #26C6DA;"></div>
+            </div>
+          </div>
+
+          <!-- Slider -->
+          <div class="donation-slider-wrap">
+            <div class="donation-amount-display" id="donationDisplay">₹<span>0</span></div>
+            <div class="donation-impact-label" id="impactLabel">Slide to see what your donation can do →</div>
+            <input type="range" class="classroom-slider" id="classroomSlider" min="0" max="5" value="0" step="1">
+            <div class="slider-labels">
+              <span>₹0</span>
+              <span>₹500</span>
+              <span>₹2,000</span>
+              <span>₹5,000</span>
+              <span>₹10,000</span>
+              <span>₹50,000</span>
+            </div>
+
+            <div class="donate-cta-row">
+              <a href="https://give.do/nonprofits/kshamtalaya-foundation" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" style="box-shadow: 0 8px 25px rgba(255,199,44,0.4);">
+                Donate Now on GiveIndia ❤
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function() {
+          const slider = document.getElementById('classroomSlider');
+          const display = document.getElementById('donationDisplay');
+          const label = document.getElementById('impactLabel');
+          const boardText = document.getElementById('boardText');
+          const items = document.querySelectorAll('.classroom-item');
+
+          const tiers = [
+            { amount: '0',      label: 'Slide to see what your donation can do →', board: 'An empty classroom awaits...' },
+            { amount: '500',    label: '🪑 Desks & furniture for students to sit and learn', board: 'Welcome to class!' },
+            { amount: '2,000',  label: '📚 Books, a clock, and learning materials arrive', board: 'A + B = Learning!' },
+            { amount: '5,000',  label: '🌍 A bookshelf, globe, and artwork fill the walls', board: 'The world is our classroom ✨' },
+            { amount: '10,000', label: '⚽ Sports gear appears and children walk in!', board: 'Every child matters 💛' },
+            { amount: '50,000', label: '🎉 A full, vibrant classroom — thanks to YOU!', board: 'Thank you for believing in us! 🌟' }
+          ];
+
+          function updateClassroom(tierIndex) {
+            const tier = tiers[tierIndex];
+            display.innerHTML = '₹<span>' + tier.amount + '</span>';
+            label.textContent = tier.label;
+            boardText.textContent = tier.board;
+
+            items.forEach(item => {
+              const itemTier = parseInt(item.getAttribute('data-tier'));
+              if (itemTier <= tierIndex) {
+                item.classList.add('visible');
+              } else {
+                item.classList.remove('visible');
+              }
+            });
+
+            // Change board color at max
+            if (tierIndex === 5) {
+              boardText.style.color = '#FFC72C';
+              boardText.style.fontSize = 'clamp(0.8rem, 2.2vw, 1.6rem)';
+            } else {
+              boardText.style.color = 'rgba(255,255,255,0.7)';
+              boardText.style.fontSize = 'clamp(0.7rem, 2vw, 1.4rem)';
+            }
+          }
+
+          slider.addEventListener('input', function() {
+            updateClassroom(parseInt(this.value));
+          });
+
+          // Initial state
+          updateClassroom(0);
+        })();
+      </script>
+    </section>
+
     <!-- COMPLIANCE DOCUMENTS -->
     <section class="section section--cream" id="compliance">
       <div class="container">

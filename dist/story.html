@@ -8,8 +8,8 @@
   <link rel="icon" type="image/png" href="/assets/logo-Zw3lcZ7V.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <script type="module" crossorigin src="/assets/main-D10Lptpo.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-DWfkqZnf.css">
+  <script type="module" crossorigin src="/assets/main-BfeYkRU7.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-CZI4Kt9a.css">
 </head>
 <body class="page-fade-in">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -599,7 +599,7 @@
     
     <!-- OUR TEAM -->
     <!-- ════════════════════════════════════════ -->
-    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: #FFF9EE; overflow: hidden; position: relative; padding: 6rem 0;">
+    <section class="section" id="team" aria-label="Our Leadership Profile" style="background: #FFFFFF; overflow: hidden; position: relative; padding: 6rem 0;">
       <!-- Playful background doodles -->
       <svg class="team-doodle team-doodle-1" width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top: 8%; left: 4%; opacity:0.25; animation: anim-float 6s infinite ease-in-out;"><path fill="none" stroke="#FF6F59" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,60 Q30,10 60,60 T110,60"/></svg>
       <svg class="team-doodle team-doodle-2" width="80" height="80" viewBox="0 0 120 120" style="position:absolute; bottom: 12%; right: 5%; opacity:0.25; animation: anim-rotate 15s infinite linear;"><polygon fill="none" stroke="#01BADE" stroke-width="4" points="60,10 110,110 10,110" stroke-linejoin="round"/></svg>
@@ -2130,6 +2130,17 @@
         </form>
       </div>
     </div>
-  </footer>
+  </footer>
+  
+  <!-- Quick Scroll Controls -->
+  <div class="scroll-controls" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: row; background: #FFFFFF; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.05); z-index: 9999; overflow: hidden; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; box-shadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; box-shadow='0 4px 20px rgba(0,0,0,0.12)';">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top" style="width: 48px; height: 44px; background: transparent; color: #555; border: none; border-right: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.background='var(--color-teal)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#555';">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" aria-label="Scroll to bottom" style="width: 48px; height: 44px; background: transparent; color: #555; border: none; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.background='var(--color-teal)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#555';">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
+
 </body>
 </html>

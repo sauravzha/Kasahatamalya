@@ -23,13 +23,13 @@
 }
 
 .btn--primary {
-  background: var(--color-sunshine);
-  color: var(--color-charcoal);
+  background: var(--color-teal);
+  color: var(--color-white);
   box-shadow: var(--shadow-btn);
 }
 
 .btn--primary:hover {
-  background: var(--color-sunshine-dark);
+  background: var(--color-teal-dark);
   transform: translateY(-2px) scale(1.02);
   box-shadow: var(--shadow-lg);
   color: var(--color-white);
