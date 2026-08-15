@@ -68,6 +68,7 @@ new_team_html = """
             transform: translateY(0);
           }
           .team-pro-name {
+            color: var(--color-teal);
             font-family: var(--font-heading);
             font-size: 1.8rem;
             font-weight: 800;
@@ -156,7 +157,7 @@ new_team_html = """
             <div class="team-pro-overlay"></div>
             <div class="team-pro-content">
               <h3 class="team-pro-name">Anjali Gupte</h3>
-              <span class="team-pro-role">Director, CEO</span>
+              <span class="team-pro-role">Director</span>
               <div class="team-pro-details">
                 <div class="team-pro-stat">
                   <span>🎓</span>

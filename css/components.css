@@ -108,7 +108,7 @@
   left: 0;
   right: 0;
   height: var(--navbar-height);
-  background: rgba(255, 251, 240, 0.92);
+  background: rgba(230, 244, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: var(--z-navbar);
@@ -118,7 +118,7 @@
 
 .navbar.scrolled {
   height: var(--navbar-height-scrolled);
-  background: rgba(255, 251, 240, 0.97);
+  background: rgba(230, 244, 255, 0.97);
   box-shadow: var(--shadow-sm);
 }
 
@@ -301,7 +301,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-cream);
+  background: #E6F4FF;
   z-index: var(--z-navbar);
   padding: calc(var(--navbar-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
   flex-direction: column;

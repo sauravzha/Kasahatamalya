@@ -44,7 +44,7 @@ html_content = """
             <img class="gov-img" src="/assets/team/soumya_b.jpeg" alt="Soumya Bhaskaracharya">
             <div class="gov-info">
               <h4>Soumya Bhaskaracharya</h4>
-              <div class="gov-role">DIRECTOR AND CEO</div>
+              <div class="gov-role">DIRECTOR</div>
               <p>Masters in Applied Sociology. Eight years with the organisation.</p>
             </div>
           </div>

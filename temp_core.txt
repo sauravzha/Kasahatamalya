@@ -323,7 +323,7 @@
                     Soumya B
                   </h3>
                   <span class="gov-badge" style="background: #E6F8FC; color: #0194B1; border: 1px solid #B3ECF7;">
-                    Director, CEO
+                    Director
                   </span>
                 </div>
               </div>
@@ -472,7 +472,7 @@
                     <div>Soumya B</div>
                   </div>
                 </td>
-                <td><span class="gov-badge" style="background: #E6F8FC; color: #0194B1;">Director, CEO</span></td>
+                <td><span class="gov-badge" style="background: #E6F8FC; color: #0194B1;">Director</span></td>
                 <td>Masters in Applied Sociology</td>
                 <td><span class="gov-tenure-pill">10 Years</span></td>
               </tr>
