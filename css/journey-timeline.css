@@ -1,0 +1,382 @@
+/* 
+  Journey Timeline Styles
+  2.5D Immersive Parallax Experience
+*/
+
+:root {
+  --jt-bg: #F9F8F6; /* Warm paper */
+  --jt-text: #2D2D2E;
+  --jt-accent: #1CA6A0; /* Teal */
+  --jt-muted: #8B8B8B;
+  --jt-line: #E5E0D8;
+  --jt-line-active: #1CA6A0;
+}
+
+#journey-timeline-section {
+  background-color: var(--jt-bg);
+  color: var(--jt-text);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  padding: 6rem 0 10rem;
+  min-height: 120vh;
+}
+
+/* Subtle paper texture overlay */
+#journey-timeline-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jt-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 6rem;
+  position: relative;
+  z-index: 10;
+  padding: 0 2rem;
+}
+
+.jt-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--jt-muted);
+  margin-bottom: 1.5rem;
+}
+
+.jt-title {
+  font-family: 'Lora', serif; /* Elegant serif */
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--jt-text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.jt-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--jt-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline Container */
+.jt-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+/* SVG Path */
+.jt-svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.jt-path-bg {
+  fill: none;
+  stroke: var(--jt-line);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jt-path-active {
+  fill: none;
+  stroke: var(--jt-line-active);
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 0.1s ease-out;
+  filter: drop-shadow(0 0 8px rgba(28, 166, 160, 0.4));
+}
+
+/* Milestones */
+.jt-milestone {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10vh;
+  z-index: 10;
+  opacity: 0.4;
+  transform: scale(0.95);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.jt-milestone:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.jt-milestone.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.jt-milestone.is-past {
+  opacity: 0.3;
+  transform: scale(0.98) translateY(-20px);
+}
+
+/* Content Area */
+.jt-content {
+  width: 45%;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.jt-year {
+  font-family: 'Lora', serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 700;
+  color: var(--jt-text);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+.jt-milestone.is-active .jt-year {
+  opacity: 1;
+  color: var(--jt-accent);
+  text-shadow: 0 10px 30px rgba(28, 166, 160, 0.2);
+}
+
+.jt-milestone-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--jt-text);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.5s ease 0.1s;
+}
+
+.jt-milestone-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--jt-muted);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.5s ease 0.2s;
+}
+
+.jt-milestone.is-active .jt-milestone-title,
+.jt-milestone.is-active .jt-milestone-desc {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Visual Node Area (The 2.5D World) */
+.jt-visual {
+  width: 50%;
+  height: 400px;
+  position: relative;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jt-visual-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+}
+
+.jt-milestone.is-active .jt-visual-inner {
+  animation: jt-float 6s ease-in-out infinite;
+}
+
+@keyframes jt-float {
+  0% { transform: translateY(0px) rotateX(0) rotateY(0); }
+  50% { transform: translateY(-15px) rotateX(2deg) rotateY(-2deg); }
+  100% { transform: translateY(0px) rotateX(0) rotateY(0); }
+}
+
+.jt-scene-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+  transition: filter 0.5s ease, transform 0.5s ease;
+  transform: translateZ(20px);
+}
+
+.jt-milestone.is-active .jt-scene-image {
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.25));
+  transform: translateZ(40px) scale(1.05);
+}
+
+/* The Marker Dot on the path */
+.jt-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: var(--jt-bg);
+  border: 4px solid var(--jt-line);
+  border-radius: 50%;
+  z-index: 15;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 0 rgba(28,166,160,0);
+}
+
+.jt-milestone.is-active .jt-marker {
+  border-color: var(--jt-accent);
+  background: var(--jt-accent);
+  box-shadow: 0 0 0 8px rgba(28,166,160,0.2);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Navigation Indicator */
+.jt-nav {
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.jt-nav-inner {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  pointer-events: auto;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.jt-nav-item {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--jt-muted);
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.jt-nav-item:hover {
+  color: var(--jt-text);
+}
+
+.jt-nav-item.is-active {
+  color: var(--jt-accent);
+}
+
+.jt-nav-item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--jt-accent);
+  border-radius: 2px;
+}
+
+/* Mouse Hover Interactions */
+@media (hover: hover) {
+  .jt-milestone:hover .jt-visual-inner {
+    transform: translateZ(30px) scale(1.02);
+  }
+}
+
+/* End Node (2026+) */
+.jt-milestone-end .jt-visual-inner {
+  animation: jt-grow 8s ease-in-out infinite;
+}
+
+@keyframes jt-grow {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.05) translateY(-10px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .jt-milestone, .jt-milestone:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5rem;
+    min-height: auto;
+  }
+  
+  .jt-content, .jt-visual {
+    width: 100%;
+  }
+
+  .jt-visual {
+    height: 300px;
+    order: -1; /* Image on top on mobile */
+    margin-bottom: 2rem;
+  }
+
+  .jt-marker {
+    display: none; /* Hide marker dots on mobile as layout changes */
+  }
+
+  .jt-nav-inner {
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+    max-width: 90vw;
+  }
+
+  .jt-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .jt-milestone, .jt-milestone.is-active, .jt-milestone.is-past {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .jt-visual-inner, .jt-milestone-end .jt-visual-inner {
+    animation: none !important;
+    transform: none !important;
+  }
+  .jt-path-active {
+    transition: none !important;
+  }
+  .jt-milestone-title, .jt-milestone-desc {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
