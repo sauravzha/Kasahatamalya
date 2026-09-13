@@ -74,37 +74,413 @@
         </p>
       </div>
     </section>
-    <!-- OUR STORY -->
-    <section class="section" id="our-story" style="background: white;">
+    <!-- OUR STORY - INTERACTIVE LADDER -->
+    <section class="section" id="our-story" style="background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFB 50%, #FFFFFF 100%); position: relative; overflow: hidden;">
+      <!-- Ambient floating orbs -->
+      <div style="position:absolute; top:10%; left:5%; width:200px; height:200px; background:radial-gradient(circle, rgba(28,166,160,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none; animation: anim-float 8s ease-in-out infinite;"></div>
+      <div style="position:absolute; bottom:15%; right:5%; width:250px; height:250px; background:radial-gradient(circle, rgba(255,199,44,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none; animation: anim-float 10s ease-in-out infinite reverse;"></div>
+
       <div class="container">
         <div class="section-header reveal text-center">
           <div class="section-header__eyebrow">Our Story</div>
           <h2 class="section-header__title">A Journey From <span class="highlight-yellow">Kotra</span></h2>
           <p class="section-header__desc" style="max-width: 700px; margin: 0 auto;">A brief history of Kshamtalaya Foundation, our founding principles, and the journey so far.</p>
         </div>
-        <div style="display: grid; gap: 3rem; margin-top: 3rem;">
-          <!-- Story Block 1 -->
-          <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; background: var(--color-cream-light); padding: 2.5rem; border-radius: 24px; border-left: 6px solid var(--color-teal); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-            <h3 style="color: var(--color-charcoal); font-size: 1.8rem; margin-bottom: 0.5rem;">What ‘Education’ Meant</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 1.1rem;">
-              The work began in a remote tribal-rural Block named Kotra, 100 kms from Udaipur. Vivek Kumar, Alokesh Sharma, and Pooja Singh immersed in the communities and realized real challenges impacting children’s continuity in school. Despite low literacy rates and high drop-outs, the children weren't "uneducated." They knew true community collaboration during floods. They could swim, navigate paths in starlight, identify edible berries, and balance to climb trees for livelihood. What defines education then? We delved into rich literature to gain a deeper understanding of what schooling should look like in Kotra.
-            </p>
+
+        <style>
+          /* ═══ LADDER TIMELINE ═══ */
+          .ladder-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            padding: 2rem 0;
+          }
+
+          /* Central vertical rail */
+          .ladder-rail {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.04) 100%);
+            border-radius: 4px;
+            z-index: 1;
+          }
+
+          /* Animated progress fill */
+          .ladder-rail-fill {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 0%;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #1CA6A0, #FFC72C, #FF6F59);
+            border-radius: 4px;
+            z-index: 2;
+            transition: height 0.3s ease-out;
+          }
+
+          /* Individual rung/step */
+          .ladder-rung {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            z-index: 3;
+          }
+          .ladder-rung:last-child {
+            margin-bottom: 0;
+          }
+
+          /* Alternate sides */
+          .ladder-rung--left {
+            flex-direction: row;
+          }
+          .ladder-rung--right {
+            flex-direction: row-reverse;
+          }
+
+          /* Content card */
+          .ladder-card {
+            flex: 0 0 calc(50% - 50px);
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          .ladder-rung--left .ladder-card {
+            transform: translateX(-40px) translateY(20px);
+          }
+          .ladder-rung--right .ladder-card {
+            transform: translateX(40px) translateY(20px);
+          }
+          .ladder-card.visible {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+          }
+
+          /* Accent stripe */
+          .ladder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            border-radius: 24px 24px 0 0;
+            transition: height 0.4s ease;
+          }
+          .ladder-card:hover::before {
+            height: 8px;
+          }
+
+          /* Glow effect on hover */
+          .ladder-card::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: -1;
+          }
+          .ladder-card:hover::after {
+            opacity: 1;
+          }
+          .ladder-card:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+          }
+
+          /* Card color themes */
+          .ladder-card--teal::before { background: linear-gradient(90deg, #1CA6A0, #08B9DB); }
+          .ladder-card--teal::after { box-shadow: 0 0 40px rgba(28,166,160,0.15); }
+          .ladder-card--yellow::before { background: linear-gradient(90deg, #FFC72C, #F2994A); }
+          .ladder-card--yellow::after { box-shadow: 0 0 40px rgba(255,199,44,0.2); }
+          .ladder-card--coral::before { background: linear-gradient(90deg, #FF6F59, #FF9080); }
+          .ladder-card--coral::after { box-shadow: 0 0 40px rgba(255,111,89,0.15); }
+
+          /* Step number badge */
+          .ladder-step-num {
+            font-family: 'Baloo 2', cursive;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            opacity: 0.12;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+          }
+          .ladder-card:hover .ladder-step-num {
+            opacity: 0.25;
+            transform: scale(1.1);
+          }
+          .ladder-card--teal .ladder-step-num { color: #1CA6A0; }
+          .ladder-card--yellow .ladder-step-num { color: #FFC72C; }
+          .ladder-card--coral .ladder-step-num { color: #FF6F59; }
+
+          .ladder-card h3 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.7rem;
+            color: var(--color-charcoal);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            font-weight: 700;
+          }
+
+          .ladder-card-summary {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+          }
+
+          /* Expandable content */
+          .ladder-card-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.3, 1), padding 0.4s ease;
+            padding-top: 0;
+          }
+          .ladder-card.expanded .ladder-card-detail {
+            max-height: 500px;
+            padding-top: 1rem;
+          }
+          .ladder-card-detail p {
+            color: var(--color-text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            border-top: 1px dashed rgba(0,0,0,0.08);
+            padding-top: 1rem;
+          }
+
+          /* Expand hint */
+          .ladder-expand-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 1rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+          }
+          .ladder-card--teal .ladder-expand-hint { color: #1CA6A0; }
+          .ladder-card--yellow .ladder-expand-hint { color: #D4A017; }
+          .ladder-card--coral .ladder-expand-hint { color: #FF6F59; }
+          .ladder-expand-arrow {
+            transition: transform 0.4s ease;
+          }
+          .ladder-card.expanded .ladder-expand-arrow {
+            transform: rotate(180deg);
+          }
+
+          /* Central node connector */
+          .ladder-node {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+          }
+          .ladder-node::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            animation: ladder-pulse 2.5s ease-in-out infinite;
+          }
+          @keyframes ladder-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.3); opacity: 1; }
+          }
+          .ladder-node--teal { background: #1CA6A0; }
+          .ladder-node--yellow { background: #FFC72C; }
+          .ladder-node--coral { background: #FF6F59; }
+
+          /* Horizontal rung connector line */
+          .ladder-connector {
+            position: absolute;
+            top: 2.5rem;
+            height: 3px;
+            border-radius: 3px;
+            opacity: 0.3;
+            z-index: 4;
+          }
+          .ladder-rung--left .ladder-connector {
+            left: calc(50% - 50px);
+            right: calc(50% + 12px);
+            transform-origin: right;
+          }
+          .ladder-rung--right .ladder-connector {
+            right: calc(50% - 50px);
+            left: calc(50% + 12px);
+            transform-origin: left;
+          }
+          .ladder-connector--teal { background: linear-gradient(90deg, rgba(28,166,160,0.4), #1CA6A0); }
+          .ladder-connector--yellow { background: linear-gradient(90deg, rgba(255,199,44,0.4), #FFC72C); }
+          .ladder-connector--coral { background: linear-gradient(90deg, rgba(255,111,89,0.4), #FF6F59); }
+
+          /* Mobile responsive */
+          @media (max-width: 768px) {
+            .ladder-rail, .ladder-rail-fill {
+              left: 20px;
+            }
+            .ladder-node {
+              left: 20px;
+              width: 18px;
+              height: 18px;
+            }
+            .ladder-node::before {
+              width: 8px;
+              height: 8px;
+            }
+            .ladder-connector {
+              display: none;
+            }
+            .ladder-rung--left,
+            .ladder-rung--right {
+              flex-direction: row;
+              padding-left: 50px;
+            }
+            .ladder-card {
+              flex: 1;
+            }
+            .ladder-rung--left .ladder-card,
+            .ladder-rung--right .ladder-card {
+              transform: translateX(30px) translateY(10px);
+            }
+          }
+        </style>
+
+        <!-- LADDER TIMELINE -->
+        <div class="ladder-timeline">
+          <!-- Background rail -->
+          <div class="ladder-rail"></div>
+          <div class="ladder-rail-fill" id="ladderProgress"></div>
+
+          <!-- STEP 1: What 'Education' Meant (LEFT) -->
+          <div class="ladder-rung ladder-rung--left">
+            <div class="ladder-card ladder-card--teal" onclick="this.classList.toggle('expanded')">
+              <div class="ladder-step-num">01</div>
+              <h3>What 'Education' Meant</h3>
+              <p class="ladder-card-summary">
+                The work began in a remote tribal-rural Block named Kotra, 100 kms from Udaipur. Vivek Kumar, Alokesh Sharma, and Pooja Singh immersed in the communities and realized real challenges impacting children's continuity in school.
+              </p>
+              <div class="ladder-card-detail">
+                <p>
+                  Despite low literacy rates and high drop-outs, the children weren't "uneducated." They knew true community collaboration during floods. They could swim, navigate paths in starlight, identify edible berries, and balance to climb trees for livelihood. What defines education then? We delved into rich literature to gain a deeper understanding of what schooling should look like in Kotra.
+                </p>
+              </div>
+              <div class="ladder-expand-hint">
+                <span>Read the full story</span>
+                <svg class="ladder-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+            </div>
+            <div class="ladder-node ladder-node--teal"></div>
+            <div class="ladder-connector ladder-connector--teal"></div>
           </div>
-          <!-- Story Block 2 -->
-          <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; background: var(--color-cream-light); padding: 2.5rem; border-radius: 24px; border-left: 6px solid var(--color-yellow); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-            <h3 style="color: var(--color-charcoal); font-size: 1.8rem; margin-bottom: 0.5rem;">Head-Heart-Hand</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 1.1rem;">
-              Inspired by the Gandhian ideology of immersing ourselves in action and theories of experiential learning, we realized children retain longer when involved in the learning process. Rote-learning doesn’t support children to prepare for a dynamic world as strongly as experiential methods do. Experiential learning makes children more alert, demonstrates logical capabilities, and gives blueprints to look at real-world problems. We devised holistic learning models integrating Social Emotional Learning. For instance, a mindfulness-integrated Geography curriculum for 7th graders visibly showed how personalized experiences help students retain concepts longer.
-            </p>
+
+          <!-- STEP 2: Head-Heart-Hand (RIGHT) -->
+          <div class="ladder-rung ladder-rung--right">
+            <div class="ladder-card ladder-card--yellow" onclick="this.classList.toggle('expanded')">
+              <div class="ladder-step-num">02</div>
+              <h3>Head-Heart-Hand</h3>
+              <p class="ladder-card-summary">
+                Inspired by the Gandhian ideology of immersing ourselves in action and theories of experiential learning, we realized children retain longer when involved in the learning process.
+              </p>
+              <div class="ladder-card-detail">
+                <p>
+                  Rote-learning doesn't support children to prepare for a dynamic world as strongly as experiential methods do. Experiential learning makes children more alert, demonstrates logical capabilities, and gives blueprints to look at real-world problems. We devised holistic learning models integrating Social Emotional Learning. For instance, a mindfulness-integrated Geography curriculum for 7th graders visibly showed how personalized experiences help students retain concepts longer.
+                </p>
+              </div>
+              <div class="ladder-expand-hint">
+                <span>Read the full story</span>
+                <svg class="ladder-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+            </div>
+            <div class="ladder-node ladder-node--yellow"></div>
+            <div class="ladder-connector ladder-connector--yellow"></div>
           </div>
-          <!-- Story Block 3 -->
-          <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; background: var(--color-cream-light); padding: 2.5rem; border-radius: 24px; border-left: 6px solid var(--color-coral); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-            <h3 style="color: var(--color-charcoal); font-size: 1.8rem; margin-bottom: 0.5rem;">Not Just Classrooms</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 1.1rem;">
-              We realized we cannot do it all by ourselves-and we shouldn't! Education cannot just happen in classrooms where we pack up and walk out. We HAVE to work with school leaders, local governance, parents, and stakeholders like Sarpanch and SMC members. The entire system must strengthen to support a child's holistic growth. This led to our mission: to establish centers of excellence in the most remote geographies along with regional leaders, facilitated through the regional youth for the most sustainable impact.
-            </p>
+
+          <!-- STEP 3: Not Just Classrooms (LEFT) -->
+          <div class="ladder-rung ladder-rung--left">
+            <div class="ladder-card ladder-card--coral" onclick="this.classList.toggle('expanded')">
+              <div class="ladder-step-num">03</div>
+              <h3>Not Just Classrooms</h3>
+              <p class="ladder-card-summary">
+                We realized we cannot do it all by ourselves—and we shouldn't! Education cannot just happen in classrooms where we pack up and walk out.
+              </p>
+              <div class="ladder-card-detail">
+                <p>
+                  We HAVE to work with school leaders, local governance, parents, and stakeholders like Sarpanch and SMC members. The entire system must strengthen to support a child's holistic growth. This led to our mission: to establish centers of excellence in the most remote geographies along with regional leaders, facilitated through the regional youth for the most sustainable impact.
+                </p>
+              </div>
+              <div class="ladder-expand-hint">
+                <span>Read the full story</span>
+                <svg class="ladder-expand-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6L8 10L12 6"/></svg>
+              </div>
+            </div>
+            <div class="ladder-node ladder-node--coral"></div>
+            <div class="ladder-connector ladder-connector--coral"></div>
           </div>
         </div>
+
+        <!-- Scroll-based progress + reveal animation -->
+        <script>
+          (function() {
+            // Progress rail fill on scroll
+            function updateLadderProgress() {
+              var timeline = document.querySelector('.ladder-timeline');
+              if (!timeline) return;
+              var rect = timeline.getBoundingClientRect();
+              var windowH = window.innerHeight;
+              var timelineTop = rect.top;
+              var timelineH = rect.height;
+              var scrolled = Math.max(0, windowH - timelineTop);
+              var pct = Math.min(100, (scrolled / (timelineH + windowH * 0.3)) * 100);
+              var fill = document.getElementById('ladderProgress');
+              if (fill) fill.style.height = pct + '%';
+            }
+
+            // Card reveal on scroll
+            function revealLadderCards() {
+              var cards = document.querySelectorAll('.ladder-card');
+              cards.forEach(function(card) {
+                var rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                  card.classList.add('visible');
+                }
+              });
+            }
+
+            window.addEventListener('scroll', function() {
+              updateLadderProgress();
+              revealLadderCards();
+            });
+            window.addEventListener('load', function() {
+              updateLadderProgress();
+              revealLadderCards();
+            });
+          })();
+        </script>
       </div>
     </section>
 
@@ -2142,7 +2518,7 @@
     
 
     <!-- FOOTER -->
-          <footer style="background-color: #2D2D2D; color: #ffffff; padding: 5rem 0; font-family: 'Inter', sans-serif;">
+            <footer style="background-color: #2D2D2D; color: #ffffff; padding: 5rem 0; font-family: 'Inter', sans-serif;">
     <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
       
       <!-- Column 1: Brand & About -->
@@ -2195,9 +2571,9 @@
       <div>
         <h4 style="color: #FFC72C; font-size: 1rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase;">Policies</h4>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
-          <li><a href="/Policies/Child%20protection%20policy_%20KF-%202026-27%20(2).pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Child Protection Policy</a></li>
-          <li><a href="/Policies/KF_Data_Protection_Policy_v2.1%20(2).pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Data Protection Policy</a></li>
-          <li><a href="/Policies/POSH_Policy_26-27_Kshamtalaya_v2.1%20(2)%20(2).pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">POSH Policy</a></li>
+          <li><a href="/policies/child-protection-policy.pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Child Protection Policy</a></li>
+          <li><a href="/policies/data-protection-policy.pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">Data Protection Policy</a></li>
+          <li><a href="/policies/posh-policy.pdf" target="_blank" style="color: #DDDDDD; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#DDDDDD'">POSH Policy</a></li>
         </ul>
       </div>
 
