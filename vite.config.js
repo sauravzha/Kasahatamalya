@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
   root: './',
+  plugins: [
+    handlebars({
+      partialDirectory: resolve(__dirname, 'partials'),
+    }),
+  ],
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -13,6 +19,7 @@ export default defineConfig({
         press: resolve(__dirname, 'press.html'),
         contact: resolve(__dirname, 'contact.html'),
         donate: resolve(__dirname, 'donate.html'),
+        notfound: resolve(__dirname, '404.html'),
       },
     },
   },

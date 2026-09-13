@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Kshamtalaya</title>
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/enhancements.css" />
+  <style>
+    .not-found-container {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .not-found-title {
+      font-size: 8rem;
+      font-weight: 800;
+      color: var(--color-teal);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .not-found-subtitle {
+      font-size: 2rem;
+      color: var(--color-charcoal);
+      margin-bottom: 2rem;
+    }
+    .not-found-text {
+      color: var(--color-text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  {{> navbar }}
+
+  <main class="not-found-container">
+    <h1 class="not-found-title">404</h1>
+    <h2 class="not-found-subtitle">Oops! We couldn't find that page.</h2>
+    <p class="not-found-text">
+      The page you're looking for might have been moved, renamed, or no longer exists. 
+      Let's get you back on track to exploring the potential of every child.
+    </p>
+    <a href="/" class="btn btn--primary btn--lg">Return to Home</a>
+  </main>
+
+  {{> footer }}
+</body>
+</html>
