@@ -1,7 +1,17 @@
+# Dependencies
 node_modules/
+
+# Local Environment
 .env
-sheet.zip
-sheet_extracted/
-replace_logo.py
-update_footers.py
-update_nav.py
+.env.local
+
+# Build output
+dist/
+
+# Tools & Archives
+tools/archive/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

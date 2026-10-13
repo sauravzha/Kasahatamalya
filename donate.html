@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate & Get Involved - Kshamtalaya | Support Every Child's Potential</title>
-  <meta name="description" content="Support Kshamtalaya Foundation. Donate, volunteer, or partner with us to unlock the potential of every child in Rajasthan, Bihar & Delhi." />
+  <title>Donate — Kshamtalaya Foundation | Support Every Child's Potential</title>
+  <meta name="description" content="Donate to Kshamtalaya Foundation. Complete your donor details and support community-led education for every child in Rajasthan, Bihar & Delhi." />
   <link rel="icon" type="image/png" href="/assets/logo.png" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/components.css" />
@@ -12,86 +12,589 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <style>
-    .donate-hero {
-      background: var(--color-charcoal);
-      color: var(--color-cream);
-      padding: calc(var(--navbar-height) + var(--space-3xl)) 0 var(--space-3xl);
+    /* ----------------------------------------
+       DONATION FLOW — Multi-Step Premium UI
+       ---------------------------------------- */
+
+    .donate-flow {
+      min-height: 100vh;
+      background: linear-gradient(165deg, #f8f9fa 0%, #eef6f9 40%, #f0f4f8 100%);
+      padding: calc(var(--navbar-height) + 2rem) 0 4rem;
+    }
+    .donate-flow__container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* -- Step progress bar -- */
+    .step-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      padding: 0 1rem;
+    }
+    .step-dot {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      color: #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      font-family: var(--font-heading);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .step-dot.active {
+      background: var(--color-teal);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(8, 185, 219, 0.35);
+      transform: scale(1.1);
+    }
+    .step-dot.complete {
+      background: #4CAF50;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+    .step-line {
+      flex: 1;
+      height: 3px;
+      background: #e0e0e0;
+      transition: background 0.5s ease;
+      max-width: 120px;
+    }
+    .step-line.complete {
+      background: linear-gradient(90deg, #4CAF50, var(--color-teal));
+    }
+    .step-label {
+      position: absolute;
+      top: 52px;
+      white-space: nowrap;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+    .step-dot.active .step-label,
+    .step-dot.complete .step-label { color: var(--color-charcoal); }
+
+    /* -- Card wrapper for each step -- */
+    .donate-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      padding: 2.5rem 2.25rem;
+      animation: cardAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
       position: relative;
       overflow: hidden;
     }
-    .donate-hero::before {
+    .donate-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-teal), var(--color-sunshine), var(--color-coral));
+    }
+    @keyframes cardAppear {
+      from { opacity: 0; transform: translateY(24px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .donate-card__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      color: var(--color-charcoal);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .donate-card__subtitle {
+      text-align: center;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* -- Amount selection (Step 1) -- */
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .amount-option {
+      padding: 1.25rem 0.5rem;
+      border: 2.5px solid #e8e8e8;
+      border-radius: 16px;
+      background: #fafafa;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .amount-option::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 70% 50%, rgba(255,199,44,0.08) 0%, transparent 60%),
-                  radial-gradient(circle at 20% 80%, rgba(28,166,160,0.06) 0%, transparent 50%);
+      background: linear-gradient(135deg, rgba(8,185,219,0.06), rgba(255,199,44,0.06));
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    .donate-amounts {
-      display: flex;
-      gap: var(--space-md);
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: var(--space-xl);
+    .amount-option:hover::before { opacity: 1; }
+    .amount-option:hover {
+      border-color: var(--color-teal);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(8, 185, 219, 0.12);
     }
-    .amount-btn {
-      padding: var(--space-md) var(--space-xl);
-      border: 2px solid rgba(255,251,240,0.2);
-      border-radius: var(--radius-pill);
-      background: transparent;
-      color: var(--color-cream);
-      font-size: var(--fs-body);
-      font-weight: var(--fw-semibold);
-      cursor: pointer;
-      transition: all var(--duration-fast);
-      font-family: var(--font-body);
+    .amount-option.selected {
+      border-color: var(--color-teal);
+      background: linear-gradient(135deg, rgba(8,185,219,0.08), rgba(8,185,219,0.03));
+      box-shadow: 0 4px 20px rgba(8, 185, 219, 0.15);
     }
-    .amount-btn:hover,
-    .amount-btn.active {
-      background: var(--color-sunshine);
-      color: var(--color-charcoal);
-      border-color: var(--color-sunshine);
-    }
-    .amount-custom {
+    .amount-option.selected::after {
+      content: '✓';
+      position: absolute;
+      top: 8px; right: 10px;
+      font-size: 0.8rem;
+      background: var(--color-teal);
+      color: #fff;
+      width: 22px; height: 22px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
       justify-content: center;
+      font-weight: 800;
     }
-    .amount-custom input {
-      padding: 0.75rem var(--space-md);
-      border: 2px solid rgba(255,251,240,0.2);
-      border-radius: var(--radius-md);
-      background: rgba(255,251,240,0.06);
-      color: var(--color-cream);
-      font-size: var(--fs-body);
-      font-family: var(--font-body);
-      width: 180px;
+    .amount-option__value {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+    }
+    .amount-option__label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .custom-amount-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      border: 2.5px solid #e8e8e8;
+      border-radius: 16px;
+      background: #fafafa;
+      transition: border-color 0.3s;
+    }
+    .custom-amount-wrap:focus-within {
+      border-color: var(--color-teal);
+      box-shadow: 0 0 0 3px rgba(8, 185, 219, 0.1);
+    }
+    .custom-amount-wrap__symbol {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+    }
+    .custom-amount-wrap input {
+      flex: 1;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      border: none;
+      background: transparent;
+      outline: none;
+      color: var(--color-charcoal);
+    }
+    .custom-amount-wrap input::placeholder {
+      color: #bbb;
+      font-weight: 500;
+    }
+
+    .amount-selected-display {
       text-align: center;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #f0fafb, #f5f9ff);
+      border-radius: 14px;
+      border: 1px solid rgba(8, 185, 219, 0.15);
     }
-    .amount-custom input::placeholder { color: rgba(255,251,240,0.4); }
-    .amount-custom input:focus { outline: none; border-color: var(--color-sunshine); }
-    .compliance-grid {
+    .amount-selected-display__label {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .amount-selected-display__value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-teal);
+    }
+
+    /* -- Donor form (Step 2) -- */
+    .form-section {
+      margin-bottom: 1.5rem;
+    }
+    .form-section__title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-teal-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-section__title::before {
+      content: '';
+      width: 4px; height: 20px;
+      background: var(--color-teal);
+      border-radius: 2px;
+    }
+
+    .form-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-lg);
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
-    .compliance-card {
-      background: var(--color-white);
-      border-radius: var(--radius-xl);
-      padding: var(--space-xl);
+    .form-row--2col {
+      grid-template-columns: 1fr 1fr;
+    }
+    .form-row--3col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .form-field {
+      position: relative;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .form-field label .required {
+      color: #e53935;
+    }
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      background: #fafafa;
+      color: var(--color-charcoal);
+      transition: all 0.25s ease;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--color-teal);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(8, 185, 219, 0.1);
+      outline: none;
+    }
+    .form-field input.error,
+    .form-field select.error {
+      border-color: #e53935;
+      box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
+    }
+    .form-field .field-error {
+      display: none;
+      font-size: 0.78rem;
+      color: #e53935;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+    .form-field input.error + .field-error,
+    .form-field select.error + .field-error {
+      display: block;
+    }
+
+    .form-field .input-with-prefix {
+      display: flex;
+      align-items: center;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: all 0.25s ease;
+      overflow: hidden;
+    }
+    .form-field .input-with-prefix:focus-within {
+      border-color: var(--color-teal);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(8, 185, 219, 0.1);
+    }
+    .form-field .input-with-prefix.error {
+      border-color: #e53935;
+      box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
+    }
+    .form-field .input-prefix {
+      padding: 0.85rem 0.75rem 0.85rem 1rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      background: #f0f0f0;
+      font-size: 0.95rem;
+      border-right: 1px solid #e0e0e0;
+    }
+    .form-field .input-with-prefix input {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+    .form-field .input-with-prefix input:focus {
+      box-shadow: none;
+      border: none;
+    }
+
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e8e8e8;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .form-checkbox input[type="checkbox"] {
+      width: 20px; height: 20px;
+      margin-top: 2px;
+      accent-color: var(--color-teal);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .form-checkbox__text {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .privacy-notice {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f0f7fa;
+      border-radius: 12px;
+      border-left: 4px solid var(--color-teal);
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .privacy-notice a {
+      color: var(--color-teal);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* -- Review & Status (Step 3) -- */
+    .review-table {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .review-row {
+      display: flex;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      gap: 0.5rem;
+    }
+    .review-row:last-child { border-bottom: none; }
+    .review-row__label {
+      flex: 0 0 40%;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+    .review-row__value {
+      flex: 1;
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      font-weight: 600;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .status-badge--pending {
+      background: #FFF3CD;
+      color: #856404;
+    }
+    .status-badge--success {
+      background: #D4EDDA;
+      color: #155724;
+    }
+
+    /* -- Payment section (Step 3) -- */
+    .payment-placeholder {
       text-align: center;
-      box-shadow: var(--shadow-card);
-      border-top: 3px solid var(--color-teal);
+      padding: 2rem;
+      background: linear-gradient(135deg, #f8f9fa, #eef6f9);
+      border-radius: 16px;
+      border: 2px dashed #d0d0d0;
     }
-    .involve-card {
-      background: var(--color-white);
-      border-radius: var(--radius-xl);
-      padding: var(--space-2xl);
-      box-shadow: var(--shadow-card);
+    .payment-placeholder__icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
-    .involve-card__icon {
-      font-size: 2.5rem;
-      margin-bottom: var(--space-md);
+    .payment-placeholder__title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .payment-placeholder__text {
+      font-size: 0.92rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* -- Buttons -- */
+    .donate-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1.1rem 2rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .donate-btn--primary {
+      background: var(--color-teal);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(8, 185, 219, 0.3);
+    }
+    .donate-btn--primary:hover {
+      background: var(--color-teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(8, 185, 219, 0.4);
+    }
+    .donate-btn--primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .donate-btn--secondary {
+      background: transparent;
+      color: var(--color-teal);
+      border: 2.5px solid var(--color-teal);
+    }
+    .donate-btn--secondary:hover {
+      background: rgba(8, 185, 219, 0.06);
+    }
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn-row .donate-btn { flex: 1; }
+
+    /* -- Error alert -- */
+    .form-alert {
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-alert--error {
+      background: #FDE8E8;
+      color: #c0392b;
+      border: 1px solid #FBCCCC;
+    }
+    .form-alert--success {
+      background: #D4EDDA;
+      color: #155724;
+      border: 1px solid #C3E6CB;
+    }
+
+    /* -- Loading spinner -- */
+    .spinner {
+      width: 20px; height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: inline-block;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* -- GiveIndia alternate option -- */
+    .giveindia-alt {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #FFF9EE, #FFF5E0);
+      border-radius: 16px;
+      border: 1px solid rgba(255,199,44,0.3);
+      text-align: center;
+    }
+    .giveindia-alt__badge {
+      display: inline-block;
+      background: var(--color-sunshine);
+      color: var(--color-charcoal);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+    .giveindia-alt__text {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    /* -- Responsive -- */
+    @media (max-width: 640px) {
+      .donate-flow { padding-top: calc(var(--navbar-height) + 1rem); }
+      .donate-card { padding: 2rem 1.25rem; border-radius: 20px; }
+      .amount-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-row--2col, .form-row--3col { grid-template-columns: 1fr; }
+      .step-dot { width: 36px; height: 36px; font-size: 0.8rem; }
+      .step-label { font-size: 0.6rem; top: 44px; }
+      .btn-row { flex-direction: column; }
     }
   </style>
 </head>
@@ -100,517 +603,364 @@
   <!-- NAVBAR -->
   {{> navbar }}
   <main id="main-content">
-    <!-- DONATE HERO -->
-    <section class="donate-hero" id="donate">
-      <div class="container text-center" style="position:relative; z-index:1;">
-        <div class="section-header__eyebrow reveal" style="color: var(--color-sunshine);">Support Every Child</div>
-        <h1 class="reveal" style="color: var(--color-cream); margin-bottom: var(--space-md);">
-          Help Build an <span style="color: var(--color-sunshine);">Abode of Potential</span>
-        </h1>
-        <p class="reveal" style="max-width: 580px; margin: 0 auto var(--space-2xl); color: rgba(255,251,240,0.75); font-size: var(--fs-body-lg);">
-          Every rupee you give helps a child discover their potential through joyful learning, 
-          compassionate teaching, and community support.
-        </p>
-        <!-- GiveIndia Official Donation Card -->
-        <div class="reveal" style="max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.12); border-radius: 28px; padding: 2.5rem 2rem; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 20px 50px rgba(0,0,0,0.25);">
-          <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1.25rem;">
-            <span style="background: var(--color-sunshine); color: var(--color-charcoal); font-weight: 800; font-size: 0.85rem; padding: 6px 18px; border-radius: 100px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,199,44,0.3);">Official Donation Partner</span>
+
+    <section class="donate-flow" id="donate">
+      <div class="donate-flow__container">
+
+        <!-- Step Progress -->
+        <div class="step-progress" id="stepProgress">
+          <div class="step-dot active" data-step="1">
+            1
+            <span class="step-label">Amount</span>
           </div>
-          <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--color-cream); margin-bottom: 1rem;">Donate via <span style="color: var(--color-sunshine);">GiveIndia (Give.do)</span></h2>
-          <p style="color: rgba(255,251,240,0.9); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.75rem; max-width: 540px; margin-left: auto; margin-right: auto;">
-            Support Kshamtalaya Foundation securely through <strong>GiveIndia</strong>. All donations receive an instant <strong>80G tax exemption certificate</strong>.
+          <div class="step-line" data-line="1"></div>
+          <div class="step-dot" data-step="2">
+            2
+            <span class="step-label">Details</span>
+          </div>
+          <div class="step-line" data-line="2"></div>
+          <div class="step-dot" data-step="3">
+            3
+            <span class="step-label">Payment</span>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------
+             STEP 1: Amount Selection
+             ---------------------------------------- -->
+        <div class="donate-card" id="step1" data-step-panel="1">
+          <h2 class="donate-card__title">Choose Your Donation Amount</h2>
+          <p class="donate-card__subtitle">
+            Every contribution, big or small, helps a child discover their potential through joyful learning.
           </p>
 
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-            <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1rem 1.25rem; text-align: center; border: 1px solid rgba(255,255,255,0.18); flex: 1; min-width: 140px;">
-              <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🔒</div>
-              <div style="color: white; font-weight: 700; font-size: 0.88rem;">100% Safe & Verified</div>
+          <div class="form-alert form-alert--error" id="step1Alert"></div>
+
+          <div class="amount-grid" id="amountGrid">
+            <div class="amount-option" data-amount="280" tabindex="0">
+              <div class="amount-option__value">₹280</div>
+              <div class="amount-option__label">One day of learning</div>
             </div>
-            <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1rem 1.25rem; text-align: center; border: 1px solid rgba(255,255,255,0.18); flex: 1; min-width: 140px;">
-              <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🧾</div>
-              <div style="color: white; font-weight: 700; font-size: 0.88rem;">Instant 80G Receipt</div>
+            <div class="amount-option" data-amount="500" tabindex="0">
+              <div class="amount-option__value">₹500</div>
+              <div class="amount-option__label">Books & materials</div>
             </div>
-            <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1rem 1.25rem; text-align: center; border: 1px solid rgba(255,255,255,0.18); flex: 1; min-width: 140px;">
-              <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💳</div>
-              <div style="color: white; font-weight: 700; font-size: 0.88rem;">UPI, Cards & NetBanking</div>
+            <div class="amount-option" data-amount="1000" tabindex="0">
+              <div class="amount-option__value">₹1,000</div>
+              <div class="amount-option__label">A month of support</div>
+            </div>
+            <div class="amount-option" data-amount="2500" tabindex="0">
+              <div class="amount-option__value">₹2,500</div>
+              <div class="amount-option__label">Teacher training</div>
+            </div>
+            <div class="amount-option" data-amount="5000" tabindex="0">
+              <div class="amount-option__value">₹5,000</div>
+              <div class="amount-option__label">Classroom resources</div>
+            </div>
+            <div class="amount-option" data-amount="other" tabindex="0">
+              <div class="amount-option__value">Other</div>
+              <div class="amount-option__label">Custom amount</div>
             </div>
           </div>
 
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="https://give.do/nonprofits/kshamtalaya-foundation" class="btn btn--primary btn--lg" style="background: var(--color-sunshine); color: var(--color-charcoal); font-size: 1.1rem; padding: 1.1rem 2.5rem; box-shadow: 0 8px 25px rgba(255,199,44,0.4);" target="_blank" rel="noopener noreferrer">
-              Donate on GiveIndia ❤
-            </a>
-            <a href="https://canva.link/tcm2crpcansr5q0" class="btn btn--white btn--lg" style="color: var(--color-charcoal);" target="_blank" rel="noopener">
-              Impact Report 📊
+          <div class="custom-amount-wrap" id="customAmountWrap" style="display:none;">
+            <span class="custom-amount-wrap__symbol">₹</span>
+            <input type="number" id="customAmountInput" placeholder="Enter amount" min="1" step="1" inputmode="numeric" />
+          </div>
+
+          <div class="amount-selected-display" id="amountDisplay" style="display:none;">
+            <div class="amount-selected-display__label">Selected Amount</div>
+            <div class="amount-selected-display__value" id="amountDisplayValue">₹0</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="donate-btn donate-btn--primary" id="step1Next" disabled>
+              Continue to Donor Details →
+            </button>
+          </div>
+
+          <!-- GiveIndia Alternate -->
+          <div class="giveindia-alt">
+            <div class="giveindia-alt__badge">Also Available</div>
+            <p class="giveindia-alt__text">
+              You can also donate via <strong>GiveIndia (Give.do)</strong> with instant 80G tax exemption certificates.
+            </p>
+            <a href="https://give.do/nonprofits/kshamtalaya-foundation" class="btn btn--secondary btn--sm" target="_blank" rel="noopener noreferrer">
+              Donate on GiveIndia →
             </a>
           </div>
         </div>
+
+        <!-- ----------------------------------------
+             STEP 2: Donor Details Form
+             ---------------------------------------- -->
+        <div class="donate-card" id="step2" data-step-panel="2" style="display:none;">
+          <h2 class="donate-card__title">Complete Your Donor Details</h2>
+          <p class="donate-card__subtitle">
+            Please provide the following information before proceeding to your donation.
+            These details help Kshamtalaya Foundation maintain donor records and process donation-related documentation.
+          </p>
+
+          <div class="form-alert form-alert--error" id="step2Alert"></div>
+
+          <!-- Amount badge -->
+          <div class="amount-selected-display" style="margin-bottom: 1.5rem;">
+            <div class="amount-selected-display__label">Donation Amount</div>
+            <div class="amount-selected-display__value" id="step2AmountDisplay">₹0</div>
+          </div>
+
+          <form id="donorForm" autocomplete="on" novalidate>
+            <!-- A. Full Name -->
+            <div class="form-section">
+              <div class="form-section__title">Personal Information</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="donor-fullname">Full Name <span class="required">*</span></label>
+                  <input type="text" id="donor-fullname" name="fullName" placeholder="Enter your full legal name" required autocomplete="name" />
+                  <div class="field-error" id="err-fullname">Full name is required.</div>
+                </div>
+              </div>
+
+              <!-- B. Mobile Number -->
+              <div class="form-row form-row--2col">
+                <div class="form-field">
+                  <label for="donor-mobile">Mobile Number <span class="required">*</span></label>
+                  <div class="input-with-prefix" id="mobile-wrap">
+                    <span class="input-prefix">+91</span>
+                    <input type="tel" id="donor-mobile" name="mobile" placeholder="9876543210" required maxlength="10" autocomplete="tel-national" inputmode="tel" />
+                  </div>
+                  <div class="field-error" id="err-mobile">A valid 10-digit Indian mobile number is required.</div>
+                </div>
+
+                <!-- C. Email -->
+                <div class="form-field">
+                  <label for="donor-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="donor-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+                  <div class="field-error" id="err-email">A valid email address is required.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- D. Billing Address -->
+            <div class="form-section">
+              <div class="form-section__title">Billing Address</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="donor-address1">Address Line 1 <span class="required">*</span></label>
+                  <input type="text" id="donor-address1" name="address1" placeholder="House/Flat No., Street, Area" required autocomplete="address-line1" />
+                  <div class="field-error" id="err-address1">Address Line 1 is required.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="donor-address2">Address Line 2 <span style="color: var(--color-text-muted); font-weight:500;">(optional)</span></label>
+                  <input type="text" id="donor-address2" name="address2" placeholder="Landmark, Colony, etc." autocomplete="address-line2" />
+                </div>
+              </div>
+              <div class="form-row form-row--3col">
+                <div class="form-field">
+                  <label for="donor-city">City / Town <span class="required">*</span></label>
+                  <input type="text" id="donor-city" name="city" placeholder="e.g. Jaipur" required autocomplete="address-level2" />
+                  <div class="field-error" id="err-city">City or Town is required.</div>
+                </div>
+                <div class="form-field">
+                  <label for="donor-state">State <span class="required">*</span></label>
+                  <select id="donor-state" name="state" required autocomplete="address-level1">
+                    <option value="">Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Andaman and Nicobar Islands">Andaman & Nicobar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra & Nagar Haveli</option>
+                    <option value="Jammu and Kashmir">Jammu & Kashmir</option>
+                    <option value="Ladakh">Ladakh</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                  </select>
+                  <div class="field-error" id="err-state">State is required.</div>
+                </div>
+                <div class="form-field">
+                  <label for="donor-pincode">PIN Code <span class="required">*</span></label>
+                  <input type="text" id="donor-pincode" name="pinCode" placeholder="e.g. 302001" required maxlength="6" autocomplete="postal-code" inputmode="numeric" />
+                  <div class="field-error" id="err-pincode">A valid 6-digit PIN code is required.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- E. PAN -->
+            <div class="form-section">
+              <div class="form-section__title">Tax Information</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="donor-pan">PAN Number <span class="required">*</span></label>
+                  <input type="text" id="donor-pan" name="pan" placeholder="Enter your PAN number (e.g. ABCDE1234F)" required maxlength="10" style="text-transform:uppercase;" autocomplete="off" />
+                  <div class="field-error" id="err-pan">A valid PAN number is required (e.g. ABCDE1234F).</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- G. Communication Preferences -->
+            <label class="form-checkbox">
+              <input type="checkbox" id="donor-whatsapp" name="whatsappOptIn" />
+              <span class="form-checkbox__text">
+                Send me updates and notifications via WhatsApp/SMS.
+                <br><span style="font-size:0.78rem;color:#999;">This is optional and will not affect your donation.</span>
+              </span>
+            </label>
+
+            <!-- H. Privacy Notice -->
+            <div class="privacy-notice">
+              <strong>Privacy Notice:</strong> Kshamtalaya Foundation collects your personal and tax-related details for the purposes of donation processing, maintaining donor records, applicable regulatory compliance, and relevant communications. Your information is handled securely and is never shared publicly.
+              <a href="/Policies/Privacy Policy — Kshamtalaya Foundation.pdf" target="_blank">Read our Privacy Policy</a>.
+            </div>
+
+            <div class="btn-row">
+              <button type="button" class="donate-btn donate-btn--secondary" id="step2Back">
+                ← Back
+              </button>
+              <button type="submit" class="donate-btn donate-btn--primary" id="step2Submit">
+                Continue to Payment →
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ----------------------------------------
+             STEP 3: Payment / Confirmation
+             ---------------------------------------- -->
+        <div class="donate-card" id="step3" data-step-panel="3" style="display:none;">
+          <h2 class="donate-card__title" id="step3Title">Your Details Have Been Submitted</h2>
+          <p class="donate-card__subtitle" id="step3Subtitle">
+            Thank you for registering your donation to Kshamtalaya Foundation.
+          </p>
+
+          <!-- Donation Reference -->
+          <div class="amount-selected-display" style="margin-bottom: 1.5rem;">
+            <div class="amount-selected-display__label">Donation Reference</div>
+            <div class="amount-selected-display__value" id="donationRefDisplay" style="font-size:1.3rem; color: var(--color-charcoal);">—</div>
+          </div>
+
+          <!-- Review Summary -->
+          <div class="review-table" id="reviewSummary">
+            <div class="review-row">
+              <span class="review-row__label">Donation Amount</span>
+              <span class="review-row__value" id="review-amount">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-row__label">Donor Name</span>
+              <span class="review-row__value" id="review-name">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-row__label">Email</span>
+              <span class="review-row__value" id="review-email">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-row__label">Mobile</span>
+              <span class="review-row__value" id="review-mobile">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-row__label">Payment Status</span>
+              <span class="review-row__value">
+                <span class="status-badge status-badge--pending" id="review-status"><span class="status-dot"></span> Pending Payment</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Payment Section: Placeholder until QR is configured -->
+          <div class="payment-placeholder" id="paymentSection">
+            <div class="payment-placeholder__icon" style="color: var(--color-teal); margin-bottom: 1rem;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="payment-placeholder__title">Payment Facility Being Configured</h3>
+            <p class="payment-placeholder__text">
+              Thank you for registering your donation to Kshamtalaya Foundation.
+              The online payment facility is being configured. <strong>No payment has been initiated.</strong>
+            </p>
+            <p class="payment-placeholder__text" style="margin-top:0.75rem; font-size:0.85rem;">
+              A team member from Kshamtalaya Foundation will contact you with payment instructions.
+              You can also reach us directly at <a href="mailto:info@kshamtalaya.org" style="color:var(--color-teal);font-weight:700;">info@kshamtalaya.org</a> or via <a href="/contact.html" style="color:var(--color-teal);font-weight:700;">our contact page</a>.
+            </p>
+          </div>
+
+          <!-- QR Payment Section: Hidden by default, activated when PAYMENT_ENABLED = true -->
+          <div id="qrPaymentSection" style="display:none;">
+            <div style="text-align:center; padding: 2rem; background: #f8fafc; border-radius: 16px; border: 2px solid #e0e0e0;">
+              <h3 style="font-family: var(--font-heading); font-size:1.2rem; color: var(--color-charcoal); margin-bottom:1rem;">
+                Scan to Pay
+              </h3>
+              <div id="qrCodeContainer" style="display:inline-block; padding:1rem; background:#fff; border-radius:12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <!-- Official QR code image goes here when configured -->
+                <img id="qrCodeImage" src="" alt="Kshamtalaya Foundation Payment QR" style="width:220px; height:220px; display:none;" />
+              </div>
+              <div style="margin-top:1rem;">
+                <p style="font-size:0.9rem; color:var(--color-text-secondary); font-weight:600;" id="qrUpiId"></p>
+                <p style="font-size:0.85rem; color:var(--color-text-muted);" id="qrBeneficiary"></p>
+              </div>
+              <div style="margin-top:1.5rem; padding:1rem; background:#FFF9E6; border-radius:12px; border: 1px solid rgba(255,199,44,0.3); text-align:left;">
+                <p style="font-size:0.85rem; color:#856404; font-weight:600;">
+                  <strong>Note:</strong> After completing payment, please note your UTR or Transaction reference number. A team member will verify and update your receipt status.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- GiveIndia Alternate -->
+          <div class="giveindia-alt" style="margin-top:2rem;">
+            <div class="giveindia-alt__badge">Alternative Payment Option</div>
+            <p class="giveindia-alt__text">
+              You can also complete your donation via <strong>GiveIndia (Give.do)</strong> for instant 80G tax exemption certificates.
+            </p>
+            <a href="https://give.do/nonprofits/kshamtalaya-foundation" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" style="background: var(--color-sunshine); color: var(--color-charcoal);">
+              Donate via GiveIndia →
+            </a>
+          </div>
+
+          <div class="btn-row" style="margin-top:2rem;">
+            <a href="/" class="donate-btn donate-btn--secondary" style="text-decoration:none;">
+              ← Back to Home
+            </a>
+            <a href="/donate.html" class="donate-btn donate-btn--primary" style="text-decoration:none;">
+              Make Another Donation
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
-    <!-- FILL THE CLASSROOM VISUALIZER            -->
-    <!-- ════════════════════════════════════════ -->
-    <section class="section" id="fill-classroom" style="background: linear-gradient(180deg, #FFF9EE 0%, #FFFFFF 100%); padding: 5rem 0; overflow: hidden;">
-      <style>
-        .classroom-container {
-          max-width: 900px;
-          margin: 0 auto;
-          position: relative;
-        }
-        .classroom-scene {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 16/9;
-          background: linear-gradient(180deg, #e8f4f8 0%, #d4ecf7 40%, #c8b896 40%, #c8b896 100%);
-          border-radius: 24px;
-          overflow: hidden;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-          border: 3px solid rgba(0,0,0,0.06);
-        }
-        /* Room structure */
-        .room-wall { position: absolute; top: 0; left: 0; width: 100%; height: 40%; background: linear-gradient(180deg, #f5efe6 0%, #ece4d4 100%); }
-        .room-floor { position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(180deg, #d4a76a 0%, #c49a5e 30%, #b8905a 100%); }
-        .room-floor::before {
-          content: '';
-          position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-          background: repeating-linear-gradient(90deg, transparent, transparent 18%, rgba(0,0,0,0.04) 18%, rgba(0,0,0,0.04) 18.5%);
-        }
-        /* Blackboard */
-        .blackboard {
-          position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
-          width: 45%; height: 28%;
-          background: #2d4a3e; border: 6px solid #8b6f47; border-radius: 4px;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-          display: flex; align-items: center; justify-content: center;
-          z-index: 2;
-        }
-        .blackboard-text {
-          color: rgba(255,255,255,0.7); font-family: 'Baloo 2', cursive;
-          font-size: clamp(0.7rem, 2vw, 1.4rem); text-align: center; padding: 0.5rem;
-          transition: all 0.8s ease;
-        }
-        /* Window */
-        .window {
-          position: absolute; top: 4%; width: 12%; height: 30%;
-          background: linear-gradient(180deg, #87CEEB 0%, #b8e4f0 100%);
-          border: 5px solid #8b6f47; border-radius: 4px;
-          box-shadow: inset 0 0 15px rgba(135,206,235,0.5);
-          z-index: 1;
-        }
-        .window::after {
-          content: ''; position: absolute; top: 48%; left: 0; width: 100%; height: 4px;
-          background: #8b6f47;
-        }
-        .window::before {
-          content: ''; position: absolute; left: 48%; top: 0; width: 4px; height: 100%;
-          background: #8b6f47;
-        }
-        .window-left { left: 5%; }
-        .window-right { right: 5%; }
-
-        /* Classroom items - all start hidden */
-        .classroom-item {
-          position: absolute;
-          transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-          opacity: 0;
-          transform: scale(0.3) translateY(30px);
-          z-index: 3;
-        }
-        .classroom-item.visible {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
-
-        /* Desk */
-        .desk {
-          width: 18%; height: 14%;
-          background: linear-gradient(180deg, #c49a5e 0%, #a87d45 100%);
-          border-radius: 4px 4px 0 0;
-          box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-        .desk::after {
-          content: ''; position: absolute; bottom: -20%; left: 10%; width: 8%; height: 20%;
-          background: #8b6f47; border-radius: 0 0 2px 2px;
-          box-shadow: 16px 0 0 #8b6f47;
-        }
-        .desk-1 { bottom: 32%; left: 8%; }
-        .desk-2 { bottom: 32%; left: 32%; }
-        .desk-3 { bottom: 32%; right: 8%; }
-
-        /* Books */
-        .books {
-          width: 8%; height: 6%;
-          display: flex; gap: 2px; align-items: flex-end;
-        }
-        .book {
-          width: 25%; height: 100%; border-radius: 2px;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .books-1 { bottom: 46%; left: 10%; }
-        .books-2 { bottom: 46%; left: 34%; }
-        .books-3 { bottom: 46%; right: 10%; }
-
-        /* Globe */
-        .globe {
-          width: 6%; aspect-ratio: 1;
-          border-radius: 50%;
-          background: radial-gradient(circle at 35% 35%, #4FC3F7, #1976D2 60%, #0D47A1);
-          box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-          bottom: 46%; left: 80%;
-        }
-        .globe::after {
-          content: ''; position: absolute; top: 20%; left: 15%;
-          width: 35%; height: 25%;
-          background: #66BB6A; border-radius: 40%;
-          transform: rotate(-15deg);
-        }
-
-        /* Children - simple stylized figures */
-        .child-figure {
-          display: flex; flex-direction: column; align-items: center;
-          width: 7%;
-        }
-        .child-head {
-          width: 60%; aspect-ratio: 1; border-radius: 50%;
-          margin-bottom: 2px;
-        }
-        .child-body {
-          width: 80%; height: 55%;
-          border-radius: 30% 30% 0 0;
-        }
-
-        .child-1 { bottom: 16%; left: 12%; }
-        .child-2 { bottom: 16%; left: 22%; }
-        .child-3 { bottom: 16%; left: 36%; }
-        .child-4 { bottom: 16%; left: 46%; }
-        .child-5 { bottom: 16%; right: 22%; }
-        .child-6 { bottom: 16%; right: 12%; }
-
-        /* Sports equipment */
-        .sports {
-          width: 10%; display: flex; gap: 4px; align-items: flex-end;
-          bottom: 5%; right: 6%;
-        }
-        .football {
-          width: 40%; aspect-ratio: 1; border-radius: 50%;
-          background: radial-gradient(circle at 40% 35%, #fff, #f5f5f5 50%, #e0e0e0);
-          border: 2px solid #333;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-        .cricket-bat {
-          width: 20%; height: 200%;
-          background: linear-gradient(180deg, #deb887 60%, #333 60%);
-          border-radius: 4px 4px 1px 1px;
-          transform: rotate(-15deg);
-        }
-
-        /* Bookshelf */
-        .bookshelf {
-          width: 14%; height: 30%;
-          background: #8b6f47;
-          border-radius: 3px;
-          top: 5%; right: 20%;
-          display: flex; flex-direction: column;
-          padding: 3%; gap: 2px; justify-content: space-around;
-        }
-        .shelf-row {
-          width: 100%; height: 30%;
-          background: #a0885c;
-          border-radius: 2px;
-          display: flex; gap: 1px; padding: 2px; align-items: flex-end;
-        }
-        .shelf-book {
-          flex: 1; height: 80%; border-radius: 1px;
-        }
-
-        /* Clock */
-        .wall-clock {
-          width: 5%; aspect-ratio: 1;
-          border-radius: 50%;
-          background: #fff;
-          border: 3px solid #333;
-          top: 8%; left: 22%;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-          display: flex; align-items: center; justify-content: center;
-        }
-        .clock-hand {
-          position: absolute; bottom: 50%; left: 50%;
-          width: 2px; background: #333;
-          transform-origin: bottom center;
-        }
-        .clock-hour { height: 25%; transform: rotate(-30deg); }
-        .clock-minute { height: 35%; transform: rotate(60deg); }
-
-        /* Art / drawings on wall */
-        .wall-art {
-          width: 7%; aspect-ratio: 4/5;
-          border-radius: 3px;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-          border: 2px solid #fff;
-        }
-        .art-1 { top: 6%; left: 32%; background: linear-gradient(135deg, #08B9DB, #10E0F5); }
-        .art-2 { top: 10%; left: 62%; background: linear-gradient(135deg, #4FB6E8, #7ECDF0); }
-
-        /* Teacher's desk */
-        .teacher-desk {
-          width: 20%; height: 10%;
-          background: linear-gradient(180deg, #6d4c2e, #5a3e25);
-          border-radius: 4px;
-          bottom: 42%; left: 40%; transform: translateX(-50%);
-          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Slider styling */
-        .donation-slider-wrap {
-          max-width: 700px; margin: 2.5rem auto 0;
-          text-align: center;
-        }
-        .donation-amount-display {
-          font-family: 'Baloo 2', cursive;
-          font-size: clamp(2rem, 5vw, 3.5rem);
-          font-weight: 800;
-          color: var(--color-charcoal);
-          margin-bottom: 0.5rem;
-          transition: all 0.3s ease;
-        }
-        .donation-amount-display span {
-          color: var(--color-teal);
-        }
-        .donation-impact-label {
-          font-size: 1.1rem;
-          color: var(--color-text-secondary);
-          font-weight: 600;
-          margin-bottom: 1.5rem;
-          min-height: 1.5em;
-          transition: all 0.4s ease;
-        }
-        .classroom-slider {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 100%;
-          height: 12px;
-          background: linear-gradient(90deg, #e0e0e0 0%, #08B9DB 50%, #0194B1 100%);
-          border-radius: 100px;
-          outline: none;
-          cursor: pointer;
-          box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .classroom-slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 36px; height: 36px;
-          border-radius: 50%;
-          background: var(--color-teal);
-          border: 4px solid #fff;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-          cursor: grab;
-          transition: transform 0.2s ease;
-        }
-        .classroom-slider::-webkit-slider-thumb:hover {
-          transform: scale(1.15);
-        }
-        .classroom-slider::-moz-range-thumb {
-          width: 36px; height: 36px;
-          border-radius: 50%;
-          background: var(--color-teal);
-          border: 4px solid #fff;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-          cursor: grab;
-        }
-        .slider-labels {
-          display: flex; justify-content: space-between;
-          margin-top: 0.75rem;
-          font-size: 0.85rem; font-weight: 700;
-          color: var(--color-text-muted);
-        }
-        .donate-cta-row {
-          margin-top: 2rem;
-          display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-        }
-      </style>
-
-      <div class="container">
-        <div class="section-header reveal" style="text-align: center; margin-bottom: 1rem;">
-          <div class="section-header__eyebrow">See Your Impact</div>
-          <h2 class="section-header__title">Fill a <span style="color: var(--color-teal);">Classroom</span> with Your Giving</h2>
-          <p class="section-header__desc">Drag the slider and watch the classroom come alive. Every rupee transforms a space into a place of wonder.</p>
-        </div>
-
-        <div class="classroom-container reveal">
-          <div class="classroom-scene" id="classroomScene">
-            <!-- Room structure -->
-            <div class="room-wall"></div>
-            <div class="room-floor"></div>
-            <div class="window window-left"></div>
-            <div class="window window-right"></div>
-            <div class="blackboard">
-              <div class="blackboard-text" id="boardText">An empty classroom awaits...</div>
-            </div>
-
-            <!-- TIER 1: ₹500 – Basic furniture -->
-            <div class="classroom-item desk desk-1" data-tier="1"></div>
-            <div class="classroom-item desk desk-2" data-tier="1"></div>
-            <div class="classroom-item desk desk-3" data-tier="1" style="transition-delay: 0.15s;"></div>
-            <div class="classroom-item teacher-desk" data-tier="1" style="transition-delay: 0.25s;"></div>
-
-            <!-- TIER 2: ₹2000 – Books & clock -->
-            <div class="classroom-item books books-1" data-tier="2">
-              <div class="book" style="background:#E53935; height:100%;"></div>
-              <div class="book" style="background:#1E88E5; height:85%;"></div>
-              <div class="book" style="background:#43A047; height:92%;"></div>
-              <div class="book" style="background:#7ECDF0; height:78%;"></div>
-            </div>
-            <div class="classroom-item books books-2" data-tier="2" style="transition-delay: 0.1s;">
-              <div class="book" style="background:#8E24AA; height:90%;"></div>
-              <div class="book" style="background:#00ACC1; height:100%;"></div>
-              <div class="book" style="background:#999999; height:82%;"></div>
-              <div class="book" style="background:#3949AB; height:95%;"></div>
-            </div>
-            <div class="classroom-item books books-3" data-tier="2" style="transition-delay: 0.2s;">
-              <div class="book" style="background:#C0CA33; height:88%;"></div>
-              <div class="book" style="background:#D81B60; height:96%;"></div>
-              <div class="book" style="background:#039BE5; height:80%;"></div>
-              <div class="book" style="background:#4FB6E8; height:100%;"></div>
-            </div>
-            <div class="classroom-item wall-clock" data-tier="2" style="transition-delay: 0.3s;">
-              <div class="clock-hand clock-hour"></div>
-              <div class="clock-minute clock-hand"></div>
-            </div>
-
-            <!-- TIER 3: ₹5000 – Bookshelf, globe, art -->
-            <div class="classroom-item bookshelf" data-tier="3">
-              <div class="shelf-row">
-                <div class="shelf-book" style="background:#E53935;"></div>
-                <div class="shelf-book" style="background:#1E88E5;"></div>
-                <div class="shelf-book" style="background:#43A047;"></div>
-                <div class="shelf-book" style="background:#FFC72C;"></div>
-              </div>
-              <div class="shelf-row">
-                <div class="shelf-book" style="background:#8E24AA;"></div>
-                <div class="shelf-book" style="background:#FF6F59;"></div>
-                <div class="shelf-book" style="background:#00ACC1;"></div>
-              </div>
-              <div class="shelf-row">
-                <div class="shelf-book" style="background:#F4511E;"></div>
-                <div class="shelf-book" style="background:#3949AB;"></div>
-                <div class="shelf-book" style="background:#C0CA33;"></div>
-                <div class="shelf-book" style="background:#D81B60;"></div>
-              </div>
-            </div>
-            <div class="classroom-item globe" data-tier="3" style="transition-delay: 0.15s;"></div>
-            <div class="classroom-item wall-art art-1" data-tier="3" style="transition-delay: 0.25s;"></div>
-            <div class="classroom-item wall-art art-2" data-tier="3" style="transition-delay: 0.35s;"></div>
-
-            <!-- TIER 4: ₹10000 – Sports + 3 children -->
-            <div class="classroom-item sports" data-tier="4">
-              <div class="cricket-bat"></div>
-              <div class="football"></div>
-            </div>
-            <div class="classroom-item child-figure child-1" data-tier="4" style="transition-delay: 0.1s;">
-              <div class="child-head" style="background: #8D6E63;"></div>
-              <div class="child-body" style="background: #42A5F5;"></div>
-            </div>
-            <div class="classroom-item child-figure child-2" data-tier="4" style="transition-delay: 0.2s;">
-              <div class="child-head" style="background: #A1887F;"></div>
-              <div class="child-body" style="background: #EF5350;"></div>
-            </div>
-            <div class="classroom-item child-figure child-3" data-tier="4" style="transition-delay: 0.3s;">
-              <div class="child-head" style="background: #795548;"></div>
-              <div class="child-body" style="background: #66BB6A;"></div>
-            </div>
-
-            <!-- TIER 5: ₹50000 – 3 more children (full classroom) -->
-            <div class="classroom-item child-figure child-4" data-tier="5">
-              <div class="child-head" style="background: #6D4C41;"></div>
-              <div class="child-body" style="background: #FFA726;"></div>
-            </div>
-            <div class="classroom-item child-figure child-5" data-tier="5" style="transition-delay: 0.15s;">
-              <div class="child-head" style="background: #8D6E63;"></div>
-              <div class="child-body" style="background: #AB47BC;"></div>
-            </div>
-            <div class="classroom-item child-figure child-6" data-tier="5" style="transition-delay: 0.25s;">
-              <div class="child-head" style="background: #A1887F;"></div>
-              <div class="child-body" style="background: #26C6DA;"></div>
-            </div>
-          </div>
-
-          <!-- Slider -->
-          <div class="donation-slider-wrap">
-            <div class="donation-amount-display" id="donationDisplay">₹<span>0</span></div>
-            <div class="donation-impact-label" id="impactLabel">Slide to see what your donation can do →</div>
-            <input type="range" class="classroom-slider" id="classroomSlider" min="0" max="5" value="0" step="1">
-            <div class="slider-labels">
-              <span>₹0</span>
-              <span>₹500</span>
-              <span>₹2,000</span>
-              <span>₹5,000</span>
-              <span>₹10,000</span>
-              <span>₹50,000</span>
-            </div>
-
-            <div class="donate-cta-row">
-              <a href="https://give.do/nonprofits/kshamtalaya-foundation" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" style="box-shadow: 0 8px 25px rgba(255,199,44,0.4);">
-                Donate Now on GiveIndia ❤
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        (function() {
-          const slider = document.getElementById('classroomSlider');
-          const display = document.getElementById('donationDisplay');
-          const label = document.getElementById('impactLabel');
-          const boardText = document.getElementById('boardText');
-          const items = document.querySelectorAll('.classroom-item');
-
-          const tiers = [
-            { amount: '0',      label: 'Slide to see what your donation can do →', board: 'An empty classroom awaits...' },
-            { amount: '500',    label: '🪑 Desks & furniture for students to sit and learn', board: 'Welcome to class!' },
-            { amount: '2,000',  label: '📚 Books, a clock, and learning materials arrive', board: 'A + B = Learning!' },
-            { amount: '5,000',  label: '🌍 A bookshelf, globe, and artwork fill the walls', board: 'The world is our classroom ✨' },
-            { amount: '10,000', label: '⚽ Sports gear appears and children walk in!', board: 'Every child matters 💛' },
-            { amount: '50,000', label: '🎉 A full, vibrant classroom - thanks to YOU!', board: 'Thank you for believing in us! 🌟' }
-          ];
-
-          function updateClassroom(tierIndex) {
-            const tier = tiers[tierIndex];
-            display.innerHTML = '₹<span>' + tier.amount + '</span>';
-            label.textContent = tier.label;
-            boardText.textContent = tier.board;
-
-            items.forEach(item => {
-              const itemTier = parseInt(item.getAttribute('data-tier'));
-              if (itemTier <= tierIndex) {
-                item.classList.add('visible');
-              } else {
-                item.classList.remove('visible');
-              }
-            });
-
-            // Change board color at max
-            if (tierIndex === 5) {
-              boardText.style.color = '#FFC72C';
-              boardText.style.fontSize = 'clamp(0.8rem, 2.2vw, 1.6rem)';
-            } else {
-              boardText.style.color = 'rgba(255,255,255,0.7)';
-              boardText.style.fontSize = 'clamp(0.7rem, 2vw, 1.4rem)';
-            }
-          }
-
-          slider.addEventListener('input', function() {
-            updateClassroom(parseInt(this.value));
-          });
-
-          // Initial state
-          updateClassroom(0);
-        })();
-      </script>
-    </section>
-
-    <!-- COMPLIANCE DOCUMENTS -->
+    <!-- ----------------------------------------
+         COMPLIANCE DOCUMENTS
+         ---------------------------------------- -->
     <section class="section section--cream" id="compliance">
       <div class="container">
         <div class="section-header reveal">
@@ -620,19 +970,25 @@
         </div>
         <div class="compliance-grid" data-stagger>
           <div class="compliance-card reveal">
-            <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📋</div>
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(8, 185, 219, 0.1); color: var(--color-teal); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-sm);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
             <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-xs);">CSR-1 Filing</h3>
             <p style="font-size: var(--fs-small); color: var(--color-text-secondary);">Registered under Companies Act for CSR funding</p>
             <a href="/certifiactes/Approval%20Letter%20for%20form%20CSR1_Kshamtalaya%20Foundation.PDF" target="_blank" class="btn btn--secondary btn--sm" style="margin-top: var(--space-md);">View Certificate</a>
           </div>
           <div class="compliance-card reveal">
-            <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏛️</div>
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255, 199, 44, 0.15); color: #b78103; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-sm);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M3 10h18"></path><path d="M5 10v11"></path><path d="M19 10v11"></path><path d="M9 10v11"></path><path d="M15 10v11"></path><path d="M12 2l10 5H2l10-5z"></path></svg>
+            </div>
             <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-xs);">80G Certificate</h3>
             <p style="font-size: var(--fs-small); color: var(--color-text-secondary);">Tax exemption for individual and institutional donors</p>
             <a href="/certifiactes/80G%20(3).pdf" target="_blank" class="btn btn--secondary btn--sm" style="margin-top: var(--space-md);">View Certificate</a>
           </div>
           <div class="compliance-card reveal">
-            <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📄</div>
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(76, 175, 80, 0.12); color: #2e7d32; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-sm);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
             <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-xs);">12A Registration</h3>
             <p style="font-size: var(--fs-small); color: var(--color-text-secondary);">Income tax exemption registration certificate</p>
             <a href="/certifiactes/12AA%20(2).pdf" target="_blank" class="btn btn--secondary btn--sm" style="margin-top: var(--space-md);">View Certificate</a>
@@ -640,6 +996,7 @@
         </div>
       </div>
     </section>
+
     <!-- OTHER WAYS TO GET INVOLVED -->
     <section class="section" id="volunteer">
       <div class="container">
@@ -648,97 +1005,396 @@
           <h2 class="section-header__title">More Ways to <span class="highlight-yellow">Get Involved</span></h2>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl);" data-stagger>
-          <!-- Volunteer -->
-          <div class="involve-card reveal" id="volunteer">
-            <div class="involve-card__icon">🌱</div>
+          <div class="involve-card reveal">
+            <div class="involve-card__icon" style="color: var(--color-teal); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(8, 185, 219, 0.1); border-radius: 12px; margin-bottom: var(--space-md);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+            </div>
             <h3 style="margin-bottom: var(--space-xs);">Volunteer with Us</h3>
             <p style="color: var(--color-text-secondary); font-size: var(--fs-small); margin-bottom: var(--space-lg);">
               Join hands-on programs in the field or contribute remotely through communications, research, curriculum design, or tech support.
             </p>
-            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
-              <li>✓ Learning Festivals facilitation</li>
-              <li>✓ Curriculum and content development</li>
-              <li>✓ Communications & design support</li>
-              <li>✓ Research & monitoring support</li>
-            </ul>
             <a href="/contact.html" class="btn btn--secondary">Express Interest</a>
           </div>
-          <!-- iDISCOVER Fellowship -->
           <div class="involve-card reveal">
-            <div class="involve-card__icon">🔭</div>
+            <div class="involve-card__icon" style="color: #b78103; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(255, 199, 44, 0.15); border-radius: 12px; margin-bottom: var(--space-md);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
             <h3 style="margin-bottom: var(--space-xs);">iDISCOVER Fellowship</h3>
             <p style="color: var(--color-text-secondary); font-size: var(--fs-small); margin-bottom: var(--space-lg);">
-              A grassroots leadership development fellowship for purpose-driven individuals who want to create lasting change in education communities.
+              A grassroots leadership development fellowship for purpose-driven individuals who want to create lasting change.
             </p>
-            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
-              <li>✓ Full immersion in community work</li>
-              <li>✓ Leadership & professional development</li>
-              <li>✓ 80+ alumni across India</li>
-              <li>✓ Real grassroots experience</li>
-            </ul>
             <a href="/contact.html" class="btn btn--secondary">Apply for Fellowship</a>
           </div>
-          <!-- Art for Good -->
           <div class="involve-card reveal">
-            <div class="involve-card__icon">🎨</div>
-            <h3 style="margin-bottom: var(--space-xs);">Art & Music for Good</h3>
-            <p style="color: var(--color-text-secondary); font-size: var(--fs-small); margin-bottom: var(--space-lg);">
-              Run a fundraising event - concert, art show, exhibition - and direct the proceeds toward children's education programs. We'll guide you through how it works.
-            </p>
-            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
-              <li>✓ Host an event, donate proceeds</li>
-              <li>✓ Raise awareness + funds together</li>
-              <li>✓ Full support from our team</li>
-              <li>✓ All event types welcome</li>
-            </ul>
-            <a href="/contact.html" class="btn btn--secondary">Organise an Event</a>
-          </div>
-          <!-- Partner with Us -->
-          <div class="involve-card reveal" id="partner">
-            <div class="involve-card__icon">🤝</div>
+            <div class="involve-card__icon" style="color: #2e7d32; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(76, 175, 80, 0.12); border-radius: 12px; margin-bottom: var(--space-md);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
             <h3 style="margin-bottom: var(--space-xs);">Institutional Partnerships</h3>
             <p style="color: var(--color-text-secondary); font-size: var(--fs-small); margin-bottom: var(--space-lg);">
-              We collaborate with government bodies, NGOs, educational institutions, and corporates to co-design and implement community-centered education initiatives.
+              We collaborate with government bodies, NGOs, educational institutions, and corporates.
             </p>
-            <ul style="font-size: var(--fs-small); color: var(--color-text-secondary); margin-bottom: var(--space-lg); display:flex; flex-direction:column; gap: var(--space-2xs);">
-              <li>✓ Government & education department tie-ups</li>
-              <li>✓ NGO co-implementation</li>
-              <li>✓ Academic & research collaborations</li>
-              <li>✓ Corporate CSR partnerships</li>
-            </ul>
             <a href="/contact.html" class="btn btn--secondary">Start a Conversation</a>
           </div>
         </div>
       </div>
     </section>
-    <!-- FRIENDS OF KSHAMTALAYA -->
-    <section class="section section--yellow text-center">
-      <div class="container">
-        <h2 class="reveal" style="color: var(--color-charcoal);">Friends of Kshamtalaya</h2>
-        <p class="reveal" style="color: rgba(43,43,43,0.7); max-width: 560px; margin: var(--space-md) auto var(--space-xl);">
-          Become a sustained supporter. Monthly giving - at any amount - helps us plan programs 
-          with confidence and reach more children every year.
-        </p>
-        <div class="reveal" style="display:flex; gap: var(--space-md); justify-content:center; flex-wrap:wrap;">
-          <a href="/contact.html" class="btn btn--primary btn--lg" style="background:var(--color-charcoal); color:var(--color-sunshine);">
-            Become a Friend ❤
-          </a>
-          <a href="https://canva.link/tcm2crpcansr5q0" class="btn btn--white btn--lg" target="_blank" rel="noopener">
-            Read Our Story
-          </a>
-        </div>
-      </div>
-    </section>
+
   </main>
   <!-- FOOTER -->
-            {{> footer }}
+  {{> footer }}
+
   <script type="module" src="/js/main.js"></script>
   <script>
-    function selectAmount(btn, amount) {
-      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('custom-amount').value = '';
-    }
+    /* ----------------------------------------
+       DONATION FLOW LOGIC
+       Multi-step: Amount → Details → Payment
+       ---------------------------------------- */
+    (function() {
+      'use strict';
+
+      // -- Payment Configuration --
+      // Set PAYMENT_ENABLED to true and configure below when official QR is ready
+      const PAYMENT_ENABLED = false;
+      const PAYMENT_CONFIG = {
+        qrImageUrl: '',          // Path to official QR code image
+        upiId: '',               // Verified UPI ID
+        beneficiaryName: '',     // Official beneficiary name
+        paymentInstructions: '', // Payment support instructions
+        supportContact: 'info@kshamtalaya.org',      // Support contact info
+      };
+
+      // -- State --
+      let currentStep = 1;
+      let selectedAmount = 0;
+      let submissionKey = generateSubmissionKey();
+      let isSubmitting = false;
+
+      // -- DOM References --
+      const stepPanels = document.querySelectorAll('[data-step-panel]');
+      const stepDots   = document.querySelectorAll('.step-dot');
+      const stepLines  = document.querySelectorAll('.step-line');
+      const amountGrid = document.getElementById('amountGrid');
+      const customWrap = document.getElementById('customAmountWrap');
+      const customInput = document.getElementById('customAmountInput');
+      const amountDisplay = document.getElementById('amountDisplay');
+      const amountDisplayValue = document.getElementById('amountDisplayValue');
+      const step1Next  = document.getElementById('step1Next');
+      const step2Back  = document.getElementById('step2Back');
+      const step2Submit = document.getElementById('step2Submit');
+      const donorForm  = document.getElementById('donorForm');
+
+      // -- Helpers --
+      function generateSubmissionKey() {
+        return 'sub_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      }
+
+      function formatINR(n) {
+        return '₹' + Number(n).toLocaleString('en-IN');
+      }
+
+      function showAlert(id, msg) {
+        const el = document.getElementById(id);
+        el.textContent = msg;
+        el.style.display = 'block';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      function hideAlert(id) {
+        document.getElementById(id).style.display = 'none';
+      }
+
+      // -- Step Navigation --
+      function goToStep(step) {
+        currentStep = step;
+
+        stepPanels.forEach(p => {
+          p.style.display = Number(p.dataset.stepPanel) === step ? 'block' : 'none';
+          if (Number(p.dataset.stepPanel) === step) {
+            p.style.animation = 'none';
+            p.offsetHeight; // trigger reflow
+            p.style.animation = 'cardAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          }
+        });
+
+        stepDots.forEach(d => {
+          const s = Number(d.dataset.step);
+          d.classList.remove('active', 'complete');
+          if (s < step)  d.classList.add('complete');
+          if (s === step) d.classList.add('active');
+          // Update checkmark for completed steps
+          if (s < step) d.innerHTML = '✓<span class="step-label">' + d.querySelector('.step-label').textContent + '</span>';
+        });
+
+        stepLines.forEach(l => {
+          const lineIdx = Number(l.dataset.line);
+          l.classList.toggle('complete', lineIdx < step);
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // ----------------------------------------
+      // STEP 1: Amount Selection
+      // ----------------------------------------
+
+      amountGrid.addEventListener('click', function(e) {
+        const option = e.target.closest('.amount-option');
+        if (!option) return;
+
+        // Clear all selections
+        amountGrid.querySelectorAll('.amount-option').forEach(o => o.classList.remove('selected'));
+        option.classList.add('selected');
+
+        const val = option.dataset.amount;
+        if (val === 'other') {
+          customWrap.style.display = 'flex';
+          customInput.focus();
+          selectedAmount = Number(customInput.value) || 0;
+        } else {
+          customWrap.style.display = 'none';
+          customInput.value = '';
+          selectedAmount = Number(val);
+        }
+
+        updateAmountDisplay();
+        hideAlert('step1Alert');
+      });
+
+      // Keyboard nav for amount options
+      amountGrid.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          e.target.click();
+        }
+      });
+
+      customInput.addEventListener('input', function() {
+        selectedAmount = Number(this.value) || 0;
+        updateAmountDisplay();
+      });
+
+      function updateAmountDisplay() {
+        if (selectedAmount > 0) {
+          amountDisplay.style.display = 'block';
+          amountDisplayValue.textContent = formatINR(selectedAmount);
+          step1Next.disabled = false;
+        } else {
+          amountDisplay.style.display = 'none';
+          step1Next.disabled = true;
+        }
+      }
+
+      step1Next.addEventListener('click', function() {
+        if (selectedAmount < 1) {
+          showAlert('step1Alert', 'Please select or enter a donation amount.');
+          return;
+        }
+        // Update Step 2's amount display
+        document.getElementById('step2AmountDisplay').textContent = formatINR(selectedAmount);
+        goToStep(2);
+      });
+
+      // ----------------------------------------
+      // STEP 2: Donor Details
+      // ----------------------------------------
+
+      step2Back.addEventListener('click', function() {
+        goToStep(1);
+      });
+
+      // PAN auto-uppercase
+      document.getElementById('donor-pan').addEventListener('input', function() {
+        this.value = this.value.toUpperCase();
+      });
+
+      // PIN code: digits only
+      document.getElementById('donor-pincode').addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 6);
+      });
+
+      // Mobile: digits only
+      document.getElementById('donor-mobile').addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 10);
+      });
+
+      // -- Client-side validation --
+      const MOBILE_RE = /^[6-9]\d{9}$/;
+      const EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      const PAN_RE    = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+      const PIN_RE    = /^\d{6}$/;
+
+      function validateField(id, wrapId, errId, testFn) {
+        const el = document.getElementById(id);
+        const val = el.value.trim();
+        const isValid = testFn(val);
+
+        if (wrapId) {
+          const wrap = document.getElementById(wrapId);
+          wrap.classList.toggle('error', !isValid);
+        } else {
+          el.classList.toggle('error', !isValid);
+        }
+
+        const errEl = document.getElementById(errId);
+        if (errEl) errEl.style.display = isValid ? 'none' : 'block';
+
+        return isValid;
+      }
+
+      function validateAllFields() {
+        let valid = true;
+
+        if (!validateField('donor-fullname', null, 'err-fullname', v => v.length > 0)) valid = false;
+        if (!validateField('donor-mobile', 'mobile-wrap', 'err-mobile', v => MOBILE_RE.test(v))) valid = false;
+        if (!validateField('donor-email', null, 'err-email', v => EMAIL_RE.test(v))) valid = false;
+        if (!validateField('donor-address1', null, 'err-address1', v => v.length > 0)) valid = false;
+        if (!validateField('donor-city', null, 'err-city', v => v.length > 0)) valid = false;
+        if (!validateField('donor-state', null, 'err-state', v => v.length > 0)) valid = false;
+        if (!validateField('donor-pincode', null, 'err-pincode', v => PIN_RE.test(v))) valid = false;
+        if (!validateField('donor-pan', null, 'err-pan', v => PAN_RE.test(v.toUpperCase()))) valid = false;
+
+        return valid;
+      }
+
+      // Real-time validation on blur
+      ['donor-fullname', 'donor-mobile', 'donor-email', 'donor-address1', 'donor-city', 'donor-state', 'donor-pincode', 'donor-pan'].forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener('blur', function() {
+          if (this.value.trim()) {
+            // Run validation for this field
+            switch(id) {
+              case 'donor-fullname': validateField(id, null, 'err-fullname', v => v.length > 0); break;
+              case 'donor-mobile': validateField(id, 'mobile-wrap', 'err-mobile', v => MOBILE_RE.test(v)); break;
+              case 'donor-email': validateField(id, null, 'err-email', v => EMAIL_RE.test(v)); break;
+              case 'donor-address1': validateField(id, null, 'err-address1', v => v.length > 0); break;
+              case 'donor-city': validateField(id, null, 'err-city', v => v.length > 0); break;
+              case 'donor-state': validateField(id, null, 'err-state', v => v.length > 0); break;
+              case 'donor-pincode': validateField(id, null, 'err-pincode', v => PIN_RE.test(v)); break;
+              case 'donor-pan': validateField(id, null, 'err-pan', v => PAN_RE.test(v.toUpperCase())); break;
+            }
+          }
+        });
+      });
+
+      // -- Form Submission --
+      donorForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        if (isSubmitting) return;
+
+        hideAlert('step2Alert');
+
+        if (!validateAllFields()) {
+          showAlert('step2Alert', 'Please fill all required fields correctly before continuing.');
+          return;
+        }
+
+        isSubmitting = true;
+        step2Submit.disabled = true;
+        step2Submit.innerHTML = '<span class="spinner"></span> Submitting…';
+
+        const payload = {
+          amount: selectedAmount,
+          fullName: document.getElementById('donor-fullname').value.trim(),
+          mobile: document.getElementById('donor-mobile').value.trim(),
+          email: document.getElementById('donor-email').value.trim(),
+          address1: document.getElementById('donor-address1').value.trim(),
+          address2: document.getElementById('donor-address2').value.trim(),
+          city: document.getElementById('donor-city').value.trim(),
+          state: document.getElementById('donor-state').value,
+          pinCode: document.getElementById('donor-pincode').value.trim(),
+          pan: document.getElementById('donor-pan').value.trim().toUpperCase(),
+          whatsappOptIn: document.getElementById('donor-whatsapp').checked,
+          _submissionKey: submissionKey,
+        };
+
+        try {
+          const res = await fetch('/api/donate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok || !data.success) {
+            // Handle validation errors from server
+            if (data.errors && data.errors.length) {
+              const msgs = data.errors.map(e => e.message).join('\n');
+              showAlert('step2Alert', msgs);
+            } else if (data.retryable) {
+              // Email failed but record saved - allow retry
+              showAlert('step2Alert', data.error || 'Submission partially failed. Please try again.');
+            } else {
+              showAlert('step2Alert', data.error || 'An error occurred. Please try again.');
+            }
+
+            isSubmitting = false;
+            step2Submit.disabled = false;
+            step2Submit.innerHTML = 'Continue to Payment →';
+            return;
+          }
+
+          // Success — go to Step 3
+          const donationRef = data.donationRef;
+          populateStep3(donationRef, payload);
+
+          // Generate a fresh submission key to prevent duplicate submissions
+          submissionKey = generateSubmissionKey();
+          isSubmitting = false;
+          step2Submit.disabled = false;
+          step2Submit.innerHTML = 'Continue to Payment →';
+
+          goToStep(3);
+
+        } catch (err) {
+          console.error('Submission error:', err);
+          showAlert('step2Alert', 'Network error. Please check your connection and try again.');
+          isSubmitting = false;
+          step2Submit.disabled = false;
+          step2Submit.innerHTML = 'Continue to Payment →';
+        }
+      });
+
+      // ----------------------------------------
+      // STEP 3: Payment / Confirmation
+      // ----------------------------------------
+
+      function populateStep3(donationRef, donor) {
+        document.getElementById('donationRefDisplay').textContent = donationRef;
+        document.getElementById('review-amount').textContent = formatINR(donor.amount);
+        document.getElementById('review-name').textContent = donor.fullName;
+        document.getElementById('review-email').textContent = donor.email;
+        document.getElementById('review-mobile').textContent = '+91 ' + donor.mobile;
+
+        // Show payment section or placeholder
+        if (PAYMENT_ENABLED && PAYMENT_CONFIG.qrImageUrl) {
+          document.getElementById('paymentSection').style.display = 'none';
+          document.getElementById('qrPaymentSection').style.display = 'block';
+
+          const qrImg = document.getElementById('qrCodeImage');
+          qrImg.src = PAYMENT_CONFIG.qrImageUrl;
+          qrImg.style.display = 'block';
+
+          if (PAYMENT_CONFIG.upiId) {
+            document.getElementById('qrUpiId').textContent = 'UPI: ' + PAYMENT_CONFIG.upiId;
+          }
+          if (PAYMENT_CONFIG.beneficiaryName) {
+            document.getElementById('qrBeneficiary').textContent = PAYMENT_CONFIG.beneficiaryName;
+          }
+
+          document.getElementById('step3Title').textContent = 'Complete Your Payment';
+          document.getElementById('step3Subtitle').textContent =
+            'Scan the QR code below to pay ' + formatINR(donor.amount) + ' to Kshamtalaya Foundation.';
+        } else {
+          document.getElementById('paymentSection').style.display = 'block';
+          document.getElementById('qrPaymentSection').style.display = 'none';
+        }
+      }
+
+      // Initialize
+      goToStep(1);
+
+    })();
   </script>
 </body>
 </html>
